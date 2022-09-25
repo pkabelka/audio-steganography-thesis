@@ -32,7 +32,7 @@ clean:
 	rm -f *~
 
 pack:
-	tar czvf $(CO).tar.gz *.tex *.bib template-fig/* obrazky-figures/* bib-styles/* fitthesis.cls zadani.pdf $(CO).pdf Makefile
+	tar czvf $(CO).tar.gz *.tex *.bib template-fig/* obrazky/* bib-styles/* fitthesis.cls zadani.pdf $(CO).pdf Makefile
 
 rename:
 	mv $(CO).tex $(NAME).tex
