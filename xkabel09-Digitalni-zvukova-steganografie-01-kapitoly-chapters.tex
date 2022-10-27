@@ -121,8 +121,13 @@ pokud poruší licenční podmínky například sdílením zakoupené hudby
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=0.3\textwidth]{obrazky/placeholder.pdf}
-    \caption{Trojúhelník se třemi nejvýznamnějšími vlastnostmi}
+    \begin{tikzpicture}
+        \draw (0,0) coordinate[label=below:robustnost] --
+              (4,0) coordinate[label=below:kapacita] --
+              (2,3) coordinate[label=above:nepostřehnutelnost] --
+              cycle;
+    \end{tikzpicture}
+    \caption{Trojúhelník se třemi nejvýznamnějšími vlastnostmi steganografických metod}
     \label{pic:method-property-triangle}
 \end{figure}
 
