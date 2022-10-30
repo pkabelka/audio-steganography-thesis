@@ -104,11 +104,73 @@ pokud poruší licenční podmínky například sdílením zakoupené hudby
 \section{Reprezentace a~způsob uložení digitálního zvuku}
 \label{sec:digital-sound-representation}
 
-\todo{popis způsobu uložení digitálního zvuku}
+Ve skutečném světě se zvuk vyskytuje jako vibrování nějakého materiálu při
+frekvenci slyšitelné člověkem, která se pohybuje mezi 10\,Hz a~20\,000\,Hz
+\cite{Swanson1998}. Zvuk je ve skutečném světě spojitý -- má nekonečný počet
+hodnot -- a~je tedy definován všude. Aby bylo možné se zvukem pracovat
+digitálně, je nutné převést jej do diskrétní formy, která má konečný počet
+hodnot. Toho docílíme vzorkováním zvuku na nějaké frekvenci
+\cite{Cernocky2021}. Vzorkování probíhá tak, že se každá sekunda spojitého
+zvuku rozdělí na tolik bodů, kolik udává vzorkovací frekvence. V~každém bodě se
+zjistí amplituda ve stejném bodě spojitého zvuku. Rozdíl mezi spojitým
+a~navzorkovaným signálem je vidět na
+obrázku~\ref{pic:continuous-vs-discrete-signal}. Nejčastěji používané
+vzorkovací frekvence jsou 44\,100\,Hz a~48\,000\,Hz.
 
-\blindtext
+\pgfplotsset{
+    standard/.style={
+        axis x line=middle,
+        axis y line=middle,
+        enlarge x limits=0.15,
+        enlarge y limits=0.15,
+        every axis x label/.style={
+            at={(current axis.right of origin)},
+            anchor=north west
+        },
+        every axis y label/.style={
+            at={(current axis.above origin)},
+            anchor=north east
+        },
+        every axis plot post/.style={
+            mark options={fill=white}
+        }
+    }
+}
 
-\blindtext
+\begin{figure}[hbt]
+    \centering
+    \begin{subfigure}[b]{0.5\linewidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[%
+                standard,
+                scale=0.9,
+                domain = 0:1,
+                samples = 100,
+                xlabel = {$t$},
+                ylabel = {$x(t)$}]
+                \addplot[black,thick] {sin(2*180*x)};
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}%
+    \begin{subfigure}[b]{0.5\linewidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[%
+                standard,
+                scale=0.9,
+                domain = 0:15,
+                samples = 16,
+                xlabel = {$n$},
+                ylabel = {$x[n]$}]
+                \addplot+[ycomb,black,thick] {sin(2*180*x/16)};
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}
+    \caption{Spojitý signál (vlevo) a~diskrétní signál (vpravo) vzorkovaný na
+    frekvenci 16\,Hz}
+    \label{pic:continuous-vs-discrete-signal}
+\end{figure}
 
 \section{Vlastnosti metod digitální zvukové steganografie}
 \label{sec:method-properties}
