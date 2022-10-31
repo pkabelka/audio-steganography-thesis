@@ -177,10 +177,20 @@ a~24\,000\,Hz.
     \label{pic:continuous-vs-sampled-signal}
 \end{figure}
 
-Kvantování je diskretizace hodnot, kterých mohou jednotlivé vzorky signálu
-nabývat.
-\todo{popsat kvantování}
-\blindtext
+Pro převedení spojitého signálu na digitální nestačí pouze vzorkování.
+Vzorkování diskretizuje časovou komponentu spojitého signálu na pevně daný
+počet vzorků za jednotku času, ale nijak neovlivňuje hodnoty, kterých
+jednotlivé vzorky mohou nabývat. Kvantování je proces diskretizace hodnot
+zaokrouhlováním k~předem určeným hodnotám \cite{Oliver1948}. Hodnoty nebo také
+hladiny, ke kterým se zaokrouhluje jsou dané počtem použitých bitů. Vyšší počet
+bitů vede ke zlepšení kvality, protože zaokrouhlené hodnoty jsou blíže jejich
+původním. Tento jev lze vidět na obrázku \ref{pic:quantization}. Proces
+kvantování vždy zavede do výsledného signálu takzvaný \textit{kvantovací šum}
+\cite{Oliver1948}, protože převedení reálných čísel na digitální není exaktní.
+Tento šum je rozdílem původního signálu a~kvantovaného signálu. Použití menšího
+počtu bitů způsobí, že kvantovací šum bude výraznější, ale výsledný signál bude
+mít menší velikost. Pro kvalitní audio se dnes nejčastěji používá alespoň
+16~bitů.
 
 \begin{figure}[hbt]
     \centering
