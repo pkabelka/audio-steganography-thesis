@@ -109,8 +109,13 @@ frekvenci slyšitelné člověkem, která se pohybuje mezi 10\,Hz a~20\,000\,Hz
 \cite{Swanson1998}. Zvuk je ve skutečném světě spojitý signál -- má nekonečný
 počet hodnot -- a~je tedy definován všude. Aby bylo možné se zvukem pracovat
 digitálně, je nutné převést jej do diskrétní formy, která má konečný počet
-hodnot. Toho docílíme vzorkováním signálu na určité vzorkovací frekvenci
-a~kvantováním \cite{Cernocky2021}.
+hodnot. Toho docílíme vzorkováním signálu na určité vzorkovací frekvenci a~poté
+kvantováním \cite{Cernocky2021}. Posledním krokem pro převod spojitého signálu
+na digitální, je kódování. Tyto tři procesy tvoří systém, který se nazývá
+\textit{pulzně-kódová modulace}~(PCM) \cite{Oliver1948}, který je
+neopominutelným základem pro práci s~digitálním audiem.
+
+\subsection*{Vzorkování}
 
 Vzorkování probíhá tak, že se každá sekunda spojitého signálu rozdělí na tolik
 bodů, kolik udává vzorkovací frekvence. V~každém bodě se zjistí amplituda ve
@@ -178,6 +183,8 @@ a~24\,000\,Hz.
     na frekvenci 16\,Hz}
     \label{pic:continuous-vs-sampled-signal}
 \end{figure}
+
+\subsection*{Kvantování}
 
 Pro převedení spojitého signálu na digitální nestačí pouze vzorkování.
 Vzorkování diskretizuje časovou komponentu spojitého signálu na pevně daný
@@ -251,8 +258,8 @@ mít menší velikost. Pro kvalitní audio se dnes nejčastěji používá alesp
 Na konec, pro uložení a~přenos digitálních signálů musí být vzorky zakódovány.
 Nejjednodušší způsob pro zakódování kvantovaných hodnot je převedením na
 binární čísla. Jednotlivé jedničky a~nuly pak mohou při přenosu reprezentovat
-přítomnost pulzu~(1) a~nepřítomnost pulzu~(0). Tomuto systému, který obsahuje
-vzorkování, kvantování a~kódování, se říká \textit{pulzně-kódová
+přítomnost pulzu~(1) a~nepřítomnost pulzu~(0). Tento systém, který obsahuje
+vzorkování, kvantování a~kódování, se nazývá \textit{pulzně-kódová
 modulace}~(PCM) \cite{Oliver1948}.
 
 \subsection*{Formáty digitálního zvuku}
