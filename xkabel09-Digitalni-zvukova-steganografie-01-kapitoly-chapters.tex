@@ -248,9 +248,39 @@ mít menší velikost. Pro kvalitní audio se dnes nejčastěji používá alesp
     \label{pic:quantization}
 \end{figure}
 
+\todo{popsat PCM}
+\blindtext
+
 \subsection*{Formáty digitálního zvuku}
 
-\todo{popsat formaty a popsat WAV}
+Digitálních audio formátů je velké množství, každý s~nějakými odlišnými
+vlastnostmi. Hlavní kategorie na které se digitální zvukové formáty dělí jsou
+\textit{nekomprimované} a~\textit{komprimované} -- ty se ještě dělí na formáty
+se ztrátovou a~bezeztrátovou kompresí. Příklady některých známých formátů jsou
+v~tabulce \ref{tab:audio-formats}.
+
+\begin{table}[H]
+    \vskip6pt
+    \caption{Tabulka známých zvukových formátů}
+    \vskip6pt
+    \centering
+    \begin{tabular}{lll}
+        \toprule
+        Nekomprimovaný & \multicolumn{2}{c}{Komprimovaný} \\
+        \cmidrule(r){2-3}
+                       & Bezeztrátový & Ztrátový \\
+        \midrule
+        WAV  & FLAC & MP3 \\
+        AIFF & ALAC & AAC \\
+        RAW  &      & OGG Vorbis \\
+             &      & Opus \\
+             &      & WebM \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:audio-formats}
+\end{table}
+
+\todo{popsat WAV}
 \blindtext
 
 \section{Vlastnosti metod digitální zvukové steganografie}
