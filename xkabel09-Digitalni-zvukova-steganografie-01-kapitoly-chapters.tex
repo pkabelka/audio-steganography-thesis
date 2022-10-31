@@ -109,13 +109,18 @@ frekvenci slyšitelné člověkem, která se pohybuje mezi 10\,Hz a~20\,000\,Hz
 \cite{Swanson1998}. Zvuk je ve skutečném světě spojitý signál -- má nekonečný
 počet hodnot -- a~je tedy definován všude. Aby bylo možné se zvukem pracovat
 digitálně, je nutné převést jej do diskrétní formy, která má konečný počet
-hodnot. Toho docílíme vzorkováním zvuku na nějaké frekvenci
+hodnot. Toho docílíme vzorkováním zvuku na určité frekvenci a~kvantováním
 \cite{Cernocky2021}. Vzorkování probíhá tak, že se každá sekunda spojitého
 signálu rozdělí na tolik bodů, kolik udává vzorkovací frekvence. V~každém bodě
 se zjistí amplituda ve stejném bodě spojitého signálu a~ta se stane jeho
 hodnotou. Rozdíl mezi spojitým a~navzorkovaným signálem je vidět na
-obrázku~\ref{pic:continuous-vs-discrete-signal}. Nejčastěji používané
-vzorkovací frekvence jsou 44\,100\,Hz a~48\,000\,Hz.
+obrázku~\ref{pic:continuous-vs-discrete-signal}. Aby nedošlo ke ztrátě
+informace, je nutné dodržet Nyquist-Shannonův vzorkovací teorém, podle kterého
+musí být nejvyšší frekvence přítomná v~signálu maximálně polovina vzorkovací
+frekvence \cite{Shannon1949}. Nejčastěji používané vzorkovací frekvence jsou
+44\,100\,Hz a~48\,000\,Hz. Nejvyšší frekvence, které lze na těchto vzorkovacích
+frekvencích reprezentovat bez ztráty informace jsou příslušně 22\,050\,Hz
+a~24\,000\,Hz.
 
 \pgfplotsset{
     standard/.style={
@@ -167,9 +172,66 @@ vzorkovací frekvence jsou 44\,100\,Hz a~48\,000\,Hz.
             \end{axis}
         \end{tikzpicture}
     \end{subfigure}
-    \caption{Spojitý signál (vlevo) a~diskrétní signál (vpravo) vzorkovaný na
+    \caption{Spojitý signál (vlevo) a~navzorkovaný signál (vpravo) vzorkovaný na
     frekvenci 16\,Hz}
     \label{pic:continuous-vs-discrete-signal}
+\end{figure}
+
+Kvantování je diskretizace hodnot, kterých mohou jednotlivé vzorky signálu
+nabývat.
+
+\begin{figure}[hbt]
+    \centering
+    \begin{subfigure}[b]{0.5\linewidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[%
+                standard,
+                scale=0.9,
+                domain = 0:16,
+                xlabel = {$n$},
+                ylabel = {$x[n]$},
+                ytick = {-1.5, -0.5, 0.5, 1.5},
+                yticklabels = {$0$, $1$, $2$, $3$},
+                ymajorgrids = true,
+                grid style = dashed,
+                ]
+                \addplot[green,dashed,samples=100] {2*sin(2*180*x/16)};
+                \addplot+[ycomb,blue,thick,mark=*] coordinates{
+                    (1,0.5) (2,1.5) (3,1.5) (4,1.5) (5,1.5) (6,1.5) (7,0.5)
+                    (8,-0.5) (9,-0.5) (10,-1.5) (11,-1.5) (12,-1.5) (13,-1.5)
+                    (14,-1.5) (15,-0.5) (16,-0.5)
+                };
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}%
+    \begin{subfigure}[b]{0.5\linewidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[%
+                standard,
+                scale=0.9,
+                domain = 0:16,
+                xlabel = {$n$},
+                ylabel = {$x[n]$},
+                ytick = {-3.5, -2.5, -1.5, -0.5, 0.5, 1.5, 2.5, 3.5},
+                yticklabels = {$0$, $1$, $2$, $3$, $4$, $5$, $6$, $7$},
+                ymajorgrids = true,
+                grid style = dashed,
+                ]
+                \addplot[green,dashed,samples=100] {4*sin(2*180*x/16)};
+                \addplot+[ycomb,blue,thick,mark=*] coordinates{
+                    (1,1.5) (2,2.5) (3,3.5) (4,3.5) (5,3.5) (6,2.5) (7,1.5)
+                    (8,0.5) (9,-1.5) (10,-2.5) (11,-3.5) (12,-3.5) (13,-3.5)
+                    (14,-2.5) (15,-1.5) (16,-0.5)
+                };
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}
+    \caption{Signál z~obrázku \ref{pic:continuous-vs-discrete-signal}
+    vzorkovaný na frekvenci~16\,Hz a~kvantovaný na 2~bitech (vlevo) a~4~bitech
+(vpravo)}
+    \label{pic:quantization}
 \end{figure}
 
 \subsection*{Formáty digitálního zvuku}
