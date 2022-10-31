@@ -114,7 +114,7 @@ hodnot. Toho docílíme vzorkováním zvuku na určité frekvenci a~kvantování
 signálu rozdělí na tolik bodů, kolik udává vzorkovací frekvence. V~každém bodě
 se zjistí amplituda ve stejném bodě spojitého signálu a~ta se stane jeho
 hodnotou. Rozdíl mezi spojitým a~navzorkovaným signálem je vidět na
-obrázku~\ref{pic:continuous-vs-discrete-signal}. Aby nedošlo ke ztrátě
+obrázku~\ref{pic:continuous-vs-sampled-signal}. Aby nedošlo ke ztrátě
 informace, je nutné dodržet Nyquist-Shannonův vzorkovací teorém, podle kterého
 musí být nejvyšší frekvence přítomná v~signálu maximálně polovina vzorkovací
 frekvence \cite{Shannon1949}. Nejčastěji používané vzorkovací frekvence jsou
@@ -174,7 +174,7 @@ a~24\,000\,Hz.
     \end{subfigure}
     \caption{Spojitý signál (vlevo) a~navzorkovaný signál (vpravo) vzorkovaný na
     frekvenci 16\,Hz}
-    \label{pic:continuous-vs-discrete-signal}
+    \label{pic:continuous-vs-sampled-signal}
 \end{figure}
 
 Kvantování je diskretizace hodnot, kterých mohou jednotlivé vzorky signálu
@@ -228,7 +228,7 @@ nabývat.
             \end{axis}
         \end{tikzpicture}
     \end{subfigure}
-    \caption{Signál z~obrázku \ref{pic:continuous-vs-discrete-signal}
+    \caption{Signál z~obrázku \ref{pic:continuous-vs-sampled-signal}
     vzorkovaný na frekvenci~16\,Hz a~kvantovaný na 2~bitech (vlevo) a~4~bitech
 (vpravo)}
     \label{pic:quantization}
