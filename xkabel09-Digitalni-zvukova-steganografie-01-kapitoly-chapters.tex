@@ -267,7 +267,8 @@ přítomnost pulzu~(1) a~nepřítomnost pulzu~(0). Tento systém, který obsahuj
 vzorkování, kvantování a~kódování, se nazývá \textit{pulzně-kódová
 modulace}~(PCM) \cite{Oliver1948}. Pulzně-kódová modulace je důležitá obecně
 pro zpracování digitálních signálů, ale i~pro účely této práce, protože ji
-využívá zvukový formát \textit{WAV}, který je popsán v~následující podsekci.
+využívá zvukový formát \textit{Waveform Audio File Format}, který je popsán
+v~následující podsekci.
 
 \subsection*{Formáty digitálního zvuku}
 \label{sub:digital-audio-formats}
@@ -299,8 +300,14 @@ v~tabulce \ref{tab:audio-formats}.
     \label{tab:audio-formats}
 \end{table}
 
-\todo{popsat WAV}
-\blindtext
+\textit{Waveform Audio File Format} (dále jen WAV) je proprietární bezlicenční
+formát pro digitální audio vytvořený firmami Microsoft a~IBM. Tento formát je
+nástavbou generického multimediálního formátu \textit{Resource Interchange File
+Format} (RIFF). Konkrétní typ pulzně-kódové modulace, který WAV formát
+nejčastěji používá je lineární pulzně-kódová modulace (LPCM) \cite{WAVE} --
+kvantovací úrovně mají mezi sebou rovnoměrné rozestupy \cite{LPCM}. Může ale
+používat i~jiné typy kódování, jako komprimované \textmu-Law a~A-Law
+\cite{WAVE}.
 
 \section{Vlastnosti metod digitální zvukové steganografie}
 \label{sec:method-properties}
