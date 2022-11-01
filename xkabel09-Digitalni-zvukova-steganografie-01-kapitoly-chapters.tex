@@ -199,10 +199,10 @@ zaokrouhlováním k~předem určeným hodnotám \cite{Oliver1948}. Hodnoty nebo 
 hladiny, ke kterým se zaokrouhluje jsou dané počtem použitých bitů. Vyšší počet
 bitů vede ke zlepšení kvality, protože zaokrouhlené hodnoty jsou blíže jejich
 původním. Tento jev lze vidět na obrázku \ref{pic:quantization}. Proces
-kvantování vždy zavede do výsledného signálu takzvaný \textit{kvantovací šum}
+kvantování vždy zavede do výsledného signálu takzvaný \textit{kvantizační šum}
 \cite{Oliver1948}, protože převedení reálných čísel na digitální není exaktní.
 Tento šum je rozdílem původního signálu a~kvantovaného signálu. Použití menšího
-počtu bitů způsobí, že kvantovací šum bude výraznější, ale výsledný signál bude
+počtu bitů způsobí, že kvantizační šum bude výraznější, ale výsledný signál bude
 mít menší velikost. Pro kvalitní audio se dnes nejčastěji používá alespoň
 16~bitů.
 
@@ -328,7 +328,9 @@ vidět na obrázku \ref{pic:method-property-triangle}. Důvodem je fakt, že nen
 možné dosáhnout vysoké úrovně všech tří vlastností zároveň \cite{Dutta2020}.
 Zvýšení kvality jedné z~vlastností vždy vede ke snížení kvality alespoň jedné
 zbývající \cite{AlSabhany2020}\cite{Djebbar2012}. V~následujících podsekcích
-budou popsány jednotlivé vlastnosti podrobněji.
+budou popsány jednotlivé vlastnosti podrobněji.Bude také několikrát použit
+pojem \textit{stego soubor}, což je soubor, který vznikne použitím nějaké
+steganografické metody pro ukrytí zvolené informace do nějakého nosiče.
 
 \begin{figure}[hbt]
     \centering
@@ -346,7 +348,29 @@ budou popsány jednotlivé vlastnosti podrobněji.
 \subsection*{Robustnost}
 \label{sub:robustness}
 
-\blindtext
+Robustnost indikuje odolnost metody proti úmyslným či neúmyslným modifikacím
+skrytých informací \cite{AlSabhany2020}\cite{Dutta2020}. Míru robustnosti lze
+hodnotit podle množství skryté informace, která zůstane nezměněná po různých
+úpravách stego souboru. Podle \cite{Djebbar2012} mohou tyto modifikace být:
+
+\begin{itemize}
+    \item zesílení amplitudy -- může poškodit skryté informace
+    \item filtrování -- skryté informace mohou být odstraněny filtrací určitého
+        pásma
+    \item překvantování -- snížením počtu bitů a~zpětné překvantování na
+        původní hodnotu zavede nejen kvantizační šum, ale může být poškozena
+        nebo odstraněna skrytá informace
+    \item převzorkování -- podobná situace jako u~překvantování, snížení
+        vzorkovací frekvence způsobí ztrátu informace
+    \item přidání šumu -- šum může skrytá data zamaskovat nebo poškodit
+    \item překódování -- skrytá informace může být poškozena převedením stego
+        souboru do formátu, který používá ztrátovou kompresi
+\end{itemize}
+
+Robustnost metody je obzvlášť důležitá pro tvorbu vodoznaku popsaného
+v~podsekci~\ref{sub:steganography-uses}. Vodoznak musí být schopen odolat výše
+zmíněným modifikacím, aby bylo možné správně identifikovat jeho vlastníka
+\cite{Swanson1998}.
 
 \subsection*{Kapacita}
 \label{sub:capacity}
