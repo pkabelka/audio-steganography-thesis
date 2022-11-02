@@ -330,9 +330,9 @@ vidět na obrázku \ref{pic:method-property-triangle}. Důvodem je fakt, že nen
 možné dosáhnout vysoké úrovně všech tří vlastností zároveň \cite{Dutta2020}.
 Zvýšení kvality jedné z~vlastností vždy vede ke snížení kvality alespoň jedné
 zbývající \cite{AlSabhany2020}\cite{Djebbar2012}. V~následujících podsekcích
-budou popsány jednotlivé vlastnosti podrobněji.Bude také několikrát použit
+budou popsány jednotlivé vlastnosti podrobněji. Bude také několikrát použit
 pojem \textit{stego soubor}, což je soubor, který vznikne použitím nějaké
-steganografické metody pro ukrytí zvolené informace do nějakého nosiče.
+steganografické metody pro ukrytí zvolené informace do krycího souboru.
 
 \begin{figure}[hbt]
     \centering
@@ -378,12 +378,25 @@ zmíněným modifikacím, aby bylo možné správně identifikovat jeho vlastní
 \subsection*{Kapacita}
 \label{sub:capacity}
 
-\blindtext
+Kapacita udává množství informace, které je možné do nosiče zakódovat a~úspěšně
+dekódovat \cite{Dutta2020}\cite{Djebbar2012}. Kapacitu metody je možné vyjádřit
+bitech za sekundu ($bps$ nebo také $b/s$) nebo jako procentuální poměr
+velikosti skryté informace k~velikosti nosiče
+\cite{AlSabhany2020}\cite{Dutta2020}.
 
 \subsection*{Nepostřehnutelnost}
 \label{sub:imperceptibility}
 
-\blindtext
+Tato vlastnost vyjadřuje podobnost stego souboru a~krycího souboru a~je spojená
+s~detekovatelností přítomnosti skryté informace \cite{AlSabhany2020}. Úroveň
+nepostřehnutelnosti je možné měřit pomocí \textit{perceptual evaluation of
+speech quality} (PESQ) testu. Hodnota 4,5 znamená, že naměřený stego soubor je
+totožný s~krycím souborem. Hodnota 1 indikuje maximální degradaci kvality.
+Další způsob pro porovnání rozdílů dvou signálů je \textit{segmentový poměr
+signálu k~šumu} (SegSNR) \cite{Djebbar2012}. AlSabhany, Ali, Ridzuan a~další
+\cite{AlSabhany2020} zjistili, že nejpoužívanější metodou napříč analyzovanými
+publikacemi byl globální \textit{poměr signálu k~šumu} (SNR) a~dále
+\textit{špičkový poměr signálu k~šumu} (PSNR).
 
 \section{Metoda nahrazení nejméně významného bitu}
 \label{sec:lsb}
