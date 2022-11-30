@@ -410,13 +410,41 @@ poblíž \cite{Dutta2020}.
 \section{Metoda nahrazení nejméně významného bitu}
 \label{sec:lsb}
 
-\todo{popis metody LSB}
+Metoda využívající nahrazení nejméně významného bitu (anglicky \textit{least
+significant bit substitution}, dále jen LSB) je nejjednodušší metodou pro
+vkládání informací do nosiče. Principem této metody je nahrazení nejméně
+významného bitu v~nosiči za bit ukrývané informace \cite{Dutta2020}.
 
-\blindtext
+Tato metoda se vyznačuje velmi vysokou kapacitu \cite{Djebbar2012}
+a~jednoduchou implementací. Kapacita této metody je přímo úměrná počtu
+a~bitovou hloubkou vzorků nosiče. Je také vhodná pro kombinaci s~dalšími
+steganografickými technikami \cite{Djebbar2012} jako je šifrování nebo
+komprese. Hlavní nevýhodou této metody je její nízká robustnost. Informace
+ukryté LSB metodou je velmi jednoduché poškodit triviálními úpravami stego
+souboru jako je například zesílení, filtrace, přidání šumu, ztrátová komprese
+\cite{Djebbar2012}, převzorkování nebo překvantování. Robustnost této metody
+a~odolnost proti některým z~těchto modifikací je možné zvýšit vkládáním do jiné
+bitové úrovně než je poslední \cite{Djebbar2012}.
 
-\blindtext
+Nemodifikovaná LSB metoda není příliš bezpečná, neboť je možné jednoduše vyčíst
+hodnoty určité bitové úrovně a~tím objevit ukryté informace \cite{Djebbar2012}.
+Pro lepší ukrytí informací je možné ukládat bity do náhodných vzorků
+a~náhodných úrovní v~nich \cite{Dutta2020}. Bezpečnost LSB metody je možné
+zvýšit šifrováním ukrývaných informací. Ukrývaná data je vhodné nejprve
+zkomprimovat například Lempel-Ziv-Welch (LZW) kompresí. Poté je možné je
+zašifrovat vybraným šifrovacím algoritmem. Vhodným algoritmem pro symetrické
+šifrování je \textit{Advanced Encryption Standard} (AES, česky standard
+pokročilého šifrování). Pro asymetrické šifrování je vhodný algoritmus
+Rivest-Shamir-Adleman (RSA) \cite{Dutta2020}.
 
-\blindtext
+Kapacitu LSB metody je možné zvýšit například ukládáním do více bitových úrovní
+za sebou v~jednotlivých vzorcích. Tato modifikace však produkuje šum, který je
+lidské ucho schopno zachytit. Lepším způsobem jak zvýšit kapacitu je vkládáním
+do 4~nejnižších bitových úrovní pomocí algoritmu \textit{nahrazení nejmenší
+chybou} (anglicky minimum-error replacement) a~rozprostření chyby do
+následujících 4~vzorků. Tato modifikace zvyšuje kapacitu LSB metody o~33\%
+zatímco poměr signálu k~šumu je nižší než u~nemodifikované metody se stejným
+počtem použitých bitů \cite{Cvejic2002}.
 
 \section{Metoda skrývání pomocí ozvěny}
 \label{sec:echo-hiding}
