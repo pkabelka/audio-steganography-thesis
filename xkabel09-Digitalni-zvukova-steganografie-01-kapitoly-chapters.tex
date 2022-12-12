@@ -449,25 +449,73 @@ počtem použitých bitů \cite{Cvejic2002}.
 \section{Metoda skrývání pomocí ozvěny}
 \label{sec:echo-hiding}
 
-\todo{popis metody Echo hiding}
+Steganografická metoda ukrývání informací pomocí ozvěny (anglicky echo hiding)
+funguje na principu přidání ozvěny do krycího média \cite{Djebbar2012}. Tato
+metoda má vyšší robustnost vůči filtrování, převzorkování, či ztrátové
+kompresi. Lidské sluchové ústrojí má široký dynamických rozsah výkonu
+a~frekvence, ale přesto je možné využít nedostatků, jako je maskování tichých
+zvuků hlasitějšími \cite{Gruhl1996}. Nevýhodou této metody je zkreslení
+způsobené přidáním ozvěny do krycího média, které je srovnatelné s~rozdílem
+poslechu audia ve sluchátkách a~přes reproduktory, kde se zvuk odráží od stěn
+v~místnosti. Při vhodném nastavení parametrů je možné docílit výborné
+nepostřehnutelnosti \cite{Gruhl1996}. Tato metoda má dostatečnou míru
+robustnosti a~je tedy vhodná pro zakódování vodoznaku do krycího média. Vhodné
+nastavení parametrů docílí velmi nízké pravděpodobnosti odhalení či odstranění
+vodoznaku neoprávněnou osobou \cite{Gruhl1996}.
 
-\blindtext
+Pro implementaci této metody se krycí médium rozdělí na segmenty do kterých se
+bity ukrývané informace zakódují vytvořením ozvěny daného segmentu. Pro
+rozlišení hodnoty bitu se použije jiná míra zpoždění pro logickou~1
+a~logickou~0. Kódování probíhá konvolucí segmentu a~konvolučním jádrem pro
+příslušný bit. Jednotlivé segmenty se následně spojí a~přidají ke krycímu médiu
+\cite{Gruhl1996}. V~praxi je ale výhodnější provést konvoluci krycího média
+s~oběma konvolučními jádry a~použít bity ukrývané informace jako masku, která
+určí které segmenty ponechat a~přidat ke krycímu médiu \cite{Gruhl1996}.
 
-\blindtext
+\subsection*{Ozvěna s~jedním konvolučním jádrem na bit}
+\label{sub:echo-single-kernel}
 
-\subsection*{Ozvěna s~jedním semínkem na bit}
-\label{sec:echo-single-kernel}
+Tuto metodu poprvé představil Daniel Gruhl a~Walter Bender v~roce 1996
+\cite{Gruhl1996}. Používá dvě konvoluční jádra dané rovnicí
+\ref{eq:echo-single-kernel}, kde $\delta$ je Kroneckerova delta funkce, $d_i$
+je zpoždění pro bit logické~0 a~logické~1 a~$\alpha$ je amplituda ozvěny
+\cite{Dutta2020}.
 
-\todo{popis metody Echo single kernel}
+\begin{equation}
+    \label{eq:echo-single-kernel}
+    h_i[n] = \delta[n] + \alpha\delta[n - d_i], i \in {0, 1}
+\end{equation}
 
-\blindtext
+\noindent Zpožděné signály vniknou konvolucemi krycího média s~konvolučními
+jádry dané rovnicí \ref{eq:echo-single-kernel-echo}, kde $s[n]$ je krycí médium
+a~$h_i[n]$ je konvoluční jádro z~rovnice \ref{eq:echo-single-kernel}.
+
+\begin{equation}
+    \label{eq:echo-single-kernel-echo}
+    k_i[n] = s[n] * h_i[n]
+\end{equation}
+
+\noindent Příklad ozvěn které vniknou konvolucemi krycího média s~konvolučními
+jádry jsou na obrázku \ref{pic:echo-single-kernel-echo}.
 
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=0.3\textwidth]{obrazky/placeholder.pdf}
-    \caption{Ozvěna vzniklá konvolucí s~konvolučními semínky}
+    \caption{Ozvěny vzniklé konvolucí s~konvolučními jádry}
     \label{pic:echo-single-kernel-echo}
 \end{figure}
+
+\subsection*{Dekódování}
+\label{sub:echo-single-kernel-decoding}
+
+\todo{popis dekódování echo metody}
+
+\blindtext
+
+\subsection*{Další modifikace metody skrývání pomocí ozvěny}
+\label{sub:echo-modifications}
+
+\todo{popis modifikací echo metody}
 
 \blindtext
 
