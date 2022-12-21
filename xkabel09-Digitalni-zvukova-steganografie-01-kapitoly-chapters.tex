@@ -508,9 +508,23 @@ jádry jsou na obrázku \ref{pic:echo-single-kernel-echo}.
 \subsection*{Dekódování}
 \label{sub:echo-single-kernel-decoding}
 
-\todo{popis dekódování echo metody}
+K~dekódování této metody se používá cepstrální analýza. Stego signál se rozdělí
+na stejný počet segmentů jako při kódování. Poté se vypočítá jeho cepstrum,
+které je definováno jako inverzní Fourierova transformace ($\mathcal{F}^-1$)
+logaritmu absolutní hodnoty Fourierovy transformace ($\mathcal{F}$) signálu
+\cite{Tekeli2017}. Vzorec pro získání cepstra signálu $x(t)$ je definován
+rovnicí \ref{eq:cepstrum}.
 
-\blindtext
+\begin{equation}
+    \label{eq:cepstrum}
+    C = \mathcal{F}^-1(\log{|\mathcal{F}(x(t))|})
+\end{equation}
+
+Po výpočtu cepstra segmentu je možné zjistit hodnotu zakódovaného bitu
+kontrolou, která hodnota na pozici $d_0$ a~$d_1$ je vyšší. Pokud je hodnota
+$C(d_0)$ vyšší než $C(d_1)$, pak je hodnota bitu daného segmentu logická~0.
+A~pokud je hodnota $C(d_1)$ vyšší než $C(d_0)$, pak je hodnota bitu daného
+segmentu logická~1 \cite{Gruhl1996}.
 
 \subsection*{Další modifikace metody skrývání pomocí ozvěny}
 \label{sub:echo-modifications}
