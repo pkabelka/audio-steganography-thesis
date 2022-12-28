@@ -462,7 +462,8 @@ v~místnosti. Při vhodném nastavení parametrů je možné docílit výborné
 nepostřehnutelnosti \cite{Gruhl1996}. Tato metoda má dostatečnou míru
 robustnosti a~je tedy vhodná pro zakódování vodoznaku do krycího média. Vhodné
 nastavení parametrů docílí velmi nízké pravděpodobnosti odhalení či odstranění
-vodoznaku neoprávněnou osobou \cite{Gruhl1996}.
+vodoznaku neoprávněnou osobou \cite{Gruhl1996}. Po přidání ozvěny si stego
+médium udrží stejné statistické a~percepční vlastnosti \cite{Djebbar2012}.
 
 Pro implementaci této metody se krycí médium rozdělí na segmenty do kterých se
 bity ukrývané informace zakódují vytvořením ozvěny daného segmentu. Pro
@@ -510,7 +511,7 @@ jádry jsou na obrázku \ref{pic:echo-single-kernel-echo}.
 \label{sub:echo-single-kernel-decoding}
 
 K~dekódování této metody se používá cepstrální analýza. Stego signál se rozdělí
-na stejný počet segmentů jako při kódování. Poté se vypočítá jeho cepstrum,
+na stejný počet segmentů jako při kódování. Poté se vypočítá jejich cepstrum,
 které je definováno jako inverzní Fourierova transformace ($\mathcal{F}^-1$)
 logaritmu absolutní hodnoty Fourierovy transformace ($\mathcal{F}$) signálu
 \cite{Tekeli2017}. Vzorec pro získání cepstra signálu $x(t)$ je definován
@@ -535,12 +536,31 @@ indexech zpoždění lze vidět na obrázku \ref{pic:segment-cepstrum}.
     \label{pic:segment-cepstrum}
 \end{figure}
 
-\subsection*{Další modifikace metody skrývání pomocí ozvěny}
+Nevýhodou při dekódování této metody je například falešná detekce, pokud se ve
+zvuku doopravdy vyskytuje ozvěna. Dále může být těžké detekovat informaci pokud
+je amplituda ozvěny příliš malá a~špičky na indexech zpoždění budou tudíž
+splývat s~okolím. Zesílení amplitudy zlepší míru detekce, ale zvýší také
+náchylnost na neoprávněnou detekci \cite{Kim2003}.
+
+\subsection*{Modifikace metody skrývání pomocí ozvěny}
 \label{sub:echo-modifications}
 
-\todo{popis modifikací echo metody}
+Pro zvýšení robustnosti a~nepostřehnutelnosti použili autoři \cite{Oh2001}
+konvoluční jádro, které nejprve vytvoří ozvěnu se zápornou amplitudou a~poté
+s~kladnou (anglicky bipolar echo). Zjistili, že tato modifikace má vyšší míru
+robustnosti i~po překódování do ztrátového formátu MP3. Dekódování této
+modifikace spočívá v~detekování špiček v~autokorelaci výkonového cepstra.
+Výkonové cepstrum je podobné normálnímu cepstru a~je definováno rovnicí
+\ref{eq:power-cepstrum}.
 
-\blindtext
+\begin{equation}
+    \label{eq:power-cepstrum}
+    C_p = \mathcal{F}^-1(\log{|\mathcal{F}(x(t))|}^2)
+\end{equation}
+
+O~2~roky později publikovali autoři \cite{Kim2003} způsob jak znovu zvýšit
+robustnost pomocí konvolučního jádra se dvěma ozvěnami posunutými vpřed i~vzad
+(anglicky backward-forward echo).
 
 \section{Metoda přímého rozprostřeného spektra}
 \label{sec:dsss}
