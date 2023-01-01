@@ -545,7 +545,8 @@ náchylnost na neoprávněnou detekci \cite{Kim2003}.
 \subsection*{Modifikace metody skrývání pomocí ozvěny}
 \label{sub:echo-modifications}
 
-Pro zvýšení robustnosti a~nepostřehnutelnosti použili autoři \cite{Oh2001}
+Pro zvýšení robustnosti a~nepostřehnutelnosti použili autoři Oh, Seok, Hong
+a~Youn \cite{Oh2001}
 konvoluční jádro, které nejprve vytvoří ozvěnu se zápornou amplitudou a~poté
 s~kladnou (anglicky bipolar echo). Zjistili, že tato modifikace má vyšší míru
 robustnosti i~po překódování do ztrátového formátu MP3. Dekódování této
@@ -558,9 +559,15 @@ Výkonové cepstrum je podobné normálnímu cepstru a~je definováno rovnicí
     C_p = \mathcal{F}^-1(\log{|\mathcal{F}(x(t))|}^2)
 \end{equation}
 
-O~2~roky později publikovali autoři \cite{Kim2003} způsob jak znovu zvýšit
+O~2~roky později publikovali autoři Kim a~Choi \cite{Kim2003} způsob jak znovu zvýšit
 robustnost pomocí konvolučního jádra se dvěma ozvěnami posunutými vpřed i~vzad
-(anglicky backward-forward echo).
+(anglicky backward-forward echo). Později publikovali autoři Wu a~Chen \cite{Wu2006}
+modifikaci ozvěnové metody kombinující již popsané modifikace. Ta
+používá konvoluční jádro pro vytvoření celkem čtyř ozvěn. Dvě jsou posunuté vzad
+a~dvě vpřed přičemž obě strany mají ozvěnu s~kladnou a~zápornou amplitudou.
+Autoři porovnávali tuto modifikaci s~výše popsanými variantami této metody a~ve
+všech testech měla vyšší poměr úspěšně dekódovaných bitů a~zároveň také vyšší
+poměr signálu k~šumu než ostatní varianty.
 
 \section{Metoda přímého rozprostřeného spektra}
 \label{sec:dsss}
