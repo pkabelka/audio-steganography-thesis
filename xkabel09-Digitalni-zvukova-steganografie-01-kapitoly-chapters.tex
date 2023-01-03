@@ -568,12 +568,23 @@ amplitudou. Autoři porovnávali tuto modifikaci s~výše popsanými variantami 
 metody a~ve všech testech měla vyšší poměr úspěšně dekódovaných bitů a~zároveň
 také vyšší poměr signálu k~šumu než ostatní varianty.
 
-\section{Metoda přímého rozprostřeného spektra}
+\section{Metoda rozprostřeného spektra}
 \label{sec:dsss}
 
-\todo{popis metody DSSS}
+Metoda rozprostřeného spektra byla nejprve vytvořena jako metoda pro zvýšení
+spolehlivosti přenosu dat a~zajištění doručení informací. Ze stejných důvodů se
+rozprostření spektra používá i~ve steganografii. Princip této metody spočívá
+v~opakování informačních bitů $n$-krát podle čipové rychlosti (anglicky
+\textit{chip rate}). Ta určuje kolika bity bude kódován každý informační bit.
+\cite{AlSabhany2020}.
 
-\blindtext
+Kódování začíná převedením ukrývaných dat z~binárního formátu na čipy. Čip je
+impulz, který používá hodnotu \textit{-1} místo binární hodnoty \textit{0}
+a~hodnotu \textit{1} používá bez změny. Poté je každý bit vynásoben
+pseudonáhodnou sekvencí hodnot \textit{-1} a~\textit{1} $n$-krát. Zvýšení počtu
+kopií bitů zvýší robustnost a~zároveň sníží kapacitu této metody
+\cite{AlSabhany2020}. Výsledné stego médium vznikne přidáním vynásobených
+hodnot ke krycímu médiu \cite{Kuznetsov2022}.
 
 \begin{figure}[hbt]
     \centering
