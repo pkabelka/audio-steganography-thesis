@@ -584,7 +584,10 @@ a~hodnotu \textit{1} používá bez změny. Poté je každý bit vynásoben
 pseudonáhodnou sekvencí hodnot \textit{-1} a~\textit{1} $n$-krát. Zvýšení počtu
 kopií bitů zvýší robustnost a~zároveň sníží kapacitu této metody
 \cite{AlSabhany2020}. Výsledné stego médium vznikne přidáním vynásobených
-hodnot ke krycímu médiu \cite{Kuznetsov2022}.
+hodnot ke krycímu médiu \cite{Kuznetsov2022}. Informace zakódovaná touto
+metodou je odolná proti šumu, protože obsahuje přebytečné kopie bitů. V~případě
+poškození části stego média je možné z~přebytečných bitů obnovit ukryté
+informace \cite{Djebbar2012}.
 
 \begin{figure}[hbt]
     \centering
@@ -593,7 +596,8 @@ hodnot ke krycímu médiu \cite{Kuznetsov2022}.
     \label{pic:dsss-spreading}
 \end{figure}
 
-\blindtext
+Pro dekódování je nezbytné, aby příjemce znal pseudonáhodnou sekvencí, která
+byla použita k~zakódování informací \cite{Djebbar2012}.
 
 \section{Metoda fázového kódování}
 \label{sec:phase-coding}
