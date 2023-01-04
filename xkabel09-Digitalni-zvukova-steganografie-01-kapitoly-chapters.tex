@@ -39,11 +39,11 @@ budoucna.
 \chapter{Digitální steganografie}
 \label{cha:digital-steganography}
 
-Tato kapitola představí širší možnosti využití steganografie v~dnešním světě.
-Poté bude stručně popsán způsob jakým se dnes reprezentuje digitální zvuk. Dále
-budou vysvětleny vlastnosti na základě kterých budou metody hodnoceny
-a~srovnávány. Každá z~podkapitol která bude následovat, se zaměří na některou
-z~používaných steganografických metod a~jejich možné modifikace.
+Tato kapitola představí steganografii obecně a~její klasifikace. Poté bude
+stručně popsán způsob jakým se dnes reprezentuje digitální zvuk. Dále budou
+vysvětleny vlastnosti na základě kterých budou metody hodnoceny a~srovnávány
+včetně způsobu jejich ověření. Závěr této kapitoly se bude věnovat existujícím
+steganografickým metodám včetně jejich možných modifikací.
 
 \section{Základní definice a~klasifikace}
 \label{sec:definitions}
@@ -407,8 +407,11 @@ maskování tónu, který následuje po hlasitém impulzu. Dalším příkladem 
 maskování informace, která je zakódovaná ve frekvenci zvuku, který se nachází
 poblíž \cite{Dutta2020}.
 
-\section{Metoda nahrazení nejméně významného bitu}
-\label{sec:lsb}
+\section{Existující řešení}
+\label{sec:existing-methods}
+
+\subsection*{Metoda nahrazení nejméně významného bitu}
+\label{sub:lsb}
 
 Metoda využívající nahrazení nejméně významného bitu (anglicky \textit{least
 significant bit substitution}, dále jen LSB) je nejjednodušší metodou pro
@@ -446,8 +449,8 @@ následujících 4~vzorků. Tato modifikace zvyšuje kapacitu LSB metody o~33\%
 zatímco poměr signálu k~šumu je nižší než u~nemodifikované metody se stejným
 počtem použitých bitů \cite{Cvejic2002}.
 
-\section{Metoda skrývání pomocí ozvěny}
-\label{sec:echo-hiding}
+\subsection*{Metoda skrývání pomocí ozvěny}
+\label{sub:echo-hiding}
 
 Steganografická metoda ukrývání informací pomocí ozvěny (anglicky echo hiding)
 funguje na principu přidání ozvěny do krycího média \cite{Djebbar2012}. Tato
@@ -473,8 +476,8 @@ příslušný bit. Jednotlivé segmenty se následně spojí a~přidají ke kryc
 s~oběma konvolučními jádry a~použít bity ukrývané informace jako masku, která
 určí které segmenty ponechat a~přidat ke krycímu médiu \cite{Gruhl1996}.
 
-\subsection*{Ozvěna s~jedním konvolučním jádrem na bit}
-\label{sub:echo-single-kernel}
+\subsubsection*{Ozvěna s~jedním konvolučním jádrem na bit}
+\label{ssub:echo-single-kernel}
 
 Tuto metodu poprvé představil Daniel Gruhl a~Walter Bender v~roce 1996
 \cite{Gruhl1996}. Používá dvě konvoluční jádra dané rovnicí
@@ -506,8 +509,8 @@ jádry jsou na obrázku \ref{pic:echo-single-kernel-echo}.
     \label{pic:echo-single-kernel-echo}
 \end{figure}
 
-\subsection*{Dekódování}
-\label{sub:echo-single-kernel-decoding}
+\subsubsection*{Dekódování}
+\label{ssub:echo-single-kernel-decoding}
 
 K~dekódování této metody se používá cepstrální analýza. Stego signál se rozdělí
 na stejný počet segmentů jako při kódování. Poté se vypočítá jejich cepstrum,
@@ -541,8 +544,8 @@ je amplituda ozvěny příliš malá a~špičky na indexech zpoždění budou tu
 splývat s~okolím. Zesílení amplitudy zlepší míru detekce, ale zvýší také
 náchylnost na neoprávněnou detekci \cite{Kim2003}.
 
-\subsection*{Modifikace metody skrývání pomocí ozvěny}
-\label{sub:echo-modifications}
+\subsubsection*{Modifikace metody skrývání pomocí ozvěny}
+\label{ssub:echo-modifications}
 
 Pro zvýšení robustnosti a~nepostřehnutelnosti použili autoři Oh, Seok, Hong
 a~Youn \cite{Oh2001} konvoluční jádro, které nejprve vytvoří ozvěnu se zápornou
@@ -567,8 +570,8 @@ amplitudou. Autoři porovnávali tuto modifikaci s~výše popsanými variantami 
 metody a~ve všech testech měla vyšší poměr úspěšně dekódovaných bitů a~zároveň
 také vyšší poměr signálu k~šumu než ostatní varianty.
 
-\section{Metoda rozprostřeného spektra}
-\label{sec:dsss}
+\subsection*{Metoda rozprostřeného spektra}
+\label{sub:dsss}
 
 Metoda rozprostřeného spektra byla nejprve vytvořena jako metoda pro zvýšení
 spolehlivosti přenosu dat a~zajištění doručení informací. Ze stejných důvodů se
@@ -619,8 +622,8 @@ určení hodnoty bitu je možné použít rozhodovací pravidlo v~rovnici
     \right.
 \end{equation}
 
-\section{Metoda fázového kódování}
-\label{sec:phase-coding}
+\subsection*{Metoda fázového kódování}
+\label{sub:phase-coding}
 
 \todo{popis metody fázového kódování}
 
@@ -635,8 +638,8 @@ určení hodnoty bitu je možné použít rozhodovací pravidlo v~rovnici
 
 \blindtext
 
-\section{Metoda paritního kódování}
-\label{sec:parity-coding}
+\subsection*{Metoda paritního kódování}
+\label{sub:parity-coding}
 
 \todo{popis metody paritního kódování}
 
@@ -646,8 +649,8 @@ určení hodnoty bitu je možné použít rozhodovací pravidlo v~rovnici
 
 \blindtext
 
-\section{Metody založené na nedostatcích lidského sluchového ústrojí}
-\label{sec:has}
+\subsection*{Metody založené na nedostatcích lidského sluchového ústrojí}
+\label{sub:has}
 
 \todo{popis metody HAS}
 
@@ -657,8 +660,8 @@ určení hodnoty bitu je možné použít rozhodovací pravidlo v~rovnici
 
 \blindtext
 
-\section{Metoda využívající vlnkové transformace}
-\label{sec:wavelet-transform}
+\subsection*{Metoda využívající vlnkové transformace}
+\label{sub:wavelet-transform}
 
 \todo{popis wavelet metody}
 
