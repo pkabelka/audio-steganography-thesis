@@ -576,7 +576,8 @@ spolehlivosti přenosu dat a~zajištění doručení informací. Ze stejných d�
 rozprostření spektra používá i~ve steganografii. Princip této metody spočívá
 v~opakování informačních bitů $n$-krát podle čipové rychlosti (anglicky
 \textit{chip rate}). Ta určuje kolika bity bude kódován každý informační bit.
-\cite{AlSabhany2020}.
+\cite{AlSabhany2020}. Dále popisované variantě této metody se říká přímé
+rozprostřené spektrum (anglicky \textit{direct sequence spread spectrum}).
 
 Kódování začíná převedením ukrývaných dat z~binárního formátu na čipy. Čip je
 impulz, který používá hodnotu \textit{-1} místo binární hodnoty \textit{0}
@@ -590,15 +591,34 @@ metodou je odolná proti šumu, protože obsahuje přebytečné kopie bitů. V~p
 poškození části stego média je možné z~přebytečných bitů obnovit ukryté
 informace \cite{Djebbar2012}.
 
-\begin{figure}[hbt]
-    \centering
-    \includegraphics[width=0.3\textwidth]{obrazky/placeholder.pdf}
-    \caption{Rozložení spektra pomocí metody přímého rozprostřeného spektra}
-    \label{pic:dsss-spreading}
-\end{figure}
+Tato metoda je dostatečně robustní pro přidání více vodoznaků. Například pro
+přidání více autorů k~hudební skladbě. Při detekci konkrétního vodoznaku jsou
+ostatní považovány jako šum. Dále je tato metoda dostatečně robustní vůči
+přidanému šumu a~překódování do ztrátového formátu \cite{Boney1996}.
 
-Pro dekódování je nezbytné, aby příjemce znal pseudonáhodnou sekvencí, která
-byla použita k~zakódování informací \cite{Djebbar2012}.
+% \begin{figure}[hbt]
+%     \centering
+%     \includegraphics[width=0.3\textwidth]{obrazky/placeholder.pdf}
+%     \caption{Rozložení spektra pomocí metody přímého rozprostřeného spektra}
+%     \label{pic:dsss-spreading}
+% \end{figure}
+
+Pro dekódování informačních bitů je nezbytné, aby příjemce měl stejnou
+pseudonáhodnou sekvenci čipů, která byla použita k~zakódování. Dekódování
+probíhá výpočtem korelace mezi stego médiem a~pseudonáhodnou sekvencí. Pro
+určení hodnoty bitu je možné použít rozhodovací pravidlo v~rovnici
+\ref{eq:dsss-decision-rule}, kde $b$ je hodnota bitu a~$c$ je výsledek korelace
+\cite{Kuznetsov2022}.
+
+\begin{equation}
+    \label{eq:dsss-decision-rule}
+    b = \left\{
+        \begin{array}{rl}
+            -1, & c < 0 \\
+            +1, & c > 0
+        \end{array}
+    \right.
+\end{equation}
 
 \section{Metoda fázového kódování}
 \label{sec:phase-coding}
