@@ -22,7 +22,7 @@ veřejnost.
 
 V~následujících kapitolách této práce je shrnut současný stav tohoto oboru,
 jsou vysvětleny cíle a~technické prostředky použité k~jejich dosažení
-a~zhodnoceny dosažené výsledky. V~kapitole~\ref{cha:existing-methods}
+a~zhodnoceny dosažené výsledky. V~kapitole~\ref{cha:digital-steganography}
 \uv{Význam steganografie a~přehled existujících metod digitální zvukové
 steganografie} jsou do hloubky popsány steganografické metody vybrané pro
 implementaci a~některé další používané. Kapitola~\ref{cha:library-design}
@@ -36,9 +36,8 @@ kapitola~\ref{cha:conclusion} obsahuje shrnutí výsledků práce a~vyhlídky do
 budoucna.
 
 
-\chapter{Význam steganografie a~přehled existujících metod digitální zvukové
-steganografie}
-\label{cha:existing-methods}
+\chapter{Digitální steganografie}
+\label{cha:digital-steganography}
 
 Tato kapitola představí širší možnosti využití steganografie v~dnešním světě.
 Poté bude stručně popsán způsob jakým se dnes reprezentuje digitální zvuk. Dále
@@ -46,8 +45,8 @@ budou vysvětleny vlastnosti na základě kterých budou metody hodnoceny
 a~srovnávány. Každá z~podkapitol která bude následovat, se zaměří na některou
 z~používaných steganografických metod a~jejich možné modifikace.
 
-\section{Význam steganografie a~její využití}
-\label{sec:motivation-and-uses}
+\section{Základní definice a~klasifikace}
+\label{sec:definitions}
 
 Steganografie je praktika skrývání informace s~cílem zakrýt její samotnou
 existenci a~ne jen znemožnit její čtení
@@ -70,42 +69,6 @@ výzkumu, která se jej týká. Některé steganografické metody používané u
 typů nosičů jsou konceptuálně stejné a~v~praxi se aplikují podobným způsobem.
 Tato práce se však bude zabývat pouze metodami použitelnými pro digitální
 audio.
-
-Poslední dobou se začaly objevovat nové směry založené na steganografických
-přístupech pro zajištění bezpečnosti a~utajení dat které by v~kombinaci
-s~konvenčními bezpečnostními technikami mohly vést k~lepším výsledkům
-\cite{Djebbar2012}. Jedna z~konvenčních bezpečnostních technik kombinovaných se
-steganografií je kryptografie. Zatím co steganografie se zabývá ukrýváním
-informace, hlavním cílem kryptografie je převést zprávu do formy, která je pro
-neoprávněné osoby nečitelná \cite{AlSabhany2020}. I~když se tedy někdo pokusí
-analyzovat komunikaci pro přítomnost utajené zprávy, není možné obsah rozeznat
-od náhodného šumu.
-
-\subsection*{Využití steganografie}
-\label{sub:steganography-uses}
-
-Steganografie má široké spektrum využití. Mezi praktické příklady patří:
-monitorování reklam v~rádiu, indexování video zpráv, použití všude tam, kde
-není možné použít šifrování, zachování soukromí jednotlivce, utajená komunikace
-mezi vojenskými rozvědkami nebo bezpečnostními složkami~\cite{Dutta2020}.
-
-Dalším často používaným pojmem spojeným se steganografií je vodoznak. Vodoznaky
-se používají pro vložení informací o~původu, vlastnictví, či autorských právech
-dat \cite{Djebbar2012}\cite{Dutta2020}\cite{Swanson1998}. Hlavní vlastností
-vodoznaku je, že by nemělo být možné jej odstranit bez poškození nosného média.
-Proto u~audia nesmí být součástí hlavičky souboru nebo být přenášen zvlášť, ale
-být jeho součástí a~musí být nedetekovatelný. Musí být také odolný proti
-transformaci signálu například při přenosu audia nebo převedení do formátu,
-který používá ztrátovou kompresi \cite{Swanson1998}. Velice známým příkladem
-jsou vodoznaky na bankovkách nebo \textit{žluté tečky} v~tiskárnové
-steganografii -- známé také jako \textit{yellow dots} -- které barevné tiskárny
-tisknou na každý list. Tyto tečky obsahují zakódované sériové číslo tiskárny
-a~čas tisku \cite{Dutta2020}. Pokud je vodoznak použit pro ochranu
-intelektuálního vlastnictví, pak se ještě rozlišuje mezi vodoznakem a~otiskem.
-Vodoznakem se značí všechny objekty stejně, ale otisk se může měnit například
-pro každého zákazníka pro jeho pozdější identifikaci. To může být užitečné
-pokud poruší licenční podmínky například sdílením zakoupené hudby
-\cite{Swanson1998}.
 
 \section{Reprezentace a~způsob uložení digitálního zvuku}
 \label{sec:digital-sound-representation}
@@ -318,7 +281,43 @@ steganografií a~zjistili, že 84\%~z~nich používalo formát WAV jako nosič. 
 účelem jednoduššího srovnávání metod bude tato práce pracovat pouze s~formátem
 WAV.
 
-\section{Vlastnosti metod digitální zvukové steganografie}
+\section{Digitální zvuková steganografie}
+\label{sec:digital-audio-steganography}
+
+Poslední dobou se začaly objevovat nové směry založené na steganografických
+přístupech pro zajištění bezpečnosti a~utajení dat které by v~kombinaci
+s~konvenčními bezpečnostními technikami mohly vést k~lepším výsledkům
+\cite{Djebbar2012}. Jedna z~konvenčních bezpečnostních technik kombinovaných se
+steganografií je kryptografie. Zatím co steganografie se zabývá ukrýváním
+informace, hlavním cílem kryptografie je převést zprávu do formy, která je pro
+neoprávněné osoby nečitelná \cite{AlSabhany2020}. I~když se tedy někdo pokusí
+analyzovat komunikaci pro přítomnost utajené zprávy, není možné obsah rozeznat
+od náhodného šumu.
+
+Digitální zvuková steganografie má široké spektrum využití. Mezi praktické příklady patří:
+monitorování reklam v~rádiu, indexování video zpráv, použití všude tam, kde
+není možné použít šifrování, zachování soukromí jednotlivce, utajená komunikace
+mezi vojenskými rozvědkami nebo bezpečnostními složkami~\cite{Dutta2020}.
+
+Dalším často používaným pojmem spojeným se steganografií je vodoznak. Vodoznaky
+se používají pro vložení informací o~původu, vlastnictví, či autorských právech
+dat \cite{Djebbar2012}\cite{Dutta2020}\cite{Swanson1998}. Hlavní vlastností
+vodoznaku je, že by nemělo být možné jej odstranit bez poškození nosného média.
+Proto u~audia nesmí být součástí hlavičky souboru nebo být přenášen zvlášť, ale
+být jeho součástí a~musí být nedetekovatelný. Musí být také odolný proti
+transformaci signálu například při přenosu audia nebo převedení do formátu,
+který používá ztrátovou kompresi \cite{Swanson1998}. Velice známým příkladem
+jsou vodoznaky na bankovkách nebo \textit{žluté tečky} v~tiskárnové
+steganografii -- známé také jako \textit{yellow dots} -- které barevné tiskárny
+tisknou na každý list. Tyto tečky obsahují zakódované sériové číslo tiskárny
+a~čas tisku \cite{Dutta2020}. Pokud je vodoznak použit pro ochranu
+intelektuálního vlastnictví, pak se ještě rozlišuje mezi vodoznakem a~otiskem.
+Vodoznakem se značí všechny objekty stejně, ale otisk se může měnit například
+pro každého zákazníka pro jeho pozdější identifikaci. To může být užitečné
+pokud poruší licenční podmínky například sdílením zakoupené hudby
+\cite{Swanson1998}.
+
+\section{Vlastnosti a~jejich ověřování}
 \label{sec:method-properties}
 
 Aby bylo možné jednotlivé metody srovnávat mezi sebou, je nutné určit
@@ -372,7 +371,7 @@ být:
 \end{itemize}
 
 Robustnost metody je obzvlášť důležitá pro tvorbu vodoznaku popsaného
-v~podsekci~\ref{sub:steganography-uses}. Vodoznak musí být schopen odolat výše
+v~podsekci~\ref{sec:digital-audio-steganography}. Vodoznak musí být schopen odolat výše
 zmíněným modifikacím, aby bylo možné správně identifikovat jeho vlastníka
 \cite{Swanson1998}.
 
