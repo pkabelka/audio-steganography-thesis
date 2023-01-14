@@ -633,9 +633,13 @@ určení hodnoty bitu je možné použít rozhodovací pravidlo v~rovnici
 \subsection*{Metoda fázového kódování}
 \label{sub:phase-coding}
 
-\todo{popis metody fázového kódování}
-
-\blindtext
+Metoda fázového kódování je založená na nahrazení fáze prvního segmentu audia
+referenční fází reprezentující ukrývaná data. Fáze následujících segmentů je
+upravena tak, aby byla zachována relativní fáze mezi segmenty. Metoda fázového
+kódování dosahuje nejlepších hodnot poměru signálu k~šumu. Avšak příliš velká
+změna fáze frekvenční komponenty vede k~rozptylu fáze a~tím ke zhoršení kvality
+zvuku. Dokud jsou ale změny fáze dostatečně malé, což je subjektivní, pak je
+možné dosáhnout neslyšitelného kódování \cite{Bender1996}.
 
 \begin{figure}[hbt]
     \centering
@@ -644,7 +648,9 @@ určení hodnoty bitu je možné použít rozhodovací pravidlo v~rovnici
     \label{pic:phase-coding-phase-change}
 \end{figure}
 
-\blindtext
+Kódování pomocí této metody začíná rozdělením krycího audia na segmenty stejně
+jako u~metody ukrývání pomocí ozvěny \ref{sub:echo-hiding}. Poté je každý
+segment převeden do frekvenční domény pomocí Fourierovy transformace.
 
 \subsection*{Metoda paritního kódování}
 \label{sub:parity-coding}
