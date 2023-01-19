@@ -592,7 +592,7 @@ rozprostřené spektrum (anglicky \textit{direct sequence spread spectrum}).
 Kódování začíná převedením ukrývaných dat z~binárního formátu na čipy. Čip je
 impulz, který používá hodnotu \textit{-1} místo binární hodnoty \textit{0}
 a~hodnotu \textit{1} používá bez změny \cite{Kuznetsov2022}. Poté je každý bit
-vynásoben pseudonáhodnou sekvencí hodnot \textit{-1} a~\textit{1} $n$-krát. Tím
+vynásoben pseudonáhodnou čipovou sekvencí $n$-krát, čímž
 dojde k~rozprostření informačních bitů přes více přenesených bitů. Zvýšení
 počtu kopií bitů zvýší robustnost a~zároveň sníží kapacitu této metody
 \cite{AlSabhany2020}. Výsledné stego médium vznikne přidáním vynásobených
@@ -614,8 +614,9 @@ přidanému šumu a~překódování do ztrátového formátu \cite{Boney1996}.
 % \end{figure}
 
 Pro dekódování informačních bitů je nezbytné, aby příjemce měl stejnou
-pseudonáhodnou sekvenci čipů, která byla použita k~zakódování. Dekódování
-probíhá výpočtem korelace mezi stego médiem a~pseudonáhodnou sekvencí. Pro
+pseudonáhodnou sekvenci čipů, která byla použita k~zakódování. Pro dekódování
+se stego médium a~pseudonáhodná sekvence rozdělí na segmenty a~vypočítá
+se korelace mezi každým segmentem stego média a~pseudonáhodné sekvence. Pro
 určení hodnoty bitu je možné použít rozhodovací pravidlo v~rovnici
 \ref{eq:dsss-decision-rule}, kde $b$ je hodnota bitu a~$c$ je výsledek korelace
 \cite{Kuznetsov2022}.
