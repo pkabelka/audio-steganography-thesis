@@ -652,9 +652,49 @@ možné dosáhnout neslyšitelného kódování \cite{Bender1996}.
     \label{pic:phase-coding-phase-change}
 \end{figure}
 
-Kódování pomocí této metody začíná rozdělením krycího audia na segmenty stejně
-jako u~metody ukrývání pomocí ozvěny \ref{sub:echo-hiding}. Poté je každý
-segment převeden do frekvenční domény pomocí Fourierovy transformace.
+Kódování pomocí této metody začíná rozdělením krycího audia na segmenty
+s~délkou počtu ukrývaných bitů. Poté je každý segment převeden do frekvenční
+domény pomocí Fourierovy transformace. Z~transformovaného signálu je možné
+vytvořit matici fází -- značeno $\phi_n(\omega_k)$ -- a~matici amplitud
+segmentů -- značeno $A_n(\omega_k)$. Písmeno $n$ značí index segmentu a~písmeno
+$k$ značí index vzorku uvnitř segmentu. Poté se vypočítá rozdíl fází segmentů
+napříč řádky \cite{Bender1996}. Matematický zápis rozdílu fází je v~rovnici
+\ref{eq:dsss-phase-diff}.
+
+\begin{equation}
+    \label{eq:dsss-phase-diff}
+    \Delta\phi_n(\omega_k) = \phi_{n+1}(\omega_k) - \phi_n(\omega_k)
+\end{equation}
+
+\noindent Poté se bity ukrývaných dat převedou do formátu $\frac{\pi}{2}$
+reprezentující hodnotu~0 a~$-\frac{\pi}{2}$ reprezentující hodnotu~1. Touto
+sekvencí se nahradí první segment v~matici fází. Poté se postupně počítají nové
+fáze z~původní fázové matice a~matice rozdílů fází. Matematický zápis je
+v~rovnici \ref{eq:dsss-new-phases}, kde $\phi'$ značí novou matici fází a~$N$
+značí index posledního segmentu \cite{Bender1996}.
+
+\begin{equation}
+    \label{eq:dsss-new-phases}
+    \left[
+        \begin{array}{lclcl}
+            \phi_1'(\omega_k) & = & \phi_0'(\omega_k)     & + & \Delta\phi_1(\omega_k) \\
+            \phi_n'(\omega_k) & = & \phi_{n-1}'(\omega_k) & + & \Delta\phi_n(\omega_k) \\
+                              & \vdots \\
+            \phi_N'(\omega_k) & = & \phi_{N-1}'(\omega_k) & + & \Delta\phi_N(\omega_k)
+        \end{array}
+    \right]
+\end{equation}
+
+\noindent Na závěr je možné sestavit stego signál z~amplitud a~nových fází
+pomocí inverzní Fourierovy transformace \cite{Bender1996}. Z~obou matic je
+potřeba zkombinovat hodnoty amplitud a~fází v~jednotlivých segmentech pro
+vytvoření komplexních čísel v~exponenciálním tvaru. Na každý segment se poté
+aplikuje inverzní Fourierova transformace. Tyto segmenty se znovu spojí
+dohromady, čímž vznikne výsledné stego médium.
+
+Kapacita této metody se pohybuje v~rozsahu 8~bitů za sekundu až 32~bitů za
+sekundu podle množství šumu přítomného v~krycím médiu. Více šumu vede k~vyšší
+kapacitě \cite{Bender1996}.
 
 \subsection*{Metoda paritního kódování}
 \label{sub:parity-coding}
