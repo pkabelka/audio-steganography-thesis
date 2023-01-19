@@ -690,7 +690,9 @@ pomocí inverzní Fourierovy transformace \cite{Bender1996}. Z~obou matic je
 potřeba zkombinovat hodnoty amplitud a~fází v~jednotlivých segmentech pro
 vytvoření komplexních čísel v~exponenciálním tvaru. Na každý segment se poté
 aplikuje inverzní Fourierova transformace. Tyto segmenty se znovu spojí
-dohromady, čímž vznikne výsledné stego médium.
+dohromady, čímž vznikne výsledné stego médium. Dekódování probíhá pouhým
+převedením fází z~prvního segmentu stego média na bity stejným způsobem jako
+při kódování.
 
 Kapacita této metody se pohybuje v~rozsahu 8~bitů za sekundu až 32~bitů za
 sekundu podle množství šumu přítomného v~krycím médiu. Více šumu vede k~vyšší
