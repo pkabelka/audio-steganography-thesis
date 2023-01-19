@@ -592,14 +592,13 @@ rozprostřené spektrum (anglicky \textit{direct sequence spread spectrum}).
 Kódování začíná převedením ukrývaných dat z~binárního formátu na čipy. Čip je
 impulz, který používá hodnotu \textit{-1} místo binární hodnoty \textit{0}
 a~hodnotu \textit{1} používá bez změny \cite{Kuznetsov2022}. Poté je každý bit
-vynásoben pseudonáhodnou čipovou sekvencí $n$-krát, čímž
-dojde k~rozprostření informačních bitů přes více přenesených bitů. Zvýšení
-počtu kopií bitů zvýší robustnost a~zároveň sníží kapacitu této metody
-\cite{AlSabhany2020}. Výsledné stego médium vznikne přidáním vynásobených
-hodnot ke krycímu médiu \cite{Kuznetsov2022}. Informace zakódovaná touto
-metodou je odolná proti šumu, protože obsahuje přebytečné kopie bitů. V~případě
-poškození části stego média je možné z~přebytečných bitů obnovit ukryté
-informace \cite{Djebbar2012}.
+vynásoben pseudonáhodnou čipovou sekvencí $n$-krát, čímž dojde k~rozprostření
+informačních bitů přes více přenesených bitů. Zvýšení počtu kopií bitů zvýší
+robustnost a~zároveň sníží kapacitu této metody \cite{AlSabhany2020}. Výsledné
+stego médium vznikne přidáním vynásobených hodnot ke krycímu médiu
+\cite{Kuznetsov2022}. Informace zakódovaná touto metodou je odolná proti šumu,
+protože obsahuje přebytečné kopie bitů. V~případě poškození části stego média
+je možné z~přebytečných bitů obnovit ukryté informace \cite{Djebbar2012}.
 
 Tato metoda je dostatečně robustní pro přidání více vodoznaků. Například pro
 přidání více autorů k~hudební skladbě. Při detekci konkrétního vodoznaku jsou
@@ -618,9 +617,9 @@ média.
 
 Pro dekódování informačních bitů je nezbytné, aby příjemce měl stejnou
 pseudonáhodnou sekvenci čipů, která byla použita k~zakódování. Pro dekódování
-se stego médium a~pseudonáhodná sekvence rozdělí na segmenty a~vypočítá
-se korelace mezi každým segmentem stego média a~pseudonáhodné sekvence. Pro
-určení hodnoty bitu je možné použít rozhodovací pravidlo v~rovnici
+se stego médium a~pseudonáhodná sekvence rozdělí na segmenty a~vypočítá se
+korelace mezi každým segmentem stego média a~pseudonáhodné sekvence. Pro určení
+hodnoty bitu je možné použít rozhodovací pravidlo v~rovnici
 \ref{eq:dsss-decision-rule}, kde $b$ je hodnota bitu a~$c$ je výsledek korelace
 \cite{Kuznetsov2022}.
 
