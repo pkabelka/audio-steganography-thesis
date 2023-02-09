@@ -551,12 +551,114 @@ kontrolou, která hodnota na pozici $d_0$ a~$d_1$ je vyšší. Pokud je hodnota
 $C(d_0)$ vyšší než $C(d_1)$, pak je hodnota bitu daného segmentu logická~0.
 A~pokud je hodnota $C(d_1)$ vyšší než $C(d_0)$, pak je hodnota bitu daného
 segmentu logická~1 \cite{Gruhl1996}. Příklad cepstra segmentu včetně špiček na
-indexech zpoždění lze vidět na obrázku \ref{pic:segment-cepstrum}.
+indexech zpoždění 100 a~110 lze vidět na obrázku \ref{pic:segment-cepstrum}.
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=0.3\textwidth]{obrazky/placeholder.pdf}
-    \caption{Příklad přiblíženého cepstra segmentu, který kóduje logickou~0}
+    \begin{subfigure}[b]{0.5\linewidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[%
+                standard,
+                enlarge y limits=0.2,
+                scale=0.9,
+                xlabel = {$n$},
+                ylabel = {$x[n]$},
+                scaled y ticks = false,
+                y tick label style = {/pgf/number format/fixed},
+                ytick = {-0.03, 0.02, 0.13},
+                ymajorgrids = true,
+                grid style = dashed,
+                ]
+                \addplot[blue,thick,samples=100] table [x={x}, y={y}] {
+x y
+90 0.02911713
+91 0.00175175
+92 -0.02027917
+93 -0.01520897
+94 -0.00849168
+95 0.00427713
+96 -0.01998557
+97 -0.02522004
+98 -0.02379227
+99 0.05305905
+100 0.13196956
+101 0.07625496
+102 -0.00591677
+103 -0.01654206
+104 0.00318564
+105 -0.0197923
+106 -0.00712777
+107 0.01512758
+108 -0.01878832
+109 -0.0260548
+110 0.01846125
+111 0.01196165
+112 -0.01430203
+113 -0.01873781
+114 -0.01135309
+115 -0.00389159
+116 0.01014747
+117 0.02179004
+118 0.00075464
+119 -0.01072793
+};
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}%
+    \begin{subfigure}[b]{0.5\linewidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[%
+                standard,
+                enlarge y limits=0.2,
+                scale=0.9,
+                xlabel = {$n$},
+                ylabel = {$x[n]$},
+                scaled y ticks = false,
+                y tick label style = {/pgf/number format/fixed},
+                ytick = {-0.03, 0.03, 0.057},
+                ymajorgrids = true,
+                grid style = dashed,
+                ]
+                \addplot[blue,thick,samples=100] table [x={x}, y={y}] {
+x y
+90 0.00846854
+91 -0.00866365
+92 -0.01506901
+93 -0.00334494
+94 0.00382214
+95 -0.00047939
+96 -0.00419374
+97 0.0046966
+98 0.02226608
+99 0.03008467
+100 0.01698417
+101 -0.00991495
+102 -0.03046551
+103 -0.02982553
+104 -0.01053166
+105 0.00202071
+106 -0.01198137
+107 -0.02595199
+108 -0.00091994
+109 0.04794415
+110 0.05781149
+111 0.01600666
+112 -0.01603436
+113 -0.00653139
+114 0.01738747
+115 0.014815
+116 0.00833863
+117 0.01340137
+118 0.02259084
+119 0.02855182
+};
+            \end{axis}
+        \end{tikzpicture}
+    \end{subfigure}
+    \caption{Přiblížená cepstra segmentů. Levý kóduje logickou~0. Pravý kóduje
+    logickou~1.}
     \label{pic:segment-cepstrum}
 \end{figure}
 
