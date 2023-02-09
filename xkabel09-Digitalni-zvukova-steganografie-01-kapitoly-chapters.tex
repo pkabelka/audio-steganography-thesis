@@ -715,13 +715,22 @@ kapacitě \cite{Bender1996}.
 \subsection*{Metoda paritního kódování}
 \label{sub:parity-coding}
 
-\todo{popis metody paritního kódování}
+Metoda paritního kódování je založená na ukrývání do nejméně významného bitu
+skupiny vzorků na rozdíl od ukrývání do jednotlivých vzorků. Pro zakódování
+informace se krycí médium rozdělí na segmenty a~vypočítá se paritní bit
+segmentu. Pokud je paritní bit stejný jako informační, pak se neprovádí nic.
+Pokud je paritní bit rozdílný, pak se změní nejméně významný bit libovolného
+vzorku v~daném segmentu. Díky tomu je možné snížit detekovatelnost informace
+\cite{Bandyopadhyay2008}, čímž ale dojde ke snížení robustnosti. Způsob
+kódování pomocí této metody je vizualizován na obrázku \ref{pic:parity-coding}.
 
-\blindtext
-
-\blindtext
-
-\blindtext
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.8\textwidth]{obrazky/parity-coding.pdf}
+    \caption{Metoda paritního kódování. Pro zakódování je potřeba docílit
+    stejné parity jako je informační bit.}
+    \label{pic:parity-coding}
+\end{figure}
 
 \subsection*{Metody založené na nedostatcích lidského sluchového ústrojí}
 \label{sub:has}
