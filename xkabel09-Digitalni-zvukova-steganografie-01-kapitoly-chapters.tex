@@ -862,6 +862,26 @@ Výkony tónů jsou nastaveny v~předem známém poměru k~výkonu segmentu
     \label{pic:tone-insertion}
 \end{figure}
 
+Dekódování probíhá porovnáním poměrů výkonu segmentu k~výkonu tónu na dané
+frekvenci \cite{Djebbar2012}. Dekódovací pravidlo lze vidět v~rovnici
+\ref{eq:tone-insertion-decision-rule} kde $b$ značí hodnotu bitu a~výkon
+segmentu je označen jako $p_i$ přičemž $i$ značí index segmentu a~$f_0$~a$f_1$
+značí použité frekvence.
+
+\begin{equation}
+    \label{eq:tone-insertion-decision-rule}
+    b = \left\{
+        \begin{array}{rl}
+            0, & \frac{p_i}{p_{f_0}} > \frac{p_i}{p_{f_1}} \\
+            1, & \mathrm{jinak}
+        \end{array}
+    \right.
+\end{equation}
+
+Tato metoda má malou kapacitu a~vložené tóny je jednoduché detekovat, proto je
+vhodné použít čtyři a~více párů frekvencí, které se střídají na základě
+určitého klíče \cite{Djebbar2012}.
+
 \subsection*{Metoda využívající vlnkové transformace}
 \label{sub:wavelet-transform}
 
