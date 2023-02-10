@@ -846,6 +846,22 @@ hlasitého impulzu. Nápodobně, maskování ve frekvenční doméně probíhá 
 frekvence, která se nachází v~blízkém okolí nějaké jiné frekvence s~vyšší
 amplitudou \cite{Dutta2020}.
 
+Jedna z~metod pracující ve frekvenční doméně je metoda vkládání tónu
+\cite{Dutta2020}. Ta spoléhá na neschopnost vnímání tónu v~přítomnosti mnohem
+hlasitějších. Pro kódování se krycí médium rozdělí na segmenty a~vypočítá se
+výkon každého z~nich. Poté se vloží dva tóny na frekvencích $f_0$ a~$f_1$.
+Výkony tónů jsou nastaveny v~předem známém poměru k~výkonu segmentu
+\cite{Djebbar2012}. Princip kódování této metody lze vidět na obrázku
+\ref{pic:tone-insertion}.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.3\textwidth]{obrazky/placeholder.pdf}
+    \caption{Metoda vkládání tónu. Specifické poměry tónů na frekvencích $f_0$
+    a~$f_1$ kódují 0~nebo~1.}
+    \label{pic:tone-insertion}
+\end{figure}
+
 \subsection*{Metoda využívající vlnkové transformace}
 \label{sub:wavelet-transform}
 
