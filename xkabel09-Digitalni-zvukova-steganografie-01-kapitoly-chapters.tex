@@ -882,6 +882,51 @@ Tato metoda má malou kapacitu a~vložené tóny je jednoduché detekovat, proto
 vhodné použít čtyři a~více párů frekvencí, které se střídají na základě
 určitého klíče \cite{Djebbar2012}.
 
+\subsection*{Metoda ukrývání v~úsecích ticha}
+\label{sub:hinding-in-silence-intervals}
+
+Tato metoda využívá ke skrývání informací úseky ticha nacházející se
+v~nahrávkách řeči \cite{Djebbar2012}. Pro zakódování informací je nejprve
+potřeba najít úseky ticha v~nahrávce. Ty se vyskytují jako posloupné sekvence
+vzorků s~amplitudou nižší než určitá hodnota. Z~nalezených úseků se ponechají
+pouze ty, jejichž délka je větší než minimální délka úseku \cite{Shahreza2008}.
+Autoři \cite{Shahreza2008} zjistili následující optimální hodnoty:
+
+\begin{itemize}
+    \item maximální amplituda úseku: 15\% maximálního rozsahu signálu,
+    \item minimální délka úseku: 200~vzorků; kratší úseky se většinou vyskytují
+        mezi částmi slov a~tyto skoky mohou být detekovány,
+    \item maximální počet bitů pro ukrytí do segmentu: 4~b.
+\end{itemize}
+
+Pokud $N$ je počet kódovaných bitů informace, $L$ je délka konkrétního
+segmentu, a~$X$ je kódovaná hodnota, pak pro kódování do konkrétního segmentu
+se vypočítá jeho nová délka $D$, tak aby platil vztah v~rovnici
+\ref{eq:silence-value} \cite{Shahreza2008}.
+
+\begin{equation}
+    \label{eq:silence-value}
+    X = D \bmod 2^N
+\end{equation}
+
+\noindent Novou délku segmentu lze jednoduše vypočítat z~rovnice
+\ref{eq:silence-length}.
+
+\begin{equation}
+    \label{eq:silence-length}
+    D = L - [(L - X) \bmod 2^N]
+\end{equation}
+
+\noindent Pokud by byla nová délka $D$ kratší než je minimální stanovená délka
+úseku, pak je potřeba použít jiný úsek. Pro dekódování informace stačí použít
+zmíněný vztah \ref{eq:silence-value} \cite{Shahreza2008}.
+
+Nevýhodou této metody je její citlivost na transformaci stego signálu. Změny
+délek úseků ticha povedou k~dekódování špatných hodnot. Pro zvýšení robustnosti
+v~tomto ohledu je možné snížit amplitudu úseků ticha a~zvýšit amplitudu
+okolních úseků, aby nedošlo ke změně délky některého z~úseků například kvůli
+kompresi \cite{Djebbar2012}.
+
 \subsection*{Metoda využívající vlnkové transformace}
 \label{sub:wavelet-transform}
 
