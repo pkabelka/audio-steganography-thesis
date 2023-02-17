@@ -33,7 +33,9 @@ clean:
 	rm -f *~
 
 pack:
+	git restore --source make -- Makefile
 	tar czvf $(CO).tar.gz *.tex *.bib template-fig/* obrazky/* bib-styles/* fitthesis.cls zadani.pdf $(CO).pdf Makefile
+	git restore --source master -- Makefile
 
 rename:
 	mv $(CO).tex $(NAME).tex
