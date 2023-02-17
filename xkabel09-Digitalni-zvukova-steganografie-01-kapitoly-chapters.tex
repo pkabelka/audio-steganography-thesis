@@ -930,14 +930,30 @@ kompresi \cite{Djebbar2012}.
 \subsection*{Metoda využívající vlnkové transformace}
 \label{sub:wavelet-transform}
 
-Nejlepší metodou pro ukrývání informací v~transformační doméně je vlnková
-transformace, protože prezentuje informace o~frekvencích, které lze získat
+Nejlepší metodou pro ukrývání informací v~transformační doméně je diskrétní vlnková
+transformace (anglicky \textit{discrete wavelet transform} -- DWT),
+protože prezentuje informace o~frekvencích, které lze získat
 z~Fourierovy transformace jako funkci v~čase. Vlnková transformace poskytuje
 dobrý kompromis mezi Fourierovou transformací, která frekvencím nepřiřazuje
 čas. Další transformační funkcí je diskrétní kosinová transformace (anglicky
 \textit{discrete cosine transform} -- DCT). Ta není pro účely ukrývání
 informací příliš vhodná, protože zavádí do audia artefakty. Metody
 v~transformační doméně jsou poměrně méně odolné proti šumu \cite{Dutta2020}.
+
+Pro zakódování informace do nosiče se nosič rozdělí na segmenty po
+512~vzorcích. Na každý segment je poté pětkrát aplikována dekompozice na
+nízkofrekvenční a~vysokofrekvenční komponenty \cite{Cvejic2002Wavelet}. Každá
+následující dekompozice je aplikována na nízkofrekvenční složku z~předchozí
+úrovně \cite{Prabakaran2012}. Výsledných 512~koeficientů je převedeno na
+binární hodnoty do jejichž nejméně významných bitů jsou uloženy bity ukrývané
+informace \cite{Cvejic2002Wavelet}. Experimentální výsledky
+v~\cite{Cvejic2002Wavelet} ukázaly, že při modifikaci až 7~nejnižších bitů bylo
+téměř nemožné rozeznat rozdíl mezi originální a~upravenou nahrávkou. A~i~při
+modifikaci více úrovní byly výsledky lepší než při použití konvenční metody
+nahrazení nejméně významného bitu popsané v~podsekci \ref{sub:lsb} s~dvakrát
+menším počtem upravených bitových úrovní. Tato metoda má velmi vysokou kapacitu
+a~je schopna ukrýt až o~220,5\,kb/s více dat než konvenční metoda nahrazení
+nejméně významného bitu \cite{Cvejic2002Wavelet}.
 
 
 \chapter{Analýza a~návrh}
