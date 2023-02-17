@@ -6,25 +6,26 @@
 #===========================================
 # asi budete chtit prejmenovat / you will probably rename:
 CO=xkabel09-Digitalni-zvukova-steganografie
+FJ=/usr/bin/firejail --profile=latex --disable-mnt --whitelist="$(shell pwd)" --blacklist="$(shell pwd)"/.git --private-bin=pdflatex,bibtex,latex,dvips
 
 all: $(CO).pdf
 
 pdf: $(CO).pdf
 
 $(CO).ps: $(CO).dvi
-	dvips $(CO)
+	$(FJ) dvips $(CO)
 
 $(CO).pdf: clean
-	pdflatex $(CO)
-	-bibtex $(CO)
-	pdflatex $(CO)
-	pdflatex $(CO)
+	$(FJ) pdflatex $(CO)
+	-$(FJ) bibtex $(CO)
+	$(FJ) pdflatex $(CO)
+	$(FJ) pdflatex $(CO)
 
 $(CO).dvi: $(CO).tex $(CO).bib
-	latex $(CO)
-	-bibtex $(CO)
-	latex $(CO)
-	latex $(CO)
+	$(FJ) latex $(CO)
+	-$(FJ) bibtex $(CO)
+	$(FJ) latex $(CO)
+	$(FJ) latex $(CO)
 
 clean:
 	rm -f *.dvi *.log $(CO).blg $(CO).bbl $(CO).toc *.aux $(CO).out $(CO).lof $(CO).ptc
@@ -54,5 +55,5 @@ vlna:
 
 # Spocita normostrany / Count of standard pages
 normostrany:
-	echo "scale=2; `detex -n $(CO)-[01]*.tex | sed s/"^ *"/""/ | sed s/"^	*"/""/ | wc -c`/1800;" | bc
+	/usr/bin/firejail --quiet --profile=zathura --private-bin=pdftotext pdftotext -nopgbrk $(CO).pdf - | sed -n '/^Kapitola 1$$/,/^Literatura$$/p' | wc -c | xargs printf "scale=2; %s/1800;\n" | bc
 
