@@ -715,6 +715,17 @@ stego médium vznikne přidáním vynásobených hodnot ke krycímu médiu
 \cite{Kuznetsov2022}. Informace zakódovaná touto metodou je odolná proti šumu,
 protože obsahuje přebytečné kopie bitů. V~případě poškození části stego média
 je možné z~přebytečných bitů obnovit ukryté informace \cite{Djebbar2012}.
+Popsaný princip kódování je možné vidět na obrázku \ref{pic:dsss-spreading},
+kde se ke krycímu signálu přidají rozprostřené bity informace vynásobené
+pseudonáhodnou sekvencí čipů.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.8\textwidth]{obrazky/direct-sequence-spread-spectrum-diagram.pdf}
+    \caption{Kódování pomocí rozprostření bitů pomocí metody přímého
+    rozprostření spektra}
+    \label{pic:dsss-spreading}
+\end{figure}
 
 Tato metoda je dostatečně robustní pro přidání více vodoznaků. Například pro
 přidání více autorů k~hudební skladbě. Při detekci konkrétního vodoznaku jsou
@@ -724,13 +735,6 @@ náhodný šum přidaný touto metodou neslyšitelný, je nutné nastavit při k
 amplitudu rozprostřené sekvence zhruba na 0,5\% dynamického rozsahu krycího
 média \cite{Bender1996}. Pro kvalitní dekódování má tato metoda kapacitu 4~bity
 za sekundu \cite{Bender1996}.
-
-% \begin{figure}[hbt]
-%     \centering
-%     \includegraphics[width=0.3\textwidth]{obrazky/placeholder.pdf}
-%     \caption{Rozložení spektra pomocí metody přímého rozprostřeného spektra}
-%     \label{pic:dsss-spreading}
-% \end{figure}
 
 Pro dekódování informačních bitů je nezbytné, aby příjemce měl stejnou
 pseudonáhodnou sekvenci čipů, která byla použita k~zakódování. Pro dekódování
@@ -760,13 +764,6 @@ kódování dosahuje nejlepších hodnot poměru signálu k~šumu. Avšak příl
 změna fáze frekvenční komponenty vede k~rozptylu fáze a~tím ke zhoršení kvality
 zvuku. Dokud jsou ale změny fáze dostatečně malé, což je subjektivní, pak je
 možné dosáhnout neslyšitelného kódování \cite{Bender1996}.
-
-\begin{figure}[hbt]
-    \centering
-    \includegraphics[width=0.3\textwidth]{obrazky/placeholder.pdf}
-    \caption{Změna fáze segmentu pro zakódování bitu}
-    \label{pic:phase-coding-phase-change}
-\end{figure}
 
 Kódování pomocí této metody začíná rozdělením krycího audia na segmenty
 s~délkou počtu ukrývaných bitů. Poté je každý segment převeden do frekvenční
