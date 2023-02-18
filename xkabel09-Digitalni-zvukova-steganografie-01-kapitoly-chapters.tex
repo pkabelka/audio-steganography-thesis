@@ -852,7 +852,8 @@ hlasitějších. Pro kódování se krycí médium rozdělí na segmenty a~vypo�
 výkon každého z~nich. Poté se vloží dva tóny na frekvencích $f_0$ a~$f_1$.
 Výkony tónů jsou nastaveny v~předem známém poměru k~výkonu segmentu
 \cite{Djebbar2012}. Princip kódování této metody lze vidět na obrázku
-\ref{pic:tone-insertion}.
+\ref{pic:tone-insertion}, kde poměr výkonů tónu na frekvencích $f_0$ a~$f_1$
+kóduje bity \texttt{010}.
 
 \begin{figure}[hbt]
     \centering
@@ -865,14 +866,14 @@ Výkony tónů jsou nastaveny v~předem známém poměru k~výkonu segmentu
 Dekódování probíhá porovnáním poměrů výkonu segmentu k~výkonu tónu na dané
 frekvenci \cite{Djebbar2012}. Dekódovací pravidlo lze vidět v~rovnici
 \ref{eq:tone-insertion-decision-rule} kde $b$ značí hodnotu bitu a~výkon
-segmentu je označen jako $p_i$ přičemž $i$ značí index segmentu a~$f_0$~a$f_1$
+segmentu je označen jako $P_i$ přičemž $i$ značí index segmentu a~$f_0$~a$f_1$
 značí použité frekvence.
 
 \begin{equation}
     \label{eq:tone-insertion-decision-rule}
     b = \left\{
         \begin{array}{rl}
-            0, & \frac{p_i}{p_{f_0}} > \frac{p_i}{p_{f_1}} \\
+            0, & \frac{P_i}{P_{f_0}} > \frac{P_i}{P_{f_1}} \\
             1, & \mathrm{jinak}
         \end{array}
     \right.
