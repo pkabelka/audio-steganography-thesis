@@ -27,9 +27,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="true"
-     inkscape:zoom="8"
-     inkscape:cx="115.1875"
-     inkscape:cy="69.5625"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="155.03316"
+     inkscape:cy="123.92046"
      inkscape:window-width="2560"
      inkscape:window-height="1382"
      inkscape:window-x="1920"
@@ -215,7 +215,7 @@
     <g
        id="g11403"
        inkscape:label="segment"
-       transform="translate(30)">
+       transform="translate(25)">
       <text
          xml:space="preserve"
          style="font-size:7.05556px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
@@ -230,13 +230,13 @@
            y="31.11528">1</tspan></text>
       <path
          style="fill:#000000;fill-opacity:1;stroke:#dd6a00;stroke-width:0.264999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleStart)"
-         d="m 14,20 0,-2"
+         d="M 14,20 V 18"
          id="path11363"
          sodipodi:nodetypes="cc"
          inkscape:label="f0 arrow" />
       <path
          style="fill:#000000;fill-opacity:1;stroke:#dd6a00;stroke-width:0.264999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleStart)"
-         d="m 18,20 0,-5"
+         d="M 18,20 V 15"
          id="path11365"
          sodipodi:nodetypes="cc"
          inkscape:label="f1 arrow" />
@@ -362,7 +362,7 @@
     <g
        id="g11455"
        inkscape:label="segment"
-       transform="translate(60)">
+       transform="translate(50)">
       <text
          xml:space="preserve"
          style="font-size:7.05556px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
@@ -509,14 +509,14 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2889px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
-       x="95.27169"
+       x="85.27169"
        y="15.596466"
        id="text11547"
        inkscape:label="dots"><tspan
          sodipodi:role="line"
          id="tspan11545"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2889px;font-family:Cantarell;-inkscape-font-specification:Cantarell;stroke-width:0.265"
-         x="95.27169"
+         x="85.27169"
          y="15.596466">...</tspan></text>
   </g>
 </svg>
