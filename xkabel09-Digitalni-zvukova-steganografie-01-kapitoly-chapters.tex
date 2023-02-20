@@ -436,7 +436,16 @@ vlastností.
 Metoda využívající nahrazení nejméně významného bitu (anglicky \textit{least
 significant bit substitution}, dále jen LSB) je nejjednodušší metodou pro
 vkládání informací do nosiče. Principem této metody je nahrazení nejméně
-významného bitu v~nosiči za bit ukrývané informace \cite{Dutta2020}.
+významného bitu v~nosiči za bit ukrývané informace \cite{Dutta2020}. Princip
+kódování pomocí této metody je vizualizován na obrázku \ref{pic:lsb-diagram}.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.8\textwidth]{obrazky/lsb-diagram.pdf}
+    \caption{Ukládání informačních bitů do nejméně významného bitu krycího
+    signálu. Upraveno z~\cite{Djebbar2012}.}
+    \label{pic:lsb-diagram}
+\end{figure}
 
 Tato metoda se vyznačuje velmi vysokou kapacitu \cite{Djebbar2012}
 a~jednoduchou implementací. Kapacita této metody je přímo úměrná počtu
