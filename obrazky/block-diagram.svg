@@ -28,8 +28,8 @@
      inkscape:document-units="mm"
      showgrid="true"
      inkscape:zoom="1.7852694"
-     inkscape:cx="323.4806"
-     inkscape:cy="287.63167"
+     inkscape:cx="304.99599"
+     inkscape:cy="408.6218"
      inkscape:window-width="2560"
      inkscape:window-height="1382"
      inkscape:window-x="1920"
@@ -301,25 +301,53 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264999;stroke-miterlimit:1.5"
-       x="86.155846"
+       x="91.155846"
        y="80"
        id="text3974"><tspan
          sodipodi:role="line"
          id="tspan3972"
          style="stroke-width:0.265"
-         x="86.155846"
+         x="91.155846"
          y="80">Výpis výstupu</tspan></text>
     <rect
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
        id="rect3976"
        width="32"
        height="9"
-       x="70.155846"
+       x="75.155846"
        y="74" />
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleStart)"
-       d="m 86,60 0,12"
+       d="M 91,60 V 72"
        id="path3990"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.264999;stroke-miterlimit:1.5"
+       x="50"
+       y="80"
+       id="text315"><tspan
+         sodipodi:role="line"
+         id="tspan313"
+         style="stroke-width:0.265"
+         x="50"
+         y="80">Statistické funkce</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+       id="rect317"
+       width="38"
+       height="9"
+       x="30.844154"
+       y="74" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleStart)"
+       d="M 83,60 70,73"
+       id="path590"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleStart)"
+       d="M 64,74 77,61"
+       id="path641"
        sodipodi:nodetypes="cc" />
   </g>
 </svg>
