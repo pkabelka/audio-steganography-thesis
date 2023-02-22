@@ -1029,9 +1029,17 @@ použití a~implementace nových metod co nejjednodušší. Dalším požadavkem
 \subsection*{Blokové schéma a~komponenty systému}
 \label{sub:solution-components}
 
-\todo{komponenty systému}
-
-\blindtext
+Struktura řešení se bude skládat z~několika modulů a~balíčků. Pro zjednodušení,
+modul je jeden soubor a~balíček je kolekce modulů. Jádrem knihovny bude balíček
+s~moduly implementovaných metod pro digitální zvukovou steganografii. Druhý
+hlavní balíček bude obsahovat moduly týkající se vestavěného programu
+s~terminálovým rozhraním. Nejdůležitějším modulem pro programovou část bude
+modul s~fasádou, která zjednoduší volání jednotlivých metod při použití
+z~terminálu. Bude také poskytovat výpočty různých statistických funkcí na
+základě kterých je možné vyhodnotit pro konkrétní krycí soubor úroveň
+jednotlivých vlastností steganografických metod popsaných v~sekci
+\ref{sec:method-properties}. Blokové schéma popsané struktury je možné vidět na
+obrázku \ref{pic:library-block-diagram}.
 
 \begin{figure}[hbt]
     \centering
@@ -1039,8 +1047,6 @@ použití a~implementace nových metod co nejjednodušší. Dalším požadavkem
     \caption{Blokové schéma knihovny pro digitální zvukovou steganografii}
     \label{pic:library-block-diagram}
 \end{figure}
-
-\blindtext
 
 \subsection*{Realizační prostředky a~metody}
 \label{sub:solution-tool-choices}
