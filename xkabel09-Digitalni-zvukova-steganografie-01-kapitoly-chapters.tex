@@ -1086,6 +1086,33 @@ datové sady: \textit{TIMIT} \cite{Garofolo1993}, \textit{GTZAN}
 \cite{Tzanetakis2001}, \textit{Noizeus} \cite{Hu2006} a~\textit{UrbanSound8K}
 \cite{Salamon2014}.
 
+Hodnoty jednotlivých vlastností jsou vyčísleny pomocí statistických funkcí,
+které se často objevovaly v~průzkumu \cite{AlSabhany2020}. Tyto funkce jsou:
+
+\begin{itemize}
+    \item poměr signálu k~šumu (anglicky \textit{signal-to-noise ratio}, dále
+        jen SNR),
+    \item špičkový poměr signálu k~šumu (anglicky \textit{peak signal-to-noise
+        ratio}, dále jen PSNR),
+    \item míra bitové chybovosti (anglicky \textit{bit error rate}, dále jen
+        BER),
+\end{itemize}
+
+Při testování se nejprve vyhodnotí maximální kapacita metody bez modifikace
+stego signálu s~pomocí funkce BER. Poté je testována robustnost následujícími
+metodami zvlášť i~kombinovaně:
+
+\begin{itemize}
+    \item překódování do ztrátového formátu,
+    \item přidání šumu,
+    \item filtrace spektra,
+    \item převzorkování,
+    \item překvantování.
+\end{itemize}
+
+Nepostřehnutelnost je sice subjektivní vlastnost, ale je možné vyhodnotit její
+míru automaticky pomocí úrovně SNR a~PSNR.
+
 \section{Popis vlastní metody digitální zvukové steganografie}
 \label{sec:own-method-proposal}
 
@@ -1200,38 +1227,6 @@ datové sady: \textit{TIMIT} \cite{Garofolo1993}, \textit{GTZAN}
 
 \chapter{Zhodnocení vlastností realizace}
 \label{cha:method-evaluation}
-
-V~této kapitole bude popsán konkrétní způsob vyhodnocení vlastností metod.
-
-\section{Způsob vyhodnocení vlastností}
-\label{sec:Způsob vyhodnocení vlastností}
-
-Hodnoty jednotlivých vlastností jsou vyčísleny pomocí statistických funkcí,
-které se často objevovaly v~průzkumu \cite{AlSabhany2020}. Tyto funkce jsou:
-
-\begin{itemize}
-    \item poměr signálu k~šumu (anglicky \textit{signal-to-noise ratio}, dále
-        jen SNR),
-    \item špičkový poměr signálu k~šumu (anglicky \textit{peak signal-to-noise
-        ratio}, dále jen PSNR),
-    \item míra bitové chybovosti (anglicky \textit{bit error rate}, dále jen
-        BER),
-\end{itemize}
-
-Při testování se nejprve vyhodnotí maximální kapacita metody bez modifikace
-stego signálu s~pomocí funkce BER. Poté je testována robustnost následujícími
-metodami zvlášť i~kombinovaně:
-
-\begin{itemize}
-    \item překódování do ztrátového formátu,
-    \item přidání šumu,
-    \item filtrace spektra,
-    \item převzorkování,
-    \item překvantování.
-\end{itemize}
-
-Nepostřehnutelnost je sice subjektivní vlastnost, ale je možné vyhodnotit její
-míru automaticky pomocí úrovně SNR a~PSNR.
 
 \todo{výsledky vyhodnocení kvality}
 
