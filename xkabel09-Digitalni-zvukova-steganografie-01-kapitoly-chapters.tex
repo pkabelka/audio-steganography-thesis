@@ -1014,9 +1014,47 @@ metody pro digitální zvukovou steganografii.
 \subsection*{Výhody a~nevýhody stávajících řešení}
 \label{sub:pros-cons-existing-solutions}
 
-\todo{výhody a nevýhody stávajících řešení}
+V~celém oboru steganografie je těžké najít kvalitní existující řešení. Většina
+existujících řešení má dva společné problémy: málo implementovaných metod
+a~špatnou dokumentaci. Zde je seznam nalezených řešení a~krátký popis každého
+z~nich:
 
-\blindtext
+\begin{itemize}
+    \item \textit{Steghide}\footnote{\url{https://steghide.sourceforge.net}} -- Asi
+        nejlepší nalezené řešení. Jedná se o~svobodný software s~GPL licencí,
+        podporuje šifrování pomocí algoritmu \textit{AES-128} a~používá grafový
+        algoritmus pro kódování. Program je ale velmi zastaralý a~nepodporuje
+        jiné metody kódování.
+    \item \textit{Hide4PGP}\footnote{\url{http://www.heinz-repp.onlinehome.de/Hide4PGP.htm}}
+        -- Další otevřený software s~podporou šifrování pomocí
+        \textit{OpenPGP}\footnote{\url{https://www.openpgp.org}}. Kódování
+        rozprostírá informační bity přes celý soubor.
+    \item \textit{Xiao Steganography}\footnote{\url{https://download.cnet.com/Xiao-Steganography/3000-2092_4-10541494.html}}
+        -- Proprietární program s~podporou pěti šifrovacích a~čtyř hešovacích
+        algoritmů, které jsou avšak velmi zastaralé a~jejich používání se
+        nedoporučuje.
+    \item \textit{audio-steganography-algorithms}\footnote{\url{https://github.com/ktekeli/audio-steganography-algorithms}}
+        -- Sada implementací metod pro program MATLAB. Obsahuje metodu
+        rozprostřeného spektra (viz \ref{sub:dsss}), ukrývání pomocí ozvěny
+        (viz \ref{sub:echo-hiding}), nejméně významného bitu (viz
+        \ref{sub:lsb}) a~fázového kódování (viz \ref{sub:phase-coding}).
+        Bohužel jsou modifikace metod v~nečitelném proprietárním formátu.
+    \item \textit{Steganography}\footnote{\url{https://github.com/ragibson/Steganography}}
+        -- Program v~jazyce \textit{Python}. Pro audio soubory ve formátu
+        \textit{WAV} podporuje pouze metodu nahrazení nejméně významného bitu.
+    \item \textit{Audio steganography - Phase encoding}\footnote{\url{https://github.com/dan-oak/secret_in_wav}}
+        -- Ukázkový program v~jazyce Python pro kódování pomocí metody fázového
+        kódování.
+    \item \textit{py-stego-phase}\footnote{\url{https://github.com/Galarius/py-stego-phase}}
+        -- Další program v~jazyce Python pro metodu fázového kódování.
+    \item \textit{InvisibleSecrets}\footnote{\url{https://www.east-tec.com/invisiblesecrets}}
+        -- Proprietární program s~podporou šifrování.
+    \item \textit{StegoStick}\footnote{\url{https://sourceforge.net/projects/stegostick}}
+        -- Svobodný software s~podporou šifrování, avšak zastaralého.
+    \item \textit{DeepSound}\footnote{\url{https://jpinsoft.net/DeepSound/Overview.aspx}}
+        -- Proprietární program s~podporou šifrování. Šifrovací algoritmus je
+        současně nejvíce doporučovaný algoritmus \textit{AES-256}.
+\end{itemize}
 
 \section{Návrh řešení}
 \label{sec:solution-proposal}
