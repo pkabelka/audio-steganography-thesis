@@ -1123,7 +1123,28 @@ velké množství funkcí pro účely zpracování signálů.
 \label{sub:use-cases}
 
 Program bude umožňovat uživateli zvolit steganografickou metodu a~pomocí ní
-zakódovat a~dekódovat tajnou zprávu ve formě textu nebo souboru.
+zakódovat a~dekódovat tajnou zprávu ve formě textu nebo souboru do krycího
+audio souboru. Interakci mezi použitím hlavního programu a~knihovny je možné
+vidět na obrázku \ref{pic:use-case-diagram-main}.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=\textwidth]{obrazky/use-case-diagram-1.pdf}
+    \caption{Diagram případů užití primárního vestavěného programu a~knihovny.}
+    \label{pic:use-case-diagram-main}
+\end{figure}
+
+Druhý vestavěný program bude umožňovat testování jednotlivých steganografických
+vlastností. Diagram případů užití pro druhý program je na obrázku
+\ref{pic:use-case-diagram-testing}.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=\textwidth]{obrazky/use-case-diagram-2.pdf}
+    \caption{Diagram případů užití druhého vestavěného programu pro testování
+    steganografických vlastností na datové sadě.}
+    \label{pic:use-case-diagram-testing}
+\end{figure}
 
 \subsection*{Ověřování vlastností}
 \label{sub:method-property-verification}
