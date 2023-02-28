@@ -952,8 +952,8 @@ kompresi \cite{Djebbar2012}.
 \label{sub:wavelet-transform}
 
 Nejlepší metodou pro ukrývání informací v~transformační doméně je diskrétní
-vlnková transformace (anglicky \textit{discrete wavelet transform} -- DWT),
-protože prezentuje informace o~frekvencích, které lze získat z~Fourierovy
+vlnková transformace (anglicky \textit{discrete wavelet transform}, dále jen
+DWT), protože prezentuje informace o~frekvencích, které lze získat z~Fourierovy
 transformace jako funkci v~čase. Vlnková transformace poskytuje dobrý kompromis
 mezi Fourierovou transformací, která frekvencím nepřiřazuje čas. Další
 transformační funkcí je diskrétní kosinová transformace (anglicky
@@ -961,7 +961,7 @@ transformační funkcí je diskrétní kosinová transformace (anglicky
 informací příliš vhodná, protože zavádí do audia artefakty. Metody
 v~transformační doméně jsou poměrně méně odolné proti šumu \cite{Dutta2020}.
 
-Pro zakódování informace do nosiče se nosič rozdělí na segmenty po
+Pro zakódování informace do nosiče pomocí DWT, nosič rozdělí na segmenty po
 512~vzorcích. Na každý segment je poté pětkrát aplikována dekompozice na
 nízkofrekvenční a~vysokofrekvenční komponenty \cite{Cvejic2002Wavelet}. Každá
 následující dekompozice je aplikována na nízkofrekvenční složku z~předchozí
