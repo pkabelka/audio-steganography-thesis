@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="use-case-diagram-1.svg"
+   inkscape:export-filename="use-case-diagram-1.pdf"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="2.56"
+     inkscape:cx="276.5625"
+     inkscape:cy="248.24219"
+     inkscape:window-width="2560"
+     inkscape:window-height="1382"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid139" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="marker34116"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow1L"
+       markerWidth="8.75"
+       markerHeight="5"
+       viewBox="0 0 8.75 5"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path34114"
+         transform="scale(-0.5)" />
+    </marker>
+    <symbol
+       id="ToiletsMen">
+      <title
+         id="title560">Toilets - Men</title>
+      <g
+         style="stroke:none"
+         id="g566">
+        <circle
+           cx="36"
+           cy="9"
+           r="5"
+           id="circle562" />
+        <path
+           d="m 24,22 v 15.5 a 2.25,2.25 0 0 0 4.5,0 V 23 h 1 v 39.5 a 3,3 0 0 0 6,0 V 40 h 1 v 22.5 a 3,3 0 0 0 6,0 V 23 h 1 v 14.5 a 2.25,2.25 0 0 0 4.5,0 V 22 A 7,7 0 0 0 41,15 H 31 a 7,7 0 0 0 -7,7 z"
+           id="path564" />
+      </g>
+    </symbol>
+    <symbol
+       id="Cashier">
+      <title
+         id="title314">Cashier</title>
+      <g
+         style="fill:none;stroke-width:6"
+         id="g320">
+        <circle
+           cx="36"
+           cy="36"
+           r="24"
+           id="circle316" />
+        <path
+           d="m 45,30 c 0,-4 -4,-6 -9,-6 -5,0 -9,2 -9,6 0,4 4,5.5 9,6 5,0.5 10,1 10,6 0,5 -5,6 -10,6 -5,0 -9,-3 -9,-7 m 9,-24 v 38"
+           id="path318" />
+      </g>
+    </symbol>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g6893"
+       inkscape:label="use-case"
+       transform="translate(15.249999,21.249999)">
+      <text
+         xml:space="preserve"
+         style="font-size:3.88056px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-orientation:upright;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.799999;stroke-miterlimit:1.5;stroke-opacity:1"
+         x="38.026207"
+         y="14.961194"
+         id="text6838"><tspan
+           sodipodi:role="line"
+           id="tspan6836"
+           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.8"
+           x="38.026207"
+           y="14.961194">Zakódování textu</tspan></text>
+      <ellipse
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse10074"
+         cx="38"
+         cy="13.470834"
+         rx="19"
+         ry="4.4708338" />
+    </g>
+    <g
+       id="g6920"
+       inkscape:label="use-case"
+       transform="translate(15,43.529167)">
+      <text
+         xml:space="preserve"
+         style="font-size:3.88056px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-orientation:upright;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.799999;stroke-miterlimit:1.5;stroke-opacity:1"
+         x="38.026207"
+         y="14.961194"
+         id="text6918"><tspan
+           sodipodi:role="line"
+           id="tspan6916"
+           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.8"
+           x="38.026207"
+           y="14.961194">Dekódování bajtů</tspan></text>
+      <ellipse
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse11528"
+         cx="38"
+         cy="24.470833"
+         rx="19"
+         ry="4.4708338"
+         transform="translate(0,-11)" />
+    </g>
+    <g
+       id="g6951"
+       inkscape:label="use-case"
+       transform="translate(15,32.529167)">
+      <text
+         xml:space="preserve"
+         style="font-size:3.88056px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-orientation:upright;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.799999;stroke-miterlimit:1.5;stroke-opacity:1"
+         x="38.026207"
+         y="14.961194"
+         id="text6949"><tspan
+           sodipodi:role="line"
+           id="tspan6947"
+           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.8"
+           x="38.026207"
+           y="14.961194">Zakódování bajtů</tspan></text>
+      <ellipse
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse11530"
+         cx="38"
+         cy="35.470833"
+         rx="19"
+         ry="4.4708338"
+         transform="translate(0,-22)" />
+    </g>
+    <g
+       id="g7736"
+       inkscape:label="use-case"
+       transform="translate(14,54.058334)">
+      <text
+         xml:space="preserve"
+         style="font-size:3.88056px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-orientation:upright;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.799999;stroke-miterlimit:1.5;stroke-opacity:1"
+         x="38.555374"
+         y="15.49036"
+         id="text7734"><tspan
+           sodipodi:role="line"
+           id="tspan7732"
+           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.8"
+           x="38.555374"
+           y="15.49036">Výpis statistik</tspan></text>
+      <ellipse
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse11538"
+         cx="106"
+         cy="35.470833"
+         rx="19"
+         ry="4.4708338"
+         transform="translate(-67,-21.529167)" />
+    </g>
+    <g
+       id="g7744"
+       inkscape:label="use-case"
+       transform="translate(89,21.529167)">
+      <text
+         xml:space="preserve"
+         style="font-size:3.88056px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-orientation:upright;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.799999;stroke-miterlimit:1.5;stroke-opacity:1"
+         x="38.026207"
+         y="14.961194"
+         id="text7742"><tspan
+           sodipodi:role="line"
+           id="tspan7740"
+           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.8"
+           x="38.026207"
+           y="14.961194">Zakódování bitů</tspan></text>
+      <ellipse
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse11534"
+         cx="38"
+         cy="68.470833"
+         rx="19"
+         ry="4.4708338"
+         transform="translate(0,-55)" />
+    </g>
+    <g
+       id="g7752"
+       inkscape:label="use-case"
+       transform="translate(88,43.529167)">
+      <text
+         xml:space="preserve"
+         style="font-size:3.88056px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-orientation:upright;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.799999;stroke-miterlimit:1.5;stroke-opacity:1"
+         x="38.555374"
+         y="14.961194"
+         id="text7750"><tspan
+           sodipodi:role="line"
+           id="tspan7748"
+           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.8"
+           x="38.555374"
+           y="14.961194">Dekódování bitů</tspan></text>
+      <ellipse
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse11536"
+         cx="39"
+         cy="79.470833"
+         rx="19"
+         ry="4.4708338"
+         transform="translate(0,-66)" />
+    </g>
+    <g
+       id="g17589"
+       inkscape:label="role"
+       transform="matrix(0.57848849,0,0,0.57848849,-43.848849,28.90988)"
+       style="stroke-width:0.864321;stroke-dasharray:none">
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.864321;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+         id="path13823"
+         cx="95"
+         cy="27"
+         r="3" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.864321;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+         d="m 94.999999,30 v 9.999999"
+         id="path13888" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.864321;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+         d="M 94.999999,39.999999 89.999999,50"
+         id="path13890" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.864321;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+         d="M 94.999999,39.999999 100,50"
+         id="path13892" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.864321;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+         d="M 89.999999,33 H 100"
+         id="path14620" />
+    </g>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+       id="rect26010"
+       width="49"
+       height="55"
+       x="29"
+       y="21"
+       ry="1" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.88056px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-orientation:upright;text-anchor:middle;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+       x="53.267982"
+       y="26.068666"
+       id="text26014"><tspan
+         sodipodi:role="line"
+         id="tspan26012"
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5"
+         x="53.267982"
+         y="26.068666">Program</tspan></text>
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+       d="M 17,50 34,35"
+       id="path28242"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+       d="M 17,50 34,46"
+       id="path28970"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+       d="m 17,50 17,6.999999"
+       id="path28972"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+       d="M 17,50 34,67.999998"
+       id="path28974"
+       sodipodi:nodetypes="cc" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+       id="rect29702"
+       width="49"
+       height="55"
+       x="102"
+       y="21"
+       ry="1" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.88056px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-orientation:upright;text-anchor:middle;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+       x="126.26797"
+       y="26.068665"
+       id="text29706"><tspan
+         sodipodi:role="line"
+         id="tspan29704"
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5"
+         x="126.26797"
+         y="26.068665">Knihovna</tspan></text>
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:1.5;stroke-dasharray:1.5, 1.5;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker34116)"
+       d="M 72,34.999998 105,35"
+       id="path31941"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:1.5;stroke-dasharray:1.5, 1.5;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker34116)"
+       d="M 72,45.999998 105,37"
+       id="path34902"
+       sodipodi:nodetypes="cc" />
+    <g
+       id="g34975"
+       inkscape:label="use-case"
+       transform="translate(88,54.058334)">
+      <text
+         xml:space="preserve"
+         style="font-size:3.88056px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-orientation:upright;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.799999;stroke-miterlimit:1.5;stroke-opacity:1"
+         x="38.555374"
+         y="14.961194"
+         id="text34971"><tspan
+           sodipodi:role="line"
+           id="tspan34969"
+           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.8"
+           x="38.555374"
+           y="14.961194">Výpočet statistik</tspan></text>
+      <ellipse
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse34973"
+         cx="106"
+         cy="35.470833"
+         rx="19"
+         ry="4.4708338"
+         transform="translate(-67,-21.529167)" />
+    </g>
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:1.5;stroke-dasharray:1.5, 1.5;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker34116)"
+       d="M 72,56.999998 105,57"
+       id="path35843"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:1.5;stroke-dasharray:1.5, 1.5;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker34116)"
+       d="M 72,67.999998 105,68"
+       id="path35851"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:2.82222px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-orientation:upright;text-anchor:middle;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-miterlimit:1.5;stroke-dasharray:1.5, 1.5;stroke-dashoffset:0;stroke-opacity:1"
+       x="88"
+       y="34"
+       id="text36735"><tspan
+         id="tspan36733"
+         style="font-size:2.82222px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0"
+         x="88"
+         y="34"
+         sodipodi:role="line">&lt;&lt;include&gt;&gt;</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82222px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-orientation:upright;text-anchor:middle;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-miterlimit:1.5;stroke-dasharray:1.5, 1.5;stroke-dashoffset:0;stroke-opacity:1"
+       x="86"
+       y="40"
+       id="text36739"><tspan
+         sodipodi:role="line"
+         id="tspan36737"
+         style="font-size:2.82222px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0"
+         x="86"
+         y="40">&lt;&lt;include&gt;&gt;</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82222px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-orientation:upright;text-anchor:middle;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-miterlimit:1.5;stroke-dasharray:1.5, 1.5;stroke-dashoffset:0;stroke-opacity:1"
+       x="88"
+       y="56"
+       id="text36743"><tspan
+         sodipodi:role="line"
+         id="tspan36741"
+         style="font-size:2.82222px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0"
+         x="88"
+         y="56">&lt;&lt;include&gt;&gt;</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82222px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-orientation:upright;text-anchor:middle;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-miterlimit:1.5;stroke-dasharray:1.5, 1.5;stroke-dashoffset:0;stroke-opacity:1"
+       x="88"
+       y="67"
+       id="text36747"><tspan
+         sodipodi:role="line"
+         id="tspan36745"
+         style="font-size:2.82222px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0"
+         x="88"
+         y="67">&lt;&lt;include&gt;&gt;</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.88056px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-orientation:upright;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0;stroke-miterlimit:1.5;stroke-dasharray:1.5, 1.5;stroke-dashoffset:0;stroke-opacity:1"
+       x="11.107557"
+       y="62.264534"
+       id="text36824"><tspan
+         sodipodi:role="line"
+         id="tspan36822"
+         style="font-size:3.88056px;stroke-width:0"
+         x="11.107557"
+         y="62.264534">Terminál</tspan></text>
+  </g>
+</svg>
