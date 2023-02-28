@@ -1191,11 +1191,76 @@ vyhodnotit její míru automaticky pomocí úrovně SNR a~PSNR.
 \section{Popis vlastní metody digitální zvukové steganografie}
 \label{sec:own-method-proposal}
 
-\todo{popis vlastní metody}
+Princip mnou navrhované metody je podobný metodě popsané v~\cite{Ramkumar1999},
+kde autoři kódují informaci do modulu (absolutní hodnoty) koeficientů
+Fourierovy transformace obrázku. Rozdíl je ale v~tom, že navrhovaná metoda
+upravuje reálnou část komplexního koeficientu Fourierovy transformace, čímž
+upravuje modul i~fázi. Druhá část této metody je kombinace s~metodou přímého
+rozprostřeného spektra (viz \ref{sub:dsss}). Aby bylo kódování robustnější,
+informační bity jsou nejprve rozprostřeny po celé délce krycího signálu a~poté
+jsou přičteny ke koeficientům Fourierovy transformace krycího signálu. Princip
+kódování je možné vidět v~algoritmu~\ref{alg:own-method-encoding}.
 
-\blindtext
+\begin{algorithm}
+    \SetNlSty{}{}{:}
+    \LinesNumbered
+    \SetAlgoNlRelativeSize{-1}
+    \DontPrintSemicolon
+    \SetInd{0.4em}{1em}
+    \SetNlSkip{0.4em}
+    \SetKwInput{KwIn}{Vstup}
+    \SetKwInput{KwOut}{Výstup}
+    \Indm
+    \KwIn{krycí signál (cover), bity tajné informace (secret), klíč pseudonáhodné sekvence (key)}
+    \KwOut{stego signál (stego)}
+    \Indp
+    \BlankLine
+    \SetInd{1em}{1em}
+    mixer $\gets$ rozprostři\_bity(secret, délka(cover))\;
+    pn $\gets$ vygeneruj\_pseudonáhodnou\_sekvenci\_čipů(key)\;
+    stego $\gets$ IDFT(DFT(cover) + mixer $\times$ pn)\;
+    \KwRet{stego}
+    \caption{Navrhovaná metoda kombinující modifikace Fourierovy transformace
+    a~metodu rozprostřeného spektra.}
+    \label{alg:own-method-encoding}
+\end{algorithm}
 
-\blindtext
+Dekódování této metody probíhá obdobně jako u~metody rozprostřeného spektra. Po
+získání pseudonáhodné sekvence čipů se vypočítá Fourierova transformace stego
+signálu a~rozdělí se na segmenty. Každý segment je korelován s~příslušným
+segmentem pseudonáhodné sekvence. Tento popis je zapsán
+v~algoritmu~\ref{alg:own-method-decoding}.
+
+\begin{algorithm}
+    \SetNlSty{}{}{:}
+    \LinesNumbered
+    \SetAlgoNlRelativeSize{-1}
+    \DontPrintSemicolon
+    \SetInd{0.4em}{1em}
+    \SetNlSkip{0.4em}
+    \SetKwInput{KwIn}{Vstup}
+    \SetKwInput{KwOut}{Výstup}
+    \Indm
+    \KwIn{stego signál (stego), klíč pseudonáhodné sekvence (key), počet bitů tajné informace ($L$)}
+    \KwOut{bity tajné informace (secret)}
+    \Indp
+    \BlankLine
+    \SetInd{1em}{1em}
+    pn $\gets$ vygeneruj\_pseudonáhodnou\_sekvenci\_čipů(key)\;
+    pn $\gets$ rozděl\_signál\_na\_segmenty(pn, $L$)\;
+    segmenty $\gets$ rozděl\_signál\_na\_segmenty(DFT(stego), $L$)\;
+    \For{$n = 1$ do $L$}{
+        korelace $\gets$ sečti(segmenty[n] $\times$ pn[n])\;
+        \eIf{korelace > 0}{
+            secret[n] $\gets$ 1\;
+        }{
+            secret[n] $\gets$ 0\;
+        }
+    }
+    \KwRet{secret}
+    \caption{Dekódování navrhované metody.}
+    \label{alg:own-method-decoding}
+\end{algorithm}
 
 
 \definecolor{backcolor}{rgb}{0.95,0.95,0.92}
