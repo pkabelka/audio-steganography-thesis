@@ -29,8 +29,8 @@
      inkscape:document-units="mm"
      showgrid="true"
      inkscape:zoom="2.5247521"
-     inkscape:cx="202.79218"
-     inkscape:cy="179.22551"
+     inkscape:cx="140.40983"
+     inkscape:cy="148.3314"
      inkscape:window-width="2560"
      inkscape:window-height="1382"
      inkscape:window-x="1920"
@@ -1006,25 +1006,25 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88056px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;writing-mode:tb-rl;direction:ltr;text-orientation:upright;text-anchor:middle;fill:none;stroke:#000000;stroke-width:0.264999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
-       x="14.123321"
-       y="32.961193"
+       x="12.709813"
+       y="32.809525"
        id="text24934"><tspan
          sodipodi:role="line"
          id="tspan24932"
          style="writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.265"
-         x="14.123321"
-         y="32.961193">MSB</tspan></text>
+         x="12.709813"
+         y="32.809525">MSB</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88056px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;writing-mode:tb-rl;direction:ltr;text-orientation:upright;text-anchor:middle;fill:none;stroke:#000000;stroke-width:0.264999;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
-       x="14.966687"
-       y="65.961197"
+       x="12"
+       y="66"
        id="text25017"><tspan
          sodipodi:role="line"
          id="tspan25015"
          style="writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.265"
-         x="14.966687"
-         y="65.961197">LSB</tspan></text>
+         x="12"
+         y="66">LSB</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#0671ff;stroke-width:0.264999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.843137;paint-order:normal"
        d="m 20,18 c 0,0 1,-8 4,-5 3,3 9,7 10,5 1,-2 1,-8 2,-6 0.999999,2 0.999999,6 3,5 1.999998,-1 2.999999,-5 4,-5 1,0 3,2 3,4 0,2 5,2 6,1 1.000001,-1 1.000001,-6 2.999999,-5 2.000002,1 1.000001,3 2.000002,5 0.999998,2 2.999999,0 4,-1 0.999998,-1 1.999998,-4 3.999999,-3 1.999999,1 0.999998,5 3,5 1.999998,0 4,-3 5,-4 0.999998,-1 2.999999,-1 4,0 0.999998,1 0.999998,7 4.999998,4 4,-3 3.000002,-7 5,-5 2.000002,2 5.000001,4 7,3 C 96,15 97,13 98,14 c 1,1 2,3 2,3"
@@ -1442,6 +1442,42 @@
        xlink:href="#Mail"
        style="fill:#000000;stroke:#000000"
        id="use40499"
-       transform="matrix(0.10252798,0,0,0.10252798,11.745793,74.180128)" />
+       transform="matrix(0.10252798,0,0,0.10252798,8.3089927,74.20576)" />
+    <g
+       id="g9082"
+       transform="matrix(0.34125164,0,0,0.34125164,-30.431983,7.0831195)"
+       inkscape:label="speaker">
+      <g
+         id="use6282"
+         style="fill:#000000;stroke:#000000"
+         transform="matrix(0,-0.26458333,0.26458333,0,112.89833,34.520208)">
+        <title
+           id="title8397">Amphitheatre</title>
+        <path
+           d="m 51.1,34.4 a 27,27 0 0 1 -30.2,0"
+           style="fill:none;stroke-width:5.5"
+           id="path8403" />
+        <path
+           d="m 57.3,43.5 a 38,38 0 0 1 -42.6,0"
+           style="fill:none;stroke-width:5.5"
+           id="path8405" />
+        <path
+           d="m 63.4,52.6 a 49,49 0 0 1 -54.8,0"
+           style="fill:none;stroke-width:5.5"
+           id="path8407" />
+      </g>
+      <path
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264999;stroke-miterlimit:1.5;stroke-opacity:0.843137"
+         d="m 120,20 v 10 l -3,-3 v -4 z"
+         id="path8348"
+         sodipodi:nodetypes="ccccc" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264999;stroke-miterlimit:1.5;stroke-opacity:0.843137"
+         id="rect9073"
+         width="3"
+         height="4"
+         x="114"
+         y="22.999998" />
+    </g>
   </g>
 </svg>
