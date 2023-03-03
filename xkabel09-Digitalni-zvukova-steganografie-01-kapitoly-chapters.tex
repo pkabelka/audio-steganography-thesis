@@ -1306,22 +1306,40 @@ zapsán v~algoritmu~\ref{alg:own-method-decoding}.
 \chapter{Realizace systému}
 \label{cha:implementation}
 
-\todo{popis kapitoly implementace}
-
-\blindtext
+V~této kapitole bude popsána konkrétní struktura modulů a~tříd, tak jak jsou
+v~řešení implementovány. Bude popsáno jak je dosaženo polymorfizmu pomocí
+společného rozhraní metod. Budou také popsány oba vestavěné programy a~poté
+budou popsány implementace jednotlivých metod v~knihovně.
 
 \section{Struktura modulů knihovny a~programu}
 \label{sec:modules}
 
-\todo{popis modulů knihovny}
-\blindtext
+Řešení je rozděleno do několika modulů a~balíčků, které plní specifickou
+činnost. Kořenovém balíčku se nachází následující balíčky:
 
-\blindtext
+\begin{itemize}
+    \item \texttt{cli} -- obsahuje moduly týkající se vestavěného programu pro
+        individuální spouštění,
+    \item \texttt{methods} -- obsahuje moduly jednotlivých steganografických
+        metod a~také balíček s~jejich automatickými testy,
+    \item \texttt{tests} -- obsahuje automatické testy pro moduly v~kořenovém
+        balíčku.
+\end{itemize}
 
-\subsection*{Implementace fasády}
-\label{sub:facade-implementation}
+V~kořenovém balíčku se nacházejí moduly společné pro ostatní balíčky. Tyto
+moduly jsou:
 
-\blindtext
+\begin{itemize}
+    \item \texttt{audio\_utils} -- obsahuje pomocné funkce pro práci se signály,
+        nejdůležitější funkcí je \texttt{split\_to\_n\_segments}, která rozdělí
+        pole na segmenty s~požadovanou délkou,
+    \item \texttt{stat\_utils} -- obsahuje implementované statistické funkce
+        popsané v~příloze \ref{cha:statistical-functions},
+    \item \texttt{exceptions} -- obsahuje vlastní výjimky použité v~knihovně
+        a~programu,
+    \item \texttt{tests\_common} -- obsahuje automatizované testy společné pro
+        všechny metody.
+\end{itemize}
 
 \subsection*{Implementace vestavěného programu}
 \label{sub:tui-implementation}
@@ -1332,6 +1350,25 @@ zapsán v~algoritmu~\ref{alg:own-method-decoding}.
 \label{ssub:tui-arguments}
 
 \blindtext
+
+Po vyhodnocení zadaných parametrů se spustí fasáda s~vybranou metodou
+a~parametry.
+
+\subsubsection*{Implementace fasády}
+\label{ssub:facade-implementation}
+
+Třída \texttt{MethodFacade} se nachází v~modulu \texttt{cli/method\_facade}
+a~jejím účelem je abstrakce některých činností při použití vestavěného
+programu. Ze zadaných argumentů připraví fasáda data pro kódování či dekódování
+na základě zvoleného módu. Přípravou dat se myslí načtení dat z~\textit{WAV}
+souboru do \textit{NumPy} \texttt{NDArray} pole pomocí funkce
+\texttt{scipy.io.wavfile.read}. V~případě kódování je dalším krokem přípravy je
+načtení ukrývaných dat do pole typu \texttt{uint8}, které bude obsahovat
+informační bity. Tento převod je proveden načtením kódovaných dat jako pole
+bajtů a~poté převedením na jednotlivé bity.
+
+Po přípravě dat je možné použít funkce \texttt{encode} a~\texttt{decode}, které
+předají jejich parametry stejnojmenným funkcím instance vybrané metody.
 
 \subsection*{Implementace programu pro ověření vlastností metod}
 \label{sub:tester-implementation}
