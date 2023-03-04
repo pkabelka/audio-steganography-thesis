@@ -55,14 +55,14 @@ Původ této praktiky se vrací až do antiky -- vyrytím písma do destičky, k
 se následně zalila voskem; ve středověké Evropě položením papíru nebo dřevěné
 šablony na nevinně vypadající text, čímž zvýrazní tajnou zprávu. Steganografie
 se tedy v~různých podobách praktikovala po tisíciletí až do dnešní počítačové
-doby \cite{Anderson1998}, kdy je považována za podobor zabezpečení dat
+doby~\cite{Anderson1998}, kdy je považována za podobor zabezpečení dat
 \cite{Djebbar2012} a~více se přesouvá od tradiční k~digitální steganografii.
 
 V~dnešním světě se stalo zabezpečení dat zájmem všech a~steganografie jako
 proces ukrývání zprávy do jiného typu média slouží k~ochraně před
-neautorizovanými či neoprávněnými příjemci \cite{Dutta2020}. Médium do kterého
+neautorizovanými či neoprávněnými příjemci~\cite{Dutta2020}. Médium do kterého
 je informace skrývána se nazývá nosič a~může být různých typů, jako například
-obrázek, audio, video, IP datagram \cite{Dutta2020}, text a~mnoho dalších.
+obrázek, audio, video, IP datagram~\cite{Dutta2020}, text a~mnoho dalších.
 Hierarchickou klasifikaci je možné vidět na obrázku
 \ref{pic:steganography-classification}.
 
@@ -91,9 +91,9 @@ slyšitelné člověkem, která se pohybuje mezi 10\,Hz a~20\,000\,Hz
 počet hodnot -- a~je tedy definován všude. Aby bylo možné se zvukem pracovat
 digitálně, je nutné převést jej do diskrétní formy, která má konečný počet
 hodnot. Toho je možné docílit vzorkováním signálu na určité vzorkovací
-frekvenci a~poté kvantováním \cite{Cernocky2021}. Posledním krokem pro převod
+frekvenci a~poté kvantováním~\cite{Cernocky2021}. Posledním krokem pro převod
 spojitého signálu na digitální, je kódování. Tyto tři procesy tvoří systém,
-který se nazývá \textit{pulzně-kódová modulace}~(PCM) \cite{Oliver1948}, který
+který se nazývá \textit{pulzně-kódová modulace}~(PCM)~\cite{Oliver1948}, který
 je neopominutelným základem pro práci s~digitálním audiem.
 
 \subsection*{Vzorkování}
@@ -106,7 +106,7 @@ spojitým a~navzorkovaným signálem je vidět na
 obrázku~\ref{pic:continuous-vs-sampled-signal}. Aby nedošlo ke ztrátě
 informace, je nutné dodržet Nyquist-Shannonův vzorkovací teorém, podle kterého
 musí být nejvyšší frekvence přítomná v~signálu maximálně polovina vzorkovací
-frekvence \cite{Shannon1949}. Nejčastěji používané vzorkovací frekvence jsou
+frekvence~\cite{Shannon1949}. Nejčastěji používané vzorkovací frekvence jsou
 44\,100\,Hz a~48\,000\,Hz. Nejvyšší frekvence, které lze na těchto vzorkovacích
 frekvencích reprezentovat bez ztráty informace jsou příslušně 22\,050\,Hz
 a~24\,000\,Hz.
@@ -173,7 +173,7 @@ Pro převedení spojitého signálu na digitální nestačí pouze vzorkování.
 Vzorkování diskretizuje časovou komponentu spojitého signálu na pevně daný
 počet vzorků za jednotku času, ale nijak neovlivňuje hodnoty, kterých
 jednotlivé vzorky mohou nabývat. Kvantování je proces diskretizace hodnot
-zaokrouhlováním k~předem určeným hodnotám \cite{Oliver1948}. Hodnoty nebo také
+zaokrouhlováním k~předem určeným hodnotám~\cite{Oliver1948}. Hodnoty nebo také
 hladiny, ke kterým se zaokrouhluje jsou dané počtem použitých bitů. Vyšší počet
 bitů vede ke zlepšení kvality, protože zaokrouhlené hodnoty jsou blíže jejich
 původním. Tento jev lze vidět na obrázku~\ref{pic:quantization}. Proces
@@ -243,7 +243,7 @@ Nejjednodušší způsob pro zakódování kvantovaných hodnot je převedením 
 binární čísla. Jednotlivé jedničky a~nuly pak mohou při přenosu reprezentovat
 přítomnost pulzu~(1) a~nepřítomnost pulzu~(0). Tento systém, který obsahuje
 vzorkování, kvantování a~kódování, se nazývá \textit{pulzně-kódová
-modulace}~(PCM) \cite{Oliver1948}. Pulzně-kódová modulace je důležitá obecně
+modulace}~(PCM)~\cite{Oliver1948}. Pulzně-kódová modulace je důležitá obecně
 pro zpracování digitálních signálů, ale i~pro účely této práce, protože ji
 využívá zvukový formát \textit{Waveform Audio File Format}, který je popsán
 v~následující podsekci.
@@ -283,12 +283,12 @@ digitální audio vytvořený firmami Microsoft a~IBM. Je široce rozšířený 
 k~němu potřeba žádná licence. Tento formát je nástavbou generického
 multimediálního formátu \textit{Resource Interchange File Format} (RIFF).
 Konkrétní typ pulzně-kódové modulace, který WAV formát nejčastěji používá je
-lineární pulzně-kódová modulace (LPCM) \cite{RFC2361} -- kvantovací úrovně mají
-mezi sebou rovnoměrné rozestupy \cite{LPCM}. Může ale používat i~jiné typy
+lineární pulzně-kódová modulace (LPCM)~\cite{RFC2361} -- kvantovací úrovně mají
+mezi sebou rovnoměrné rozestupy~\cite{LPCM}. Může ale používat i~jiné typy
 kódování, jako \textit{IEEE Float} nebo komprimované \textmu-Law a~A-Law
 \cite{RFC2361}.
 
-V~roce 2020 provedli AlSabhany, Ali, Ridzuan a~další \cite{AlSabhany2020}
+V~roce 2020 provedli AlSabhany, Ali, Ridzuan a~další~\cite{AlSabhany2020}
 systematické srovnání 134~publikací zabývající se digitální zvukovou
 steganografií a~zjistili, že 84\%~z~nich používalo formát WAV jako nosič. Za
 účelem jednoduššího srovnávání metod bude tato práce pracovat pouze s~formátem
@@ -303,7 +303,7 @@ s~konvenčními bezpečnostními technikami mohly vést k~lepším výsledkům
 \cite{Djebbar2012}. Jedna z~konvenčních bezpečnostních technik kombinovaných se
 steganografií je kryptografie. Zatím co steganografie se zabývá ukrýváním
 informace, hlavním cílem kryptografie je převést zprávu do formy, která je pro
-neoprávněné osoby nečitelná \cite{AlSabhany2020}. I~když se tedy někdo pokusí
+neoprávněné osoby nečitelná~\cite{AlSabhany2020}. I~když se tedy někdo pokusí
 analyzovat komunikaci pro přítomnost utajené zprávy, není možné obsah rozeznat
 od náhodného šumu.
 
@@ -315,16 +315,16 @@ složkami~\cite{Dutta2020}.
 
 Dalším často používaným pojmem spojeným se steganografií je vodoznak. Vodoznaky
 se používají pro vložení informací o~původu, vlastnictví, či autorských právech
-dat \cite{Djebbar2012}\cite{Dutta2020}\cite{Swanson1998}. Hlavní vlastností
+dat~\cite{Djebbar2012}\cite{Dutta2020}\cite{Swanson1998}. Hlavní vlastností
 vodoznaku je, že by nemělo být možné jej odstranit bez poškození nosného média.
 Proto u~audia nesmí být součástí hlavičky souboru nebo být přenášen zvlášť, ale
 být jeho součástí a~musí být nedetekovatelný. Musí být také odolný proti
 transformaci signálu například při přenosu audia nebo převedení do formátu,
-který používá ztrátovou kompresi \cite{Swanson1998}. Velice známým příkladem
+který používá ztrátovou kompresi~\cite{Swanson1998}. Velice známým příkladem
 jsou vodoznaky na bankovkách nebo \textit{žluté tečky} v~tiskárnové
 steganografii -- známé také jako \textit{yellow dots} -- které barevné tiskárny
 tisknou na každý list. Tyto tečky obsahují zakódované sériové číslo tiskárny
-a~čas tisku \cite{Dutta2020}. Pokud je vodoznak použit pro ochranu
+a~čas tisku~\cite{Dutta2020}. Pokud je vodoznak použit pro ochranu
 intelektuálního vlastnictví, pak se ještě rozlišuje mezi vodoznakem a~otiskem.
 Vodoznakem se značí všechny objekty stejně, ale otisk se může měnit například
 pro každého zákazníka pro jeho pozdější identifikaci. To může být užitečné
@@ -341,9 +341,9 @@ steganografických publikací se shodují, že nejvýznamnějšími vlastnostmi 
 \cite{AlSabhany2020}\cite{Djebbar2012}\cite{Dutta2020}. Tyto tři vlastnosti je
 možné si představit jako trojúhelník s~každou vlastností v~jednom rohu, jak je
 vidět na obrázku~\ref{pic:method-property-triangle}. Důvodem je fakt, že není
-možné dosáhnout vysoké úrovně všech tří vlastností zároveň \cite{Dutta2020}.
+možné dosáhnout vysoké úrovně všech tří vlastností zároveň~\cite{Dutta2020}.
 Zvýšení kvality jedné z~vlastností vždy vede ke snížení kvality alespoň jedné
-zbývající \cite{AlSabhany2020}\cite{Djebbar2012}. V~následujících podsekcích
+zbývající~\cite{AlSabhany2020}\cite{Djebbar2012}. V~následujících podsekcích
 budou popsány jednotlivé vlastnosti podrobněji. Bude také několikrát použit
 pojem \textit{stego soubor}, což je soubor, který vznikne použitím určité
 steganografické metody pro ukrytí zvolené informace do krycího souboru.
@@ -365,9 +365,9 @@ steganografické metody pro ukrytí zvolené informace do krycího souboru.
 \label{sub:robustness}
 
 Robustnost indikuje odolnost metody proti úmyslným či neúmyslným modifikacím
-skrytých informací \cite{AlSabhany2020}\cite{Dutta2020}. Míru robustnosti lze
+skrytých informací~\cite{AlSabhany2020}\cite{Dutta2020}. Míru robustnosti lze
 hodnotit na základě množství skryté informace, která zůstane nezměněná po
-různých úpravách stego souboru. Podle \cite{Djebbar2012} mohou tyto modifikace
+různých úpravách stego souboru. Podle~\cite{Djebbar2012} mohou tyto modifikace
 být:
 
 \begin{itemize}
@@ -387,13 +387,13 @@ být:
 Robustnost metody je obzvlášť důležitá pro tvorbu vodoznaku popsaného
 v~podsekci~\ref{sec:digital-audio-steganography}. Vodoznak musí být schopen
 odolat výše zmíněným modifikacím, aby bylo možné správně identifikovat jeho
-vlastníka \cite{Swanson1998}.
+vlastníka~\cite{Swanson1998}.
 
 \subsection*{Kapacita}
 \label{sub:capacity}
 
 Kapacita udává množství informace, které je možné do nosiče zakódovat a~úspěšně
-dekódovat \cite{Dutta2020}\cite{Djebbar2012}. Kapacitu metody je možné vyjádřit
+dekódovat~\cite{Dutta2020}\cite{Djebbar2012}. Kapacitu metody je možné vyjádřit
 bitech za sekundu ($bps$ nebo také $b/s$) nebo jako procentuální poměr
 velikosti skryté informace k~velikosti nosiče
 \cite{AlSabhany2020}\cite{Dutta2020}. Výhodou zvukových steganografických metod
@@ -405,12 +405,12 @@ je možné ukládat informace do nevyužitých polí v~hlavičkách souborů
 \label{sub:imperceptibility}
 
 Tato vlastnost vyjadřuje podobnost stego souboru a~krycího souboru a~je spojená
-s~detekovatelností přítomnosti skryté informace \cite{AlSabhany2020}. Úroveň
+s~detekovatelností přítomnosti skryté informace~\cite{AlSabhany2020}. Úroveň
 nepostřehnutelnosti je možné měřit pomocí \textit{perceptual evaluation of
 speech quality} (PESQ) testu. Hodnota~4,5 znamená, že naměřený stego soubor je
 totožný s~krycím souborem. Hodnota~1 indikuje maximální degradaci kvality.
 Další způsob pro porovnání rozdílů dvou signálů je \textit{segmentový poměr
-signálu k~šumu} (SegSNR) \cite{Djebbar2012}. V~již zmíněné studii z~roku~2020
+signálu k~šumu} (SegSNR)~\cite{Djebbar2012}. V~již zmíněné studii z~roku~2020
 \cite{AlSabhany2020} zjistili autoři, že nejpoužívanější metodou napříč
 analyzovanými publikacemi byl globální \textit{poměr signálu k~šumu} (SNR)
 a~dále \textit{špičkový poměr signálu k~šumu} (PSNR).
@@ -419,7 +419,7 @@ Zvukové steganografické metody mají tu nevýhodu, že lidské zvukové ústro
 velmi citlivé. Přesto má nedostatky, které je možné využít, jako například
 maskování tónu, který následuje po hlasitém impulzu. Dalším příkladem je
 maskování informace, která je zakódovaná ve frekvenci zvuku, který se nachází
-poblíž \cite{Dutta2020}.
+poblíž~\cite{Dutta2020}.
 
 \section{Existující řešení}
 \label{sec:existing-methods}
@@ -437,7 +437,7 @@ vlastností.
 Metoda využívající nahrazení nejméně významného bitu (anglicky \textit{least
 significant bit substitution}, dále jen LSB) je nejjednodušší metodou pro
 vkládání informací do nosiče. Principem této metody je nahrazení nejméně
-významného bitu v~nosiči za bit ukrývané informace \cite{Dutta2020}. Princip
+významného bitu v~nosiči za bit ukrývané informace~\cite{Dutta2020}. Princip
 kódování pomocí této metody je vizualizován na obrázku~\ref{pic:lsb-diagram}.
 
 \begin{figure}[hbt]
@@ -448,27 +448,27 @@ kódování pomocí této metody je vizualizován na obrázku~\ref{pic:lsb-diagr
     \label{pic:lsb-diagram}
 \end{figure}
 
-Tato metoda se vyznačuje velmi vysokou kapacitu \cite{Djebbar2012}
+Tato metoda se vyznačuje velmi vysokou kapacitu~\cite{Djebbar2012}
 a~jednoduchou implementací. Kapacita této metody je přímo úměrná počtu
 a~bitovou hloubkou vzorků nosiče. Je také vhodná pro kombinaci s~dalšími
-steganografickými technikami \cite{Djebbar2012} jako je šifrování nebo
+steganografickými technikami~\cite{Djebbar2012} jako je šifrování nebo
 komprese. Hlavní nevýhodou této metody je její nízká robustnost. Informace
 ukryté LSB metodou je velmi jednoduché poškodit triviálními úpravami stego
 souboru jako je například zesílení, filtrace, přidání šumu, ztrátová komprese
 \cite{Djebbar2012}, převzorkování nebo překvantování. Robustnost této metody
 a~odolnost proti některým z~těchto modifikací je možné zvýšit vkládáním do jiné
-bitové úrovně než je poslední \cite{Djebbar2012}.
+bitové úrovně než je poslední~\cite{Djebbar2012}.
 
 Nemodifikovaná LSB metoda není příliš bezpečná, neboť je možné jednoduše vyčíst
-hodnoty určité bitové úrovně a~tím odhalit ukryté informace \cite{Djebbar2012}.
+hodnoty určité bitové úrovně a~tím odhalit ukryté informace~\cite{Djebbar2012}.
 Pro lepší ukrytí informací je možné ukládat bity do náhodných vzorků
-a~náhodných úrovní v~nich \cite{Dutta2020}. Bezpečnost LSB metody je možné
+a~náhodných úrovní v~nich~\cite{Dutta2020}. Bezpečnost LSB metody je možné
 zvýšit šifrováním ukrývaných informací. Ukrývaná data je vhodné nejprve
 zkomprimovat například Lempel-Ziv-Welch (LZW) kompresí. Poté je možné je
 zašifrovat vybraným šifrovacím algoritmem. Vhodným algoritmem pro symetrické
 šifrování je \textit{Advanced Encryption Standard} (AES, česky standard
 pokročilého šifrování). Pro asymetrické šifrování je vhodný algoritmus
-Rivest-Shamir-Adleman (RSA) \cite{Dutta2020}.
+Rivest-Shamir-Adleman (RSA)~\cite{Dutta2020}.
 
 Kapacitu LSB metody je možné zvýšit například ukládáním do více bitových úrovní
 za sebou v~jednotlivých vzorcích. Tato modifikace však produkuje šum, který je
@@ -477,25 +477,25 @@ do 4~nejnižších bitových úrovní pomocí algoritmu \textit{nahrazení nejme
 chybou} (anglicky minimum-error replacement) a~rozprostření chyby do
 následujících 4~vzorků. Tato modifikace zvyšuje kapacitu LSB metody o~33\%
 zatímco poměr signálu k~šumu je nižší než u~nemodifikované metody se stejným
-počtem použitých bitů \cite{Cvejic2002}.
+počtem použitých bitů~\cite{Cvejic2002}.
 
 \subsection*{Metoda skrývání pomocí ozvěny}
 \label{sub:echo-hiding}
 
 Steganografická metoda ukrývání informací pomocí ozvěny (anglicky echo hiding)
-funguje na principu přidání ozvěny do krycího média \cite{Djebbar2012}. Tato
+funguje na principu přidání ozvěny do krycího média~\cite{Djebbar2012}. Tato
 metoda má vyšší robustnost vůči filtrování, převzorkování, či ztrátové
 kompresi. Lidské sluchové ústrojí má široký dynamických rozsah výkonu
 a~frekvence, ale přesto je možné využít nedostatků, jako je maskování tichých
-zvuků hlasitějšími \cite{Gruhl1996}. Nevýhodou této metody je zkreslení
+zvuků hlasitějšími~\cite{Gruhl1996}. Nevýhodou této metody je zkreslení
 způsobené přidáním ozvěny do krycího média, které je srovnatelné s~rozdílem
 poslechu audia ve sluchátkách a~přes reproduktory, kde se zvuk odráží od stěn
 v~místnosti. Při vhodném nastavení parametrů je možné docílit výborné
-nepostřehnutelnosti \cite{Gruhl1996}. Tato metoda má dostatečnou míru
+nepostřehnutelnosti~\cite{Gruhl1996}. Tato metoda má dostatečnou míru
 robustnosti a~je tedy vhodná pro zakódování vodoznaku do krycího média. Vhodné
 nastavení parametrů docílí velmi nízké pravděpodobnosti odhalení či odstranění
-vodoznaku neoprávněnou osobou \cite{Gruhl1996}. Po přidání ozvěny si stego
-médium udrží stejné statistické a~percepční vlastnosti \cite{Djebbar2012}.
+vodoznaku neoprávněnou osobou~\cite{Gruhl1996}. Po přidání ozvěny si stego
+médium udrží stejné statistické a~percepční vlastnosti~\cite{Djebbar2012}.
 
 Pro implementaci této metody se krycí médium rozdělí na segmenty do kterých se
 bity ukrývané informace zakódují vytvořením ozvěny daného segmentu. Pro
@@ -504,9 +504,9 @@ a~logickou~0. Kódování probíhá konvolucí segmentu a~konvolučním jádrem 
 příslušný bit. Jednotlivé segmenty se následně spojí a~přidají ke krycímu médiu
 \cite{Gruhl1996}. V~praxi je ale výhodnější provést konvoluci krycího média
 s~oběma konvolučními jádry a~použít bity ukrývané informace jako masku, která
-určí které segmenty ponechat a~přidat ke krycímu médiu \cite{Gruhl1996}. Pro
+určí které segmenty ponechat a~přidat ke krycímu médiu~\cite{Gruhl1996}. Pro
 snížení míry zkreslení na rozmezí segmentů je vhodné vyhladit změnu mezi
-hodnotou~0~a~1 \cite{Tekeli2017}. Příklad ozvěn, které vniknou použitím masky
+hodnotou~0~a~1~\cite{Tekeli2017}. Příklad ozvěn, které vniknou použitím masky
 bez vyhlazení jsou na obrázku~\ref{pic:echo-single-kernel-echo}. Příklad ozvěn,
 které vniknou použitím masky s~vyhlazením jsou na obrázku
 \ref{pic:echo-single-kernel-echo-smooth}.
@@ -572,7 +572,7 @@ Po výpočtu cepstra segmentu je možné zjistit hodnotu zakódovaného bitu
 kontrolou, která hodnota na pozici $d_0$ a~$d_1$ je vyšší. Pokud je hodnota
 $C(d_0)$ vyšší než $C(d_1)$, pak je hodnota bitu daného segmentu logická~0.
 A~pokud je hodnota $C(d_1)$ vyšší než $C(d_0)$, pak je hodnota bitu daného
-segmentu logická~1 \cite{Gruhl1996}. Příklad cepstra segmentu včetně špiček na
+segmentu logická~1~\cite{Gruhl1996}. Příklad cepstra segmentu včetně špiček na
 indexech zpoždění 100 a~110 lze vidět na obrázku~\ref{pic:segment-cepstrum}.
 
 \begin{figure}[hbt]
@@ -688,13 +688,13 @@ Nevýhodou při dekódování této metody je například falešná detekce, pok
 zvuku doopravdy vyskytuje ozvěna. Dále může být těžké detekovat informaci pokud
 je amplituda ozvěny příliš malá a~špičky na indexech zpoždění budou tudíž
 splývat s~okolím. Zesílení amplitudy zlepší míru detekce, ale zvýší také
-náchylnost na neoprávněnou detekci \cite{Kim2003}.
+náchylnost na neoprávněnou detekci~\cite{Kim2003}.
 
 \subsubsection*{Modifikace metody skrývání pomocí ozvěny}
 \label{ssub:echo-modifications}
 
 Pro zvýšení robustnosti a~nepostřehnutelnosti použili autoři Oh, Seok, Hong
-a~Youn \cite{Oh2001} konvoluční jádro, které nejprve vytvoří ozvěnu se zápornou
+a~Youn~\cite{Oh2001} konvoluční jádro, které nejprve vytvoří ozvěnu se zápornou
 amplitudou a~poté s~kladnou (anglicky bipolar echo). Zjistili, že tato
 modifikace má vyšší míru robustnosti i~po překódování do ztrátového formátu
 MP3. Dekódování této modifikace spočívá v~detekování špiček v~autokorelaci
@@ -706,7 +706,7 @@ definováno rovnicí~\ref{eq:power-cepstrum}.
     C_p = \mathcal{F}^-1(\log{|\mathcal{F}(x(t))|}^2)
 \end{equation}
 
-O~2~roky později publikovali autoři Kim a~Choi \cite{Kim2003} způsob jak znovu
+O~2~roky později publikovali autoři Kim a~Choi~\cite{Kim2003} způsob jak znovu
 zvýšit robustnost pomocí konvolučního jádra se dvěma ozvěnami posunutými vpřed
 i~vzad (anglicky backward-forward echo). Později publikovali autoři Wu a~Chen
 \cite{Wu2006} modifikaci ozvěnové metody kombinující již popsané modifikace. Ta
@@ -729,14 +729,14 @@ rozprostřené spektrum (anglicky \textit{direct sequence spread spectrum}).
 
 Kódování začíná převedením ukrývaných dat z~binárního formátu na čipy. Čip je
 impulz, který používá hodnotu \textit{-1} místo binární hodnoty \textit{0}
-a~hodnotu \textit{1} používá bez změny \cite{Kuznetsov2022}. Poté je každý bit
+a~hodnotu \textit{1} používá bez změny~\cite{Kuznetsov2022}. Poté je každý bit
 vynásoben pseudonáhodnou čipovou sekvencí $n$-krát, čímž dojde k~rozprostření
 informačních bitů přes více přenesených bitů. Zvýšení počtu kopií bitů zvýší
-robustnost a~zároveň sníží kapacitu této metody \cite{AlSabhany2020}. Výsledné
+robustnost a~zároveň sníží kapacitu této metody~\cite{AlSabhany2020}. Výsledné
 stego médium vznikne přidáním vynásobených hodnot ke krycímu médiu
 \cite{Kuznetsov2022}. Informace zakódovaná touto metodou je odolná proti šumu,
 protože obsahuje přebytečné kopie bitů. V~případě poškození části stego média
-je možné z~přebytečných bitů obnovit ukryté informace \cite{Djebbar2012}.
+je možné z~přebytečných bitů obnovit ukryté informace~\cite{Djebbar2012}.
 Popsaný princip kódování je možné vidět na obrázku~\ref{pic:dsss-spreading},
 kde se ke krycímu signálu přidají rozprostřené bity informace vynásobené
 pseudonáhodnou sekvencí čipů.
@@ -753,11 +753,11 @@ pseudonáhodnou sekvencí čipů.
 Tato metoda je dostatečně robustní pro přidání více vodoznaků. Například pro
 přidání více autorů k~hudební skladbě. Při detekci konkrétního vodoznaku jsou
 ostatní považovány jako šum. Dále je tato metoda dostatečně robustní vůči
-přidanému šumu a~překódování do ztrátového formátu \cite{Boney1996}. Aby byl
+přidanému šumu a~překódování do ztrátového formátu~\cite{Boney1996}. Aby byl
 náhodný šum přidaný touto metodou neslyšitelný, je nutné nastavit při kódování
 amplitudu rozprostřené sekvence zhruba na 0,5\% dynamického rozsahu krycího
-média \cite{Bender1996}. Pro kvalitní dekódování má tato metoda kapacitu 4~bity
-za sekundu \cite{Bender1996}.
+média~\cite{Bender1996}. Pro kvalitní dekódování má tato metoda kapacitu 4~bity
+za sekundu~\cite{Bender1996}.
 
 Pro dekódování informačních bitů je nezbytné, aby příjemce měl stejnou
 pseudonáhodnou sekvenci čipů, která byla použita k~zakódování. Pro dekódování
@@ -786,7 +786,7 @@ upravena tak, aby byla zachována relativní fáze mezi segmenty. Metoda fázov�
 kódování dosahuje nejlepších hodnot poměru signálu k~šumu. Avšak příliš velká
 změna fáze frekvenční komponenty vede k~rozptylu fáze a~tím ke zhoršení kvality
 zvuku. Dokud jsou ale změny fáze dostatečně malé, což je subjektivní, pak je
-možné dosáhnout neslyšitelného kódování \cite{Bender1996}.
+možné dosáhnout neslyšitelného kódování~\cite{Bender1996}.
 
 Kódování pomocí této metody začíná rozdělením krycího audia na segmenty
 s~délkou počtu ukrývaných bitů. Poté je každý segment převeden do frekvenční
@@ -794,7 +794,7 @@ domény pomocí Fourierovy transformace. Z~transformovaného signálu je možné
 vytvořit matici fází -- značeno $\phi_n(\omega_k)$ -- a~matici amplitud
 segmentů -- značeno $A_n(\omega_k)$. Písmeno $n$ značí index segmentu a~písmeno
 $k$ značí index vzorku uvnitř segmentu. Poté se vypočítá rozdíl fází segmentů
-napříč řádky \cite{Bender1996}. Matematický zápis rozdílu fází je v~rovnici
+napříč řádky~\cite{Bender1996}. Matematický zápis rozdílu fází je v~rovnici
 \ref{eq:phase-diff}.
 
 \begin{equation}
@@ -807,7 +807,7 @@ reprezentující hodnotu~0 a~$-\frac{\pi}{2}$ reprezentující hodnotu~1. Touto
 sekvencí se nahradí první segment v~matici fází. Poté se postupně počítají nové
 fáze z~původní fázové matice a~matice rozdílů fází. Matematický zápis je
 v~rovnici~\ref{eq:new-phases}, kde $\phi'$ značí novou matici fází a~$N$
-značí index posledního segmentu \cite{Bender1996}.
+značí index posledního segmentu~\cite{Bender1996}.
 
 \begin{equation}
     \label{eq:new-phases}
@@ -822,7 +822,7 @@ značí index posledního segmentu \cite{Bender1996}.
 \end{equation}
 
 \noindent Na závěr je možné sestavit stego signál z~amplitud a~nových fází
-pomocí inverzní Fourierovy transformace \cite{Bender1996}. Z~obou matic je
+pomocí inverzní Fourierovy transformace~\cite{Bender1996}. Z~obou matic je
 potřeba zkombinovat hodnoty amplitud a~fází v~jednotlivých segmentech pro
 vytvoření komplexních čísel v~exponenciálním tvaru. Na každý segment se poté
 aplikuje inverzní Fourierova transformace. Tyto segmenty se znovu spojí
@@ -832,7 +832,7 @@ při kódování.
 
 Kapacita této metody se pohybuje v~rozsahu 8~bitů za sekundu až 32~bitů za
 sekundu podle množství šumu přítomného v~krycím médiu. Více šumu vede k~vyšší
-kapacitě \cite{Bender1996}.
+kapacitě~\cite{Bender1996}.
 
 \subsection*{Metoda paritního kódování}
 \label{sub:parity-coding}
@@ -864,7 +864,7 @@ v~časové doméně využívá nutnosti počkat chvíli po zaslechnutí hlasité
 Pro ukrytí nějakého tónu je možné vložit jej do bezprostřední blízkosti
 hlasitého impulzu. Nápodobně, maskování ve frekvenční doméně probíhá vložením
 frekvence, která se nachází v~blízkém okolí nějaké jiné frekvence s~vyšší
-amplitudou \cite{Dutta2020}.
+amplitudou~\cite{Dutta2020}.
 
 Jedna z~metod pracující ve frekvenční doméně je metoda vkládání tónu
 \cite{Dutta2020}. Ta spoléhá na neschopnost vnímání tónu v~přítomnosti mnohem
@@ -884,7 +884,7 @@ kóduje bity \texttt{010}.
 \end{figure}
 
 Dekódování probíhá porovnáním poměrů výkonu segmentu k~výkonu tónu na dané
-frekvenci \cite{Djebbar2012}. Dekódovací pravidlo lze vidět v~rovnici
+frekvenci~\cite{Djebbar2012}. Dekódovací pravidlo lze vidět v~rovnici
 \ref{eq:tone-insertion-decision-rule} kde $b$ značí hodnotu bitu a~výkon
 segmentu je označen jako $P_i$ přičemž $i$ značí index segmentu a~$f_0$~a$f_1$
 značí použité frekvence.
@@ -901,17 +901,17 @@ značí použité frekvence.
 
 Tato metoda má malou kapacitu a~vložené tóny je jednoduché detekovat, proto je
 vhodné použít čtyři a~více párů frekvencí, které se střídají na základě
-určitého klíče \cite{Djebbar2012}.
+určitého klíče~\cite{Djebbar2012}.
 
 \subsection*{Metoda ukrývání v~úsecích ticha}
 \label{sub:hiding-in-silence-intervals}
 
 Tato metoda využívá ke skrývání informací úseky ticha nacházející se
-v~nahrávkách řeči \cite{Djebbar2012}. Pro zakódování informací je nejprve
+v~nahrávkách řeči~\cite{Djebbar2012}. Pro zakódování informací je nejprve
 potřeba najít úseky ticha v~nahrávce. Ty se vyskytují jako posloupné sekvence
 vzorků s~amplitudou nižší než určitá hodnota. Z~nalezených úseků se ponechají
-pouze ty, jejichž délka je větší než minimální délka úseku \cite{Shahreza2008}.
-Autoři \cite{Shahreza2008} zjistili následující optimální hodnoty:
+pouze ty, jejichž délka je větší než minimální délka úseku~\cite{Shahreza2008}.
+Autoři~\cite{Shahreza2008} zjistili následující optimální hodnoty:
 
 \begin{itemize}
     \item maximální amplituda úseku: 15\% maximálního rozsahu signálu,
@@ -923,7 +923,7 @@ Autoři \cite{Shahreza2008} zjistili následující optimální hodnoty:
 Pokud $X$ je kódovaná hodnota, $N$ je počet bitů kódované hodnoty a~$L$ je
 délka konkrétního segmentu, pak pro kódování do konkrétního segmentu se
 vypočítá jeho nová délka $D$, tak aby platil vztah v~rovnici
-\ref{eq:silence-value} \cite{Shahreza2008}.
+\ref{eq:silence-value}~\cite{Shahreza2008}.
 
 \begin{equation}
     \label{eq:silence-value}
@@ -940,13 +940,13 @@ vypočítá jeho nová délka $D$, tak aby platil vztah v~rovnici
 
 \noindent Pokud by byla nová délka $D$ kratší než je minimální stanovená délka
 úseku, pak je potřeba použít jiný úsek. Pro dekódování informace stačí použít
-zmíněný vztah~\ref{eq:silence-value} \cite{Shahreza2008}.
+zmíněný vztah~\ref{eq:silence-value}~\cite{Shahreza2008}.
 
 Nevýhodou této metody je její citlivost na transformaci stego signálu. Změny
 délek úseků ticha povedou k~dekódování špatných hodnot. Pro zvýšení robustnosti
 v~tomto ohledu je možné snížit amplitudu úseků ticha a~zvýšit amplitudu
 okolních úseků, aby nedošlo ke změně délky některého z~úseků například kvůli
-kompresi \cite{Djebbar2012}.
+kompresi~\cite{Djebbar2012}.
 
 \subsection*{Metoda využívající vlnkové transformace}
 \label{sub:wavelet-transform}
@@ -959,26 +959,26 @@ mezi Fourierovou transformací, která frekvencím nepřiřazuje čas. Další
 transformační funkcí je diskrétní kosinová transformace (anglicky
 \textit{discrete cosine transform} -- DCT). Ta není pro účely ukrývání
 informací příliš vhodná, protože zavádí do audia artefakty. Metody
-v~transformační doméně jsou poměrně méně odolné proti šumu \cite{Dutta2020}.
+v~transformační doméně jsou poměrně méně odolné proti šumu~\cite{Dutta2020}.
 
 Pro zakódování informace do nosiče pomocí DWT, nosič rozdělí na segmenty po
 512~vzorcích. Na každý segment je poté pětkrát aplikována dekompozice na
-nízkofrekvenční a~vysokofrekvenční komponenty \cite{Cvejic2002Wavelet}. Každá
+nízkofrekvenční a~vysokofrekvenční komponenty~\cite{Cvejic2002Wavelet}. Každá
 následující dekompozice je aplikována na nízkofrekvenční složku z~předchozí
-úrovně \cite{Prabakaran2012}. Výsledných 512~koeficientů je převedeno na
+úrovně~\cite{Prabakaran2012}. Výsledných 512~koeficientů je převedeno na
 binární hodnoty do jejichž nejméně významných bitů jsou uloženy bity ukrývané
-informace \cite{Cvejic2002Wavelet}. Experimentální výsledky
+informace~\cite{Cvejic2002Wavelet}. Experimentální výsledky
 v~\cite{Cvejic2002Wavelet} ukázaly, že při modifikaci až 7~nejnižších bitů bylo
 téměř nemožné rozeznat rozdíl mezi originální a~upravenou nahrávkou. A~i~při
 modifikaci více úrovní byly výsledky lepší než při použití konvenční metody
 nahrazení nejméně významného bitu popsané v~podsekci~\ref{sub:lsb} s~dvakrát
 menším počtem upravených bitových úrovní. Tato metoda má velmi vysokou kapacitu
 a~je schopna ukrýt až o~220,5\,kb/s více dat než konvenční metoda nahrazení
-nejméně významného bitu \cite{Cvejic2002Wavelet}.
+nejméně významného bitu~\cite{Cvejic2002Wavelet}.
 
 Proces dekódování probíhá podobně jako kódování. Stego signál se rozdělí na
 segmenty, provede se dekompozice a~koeficienty se převedou na binární hodnoty.
-Z~nejnižších bitů je možné vyčíst bity ukryté informace \cite{Pooyan2007}.
+Z~nejnižších bitů je možné vyčíst bity ukryté informace~\cite{Pooyan2007}.
 
 
 \chapter{Analýza a~návrh}
@@ -1154,13 +1154,13 @@ vlastností. Diagram případů užití pro druhý program je na obrázku
 Pro ověření vlastností steganografických metod bude součástí knihovny druhý
 vestavěný program, který bude systematicky testovat jednotlivé vlastnosti každé
 metody. Testování bude probíhat na často používaných datových sadách pro
-digitální zvukovou steganografii. Podle \cite{AlSabhany2020} jsou to tyto
-datové sady: \textit{TIMIT} \cite{Garofolo1993}, \textit{GTZAN}
-\cite{Tzanetakis2001}, \textit{Noizeus} \cite{Hu2006} a~\textit{UrbanSound8K}
+digitální zvukovou steganografii. Podle~\cite{AlSabhany2020} jsou to tyto
+datové sady: \textit{TIMIT}~\cite{Garofolo1993}, \textit{GTZAN}
+\cite{Tzanetakis2001}, \textit{Noizeus}~\cite{Hu2006} a~\textit{UrbanSound8K}
 \cite{Salamon2014}.
 
 Hodnoty jednotlivých vlastností se vyčíslují pomocí statistických funkcí, které
-se často objevovaly v~průzkumu \cite{AlSabhany2020}. Tyto funkce jsou:
+se často objevovaly v~průzkumu~\cite{AlSabhany2020}. Tyto funkce jsou:
 
 \begin{itemize}
     \item poměr signálu k~šumu měřen v~decibelech (anglicky
