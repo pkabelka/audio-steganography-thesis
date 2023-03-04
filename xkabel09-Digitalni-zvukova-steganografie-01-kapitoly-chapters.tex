@@ -1472,7 +1472,38 @@ ukrývané informace.
 \subsection*{Metoda nahrazení nejméně významného bitu}
 \label{sub:lsb-implementation}
 
-\blindtext
+Tato podsekce popisuje implementaci metody popsané v~podsekci~\ref{sub:lsb}.
+Kódování pomocí této metody je velmi jednoduché pokud jsou vzorky krycího
+signálu celočíselného datového typu. Pokud jsou vzorky typu datového typu
+\textit{float}, pak je potřeba nejprve převést vzorky do celočíselného datového
+typu se stejnou bitovou velikostí. V~knihovně NumPy je možné použít funkci
+\texttt{tobytes}, která převede pole se vzorky na pole sekvenci bajtů, tak jak
+jsou uloženy v~paměti. Bajty je možné znovu načíst do NDArray pole funkcí
+\texttt{frombuffer}, které se specifikuje požadovaný celočíselný typ. Úryvek
+kódu~\ref{lst:lsb-float-conversion} převede pole vzorků s~plovoucí desetinnou
+čárkou na pole celočíselných typů. Slovník \texttt{dtype\_conv} slouží jako
+tabulka pro převod plovoucích typů na celočíselné.
+
+\begin{lstlisting}[language=PythonPlus, label={lst:lsb-float-conversion},
+caption={Převedení datového typu s~plovoucí desetinnou čárkou na celočíselný
+datový typ.}]
+source = self._source_data
+if source.dtype in dtype_conv:
+    source = source.astype(source.dtype.newbyteorder('<')).tobytes()
+    source = np.frombuffer(source, dtype=dtype_conv[self._source_data.dtype])
+\end{lstlisting}
+
+Implementace podporuje kódování do více bitových úrovní a~zakódování pouze
+potřebných bitů. Při kódování do více úrovní se musí bity v~poli
+\texttt{self.\_secret\_data} rozdělit na podpole o~velikosti zvolené bitové
+hloubky. Podpole jsou poté převedeny na bajty. Ve vzorcích krycího signálu jsou
+vynulovány poslední bity po zvolenou bitovou úroveň logickou funkcí
+\texttt{and} a~zakódována ukrývaná data logickou funkcí \texttt{or}.
+
+Při kódování pouze potřebných bitů bude upraveno pouze tolik vzorků, kolik je
+potřeba. Pokud je tato volba vypnutá, vyplní se zbytek vzorků do náhodným
+šumem, aby ukrytá data splynula. Dekódování probíhá opačně, bajty jsou načteny
+funkcí \texttt{and} a~převedeny na bity.
 
 \subsection*{Metoda skrývání pomocí ozvěny}
 \label{sub:echo-hiding-implementation}
