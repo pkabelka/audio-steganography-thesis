@@ -1344,12 +1344,70 @@ moduly jsou:
 \subsection*{Implementace vestavěného programu}
 \label{sub:tui-implementation}
 
-\blindtext
+Všechny moduly pro hlavní vestavěný program se nachází v~balíčku \texttt{cli}.
+Program je možné spustit příkazem \texttt{python -m audio\_steganography}, čímž
+se automaticky spustí soubor \texttt{\_\_main\_\_.py} v~kořenovém balíčku.
+Tento soubor jsem převzal a~upravil z~projektu
+\texttt{yt-dlp}\footnote{\url{https://github.com/yt-dlp/yt-dlp}}. Jeho jediným
+úkolem je upravit proměnné prostředí, aby bylo možné importovat a~spustit
+funkci \texttt{main}, která se nachází v~souboru \texttt{cli/\_\_init\_\_.py}.
 
-\subsubsection*{Argumenty pro spouštění}
+Po spuštění funkce \texttt{main} se vyhodnotí argumenty předané programu.
+Parser argumentů má několik společných argumentů, avšak všechny argumenty
+specifické pro jednotlivé metody jsou generovány automaticky voláním funkcí
+\texttt{get\_encode\_args} a~\texttt{get\_decode\_args} pro každou
+steganografickou metodu.
+
+\subsubsection*{Argumenty pro spuštění}
 \label{ssub:tui-arguments}
 
-\blindtext
+Jelikož jsou argumenty generovány ze společného rozhraní metod, je i~rozhraní
+argumentů velmi předvídatelné. Kostra volání je následující:
+
+\begin{verbatim}
+python3 -m audio_steganography <metoda> <encode/decode> ...
+\end{verbatim}
+
+Prvním argumentem je název požadované metody a~poté požadovaný režim --
+\texttt{encode} pro kódování a~\texttt{decode} pro dekódování. Poté je nutné
+zadat všechny povinné přepínače a~případně nastavit vhodně i~volitelné
+přepínače. Povinný společný přepínač je pouze \verb|-s/--source| -- při
+kódování se jedná o~krycí soubor do kterého budou zakódována data a~při
+dekódování se jedná o~stego soubor ze kterého budou data dekódována.
+
+Při kódování je potřeba použít jeden z~následujících přepínačů:
+
+\begin{itemize}
+    \item \verb|-t/--text| -- umožňuje zadání kódovaného textu jako argument
+        programu,
+    \item \verb|-f/--file| -- kódovaná data budou načtena jako surové bajty ze
+        souboru.
+\end{itemize}
+
+Pro výstup je možné použít argument \verb|-o/--output|, čímž je možno určit
+název výstupního souboru po kódování/dekódování. Pokud je specifikován název
+\texttt{-} v~režimu dekódování, budou dekódovaná data vytištěna na standardní
+výstup. Výstup je uvozen uvnitř uvozovek s~písmenem \texttt{b} na začátku.
+Jedná se pouze o~výstupní formát bajtového pole v~jazyce Python. Pokud jsou ve
+výstupu znaky mimo znakovou sadu \textit{ASCII}, pak bude hodnota bajtu
+obsahovat prefix \verb|\x| a~některé netisknutelné znaky budou obsahovat jejich
+příslušnou \uv{escape sekvenci}. Příklad výstupu slov \uv{Dobrý} a~\uv{den},
+každý na novém řádku je:
+
+\begin{verbatim}
+b'Dobr\xc3\xbd\nden'
+\end{verbatim}
+
+Výstup obsahuje také asociované pole hodnot ve formátu \textit{JSON}
+s~dodatečnými parametry potřebnými pro dekódování u~některých metod. Poslední
+společné volitelné argumenty jsou:
+
+\begin{itemize}
+    \item \verb|-y/--overwrite| -- potlačí chybovou hlášku pokud výstupní
+        soubor existuje a~bude přepsán bez dotázání,
+    \item \verb|--stats| -- přidá do dodatečného výstupu programu výstup
+        statistických funkcí.
+\end{itemize}
 
 Po vyhodnocení zadaných parametrů se spustí fasáda s~vybranou metodou
 a~parametry.
