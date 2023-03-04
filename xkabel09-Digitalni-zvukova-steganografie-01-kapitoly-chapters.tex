@@ -1495,8 +1495,8 @@ if source.dtype in dtype_conv:
 
 Implementace podporuje kódování do více bitových úrovní a~zakódování pouze
 potřebných bitů. Při kódování do více úrovní se musí bity v~poli
-\texttt{self.\_secret\_data} rozdělit na podpole o~velikosti zvolené bitové
-hloubky. Podpole jsou poté převedeny na bajty. Ve vzorcích krycího signálu jsou
+\texttt{\_secret\_data} rozdělit na podpole o~velikosti zvolené bitové hloubky.
+Podpole jsou poté převedeny na bajty. Ve vzorcích krycího signálu jsou
 vynulovány poslední bity po zvolenou bitovou úroveň logickou funkcí
 \texttt{and} a~zakódována ukrývaná data logickou funkcí \texttt{or}.
 
