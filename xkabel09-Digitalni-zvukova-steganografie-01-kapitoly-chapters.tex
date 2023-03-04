@@ -1435,7 +1435,9 @@ a~\texttt{get\_decode\_args}, které vrací pole argumentů pro kódování
 a~dekódování, které jsou specifické pro danou metodu.
 
 Dále jsou zděděné metody nuceny implementovat funkce \texttt{encode}
-a~\texttt{decode}, díky čemu mají společné rozhraní. Bohužel není možné
+a~\texttt{decode}. Obě funkce vrací proměnné stejných typů -- prvním je NDArray
+pole obsahující buď vzorky zakódovaného signálu nebo dekódované bity a~druhou
+proměnnou je slovník s~dodatečným výstupem. Bohužel není možné
 dosáhnout polymorfizmu perfektně, protože různé steganografické metody požadují
 různé parametry pro kódování a~dekódování. Naštěstí Jazyk Python umožňuje při
 volání funkcí expandovat do argumentů slovník (asociované pole hodnot)
