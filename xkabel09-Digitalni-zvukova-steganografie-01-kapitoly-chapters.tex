@@ -1437,12 +1437,12 @@ a~dekódování, které jsou specifické pro danou metodu.
 Dále jsou zděděné metody nuceny implementovat funkce \texttt{encode}
 a~\texttt{decode}. Obě funkce vrací proměnné stejných typů -- prvním je NDArray
 pole obsahující buď vzorky zakódovaného signálu nebo dekódované bity a~druhou
-proměnnou je slovník s~dodatečným výstupem. Bohužel není možné
-dosáhnout polymorfizmu perfektně, protože různé steganografické metody požadují
-různé parametry pro kódování a~dekódování. Naštěstí Jazyk Python umožňuje při
-volání funkcí expandovat do argumentů slovník (asociované pole hodnot)
-s~přiřazenými parametry. Pokud je v~hlavičce funkce použito \texttt{**kwargs},
-pak Python ignoruje přebytečné argumenty. Při volání funkcí \texttt{encode}
+proměnnou je slovník s~dodatečným výstupem. Bohužel není možné dosáhnout
+polymorfizmu perfektně, protože různé steganografické metody požadují různé
+parametry pro kódování a~dekódování. Naštěstí Jazyk Python umožňuje při volání
+funkcí expandovat do argumentů slovník (asociované pole hodnot) s~přiřazenými
+parametry. Pokud je v~hlavičce funkce použito \texttt{**kwargs}, pak Python
+ignoruje přebytečné argumenty. Při volání funkcí \texttt{encode}
 a~\texttt{decode} je díky tomu možné přednastavit argumenty pro metody předem
 do slovníku a~poté pouze vybrat použitou metodu. Tato funkcionalita je využita
 jak ve třídě \texttt{MethodFacade} tak i~při volání fasády ve funkci
