@@ -176,7 +176,7 @@ jednotlivé vzorky mohou nabývat. Kvantování je proces diskretizace hodnot
 zaokrouhlováním k~předem určeným hodnotám \cite{Oliver1948}. Hodnoty nebo také
 hladiny, ke kterým se zaokrouhluje jsou dané počtem použitých bitů. Vyšší počet
 bitů vede ke zlepšení kvality, protože zaokrouhlené hodnoty jsou blíže jejich
-původním. Tento jev lze vidět na obrázku \ref{pic:quantization}. Proces
+původním. Tento jev lze vidět na obrázku~\ref{pic:quantization}. Proces
 kvantování vždy zavede do výsledného signálu takzvaný \textit{kvantizační šum}
 \cite{Oliver1948}, protože převedení reálných čísel na digitální není exaktní.
 Tento šum je rozdílem původního signálu a~kvantovaného signálu. Použití menšího
@@ -232,7 +232,7 @@ bude mít menší velikost. Pro kvalitní audio se dnes nejčastěji používá 
             \end{axis}
         \end{tikzpicture}
     \end{subfigure}
-    \caption{Signál z~obrázku \ref{pic:continuous-vs-sampled-signal}
+    \caption{Signál z~obrázku~\ref{pic:continuous-vs-sampled-signal}
     vzorkovaný na frekvenci~16\,Hz a~kvantovaný na 2~bitech (vlevo) a~4~bitech
 (vpravo)}
     \label{pic:quantization}
@@ -255,7 +255,7 @@ Digitálních audio formátů je velké množství, každý se svými odlišným
 vlastnostmi. Hlavní kategorie na které se digitální zvukové formáty dělí jsou
 \textit{nekomprimované} a~\textit{komprimované} -- ty se ještě dělí na formáty
 se ztrátovou a~bezeztrátovou kompresí. Příklady některých známých formátů jsou
-v~tabulce \ref{tab:audio-formats}.
+v~tabulce~\ref{tab:audio-formats}.
 
 \begin{table}[H]
     \vskip6pt
@@ -340,7 +340,7 @@ steganografických publikací se shodují, že nejvýznamnějšími vlastnostmi 
 \textit{robustnost}, \textit{kapacita} a~\textit{nepostřehnutelnost}
 \cite{AlSabhany2020}\cite{Djebbar2012}\cite{Dutta2020}. Tyto tři vlastnosti je
 možné si představit jako trojúhelník s~každou vlastností v~jednom rohu, jak je
-vidět na obrázku \ref{pic:method-property-triangle}. Důvodem je fakt, že není
+vidět na obrázku~\ref{pic:method-property-triangle}. Důvodem je fakt, že není
 možné dosáhnout vysoké úrovně všech tří vlastností zároveň \cite{Dutta2020}.
 Zvýšení kvality jedné z~vlastností vždy vede ke snížení kvality alespoň jedné
 zbývající \cite{AlSabhany2020}\cite{Djebbar2012}. V~následujících podsekcích
@@ -438,7 +438,7 @@ Metoda využívající nahrazení nejméně významného bitu (anglicky \textit{
 significant bit substitution}, dále jen LSB) je nejjednodušší metodou pro
 vkládání informací do nosiče. Principem této metody je nahrazení nejméně
 významného bitu v~nosiči za bit ukrývané informace \cite{Dutta2020}. Princip
-kódování pomocí této metody je vizualizován na obrázku \ref{pic:lsb-diagram}.
+kódování pomocí této metody je vizualizován na obrázku~\ref{pic:lsb-diagram}.
 
 \begin{figure}[hbt]
     \centering
@@ -507,7 +507,7 @@ s~oběma konvolučními jádry a~použít bity ukrývané informace jako masku, 
 určí které segmenty ponechat a~přidat ke krycímu médiu \cite{Gruhl1996}. Pro
 snížení míry zkreslení na rozmezí segmentů je vhodné vyhladit změnu mezi
 hodnotou~0~a~1 \cite{Tekeli2017}. Příklad ozvěn, které vniknou použitím masky
-bez vyhlazení jsou na obrázku \ref{pic:echo-single-kernel-echo}. Příklad ozvěn,
+bez vyhlazení jsou na obrázku~\ref{pic:echo-single-kernel-echo}. Příklad ozvěn,
 které vniknou použitím masky s~vyhlazením jsou na obrázku
 \ref{pic:echo-single-kernel-echo-smooth}.
 
@@ -542,8 +542,8 @@ je zpoždění pro bit logické~0 a~logické~1 a~$\alpha$ je amplituda ozvěny
 \end{equation}
 
 \noindent Zpožděné signály vniknou konvolucemi krycího média s~konvolučními
-jádry dané rovnicí \ref{eq:echo-single-kernel-echo}, kde $s[n]$ je krycí médium
-a~$h_i[n]$ je konvoluční jádro z~rovnice \ref{eq:echo-single-kernel}.
+jádry dané rovnicí~\ref{eq:echo-single-kernel-echo}, kde $s[n]$ je krycí médium
+a~$h_i[n]$ je konvoluční jádro z~rovnice~\ref{eq:echo-single-kernel}.
 
 \begin{equation}
     \label{eq:echo-single-kernel-echo}
@@ -551,7 +551,7 @@ a~$h_i[n]$ je konvoluční jádro z~rovnice \ref{eq:echo-single-kernel}.
 \end{equation}
 
 \noindent Příklad ozvěn, které vniknou konvolucemi krycího média s~konvolučními
-jádry jsou na obrázku \ref{pic:echo-single-kernel-echo}.
+jádry jsou na obrázku~\ref{pic:echo-single-kernel-echo}.
 
 \subsubsection*{Dekódování}
 \label{ssub:echo-single-kernel-decoding}
@@ -561,7 +561,7 @@ na stejný počet segmentů jako při kódování. Poté se vypočítá jejich c
 které je definováno jako inverzní Fourierova transformace ($\mathcal{F}^-1$)
 logaritmu absolutní hodnoty Fourierovy transformace ($\mathcal{F}$) signálu
 \cite{Tekeli2017}. Vzorec pro získání cepstra signálu $x(t)$ je definován
-rovnicí \ref{eq:cepstrum}.
+rovnicí~\ref{eq:cepstrum}.
 
 \begin{equation}
     \label{eq:cepstrum}
@@ -573,7 +573,7 @@ kontrolou, která hodnota na pozici $d_0$ a~$d_1$ je vyšší. Pokud je hodnota
 $C(d_0)$ vyšší než $C(d_1)$, pak je hodnota bitu daného segmentu logická~0.
 A~pokud je hodnota $C(d_1)$ vyšší než $C(d_0)$, pak je hodnota bitu daného
 segmentu logická~1 \cite{Gruhl1996}. Příklad cepstra segmentu včetně špiček na
-indexech zpoždění 100 a~110 lze vidět na obrázku \ref{pic:segment-cepstrum}.
+indexech zpoždění 100 a~110 lze vidět na obrázku~\ref{pic:segment-cepstrum}.
 
 \begin{figure}[hbt]
     \centering
@@ -699,7 +699,7 @@ amplitudou a~poté s~kladnou (anglicky bipolar echo). Zjistili, že tato
 modifikace má vyšší míru robustnosti i~po překódování do ztrátového formátu
 MP3. Dekódování této modifikace spočívá v~detekování špiček v~autokorelaci
 výkonového cepstra. Výkonové cepstrum je podobné normálnímu cepstru a~je
-definováno rovnicí \ref{eq:power-cepstrum}.
+definováno rovnicí~\ref{eq:power-cepstrum}.
 
 \begin{equation}
     \label{eq:power-cepstrum}
@@ -737,7 +737,7 @@ stego médium vznikne přidáním vynásobených hodnot ke krycímu médiu
 \cite{Kuznetsov2022}. Informace zakódovaná touto metodou je odolná proti šumu,
 protože obsahuje přebytečné kopie bitů. V~případě poškození části stego média
 je možné z~přebytečných bitů obnovit ukryté informace \cite{Djebbar2012}.
-Popsaný princip kódování je možné vidět na obrázku \ref{pic:dsss-spreading},
+Popsaný princip kódování je možné vidět na obrázku~\ref{pic:dsss-spreading},
 kde se ke krycímu signálu přidají rozprostřené bity informace vynásobené
 pseudonáhodnou sekvencí čipů.
 
@@ -806,7 +806,7 @@ napříč řádky \cite{Bender1996}. Matematický zápis rozdílu fází je v~ro
 reprezentující hodnotu~0 a~$-\frac{\pi}{2}$ reprezentující hodnotu~1. Touto
 sekvencí se nahradí první segment v~matici fází. Poté se postupně počítají nové
 fáze z~původní fázové matice a~matice rozdílů fází. Matematický zápis je
-v~rovnici \ref{eq:new-phases}, kde $\phi'$ značí novou matici fází a~$N$
+v~rovnici~\ref{eq:new-phases}, kde $\phi'$ značí novou matici fází a~$N$
 značí index posledního segmentu \cite{Bender1996}.
 
 \begin{equation}
@@ -844,7 +844,7 @@ segmentu. Pokud je paritní bit stejný jako informační, pak se neprovádí ni
 Pokud je paritní bit rozdílný, pak se změní nejméně významný bit libovolného
 vzorku v~daném segmentu. Díky tomu je možné snížit detekovatelnost informace
 \cite{Bandyopadhyay2008}, čímž ale dojde ke snížení robustnosti. Způsob
-kódování pomocí této metody je vizualizován na obrázku \ref{pic:parity-coding}.
+kódování pomocí této metody je vizualizován na obrázku~\ref{pic:parity-coding}.
 
 \begin{figure}[hbt]
     \centering
@@ -940,7 +940,7 @@ vypočítá jeho nová délka $D$, tak aby platil vztah v~rovnici
 
 \noindent Pokud by byla nová délka $D$ kratší než je minimální stanovená délka
 úseku, pak je potřeba použít jiný úsek. Pro dekódování informace stačí použít
-zmíněný vztah \ref{eq:silence-value} \cite{Shahreza2008}.
+zmíněný vztah~\ref{eq:silence-value} \cite{Shahreza2008}.
 
 Nevýhodou této metody je její citlivost na transformaci stego signálu. Změny
 délek úseků ticha povedou k~dekódování špatných hodnot. Pro zvýšení robustnosti
@@ -971,7 +971,7 @@ informace \cite{Cvejic2002Wavelet}. Experimentální výsledky
 v~\cite{Cvejic2002Wavelet} ukázaly, že při modifikaci až 7~nejnižších bitů bylo
 téměř nemožné rozeznat rozdíl mezi originální a~upravenou nahrávkou. A~i~při
 modifikaci více úrovní byly výsledky lepší než při použití konvenční metody
-nahrazení nejméně významného bitu popsané v~podsekci \ref{sub:lsb} s~dvakrát
+nahrazení nejméně významného bitu popsané v~podsekci~\ref{sub:lsb} s~dvakrát
 menším počtem upravených bitových úrovní. Tato metoda má velmi vysokou kapacitu
 a~je schopna ukrýt až o~220,5\,kb/s více dat než konvenční metoda nahrazení
 nejméně významného bitu \cite{Cvejic2002Wavelet}.
@@ -1034,9 +1034,9 @@ z~nich:
         nedoporučuje.
     \item \textit{audio-steganography-algorithms}\footnote{\url{https://github.com/ktekeli/audio-steganography-algorithms}}
         -- Sada implementací metod pro program MATLAB. Obsahuje metodu
-        rozprostřeného spektra (viz \ref{sub:dsss}), ukrývání pomocí ozvěny
-        (viz \ref{sub:echo-hiding}), nejméně významného bitu (viz
-        \ref{sub:lsb}) a~fázového kódování (viz \ref{sub:phase-coding}).
+        rozprostřeného spektra (viz~\ref{sub:dsss}), ukrývání pomocí ozvěny
+        (viz~\ref{sub:echo-hiding}), nejméně významného bitu
+        (viz~\ref{sub:lsb}) a~fázového kódování (viz~\ref{sub:phase-coding}).
         Bohužel jsou modifikace metod v~nečitelném proprietárním formátu.
     \item \textit{Steganography}\footnote{\url{https://github.com/ragibson/Steganography}}
         -- Program v~jazyce \textit{Python}. Pro audio soubory ve formátu
@@ -1093,7 +1093,7 @@ z~terminálu. Bude také poskytovat výpočty různých statistických funkcí n
 základě kterých bude možné vyhodnotit pro konkrétní krycí soubor úroveň
 jednotlivých vlastností steganografických metod popsaných v~sekci
 \ref{sec:method-properties}. Blokové schéma popsané struktury je možné vidět na
-obrázku \ref{pic:library-block-diagram}.
+obrázku~\ref{pic:library-block-diagram}.
 
 \begin{figure}[hbt]
     \centering
@@ -1127,7 +1127,7 @@ velké množství funkcí pro účely zpracování signálů.
 Program bude umožňovat uživateli zvolit steganografickou metodu a~pomocí ní
 zakódovat a~dekódovat tajnou zprávu ve formě textu nebo souboru do krycího
 audio souboru. Interakci mezi použitím hlavního programu a~knihovny je možné
-vidět na obrázku \ref{pic:use-case-diagram-main}.
+vidět na obrázku~\ref{pic:use-case-diagram-main}.
 
 \begin{figure}[hbt]
     \centering
@@ -1199,7 +1199,7 @@ kde autoři kódují informaci do modulu (absolutní hodnoty) koeficientů
 Fourierovy transformace obrázku. Rozdíl je ale v~tom, že navrhovaná metoda
 upravuje reálnou část komplexního koeficientu Fourierovy transformace, čímž
 upravuje modul i~fázi. Druhá část této metody je kombinace s~metodou přímého
-rozprostřeného spektra (viz \ref{sub:dsss}). Aby bylo kódování robustnější,
+rozprostřeného spektra (viz~\ref{sub:dsss}). Aby bylo kódování robustnější,
 informační bity jsou nejprve rozprostřeny po celé délce krycího signálu a~poté
 jsou přičteny ke koeficientům Fourierovy transformace krycího signálu. Princip
 kódování je možné vidět v~algoritmu~\ref{alg:own-method-encoding}.
@@ -1331,7 +1331,7 @@ moduly jsou:
         nejdůležitější funkcí je \texttt{split\_to\_n\_segments}, která rozdělí
         pole na segmenty s~požadovanou délkou,
     \item \texttt{stat\_utils} -- obsahuje implementované statistické funkce
-        popsané v~příloze \ref{cha:statistical-functions},
+        popsané v~příloze~\ref{cha:statistical-functions},
     \item \texttt{exceptions} -- obsahuje vlastní výjimky použité v~knihovně
         a~programu,
     \item \texttt{tests\_common} -- obsahuje automatizované testy společné pro
