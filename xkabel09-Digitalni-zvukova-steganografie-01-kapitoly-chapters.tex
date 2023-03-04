@@ -1429,18 +1429,22 @@ předají jejich parametry stejnojmenným funkcím instance vybrané metody.
 \label{sec:method-implementation}
 
 Každá implementovaná metoda dědí ze společné abstraktní třídy
-\texttt{MethodBase} z~modulu \texttt{methods/method\_base}. Zděděné metody jsou
-nuceny implementovat funkce \texttt{encode} a~\texttt{decode}, díky čemu mají
-společné rozhraní. Bohužel není možné dosáhnout polymorfizmu perfektně, protože
-různé steganografické metody požadují různé parametry pro kódování
-a~dekódování. Naštěstí Jazyk Python umožňuje při volání funkcí expandovat do
-argumentů slovník (asociované pole hodnot) s~přiřazenými parametry. Pokud je
-v~hlavičce funkce použito \texttt{**kwargs}, pak Python ignoruje přebytečné
-argumenty. Při volání funkcí \texttt{encode} a~\texttt{decode} je díky tomu
-možné přednastavit argumenty pro metody předem do slovníku a~poté pouze vybrat
-použitou metodu. Tato funkcionalita je využita jak ve třídě
-\texttt{MethodFacade} tak i~při volání fasády ve funkci \texttt{main}.
-Zjednodušený příklad kódu z~funkce \texttt{main} je ve výpisu
+\texttt{MethodBase} z~modulu \texttt{methods/method\_base}. Ve společném
+rozhraní jsou pro vestavěný program funkce \texttt{get\_encode\_args}
+a~\texttt{get\_decode\_args}, které vrací pole argumentů pro kódování
+a~dekódování, které jsou specifické pro danou metodu.
+
+Dále jsou zděděné metody nuceny implementovat funkce \texttt{encode}
+a~\texttt{decode}, díky čemu mají společné rozhraní. Bohužel není možné
+dosáhnout polymorfizmu perfektně, protože různé steganografické metody požadují
+různé parametry pro kódování a~dekódování. Naštěstí Jazyk Python umožňuje při
+volání funkcí expandovat do argumentů slovník (asociované pole hodnot)
+s~přiřazenými parametry. Pokud je v~hlavičce funkce použito \texttt{**kwargs},
+pak Python ignoruje přebytečné argumenty. Při volání funkcí \texttt{encode}
+a~\texttt{decode} je díky tomu možné přednastavit argumenty pro metody předem
+do slovníku a~poté pouze vybrat použitou metodu. Tato funkcionalita je využita
+jak ve třídě \texttt{MethodFacade} tak i~při volání fasády ve funkci
+\texttt{main}. Zjednodušený příklad kódu z~funkce \texttt{main} je ve výpisu
 \ref{lst:general-method-usage}.
 
 \begin{lstlisting}[language=PythonPlus, label={lst:general-method-usage},
