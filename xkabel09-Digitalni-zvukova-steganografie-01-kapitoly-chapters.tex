@@ -1509,7 +1509,61 @@ funkcí \texttt{and} a~převedeny na bity.
 \subsection*{Metoda skrývání pomocí ozvěny}
 \label{sub:echo-hiding-implementation}
 
-\blindtext
+Tato podsekce popisuje implementaci metody a~modifikací popsaných
+v~podsekci~\ref{sub:echo-hiding}. Všechny varianty této metody používají stejné
+parametry a~kontroly, proto třídy těchto metod dědí z~abstraktní bázové třídy
+\texttt{EchoBase} v~modulu \texttt{cli/echo\_base}. Při kódování se po zavolání
+funkce \texttt{encode} přesměruje volání na funkci \texttt{encode\_wrapper} do
+které se k~argumentům přidá konkrétní kódovaná třída. Ve funkci
+\texttt{encode\_wrapper} se provedou kontroly argumentů a~také výběr způsobu
+volitelného hledání optimálních zpoždění ozvěn.
+
+Kódování pomocí této metody je těžko předvídatelné a~výsledky závisí velmi na
+zvolených hodnotách zpoždění. Proto jsem pro hledání optimálních hodnot
+implementoval dva způsoby automatického hledání. Prvním způsobem je hledání
+hrubou silou, které provede 300~iterací v~okolí \texttt{d0} a~\texttt{d1}.
+Tento způsob hledání většinou najde optimální hodnoty, ale doba běhu může trvat
+velmi dlouho na základě délky krycího signálu. Efektivnějším způsobem je druhá
+varianta hledání a~to pomocí optimalizační metody
+\textit{Basin-hopping}\footnote{https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.basinhopping.html}
+z~knihovny \textit{SciPy}. Jedná se o~optimalizační funkci pro nalezení
+globálního minima dané funkce. V~případě steganografických metod se
+minimalizovanou funkcí myslí funkce míry bitové chybovosti (dále jen BER,
+viz~\ref{cha:statistical-functions}).
+
+Samotné kódování každé metody je implementováno v~její příslušné třídě ve
+funkci \texttt{\_encode}. Pokud není vybrána metoda hledání hodnot zpoždění,
+budou použity hodnoty zadané uživatelem bez ohledu na hodnotu BER. To umožňuje
+případně implementovat jiné způsoby hledání optimálních hodnot. Implementace
+obsahuje velký rozdíl oproti teoretickému popisu z~důvodu optimalizace
+kódování, a~to nahrazením konvoluce pro vytvoření ozvěny za zkopírování pole
+a~doplnění příslušným počtem nul. Jednotlivé ozvěny jsou pak přiřazeny jako
+výřezy zkopírovaného pole. Ukázka kódu který se v~podobné formě nachází ve
+všech variantách ozvěnové metody je vidět ve
+výpisu~\ref{lst:echo-source-padding}.
+
+\begin{lstlisting}[language=PythonPlus, label={lst:echo-source-padding},
+caption={Vytvoření pouze jedné kopie krycího signálu a~přiřazení jednotlivých
+ozvěn jako výřezy.}]
+# doplneni nul ke krycimu signalu
+source_pad = np.pad(self._source_data, (d1 + 5, 0)) * alpha/2
+
+# leva strana: d0 nul
+echo_0_neg = source_pad[d1+5-d0:] * -1
+# leva strana: d0 + 5 nul
+echo_0_pos = source_pad[d1-d0:] * decay_rate
+
+# leva strana: d1 nul
+echo_1_neg = source_pad[5:] * -1
+# leva strana: d1 + 5 nul
+echo_1_pos = source_pad * decay_rate
+\end{lstlisting}
+
+Dekódování každé varianty této metody se u~každé mírně liší a~je implementováno
+ve funkci \texttt{decode} příslušné třídy. Metody \textit{single echo}
+a~\textit{bipolar backward-forward echo} používají pouze cepstrum stego
+signálu. Metody \textit{bipolar echo} a~\textit{backward-forward echo}
+používají autokorelaci cepstra.
 
 \subsection*{Metoda rozprostřeného spektra}
 \label{sub:dsss-implementation}
