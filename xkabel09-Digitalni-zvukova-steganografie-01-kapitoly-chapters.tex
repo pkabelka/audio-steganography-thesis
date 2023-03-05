@@ -482,20 +482,21 @@ počtem použitých bitů~\cite{Cvejic2002}.
 \subsection*{Metoda skrývání pomocí ozvěny}
 \label{sub:echo-hiding}
 
-Steganografická metoda ukrývání informací pomocí ozvěny (anglicky \textit{echo hiding})
-funguje na principu přidání ozvěny do krycího média~\cite{Djebbar2012}. Tato
-metoda má vyšší robustnost vůči filtrování, převzorkování, či ztrátové
-kompresi. Lidské sluchové ústrojí má široký dynamických rozsah výkonu
-a~frekvence, ale přesto je možné využít nedostatků, jako je maskování tichých
-zvuků hlasitějšími~\cite{Gruhl1996}. Nevýhodou této metody je zkreslení
-způsobené přidáním ozvěny do krycího média, které je srovnatelné s~rozdílem
-poslechu audia ve sluchátkách a~přes reproduktory, kde se zvuk odráží od stěn
-v~místnosti. Při vhodném nastavení parametrů je možné docílit výborné
-nepostřehnutelnosti~\cite{Gruhl1996}. Tato metoda má dostatečnou míru
-robustnosti a~je tedy vhodná pro zakódování vodoznaku do krycího média. Vhodné
-nastavení parametrů docílí velmi nízké pravděpodobnosti odhalení či odstranění
-vodoznaku neoprávněnou osobou~\cite{Gruhl1996}. Po přidání ozvěny si stego
-médium udrží stejné statistické a~percepční vlastnosti~\cite{Djebbar2012}.
+Steganografická metoda ukrývání informací pomocí ozvěny (anglicky \textit{echo
+hiding}) funguje na principu přidání ozvěny do krycího
+média~\cite{Djebbar2012}. Tato metoda má vyšší robustnost vůči filtrování,
+převzorkování, či ztrátové kompresi. Lidské sluchové ústrojí má široký
+dynamických rozsah výkonu a~frekvence, ale přesto je možné využít nedostatků,
+jako je maskování tichých zvuků hlasitějšími~\cite{Gruhl1996}. Nevýhodou této
+metody je zkreslení způsobené přidáním ozvěny do krycího média, které je
+srovnatelné s~rozdílem poslechu audia ve sluchátkách a~přes reproduktory, kde
+se zvuk odráží od stěn v~místnosti. Při vhodném nastavení parametrů je možné
+docílit výborné nepostřehnutelnosti~\cite{Gruhl1996}. Tato metoda má
+dostatečnou míru robustnosti a~je tedy vhodná pro zakódování vodoznaku do
+krycího média. Vhodné nastavení parametrů docílí velmi nízké pravděpodobnosti
+odhalení či odstranění vodoznaku neoprávněnou osobou~\cite{Gruhl1996}. Po
+přidání ozvěny si stego médium udrží stejné statistické a~percepční
+vlastnosti~\cite{Djebbar2012}.
 
 Pro implementaci této metody se krycí médium rozdělí na segmenty do kterých se
 bity ukrývané informace zakódují vytvořením ozvěny daného segmentu. Pro
