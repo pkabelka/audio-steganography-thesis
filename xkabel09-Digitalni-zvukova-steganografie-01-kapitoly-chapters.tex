@@ -1583,7 +1583,18 @@ používají autokorelaci cepstra.
 \subsection*{Metoda rozprostřeného spektra}
 \label{sub:dsss-implementation}
 
-\blindtext
+Tato podsekce popisuje implementaci metody popsané v~podsekci~\ref{sub:dsss}.
+Pro vytvoření sekvence čipů je použita funkce \texttt{spread\_bits}, která
+rozprostírá bity přes zadanou délku (viz výpis~\ref{lst:spread-bits}). Čipy
+jsou poté vynásobeny pseudonáhodnou sekvencí čipů generovanou ze zadaného
+klíče. Klíč je převeden na 32-bitové číslo hešovací funkcí \textit{SHA256} a~je
+použit jako počátek pseudonáhodného generátoru (anglicky \textit{seed}).
+Implementace používá pro generování pseudonáhodné sekvence generátor
+\textit{MT19937}\footnote{\url{https://numpy.org/doc/stable/reference/random/legacy.html}}.
+Tento generátor není dostatečně bezpečný pro kryptografické účely, ale je
+použit v~implementaci protože podporuje zadání \uv{seedu}. Pro bezpečnější
+kódování by měla být v~budoucnu podporována možnost zadání pseudonáhodné
+sekvence externě funkci \texttt{encode}.
 
 \subsection*{Metoda rozprostřeného spektra ve Fourierově transformaci (vlastní
 metoda)}
