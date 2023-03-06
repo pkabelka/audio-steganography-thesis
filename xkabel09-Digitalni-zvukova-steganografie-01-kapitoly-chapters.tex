@@ -1626,7 +1626,20 @@ for i in range(l):
 metoda)}
 \label{sub:dsssdft-implementation}
 
-\blindtext
+Algoritmický popis této metody se nachází
+v~podsekci~\ref{sec:own-method-proposal}. Kódování této metody je téměř
+identické jako standardní metoda rozprostřeného spektra popsaná výše. Rozdíl je
+v~použití Fourierovy transformace pro modulaci sekvence čipů. Po modulaci je
+signál převeden zpět do časové domény inverzní Fourierovou transformací (viz
+výpis~\ref{lst:dsss-dft-modulation}).
+
+\begin{lstlisting}[language=PythonPlus, label={lst:dsss-dft-modulation},
+caption={Modulace Fourierovy transformace krycího signálu, rozprostřených bitů
+a~pseudonáhodné sekvence čipů.}]
+fft = np.fft.fft(source)
+encoded = fft + mixer * np.abs(fft).max() * alpha * pn_sequence
+encoded = np.fft.ifft(encoded).real
+\end{lstlisting}
 
 \subsection*{Metoda fázového kódování}
 \label{sub:phase-coding-implementation}
