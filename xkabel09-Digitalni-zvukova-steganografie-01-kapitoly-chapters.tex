@@ -1594,7 +1594,33 @@ Implementace používá pro generování pseudonáhodné sekvence generátor
 Tento generátor není dostatečně bezpečný pro kryptografické účely, ale je
 použit v~implementaci protože podporuje zadání \uv{seedu}. Pro bezpečnější
 kódování by měla být v~budoucnu podporována možnost zadání pseudonáhodné
-sekvence externě funkci \texttt{encode}.
+sekvence externě funkci \texttt{encode}. Sekvence čipů je poté jednoduše
+modulována s~krycím signálem a~rozprostřenými bity v~proměnné \texttt{mixer}
+(viz výpis~\ref{lst:dsss-modulation}).
+
+\begin{lstlisting}[language=PythonPlus, label={lst:dsss-modulation},
+caption={Modulace krycího signálu, rozprostřených bitů a~pseudonáhodné sekvence
+čipů.}]
+encoded = source + mixer * alpha * pn_sequence
+\end{lstlisting}
+
+K~dekódování se znovu vygeneruje pseudonáhodná sekvence čipů ze zadaného klíče.
+Sekvence čipů i~stego signál se rozdělí na segmenty se zadanou délkou. Poté je
+provedena korelace mezi segmenty stego signálu a~sekvence čipů. Korelace je
+implementována pouze jako součet vynásobených vzorků (viz
+výpis~\ref{lst:dsss-decoding}).
+
+\begin{lstlisting}[language=PythonPlus, label={lst:dsss-decoding},
+caption={Korelace segmentů a~rozhodovací pravidlo.}]
+decoded = np.zeros(l, dtype=np.uint8)
+for i in range(l):
+    correlation = np.sum(source_segments[i] * pn_sequence_segments[i])
+
+    if correlation > 0:
+        decoded[i] = 1
+    else:
+        decoded[i] = 0
+\end{lstlisting}
 
 \subsection*{Metoda rozprostřeného spektra ve Fourierově transformaci (vlastní
 metoda)}
