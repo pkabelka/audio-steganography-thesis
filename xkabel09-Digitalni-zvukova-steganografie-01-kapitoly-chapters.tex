@@ -1529,7 +1529,9 @@ varianta hledání a~to pomocí optimalizační metody
 z~knihovny \textit{SciPy}. Jedná se o~optimalizační funkci pro nalezení
 globálního minima dané funkce. V~případě steganografických metod se
 minimalizovanou funkcí myslí funkce míry bitové chybovosti (dále jen BER,
-viz~\ref{cha:statistical-functions}).
+viz~\ref{cha:statistical-functions}). Použitím této optimalizační funkce je
+hledání správných hodnot mnohem rychlejší než při hledání hrubou silo, ale není
+zaručeno, že výsledné hodnoty dosáhnou zakódování bez chyb.
 
 Samotné kódování každé metody je implementováno v~její příslušné třídě ve
 funkci \texttt{\_encode}. Pokud není vybrána metoda hledání hodnot zpoždění,
