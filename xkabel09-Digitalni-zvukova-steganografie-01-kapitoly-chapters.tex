@@ -1561,6 +1561,19 @@ echo_1_neg = source_pad[5:] * -1
 echo_1_pos = source_pad * decay_rate
 \end{lstlisting}
 
+Pro výběr vzorků požadovaných segmentů ozvěn je použita funkce
+\texttt{spread\_bits}, která rozprostírá bity přes zadanou délku. Rozprostřené
+bity ukrývané informace jsou použity jako maska, kterou se vynásobí vytvořené
+ozvěny. Funkce \texttt{spread\_bits} lze vidět ve výpisu~\ref{lst:spread-bits}.
+
+\begin{lstlisting}[language=PythonPlus, label={lst:spread-bits},
+caption={Funkce pro rozprostření bitů na zadanou délku.}]
+def spread_bits(secret_data: np.ndarray, signal_length: int) -> np.ndarray:
+    mixer, rest = split_to_n_segments(np.ones(signal_length), len(secret_data))
+    mixer = mixer * secret_data[:, None]
+    return np.append(mixer, rest)
+\end{lstlisting}
+
 Dekódování každé varianty této metody se u~každé mírně liší a~je implementováno
 ve funkci \texttt{decode} příslušné třídy. Metody \textit{single echo}
 a~\textit{bipolar backward-forward echo} používají pouze cepstrum stego
