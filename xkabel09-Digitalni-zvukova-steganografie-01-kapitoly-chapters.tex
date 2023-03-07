@@ -833,7 +833,10 @@ při kódování.
 
 Kapacita této metody se pohybuje v~rozsahu 8~bitů za sekundu až 32~bitů za
 sekundu podle množství šumu přítomného v~krycím médiu. Více šumu vede k~vyšší
-kapacitě~\cite{Bender1996}.
+kapacitě~\cite{Bender1996}. Existují modifikace této metody, které využívají
+jiné fáze krycího signálu. Například vyšší frekvence jsou hůře detekovatelné
+lidským sluchovým ústrojím~\cite{Djebbar2014}. Autoři~\cite{Djebbar2014}
+vybírají pro kódování pouze frekvenční regiony s~vysokou energií.
 
 \subsection*{Metoda paritního kódování}
 \label{sub:parity-coding}
@@ -1644,9 +1647,50 @@ encoded = np.fft.ifft(encoded).real
 \subsection*{Metoda fázového kódování}
 \label{sub:phase-coding-implementation}
 
-\todo{popis metody fázového kódování}
+Tato podsekce popisuje implementaci metody popsané
+v~podsekci~\ref{sub:phase-coding}. Kroky implementace se shodují s~teoretickým
+popisem až na zvolené fáze v~prvním segmentu. Autoři~\cite{Bender1996}
+nahradili fáze nultého segmentu novými fázemi, které reprezentují ukrývanou
+informaci. Při implementaci jsem zjistil, že tato varianta velmi negativně
+ovlivňuje fáze na začátku a~tím i~výsledný stego signál. Rozhodl jsem se proto
+implementovat modifikaci této metody, která nahrazuje naopak fáze nejvyšších
+frekvencí v~segmentu. Algoritmický popis této metody jsem našel v~odpovědi Dana
+Oaka na fóru \textit{StackExchange}~\cite{PhaseStackExchange}.
 
-\blindtext
+Pro zakódování se zvolí velikost segmentů několikrát větší než je délka
+ukrývaných bitů, aby byly nové fáze uloženy ve vysokých frekvencích. Délka
+segmentů je vypočítána podle vzorce~\ref{eq:phase-segment-len}, kde $X$ je
+počet bitů ukrývané informace, $L$ je délka segmentů
+a~$\left\lceil~\right\rceil$ je funkce pro zaokrouhlení nahoru.
+
+\begin{equation}
+    \label{eq:phase-segment-len}
+    L = 2 \times 2^{\left\lceil \log_2{(2 \times X)} \right\rceil}
+\end{equation}
+
+Nové fáze se zapíší do horních frekvencí, které se nachází v~polovině pole
+s~fázemi segmentu. Délka segmentu musí být mnohem větší než je ukrývaná
+informace, protože jsou fáze segmentu symetrické. Pro zachování této symetrie
+jsou se nové fáze zapíší i~do druhé půlky pole fází, ale opačně. Matematický
+zápis nahrazení fází se nachází v~rovnici~\ref{eq:phase-new-angles}, kde $i \in
+\{ 1, \dots, X \}$ a~$\phi_d$ je pole nových fází.
+
+\begin{equation}
+    \begin{aligned}
+        \label{eq:phase-new-angles}
+        \phi_0[L/2 - X + i] &= \phi_d[i] \\
+        \phi_0[L/2 + 1 + i] &= -\phi_d[X + 1 - i]
+    \end{aligned}
+\end{equation}
+
+Kód pro zápis nových fází ekvivalentní s~rovnicemi~\ref{eq:phase-new-angles} se
+nachází ve výpisu~\ref{lst:phase-new-angles}.
+
+\begin{lstlisting}[language=PythonPlus, label={lst:phase-new-angles},
+caption={Zápis nových fází do pole s~fázemi segmentu.}]
+angles[0, segment_len//2 - secret_len : segment_len//2] = secret_angles
+angles[0, segment_len//2 + 1 : segment_len//2 + 1 + secret_len] = -np.flip(secret_angles)
+\end{lstlisting}
 
 \subsection*{Metoda ukrývání v~úsecích ticha}
 \label{sub:hiding-in-silence-intervals-implementation}
