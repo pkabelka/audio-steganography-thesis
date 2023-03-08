@@ -1695,9 +1695,33 @@ angles[0, segment_len//2 + 1 : segment_len//2 + 1 + secret_len] = -np.flip(secre
 \subsection*{Metoda ukrývání v~úsecích ticha}
 \label{sub:hiding-in-silence-intervals-implementation}
 
-\todo{popis metody ukrývání v úsecích ticha}
+Tato podsekce popisuje implementaci metody popsané
+v~podsekci~\ref{sub:hiding-in-silence-intervals}. K~nalezení úseků ticha je
+použita funkce \texttt{consecutive\_values}, která v~zadaném poli najde
+počáteční indexy a~délky úseků opakujících se hodnot. Tato funkce byla převzata
+a~upravena z~odpovědi na fóru
+\textit{StackOverflow}~\cite{ConsecutiveValuesStackOverflow}. Knihovna NumPy
+umožňuje filtrovat zadané pole určitými podmínkami. Výsledkem je pole
+booleovských hodnot \texttt{true} a~\texttt{false} jako výsledek zadané
+podmínky pro každý prvek vstupního pole. Pro nalezení úseků ticha se použije
+jako podmínka filtru zda je absolutní hodnota vzorku menší než 15\% maximálního
+rozsahu signálu. V~booleovských hodnotách se poté najdou souvislé sekvence
+hodnot \texttt{true}. Kód funkce \texttt{consecutive\_values} a~její použití
+pro nalezení úseků ticha je vidět ve výpisu~\ref{lst:silence-intervals}.
 
-\blindtext
+\begin{lstlisting}[language=PythonPlus, label={lst:silence-intervals},
+caption={Nalezení indexů a~délek úseků ticha.}]
+def consecutive_values(input: Union[List, np.ndarray]):
+    input = np.asanyarray(input)
+    if input.size == 0:
+        return np.array([]), np.array([])
+    diff = np.ones(input.shape, dtype=bool)
+    diff[1:] = np.diff(input)
+    return np.nonzero(diff)[0], np.diff(np.append(np.nonzero(diff)[0], input.size))
+
+silence_starts, silence_lens = consecutive_values(
+    np.abs(self._source_data) <= 0.15 * np.abs(self._source_data).max())
+\end{lstlisting}
 
 \subsection*{Metod vkládání tónu}
 \label{sub:tone-insertion-implementation}
