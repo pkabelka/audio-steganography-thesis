@@ -1744,9 +1744,64 @@ decoded = np.unpackbits(
 \subsection*{Metoda vkládání tónu}
 \label{sub:tone-insertion-implementation}
 
-\todo{popis metody vkládání tónu}
+Tato podsekce popisuje implementaci metody popsané v~podsekci~\ref{sub:has}. Ke
+kódování i~dekódování je potřeba vypočítat výkon segmentů signálu. Publikace
+popisující tuto metodu nespecifikují rovnici pro výpočet výkonu segmentu
+a~proto jsem zvolil jeden z~možných výpočtů, který lze vidět
+v~rovnici~\ref{eq:segment-power}, kde $P$ je výkon segmentu a~$N$ je počet
+vzorků segmentu.
 
-\blindtext
+\begin{equation}
+    \label{eq:segment-power}
+    P = \frac{1}{N} \sum_{n=0}^{n=N-1}{|x[n]|^2}
+\end{equation}
+
+Poté jsou vygenerovány tóny na zvolených frekvencích funkcí $\sin$. Z~obou tónů
+jsou také vypočítány výkony, aby bylo možné nastavit jejich amplitudy tak, aby
+měly požadovaný poměr výkonu. Výpočet amplitudy tóny k~docílení požadovaného
+výkonu je vidět v~rovnici~\ref{eq:tone-amplitude}, kde $A$ je požadovaná
+amplituda tónu, $M$ je požadovaný procentuální poměr výkonu, $P_s$ je výkon
+segmentu a~$P_t$ je výkon tónu.
+
+\begin{equation}
+    \label{eq:tone-amplitude}
+    A = \sqrt{M \times \frac{P_s}{P_t}}
+\end{equation}
+
+V~implementaci jsou amplitudy předpočítány pro všechny kombinace bitů. Výpočet
+bude proveden efektivněji, protože knihovna NumPy použije na pozadí
+optimalizované vektorové instrukce. Výpočet tak bude mnohem rychlejší než při
+použití cyklu v~jazyce Python. Předpočítané amplitudy jsou poté vybrány na
+základě kódovaného bitu a~násobí se s~příslušným tónem. Ukázka kódu pro výpočet
+amplitud a~modulaci tónů se segmenty je vidět ve
+výpisu~\ref{lst:tone-insertion}.
+
+\begin{lstlisting}[language=PythonPlus, label={lst:tone-insertion},
+caption={Výpočet amplitud a~přidání tónů k~segmentům.}]
+f0_amplitudes = np.empty((2, len(segments)))
+f0_amplitudes[0] = np.sqrt(0.0025 * segment_powers / tone_f0_power)
+f0_amplitudes[1] = np.sqrt(0.000025 * segment_powers / tone_f0_power)
+
+f1_amplitudes = np.empty((2, len(segments)))
+f1_amplitudes[0] = np.sqrt(0.000025 * segment_powers / tone_f1_power)
+f1_amplitudes[1] = np.sqrt(0.0025 * segment_powers / tone_f1_power)
+
+for i, bit in enumerate(self._secret_data):
+    segments[i] += (tone_f0 * f0_amplitudes[bit][i] +
+                      tone_f1 * f1_amplitudes[bit][i])
+\end{lstlisting}
+
+K~dekódování jsem použil místo poměrů výkonů poměry korelačního koeficientu
+segmentu a~jednotlivých tónů. Kód pro výpočet korelace a~určení hodnoty bitu
+lze vidět ve výpisu~\ref{lst:tone-insertion-decoding}.
+
+\begin{lstlisting}[language=PythonPlus, label={lst:tone-insertion-decoding},
+caption={Výpočet korelace mezi segmenty a~tóny.}]
+for i in range(min(l, len(segments))):
+    decoded[i] = (
+        np.sum(segments[i] * tone_f1) / segment_len >
+        np.sum(segments[i] * tone_f0) / segment_len)
+\end{lstlisting}
 
 \subsection*{Implementace programu pro ověření vlastností metod}
 \label{sub:tester-implementation}
