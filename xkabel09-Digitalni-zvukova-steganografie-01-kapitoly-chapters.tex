@@ -569,12 +569,13 @@ rovnicí~\ref{eq:cepstrum}.
     C = \mathcal{F}^-1(\log{|\mathcal{F}(x(t))|})
 \end{equation}
 
-\noindent Po výpočtu cepstra segmentu je možné zjistit hodnotu zakódovaného bitu
-kontrolou, která hodnota na pozici $d_0$ a~$d_1$ je vyšší. Pokud je hodnota
-$C(d_0)$ vyšší než $C(d_1)$, pak je hodnota bitu daného segmentu logická~0.
-A~pokud je hodnota $C(d_1)$ vyšší než $C(d_0)$, pak je hodnota bitu daného
-segmentu logická~1~\cite{Gruhl1996}. Příklad cepstra segmentu včetně špiček na
-indexech zpoždění 100 a~110 lze vidět na obrázku~\ref{pic:segment-cepstrum}.
+\noindent Po výpočtu cepstra segmentu je možné zjistit hodnotu zakódovaného
+bitu kontrolou, která hodnota na pozici $d_0$ a~$d_1$ je vyšší. Pokud je
+hodnota $C(d_0)$ vyšší než $C(d_1)$, pak je hodnota bitu daného segmentu
+logická~0. A~pokud je hodnota $C(d_1)$ vyšší než $C(d_0)$, pak je hodnota bitu
+daného segmentu logická~1~\cite{Gruhl1996}. Příklad cepstra segmentu včetně
+špiček na indexech zpoždění 100 a~110 lze vidět na
+obrázku~\ref{pic:segment-cepstrum}.
 
 \begin{figure}[hbt]
     \centering
@@ -903,9 +904,9 @@ značí použité frekvence.
     \right.
 \end{equation}
 
-\noindent Tato metoda má malou kapacitu a~vložené tóny je jednoduché detekovat, proto je
-vhodné použít čtyři a~více párů frekvencí, které se střídají na základě
-určitého klíče~\cite{Djebbar2012}.
+\noindent Tato metoda má malou kapacitu a~vložené tóny je jednoduché detekovat,
+proto je vhodné použít čtyři a~více párů frekvencí, které se střídají na
+základě určitého klíče~\cite{Djebbar2012}.
 
 \subsection*{Metoda ukrývání v~úsecích ticha}
 \label{sub:hiding-in-silence-intervals}
@@ -924,9 +925,9 @@ Autoři~\cite{Shahreza2008} zjistili následující optimální hodnoty:
     \item maximální počet bitů pro ukrytí do segmentu: 4~b.
 \end{itemize}
 
-\noindent Pokud $X$ je kódovaná hodnota, $N$ je počet bitů kódované hodnoty a~$L$ je
-délka konkrétního segmentu, pak pro kódování do konkrétního segmentu se
-vypočítá jeho nová délka $D$, tak aby platil vztah v~rovnici
+\noindent Pokud $X$ je kódovaná hodnota, $N$ je počet bitů kódované hodnoty
+a~$L$ je délka konkrétního segmentu, pak pro kódování do konkrétního segmentu
+se vypočítá jeho nová délka $D$, tak aby platil vztah v~rovnici
 \ref{eq:silence-value}~\cite{Shahreza2008}.
 
 \begin{equation}
@@ -1179,9 +1180,9 @@ se často objevovaly v~průzkumu~\cite{AlSabhany2020}. Tyto funkce jsou:
         dále jen RMSD).
 \end{itemize}
 
-\noindent Rovnice těchto funkcí jsou v~příloze~\ref{cha:statistical-functions}. Při
-testování se nejprve vyhodnotí maximální kapacita metody bez modifikace stego
-signálu s~pomocí funkce BER. Poté bude testována robustnost následujícími
+\noindent Rovnice těchto funkcí jsou v~příloze~\ref{cha:statistical-functions}.
+Při testování se nejprve vyhodnotí maximální kapacita metody bez modifikace
+stego signálu s~pomocí funkce BER. Poté bude testována robustnost následujícími
 metodami zvlášť i~kombinovaně:
 
 \begin{itemize}
@@ -1192,8 +1193,8 @@ metodami zvlášť i~kombinovaně:
     \item překódování do ztrátového formátu.
 \end{itemize}
 
-\noindent Nepostřehnutelnost je sice subjektivní vlastnost, ale je možné částečně
-vyhodnotit její míru automaticky pomocí úrovně SNR a~PSNR.
+\noindent Nepostřehnutelnost je sice subjektivní vlastnost, ale je možné
+částečně vyhodnotit její míru automaticky pomocí úrovně SNR a~PSNR.
 
 \section{Popis vlastní metody digitální zvukové steganografie}
 \label{sec:own-method-proposal}
@@ -1327,13 +1328,13 @@ budou popsány implementace jednotlivých metod v~knihovně.
         balíčku.
 \end{itemize}
 
-\noindent V~kořenovém balíčku se nacházejí moduly společné pro ostatní balíčky. Tyto
-moduly jsou:
+\noindent V~kořenovém balíčku se nacházejí moduly společné pro ostatní balíčky.
+Tyto moduly jsou:
 
 \begin{itemize}
-    \item \texttt{audio\_utils} -- obsahuje pomocné funkce pro práci se signály,
-        nejdůležitější funkcí je \texttt{split\_to\_n\_segments}, která rozdělí
-        pole na segmenty s~požadovanou délkou,
+    \item \texttt{audio\_utils} -- obsahuje pomocné funkce pro práci se
+        signály, nejdůležitější funkcí je \texttt{split\_to\_n\_segments},
+        která rozdělí pole na segmenty s~požadovanou délkou,
     \item \texttt{stat\_utils} -- obsahuje implementované statistické funkce
         popsané v~příloze~\ref{cha:statistical-functions},
     \item \texttt{exceptions} -- obsahuje vlastní výjimky použité v~knihovně
@@ -1667,8 +1668,8 @@ a~$\left\lceil~\right\rceil$ je funkce pro zaokrouhlení nahoru.
     L = 2 \times 2^{\left\lceil \log_2{(2 \times X)} \right\rceil}
 \end{equation}
 
-\noindent Nové fáze se zapíší do horních frekvencí, které se nachází v~polovině pole
-s~fázemi segmentu. Délka segmentu musí být mnohem větší než je ukrývaná
+\noindent Nové fáze se zapíší do horních frekvencí, které se nachází v~polovině
+pole s~fázemi segmentu. Délka segmentu musí být mnohem větší než je ukrývaná
 informace, protože jsou fáze segmentu symetrické. Pro zachování této symetrie
 jsou se nové fáze zapíší i~do druhé půlky pole fází, ale opačně. Matematický
 zápis nahrazení fází se nachází v~rovnici~\ref{eq:phase-new-angles}, kde $i \in
@@ -1682,8 +1683,9 @@ zápis nahrazení fází se nachází v~rovnici~\ref{eq:phase-new-angles}, kde $
     \end{aligned}
 \end{equation}
 
-\noindent Kód pro zápis nových fází ekvivalentní s~rovnicemi~\ref{eq:phase-new-angles} se
-nachází ve výpisu~\ref{lst:phase-new-angles}.
+\noindent Kód pro zápis nových fází ekvivalentní
+s~rovnicemi~\ref{eq:phase-new-angles} se nachází ve
+výpisu~\ref{lst:phase-new-angles}.
 
 \begin{lstlisting}[language=PythonPlus, label={lst:phase-new-angles},
 caption={Zápis nových fází do pole s~fázemi segmentu.}]
@@ -1767,12 +1769,12 @@ segmentu a~$P_t$ je výkon tónu.
     A = \sqrt{M \times \frac{P_s}{P_t}}
 \end{equation}
 
-\noindent V~implementaci jsou amplitudy předpočítány pro všechny kombinace bitů. Výpočet
-bude proveden efektivněji, protože knihovna NumPy použije na pozadí
-optimalizované vektorové instrukce. Výpočet tak bude mnohem rychlejší než při
-použití cyklu v~jazyce Python. Předpočítané amplitudy jsou poté vybrány na
-základě kódovaného bitu a~násobí se s~příslušným tónem. Ukázka kódu pro výpočet
-amplitud a~modulaci tónů se segmenty je vidět ve
+\noindent V~implementaci jsou amplitudy předpočítány pro všechny kombinace
+bitů. Výpočet bude proveden efektivněji, protože knihovna NumPy použije na
+pozadí optimalizované vektorové instrukce. Výpočet tak bude mnohem rychlejší
+než při použití cyklu v~jazyce Python. Předpočítané amplitudy jsou poté vybrány
+na základě kódovaného bitu a~násobí se s~příslušným tónem. Ukázka kódu pro
+výpočet amplitud a~modulaci tónů se segmenty je vidět ve
 výpisu~\ref{lst:tone-insertion}.
 
 \begin{lstlisting}[language=PythonPlus, label={lst:tone-insertion},
