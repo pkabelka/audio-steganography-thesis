@@ -569,7 +569,7 @@ rovnicí~\ref{eq:cepstrum}.
     C = \mathcal{F}^-1(\log{|\mathcal{F}(x(t))|})
 \end{equation}
 
-Po výpočtu cepstra segmentu je možné zjistit hodnotu zakódovaného bitu
+\noindent Po výpočtu cepstra segmentu je možné zjistit hodnotu zakódovaného bitu
 kontrolou, která hodnota na pozici $d_0$ a~$d_1$ je vyšší. Pokud je hodnota
 $C(d_0)$ vyšší než $C(d_1)$, pak je hodnota bitu daného segmentu logická~0.
 A~pokud je hodnota $C(d_1)$ vyšší než $C(d_0)$, pak je hodnota bitu daného
@@ -903,7 +903,7 @@ značí použité frekvence.
     \right.
 \end{equation}
 
-Tato metoda má malou kapacitu a~vložené tóny je jednoduché detekovat, proto je
+\noindent Tato metoda má malou kapacitu a~vložené tóny je jednoduché detekovat, proto je
 vhodné použít čtyři a~více párů frekvencí, které se střídají na základě
 určitého klíče~\cite{Djebbar2012}.
 
@@ -924,7 +924,7 @@ Autoři~\cite{Shahreza2008} zjistili následující optimální hodnoty:
     \item maximální počet bitů pro ukrytí do segmentu: 4~b.
 \end{itemize}
 
-Pokud $X$ je kódovaná hodnota, $N$ je počet bitů kódované hodnoty a~$L$ je
+\noindent Pokud $X$ je kódovaná hodnota, $N$ je počet bitů kódované hodnoty a~$L$ je
 délka konkrétního segmentu, pak pro kódování do konkrétního segmentu se
 vypočítá jeho nová délka $D$, tak aby platil vztah v~rovnici
 \ref{eq:silence-value}~\cite{Shahreza2008}.
@@ -1179,7 +1179,7 @@ se často objevovaly v~průzkumu~\cite{AlSabhany2020}. Tyto funkce jsou:
         dále jen RMSD).
 \end{itemize}
 
-Rovnice těchto funkcí jsou v~příloze~\ref{cha:statistical-functions}. Při
+\noindent Rovnice těchto funkcí jsou v~příloze~\ref{cha:statistical-functions}. Při
 testování se nejprve vyhodnotí maximální kapacita metody bez modifikace stego
 signálu s~pomocí funkce BER. Poté bude testována robustnost následujícími
 metodami zvlášť i~kombinovaně:
@@ -1192,7 +1192,7 @@ metodami zvlášť i~kombinovaně:
     \item překódování do ztrátového formátu.
 \end{itemize}
 
-Nepostřehnutelnost je sice subjektivní vlastnost, ale je možné částečně
+\noindent Nepostřehnutelnost je sice subjektivní vlastnost, ale je možné částečně
 vyhodnotit její míru automaticky pomocí úrovně SNR a~PSNR.
 
 \section{Popis vlastní metody digitální zvukové steganografie}
@@ -1327,7 +1327,7 @@ budou popsány implementace jednotlivých metod v~knihovně.
         balíčku.
 \end{itemize}
 
-V~kořenovém balíčku se nacházejí moduly společné pro ostatní balíčky. Tyto
+\noindent V~kořenovém balíčku se nacházejí moduly společné pro ostatní balíčky. Tyto
 moduly jsou:
 
 \begin{itemize}
@@ -1374,9 +1374,8 @@ Prvním argumentem je název požadované metody a~poté požadovaný režim --
 zadat všechny povinné přepínače a~případně nastavit vhodně i~volitelné
 přepínače. Povinný společný přepínač je pouze \verb|-s/--source| -- při
 kódování se jedná o~krycí soubor do kterého budou zakódována data a~při
-dekódování se jedná o~stego soubor ze kterého budou data dekódována.
-
-Při kódování je potřeba použít jeden z~následujících přepínačů:
+dekódování se jedná o~stego soubor ze kterého budou data dekódována. Při
+kódování je ještě potřeba použít jeden z~následujících přepínačů:
 
 \begin{itemize}
     \item \verb|-t/--text| -- umožňuje zadání kódovaného textu jako argument
@@ -1396,10 +1395,10 @@ příslušnou \uv{escape sekvenci}. Příklad výstupu slov \uv{Dobrý} a~\uv{de
 každý na novém řádku je:
 
 \begin{verbatim}
-b'Dobr\xc3\xbd\nden'
+    b'Dobr\xc3\xbd\nden'
 \end{verbatim}
 
-Výstup obsahuje také asociované pole hodnot ve formátu \textit{JSON}
+\noindent Výstup obsahuje také asociované pole hodnot ve formátu \textit{JSON}
 s~dodatečnými parametry potřebnými pro dekódování u~některých metod. Poslední
 společné volitelné argumenty jsou:
 
@@ -1410,7 +1409,7 @@ společné volitelné argumenty jsou:
         statistických funkcí.
 \end{itemize}
 
-Po vyhodnocení zadaných parametrů se spustí fasáda s~vybranou metodou
+\noindent Po vyhodnocení zadaných parametrů se spustí fasáda s~vybranou metodou
 a~parametry.
 
 \subsubsection*{Implementace fasády}
@@ -1668,7 +1667,7 @@ a~$\left\lceil~\right\rceil$ je funkce pro zaokrouhlení nahoru.
     L = 2 \times 2^{\left\lceil \log_2{(2 \times X)} \right\rceil}
 \end{equation}
 
-Nové fáze se zapíší do horních frekvencí, které se nachází v~polovině pole
+\noindent Nové fáze se zapíší do horních frekvencí, které se nachází v~polovině pole
 s~fázemi segmentu. Délka segmentu musí být mnohem větší než je ukrývaná
 informace, protože jsou fáze segmentu symetrické. Pro zachování této symetrie
 jsou se nové fáze zapíší i~do druhé půlky pole fází, ale opačně. Matematický
@@ -1683,7 +1682,7 @@ zápis nahrazení fází se nachází v~rovnici~\ref{eq:phase-new-angles}, kde $
     \end{aligned}
 \end{equation}
 
-Kód pro zápis nových fází ekvivalentní s~rovnicemi~\ref{eq:phase-new-angles} se
+\noindent Kód pro zápis nových fází ekvivalentní s~rovnicemi~\ref{eq:phase-new-angles} se
 nachází ve výpisu~\ref{lst:phase-new-angles}.
 
 \begin{lstlisting}[language=PythonPlus, label={lst:phase-new-angles},
@@ -1756,7 +1755,7 @@ vzorků segmentu.
     P = \frac{1}{N} \sum_{n=0}^{n=N-1}{|x[n]|^2}
 \end{equation}
 
-Poté jsou vygenerovány tóny na zvolených frekvencích funkcí $\sin$. Z~obou tónů
+\noindent Poté jsou vygenerovány tóny na zvolených frekvencích funkcí $\sin$. Z~obou tónů
 jsou také vypočítány výkony, aby bylo možné nastavit jejich amplitudy tak, aby
 měly požadovaný poměr výkonu. Výpočet amplitudy tóny k~docílení požadovaného
 výkonu je vidět v~rovnici~\ref{eq:tone-amplitude}, kde $A$ je požadovaná
@@ -1768,7 +1767,7 @@ segmentu a~$P_t$ je výkon tónu.
     A = \sqrt{M \times \frac{P_s}{P_t}}
 \end{equation}
 
-V~implementaci jsou amplitudy předpočítány pro všechny kombinace bitů. Výpočet
+\noindent V~implementaci jsou amplitudy předpočítány pro všechny kombinace bitů. Výpočet
 bude proveden efektivněji, protože knihovna NumPy použije na pozadí
 optimalizované vektorové instrukce. Výpočet tak bude mnohem rychlejší než při
 použití cyklu v~jazyce Python. Předpočítané amplitudy jsou poté vybrány na
