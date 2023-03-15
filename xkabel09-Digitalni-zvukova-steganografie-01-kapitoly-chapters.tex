@@ -88,7 +88,20 @@ zvuk v~digitální formě.
 V~reálném světě se zvuk vyskytuje jako vibrace materiálu při frekvenci
 slyšitelné člověkem, která se pohybuje mezi 10\,Hz a~20\,000\,Hz
 \cite{Swanson1998}. Zvuk je ve skutečném světě spojitý signál -- má nekonečný
-počet hodnot -- a~je tedy definován všude. Aby bylo možné se zvukem pracovat
+počet hodnot -- a~je tedy definován všude. Základními parametry signálu jsou
+\textit{frekvence}, \textit{perioda} a~\textit{amplituda}. Amplituda, která
+udává maximální výchylku signálu. Frekvence, nebo také kmitočet, vyjadřuje
+počet period za jednotku času a~udává se v~Hertzích (Hz). Perioda je úzce
+svázaná s~frekvencí a~vyjadřuje délku jednoho opakování v~signálu, udává se
+v~sekundách~\cite{Cernocky2021}. Vztah mezi frekvencí a~periodou lze vidět
+v~rovnici~\ref{eq:period}, kde $T$~je perioda a~$f$~je frekvence.
+
+\begin{equation}
+    \label{eq:period}
+    T = \frac{1}{f}
+\end{equation}
+
+Aby bylo možné se zvukem pracovat
 digitálně, je nutné převést jej do diskrétní formy, která má konečný počet
 hodnot. Toho je možné docílit vzorkováním signálu na určité vzorkovací
 frekvenci a~poté kvantováním~\cite{Cernocky2021}. Posledním krokem pro převod
