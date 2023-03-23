@@ -1828,10 +1828,68 @@ for i in range(min(l, len(segments))):
         np.sum(segments[i] * tone_f0) / segment_len)
 \end{lstlisting}
 
-\subsection*{Implementace programu pro ověření vlastností metod}
-\label{sub:tester-implementation}
+\section*{Implementace programu pro ověření vlastností metod}
+\label{sec:evaluation-program-implementation}
 
-\todo{implementace programu pro overeni vlastnosti}
+Ověřování vlastností je rozděleno do dvou částí. První částí je program pro
+vyhodnocení vlastností metod a~výpočet statistických funkcí popsaných
+v~sekci~\ref{sub:method-property-verification}. Druhou částí je program pro
+zpracování dat vygenerovaných předchozím programem.
+
+\subsection*{Argumenty pro spuštění programu pro vygenerování dat}
+\label{sub:tui-arguments}
+
+První program pro generování se nachází v~balíčku \texttt{cli.evaluation}.
+Kostra volání programu je následující:
+
+\begin{verbatim}
+python3 -m audio_steganography.cli.evaluation -d <cesta k datovým sadám> \
+    -o <cesta výstupní složky> <testované metody>
+\end{verbatim}
+
+\noindent Přepínač \verb|-d/--datasets| specifikuje kořenovou složku obsahující
+použité datové sady. Očekávaná struktura je datových sad je následující:
+
+\begin{verbatim}
+<kořen datových sad>
+|   <datová sada>
+|   |   <kategorie>
+|   |   |   <soubory>
+|   |   |   ...
+|   |   <kategorie>
+|   |   |   <soubory>
+|   |   |   ...
+|   |   ...
+|   ...
+\end{verbatim}
+
+\noindent Obsahem výstupní složky, specifikované přepínačem \verb|-o/--output|,
+budou soubory v~textovém formátu s~jednotlivými sloupci oddělenými středníkem.
+Tento formát měl původně hodnoty oddělené čárkou (anglicky
+\textit{comma-separated values}, CSV), ale protože se ve výstupu nachází čárky,
+tak jsem zvolil středník pro oddělení hodnot. Struktura výstupní složky je
+totožná s~kořenovou složkou pro datové sady. Názvy souborů pouze obsahují navíc
+příponu \texttt{.csv}.
+
+Pro výpis průběžného stavu vyhodnocování je možné použít přepínač
+\verb|-l/--log|, který bude na standardní chybový výstup vypisovat informace
+o~právě vyhodnocovaném souboru, metodě, parametrů a~modifikací včetně
+dodatečných informací o~prováděném kódování a~dekódování.
+
+Posledním přepínačem je \verb|-e/--extended|, který přidá k~vyhodnocovaným
+metodám dodatečné parametry pro hlubší testování, avšak vyhodnocování bude
+trvat podstatně déle.
+
+Na závěr jsou po přepínačích zadány metody které budou vyhodnocovány. Názvy
+metod je možné vypsat v~nápovědě přepínačem \verb|-h/--help|. Pro vyhodnocení
+všech metod je možné zadat argument \texttt{ALL} nebo nezadat žádnou metodu.
+
+\subsection{Způsob vyhodnocení}
+\label{sub:evaluation-program}
+
+\todo{programová část vyhodnocení, paralelizace}
+\blindtext
+
 \blindtext
 
 
