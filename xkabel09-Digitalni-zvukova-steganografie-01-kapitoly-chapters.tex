@@ -1190,7 +1190,9 @@ metody. Testování bude probíhat na často používaných datových sadách pr
 digitální zvukovou steganografii. Podle~\cite{AlSabhany2020} jsou to tyto
 datové sady: \textit{TIMIT}~\cite{Garofolo1993}, \textit{GTZAN}
 \cite{Tzanetakis2001}, \textit{Noizeus}~\cite{Hu2006} a~\textit{UrbanSound8K}
-\cite{Salamon2014}.
+\cite{Salamon2014}. K~těmto datovým sadám jsem ještě přidal vlastní sadu
+souborů, která bude s~ostatními více popsána dál
+v~části~\ref{ssub:dataset-descriptions}.
 
 Hodnoty jednotlivých vlastností se vyčíslují pomocí statistických funkcí, které
 se často objevovaly v~průzkumu~\cite{AlSabhany2020}. Tyto funkce jsou:
@@ -1227,15 +1229,63 @@ metodami zvlášť i~kombinovaně:
 \subsubsection{Popis použitých datových sad}
 \label{ssub:dataset-descriptions}
 
-\todo{popis datových sad}
-\blindtext
-\blindtext
+Datový korpus \textit{TIMIT} vznikl v~roce~1993 za účelem automatizovaného
+vyhodnocování systémů pro detekci řeči~\cite{Garofolo1993}. Našel avšak použití
+v~širokém spektru dalších oblastí pracující se zvukovými nahrávkami, mezi nimiž
+je i~zvuková steganografie. Korpus obsahuje nahrávky od 630~řečníků z~osmi
+hlavních dialektů americké angličtiny. Každý řečník četl deset foneticky
+pestrých vět. Nahrávky obsahují jeden kanál PCM kódovaného zvuku ve formátu
+WAV. Zvuk je vzorkován na frekvenci 16\,kHz a~vzorky jsou kvantovány na
+16~bitech~\cite{Garofolo1993}. Průměrná délka jedné nahrávky jsou 3~sekundy.
 
-\blindtext
-\blindtext
+Datová sada \textit{GTZAN} vznikla mezi lety 2000-2001 a~obsahuje
+1000~hudebních nahrávek po 30~sekundách. Žánr a~zdroj jednotlivých nahrávek je
+různorodý. Celkem obsahuje datová sada 10~hudeních žánrů. Nahrávky obsahují
+jeden kanál a~jsou vzorkovány na frekvenci 22050\,Hz a~kvantovány na
+16~bitech~\cite{Tzanetakis2001}.
 
-\blindtext
-\blindtext
+Datová sada \textit{NOIZEUS} vnikla v~roce~2007 za účelem lepšího srovnání
+algoritmů pro zkvalitnění hlasových dat. Sada obsahuje 30~nahrávek s~jedním PCM
+kanálem vzorkovaným na frekvenci 8\,kHz a~kvantovaným na 16~bitech. Obsahem
+nahrávek jsou všechny fonémy americké angličtiny. Součástí sady je také osm
+modifikovaných verzí nahrávek s~přidaným ruchem různého druhu. Každá modifikace
+má ještě čtyři úrovně hlasitosti ruchu určeného mírou poměru signálu k~šumu
+s~hodnotami: 0\,dB, 5\,dB, 10\,dB a~15\,dB~\cite{Hu2006}.
+
+Datová sada \textit{UrbanSound8K} vznikl v~roce~2014 za účelem vytvoření volně
+dostupného korpusu nahrávek z~městského prostředí. Nahrávky jsou ve formátu
+WAV, ale nemají jednotnou vzorkovací frekvenci ani počet bitů na vzorek. Celkem
+obsahuje sada 8732~krátkých nahrávek rozdělených do deseti kategorií městských
+zvuků~\cite{Salamon2014}.
+
+K~výše popsaným datovým sadám jsem vytvořil vlastní sadu nahrávek. Jedná se
+o~25~segmentů nahrávky řeči z~videa \textit{A Narrated Tour of the
+Moon}\footnote{\url{https://svs.gsfc.nasa.gov/cgi-bin/details.cgi?aid=10929}}
+od NASA. Délka nahrávek se pohybuje od \textasciitilde4~sekund do
+\textasciitilde20~sekund. Nahrávky obsahují jeden kanál PCM zvuku vzorkovaného
+na frekvenci 22050\,Hz a~kvantovaného na 16~bitech.
+
+Pro shrnutí je v~tabulce~\ref{tab:datasets} přehled parametrů jednotlivých
+datových sad.
+
+\begin{table}[H]
+    \vskip6pt
+    \caption{Přehled parametrů datových sad}
+    \vskip6pt
+    \centering
+    \begin{tabular}{llll}
+        \toprule
+        Název & Vzorkovací frekvence & Bitová hloubka & Počet nahrávek \\
+        \midrule
+        TIMIT & 16000\,Hz & 16\,b & 6300 \\
+        GTZAN & 22050\,Hz & 16\,b & 1000 \\
+        NOIZEUS & 8000\, Hz & 16\,b & 960 \\
+        UrbanSound8K & -- & -- & 8732 \\
+        A Narrated Tour of the Moon & 22050\,Hz & 16\,b & 25 \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:datasets}
+\end{table}
 
 \section{Popis vlastní metody digitální zvukové steganografie}
 \label{sec:own-method-proposal}
