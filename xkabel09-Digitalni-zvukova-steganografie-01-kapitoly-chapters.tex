@@ -1963,6 +1963,22 @@ všech metod je možné zadat argument \texttt{ALL} nebo nezadat žádnou metodu
 \chapter{Zhodnocení vlastností realizace}
 \label{cha:method-evaluation}
 
+V~této kapitole budou popsány výsledky vyhodnocení implementovaných metod na
+zvolených datových sadách popsaných v~části~\ref{ssub:dataset-descriptions}.
+Vyhodnocování velkého množství kombinací parametrů metod způsobilo výrazné
+zpomalení programu a~velikost datových sad tomu nepomohla. Proto byly
+z~určitých datových sad vybrány menší skupiny souborů na kterých bylo
+vyhodnocení provedeno.
+
+Z~datové sady \textit{UrbanSound8K} byl použit pouze oddíl s~názvem
+\textit{fold1}, který obsahuje 873~nahrávek. Avšak pouze soubor
+\texttt{88466-7-0-0.wav} byl vynechán, protože jsou vzorky tohoto souboru
+kódovány pomocí adaptivní diferenciální pulzně-kódové modulace, pro kterou
+nebyl implementovaný program navržen.
+
+Z~datové sady \textit{TIMIT} byla vybrána od každého z~630~řečníků pouze jedna
+věta namísto všech deseti namluvených.
+
 \todo{výsledky vyhodnocení kvality}
 
 \blindtext
