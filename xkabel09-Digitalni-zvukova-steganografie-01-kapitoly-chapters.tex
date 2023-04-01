@@ -1964,13 +1964,12 @@ všech metod je možné zadat argument \texttt{ALL} nebo nezadat žádnou metodu
 \label{sub:evaluation-program}
 
 Program nejprve vyhodnotí zadané argumenty ze kterých zjistí primárně kořenovou
-složku obsahující datové sady. Při načítání cest souborů jsou ignorovány všechny
-soubory a~složky začínající tečkou. Všechny soubory které
-budou použity pro vyhodnocení se přidají spolu se zvolenými metodami jako
-argumenty pro funkci \texttt{evaluate\_method}, která provádí kódování,
-modifikace a~dekódování. Třída \texttt{Pool} z~knihovny
-\texttt{multiprocessing} zajišťuje vytváření a~spouštění paralelních procesů
-s~funkcí \texttt{evaluate\_method}.
+složku obsahující datové sady. Při načítání cest souborů jsou ignorovány
+všechny soubory a~složky začínající tečkou. Všechny soubory které budou použity
+pro vyhodnocení se přidají spolu se zvolenými metodami jako argumenty pro
+funkci \texttt{evaluate\_method}, která provádí kódování, modifikace
+a~dekódování. Třída \texttt{Pool} z~knihovny \texttt{multiprocessing} zajišťuje
+vytváření a~spouštění paralelních procesů s~funkcí \texttt{evaluate\_method}.
 
 Funkce \texttt{evaluate\_method} obsahuje několik vrstev vnořených cyklů které
 přidávají vyhodnocované aspekty. První cyklus testuje různé délky zpráv.
