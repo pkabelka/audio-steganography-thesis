@@ -1963,10 +1963,24 @@ všech metod je možné zadat argument \texttt{ALL} nebo nezadat žádnou metodu
 \subsection{Způsob vyhodnocení}
 \label{sub:evaluation-program}
 
-\todo{programová část vyhodnocení, paralelizace}
-\blindtext
+Program nejprve vyhodnotí zadané argumenty ze kterých zjistí primárně kořenovou
+složku obsahující datové sady. Při načítání cest souborů z~datových sad jsou
+ignorovány datové sady a~kategorie začínající \uv{.}. Všechny soubory které
+budou použity pro vyhodnocení se přidají spolu se zvolenými metodami jako
+argumenty pro funkci \texttt{evaluate\_method}, která provádí kódování,
+modifikace a~dekódování. Třída \texttt{Pool} z~knihovny
+\texttt{multiprocessing} zajišťuje vytváření a~spouštění paralelních procesů
+s~funkcí \texttt{evaluate\_method}.
 
-\blindtext
+Funkce \texttt{evaluate\_method} obsahuje několik vrstev vnořených cyklů které
+přidávají vyhodnocované aspekty. První cyklus testuje různé délky zpráv.
+V~dalším cyklu se každá zpráva kóduje do souboru zvolenými metodami. Každá
+metoda má také různé parametry které ovlivňují míru nepostřehnutelnosti,
+robustnosti a~kapacity. Proto musí být tyto parametry otestovány navzájem
+s~ostatními pro nalezení optimálních hodnot. Po zakódování zprávy jsou
+aplikovány modifikace a~vyhodnocení vlastností statistickými funkcemi popsanými
+v~sekci~\ref{sub:method-property-verification}. Výsledky pro vyhodnocený soubor
+jsou zapsány ve formátu \textit{CSV} do výstupní složky.
 
 
 \chapter{Zhodnocení vlastností realizace}
