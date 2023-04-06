@@ -2002,6 +2002,17 @@ Obsahem výstupní složky, specifikované přepínačem \verb|-o/--output|,
 jsou soubory ve formátu CSV s~hodnotami oddělenými středníkem a~také grafy
 z~tabulek ve formátu PDF.
 
+\subsection*{Zpracování výsledků}
+\label{sub:evaluation-processing-program}
+
+Program načte na základě daných argumentů načteny tabulky s~výsledky ze všech
+souborů do jedné instance třídy \texttt{DataFrame} z~knihovny \textit{pandas}.
+Tato tabulka je předána funkci \texttt{process\_data}, která data zpracuje,
+vyfiltruje a~vytvoří tabulky a~grafy s~výslednými hodnotami zjišťovaných
+parametrů steganografických metod. Konkrétní parametry a~hodnoty budou popsány
+v~následující kapitole.
+
+
 \chapter{Zhodnocení vlastností realizace}
 \label{cha:method-evaluation}
 
