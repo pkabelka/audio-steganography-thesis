@@ -1982,6 +1982,25 @@ v~sekci~\ref{sub:method-property-verification}. Výsledky pro vyhodnocený soubo
 jsou z~cyklů postupně sesbírány do instance třídy \texttt{DataFrame} z~knihovny
 \textit{pandas} a~zapsány ve formátu \textit{CSV} do výstupní složky.
 
+\subsection*{Argumenty pro spuštění programu pro zpracování výsledků}
+\label{sub:evaluation-processing-program-tui-arguments}
+
+Program pro zpracování výsledků se nachází v~balíčku
+\texttt{cli.evaluation.process}. Kostra volání programu je následující:
+
+\begin{verbatim}
+python3 -m audio_steganography.cli.evaluation.process \
+    -d <cesta k výsledkům> -o <cesta výstupní složky>
+\end{verbatim}
+
+\noindent Přepínač \verb|-d/--data| specifikuje kořenovou složku obsahující
+výsledky vyhodnocení metod na datových sadách. Očekávaná struktura je stejná
+jako u~programu pro generování výsledků
+(viz~\ref{sub:evaluation-program-tui-arguments}).
+
+Obsahem výstupní složky, specifikované přepínačem \verb|-o/--output|,
+jsou soubory ve formátu CSV s~hodnotami oddělenými středníkem a~také grafy
+z~tabulek ve formátu PDF.
 
 \chapter{Zhodnocení vlastností realizace}
 \label{cha:method-evaluation}
