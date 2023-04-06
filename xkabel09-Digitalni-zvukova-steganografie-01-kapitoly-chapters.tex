@@ -1094,7 +1094,11 @@ až minut.
 Při volbě tajné zprávy bude mít uživatel programu na výběr textový vstup nebo
 obsah souboru. Rozhraní jednotlivých metod bude pracovat s~bity ukrývané
 informace, díky čemu nebude nezáležet na typu kódovaných dat. Pro kódování je
-tedy postačí převést z~bajtů na bity a~při dekódování naopak.
+tedy postačí převést z~bajtů na bity a~při dekódování naopak. Většina
+steganografických metod má několik parametrů které mají vliv na robustnost,
+kapacitu a~nepostřehnutelnost metody. Tyto parametry budou uživateli
+zpřístupněny jako dodatečné argumenty při spouštění programu nebo při kódování
+a~dekódování v~knihovní části této práce.
 
 Z~metod popsaných v~sekci~\ref{sec:existing-methods} jsem plánoval
 implementovat všechny, avšak některé metody se ukázaly být velmi složité na
@@ -1475,6 +1479,11 @@ kódování je ještě potřeba použít jeden z~následujících přepínačů:
     \item \verb|-f/--file| -- kódovaná data budou načtena jako surové bajty ze
         souboru.
 \end{itemize}
+
+Většina metod má parametry, které ovlivňují jejich kvalitu a~rychlost kódování,
+robustnost, kapacitu či nepostřehnutelnost. Nejlepší způsob jak zjistit o~jaké
+parametry se u~metod jedná je zadáním přepínače \verb|-h| nebo \verb|--help| po
+vyplnění základní kostry volání.
 
 Pro výstup je možné použít argument \verb|-o/--output|, čímž je možno určit
 název výstupního souboru po kódování/dekódování. Pokud je specifikován název
