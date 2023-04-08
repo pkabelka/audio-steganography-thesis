@@ -1981,18 +1981,18 @@ a~dekódování. Třída \texttt{Pool} z~knihovny \texttt{multiprocessing} zaji�
 vytváření a~spouštění paralelních procesů s~funkcí \texttt{evaluate\_method}.
 
 Funkce \texttt{evaluate\_method} obsahuje několik vrstev vnořených cyklů které
-přidávají vyhodnocované aspekty. První cyklus testuje různé délky zpráv.
-Pokud je zpráva příliš dlouhá na konkrétní metodu a~její nastavení, pak jsou
+přidávají vyhodnocované aspekty. První cyklus testuje různé délky zpráv. Pokud
+je zpráva příliš dlouhá na konkrétní metodu a~její nastavení, pak jsou
 ponechány hodnoty prázdné až na dobu kódování a~dekódování, které jsou
-nastaveny na nekonečno.
-V~dalším cyklu se každá zpráva kóduje do souboru zvolenými metodami. Každá
-metoda má také různé parametry které ovlivňují míru nepostřehnutelnosti,
-robustnosti a~kapacity. Proto musí být tyto parametry otestovány navzájem
-s~ostatními pro nalezení optimálních hodnot. Po zakódování zprávy jsou
-aplikovány modifikace a~vyhodnocení vlastností statistickými funkcemi popsanými
-v~sekci~\ref{sub:method-property-verification}. Výsledky pro vyhodnocený soubor
-jsou z~cyklů postupně sesbírány do instance třídy \texttt{DataFrame} z~knihovny
-\textit{pandas} a~zapsány ve formátu \textit{CSV} do výstupní složky.
+nastaveny na nekonečno. V~dalším cyklu se každá zpráva kóduje do souboru
+zvolenými metodami. Každá metoda má také různé parametry které ovlivňují míru
+nepostřehnutelnosti, robustnosti a~kapacity. Proto musí být tyto parametry
+otestovány navzájem s~ostatními pro nalezení optimálních hodnot. Po zakódování
+zprávy jsou aplikovány modifikace a~vyhodnocení vlastností statistickými
+funkcemi popsanými v~sekci~\ref{sub:method-property-verification}. Výsledky pro
+vyhodnocený soubor jsou z~cyklů postupně sesbírány do instance třídy
+\texttt{DataFrame} z~knihovny \textit{pandas} a~zapsány ve formátu \textit{CSV}
+do výstupní složky.
 
 \subsection*{Argumenty pro spuštění programu pro zpracování výsledků}
 \label{sub:evaluation-processing-program-tui-arguments}
