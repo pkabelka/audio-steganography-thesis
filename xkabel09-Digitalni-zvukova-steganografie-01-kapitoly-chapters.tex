@@ -2048,8 +2048,25 @@ věta namísto všech deseti namluvených.
 \section{Testované parametry}
 \label{sec:tested-parameters}
 
-Testované délky jsou 32\,bitů, 128\,bitů, 512\,bitů a~v~rozšířeném režimu
-i~256\,bitů.
+Testované délky zpráv jsou 32\,bitů, 128\,bitů, 512\,bitů a~v~rozšířeném režimu
+i~256\,bitů. Tyto délky byly zvoleny pro otestování kapacity a~kvality metod.
+Z~modifikací ze sekce~\ref{sub:method-property-verification} byly použity
+všechny vybrané s~několika variantami. Varianty modifikací jsou následující:
+
+\begin{itemize}
+    \item přidání šumu má tři varianty poměru signálu k~šumu: 10\,dB, 20\,dB
+        a~v~rozšířeném režimu i~15\,dB,
+    \item filtrace spektra je rozdělena na filtraci horních a~spodních
+        frekvencí od poloviny maximální frekvence signálu,
+    \item převzorkování je testováno pouze snížením počtu vzorků na polovinu
+        a~zpět,
+    \item překvantování je testováno obdobně snížením počtu bitů na vzorek na
+        polovinu a~zpět,
+    \item pro překódování do ztrátového formátu byl zvolen formát MP3.
+\end{itemize}
+
+\noindent Robustnost a~nepostřehnutelnost je měřena pro každou kombinaci metod
+a~modifikací.
 
 \todo{výsledky vyhodnocení kvality}
 
