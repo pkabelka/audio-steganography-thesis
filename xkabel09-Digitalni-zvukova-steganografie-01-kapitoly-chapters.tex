@@ -1982,6 +1982,9 @@ vytváření a~spouštění paralelních procesů s~funkcí \texttt{evaluate\_me
 
 Funkce \texttt{evaluate\_method} obsahuje několik vrstev vnořených cyklů které
 přidávají vyhodnocované aspekty. První cyklus testuje různé délky zpráv.
+Pokud je zpráva příliš dlouhá na konkrétní metodu a~její nastavení, pak jsou
+ponechány hodnoty prázdné až na dobu kódování a~dekódování, které jsou
+nastaveny na nekonečno.
 V~dalším cyklu se každá zpráva kóduje do souboru zvolenými metodami. Každá
 metoda má také různé parametry které ovlivňují míru nepostřehnutelnosti,
 robustnosti a~kapacity. Proto musí být tyto parametry otestovány navzájem
