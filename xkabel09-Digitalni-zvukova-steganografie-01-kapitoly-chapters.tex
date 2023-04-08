@@ -2078,10 +2078,48 @@ a~modifikací.
 \blindtext
 
 \begin{figure}[hbt]
+    \pgfplotstableread[
+        col sep=semicolon,
+        ]{data/no-modifications-all-params-mean.csv}\noModAllParamsMean
     \centering
-    \includegraphics[width=0.3\textwidth]{obrazky/placeholder.pdf}
-    \caption{Placeholder}
-    \label{pic:placeholder}
+    \begin{tikzpicture}
+        \begin{axis}[%
+            standard,
+            ybar,
+            bar width=5pt,
+            axis y line=left,
+            scale=0.9,
+            enlargelimits=0.15,
+            ymin=0,
+            scale only axis, % apply height and width to the actual axis
+            height=5cm,
+            % width=\textwidth-\widthof{100}-0.1cm, % textwidth - the longest label offset; does not work for some reason
+            width=15.5cm,
+            % xlabel={},
+            % ylabel={},
+            % yticklabel style={align=right, inner sep=0pt, xshift=-0.1cm}, % does not work for some reason
+            ytick={0, 10, 25, 50, 75, 100},
+            ymajorgrids=true,
+            grid style=dashed,
+            xtick=data, % needed for xticklabels
+            xticklabels from table={\noModAllParamsMean}{method},
+            xticklabel style={rotate=45, anchor=east},
+            % nodes near coords,
+            % nodes near coords align=vertical,
+            legend style={
+                legend pos=north east,
+                font=\small,
+            },
+            ]
+            \addplot table[x expr=\coordindex, y=ber percent] {\noModAllParamsMean};
+            \addplot table[x expr=\coordindex, y=snr db] {\noModAllParamsMean};
+            \addplot table[x expr=\coordindex, y=psnr db] {\noModAllParamsMean};
+            \legend{$\mathrm{BER}_{\%}$,$\mathrm{SNR}_\mathrm{dB}$,$\mathrm{PSNR}_\mathrm{dB}$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Průměrné hodnoty $\mathrm{BER}_{\%}$, $\mathrm{SNR}_\mathrm{dB}$
+    a~$\mathrm{PSNR}_\mathrm{dB}$ bez modifikací metod.}
+    \label{pic:no-mod-all-params-mean}
 \end{figure}
 
 \blindtext
