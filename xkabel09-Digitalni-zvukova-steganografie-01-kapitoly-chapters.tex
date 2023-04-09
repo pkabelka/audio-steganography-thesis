@@ -1,3 +1,68 @@
+\pgfplotsset{
+    standard/.style={
+        axis x line=middle,
+        axis y line=middle,
+        enlarge x limits=0.15,
+        enlarge y limits=0.15,
+        every axis x label/.style={
+            at={(current axis.right of origin)},
+            anchor=north west
+        },
+        every axis y label/.style={
+            at={(current axis.above origin)},
+            anchor=north east
+        },
+        every axis plot post/.style={
+            mark options={fill=white}
+        },
+    },
+    wideybar/.style={
+        standard,
+        ybar,
+        enlargelimits=0.15,
+        axis y line=left,
+        ymin=0,
+        scale only axis, % apply height and width to the actual axis
+        height=5cm,
+        % width=\textwidth-\widthof{100}-0.1cm, % textwidth - the longest label offset; does not work for some reason
+        width=15.5cm,
+        % yticklabel style={align=right, inner sep=0pt, xshift=-0.1cm}, % does not work for some reason
+    },
+}
+\definecolor{backcolor}{rgb}{0.95,0.95,0.92}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegreen2}{rgb}{0,0.6,0.2}
+\definecolor{codepurple}{rgb}{0.6,0,0.6}
+\definecolor{codeorange}{rgb}{0.8,0.2,0}
+\lstdefinestyle{mystyle}{%
+    showspaces=false,
+    showtabs=false,
+    breaklines=true,
+    showstringspaces=false,
+    breakatwhitespace=true,
+    escapeinside={(*@}{@*)},
+    backgroundcolor=\color{backcolor},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{codepurple},
+    keywordstyle=[2]\color{darkblue},
+    keywordstyle=[3]\color{codepurple},
+    keywordstyle=[4]\color{codegreen2},
+    stringstyle=\color{codeorange},
+    basicstyle=\ttfamily,
+    captionpos=b,
+    numbers=left,
+    frame=single,
+    numberstyle=\tiny,
+    aboveskip=1em,
+    abovecaptionskip=6pt,
+}%
+\lstset{style=mystyle}%
+\lstdefinelanguage{PythonPlus}[]{Python}{%
+    morekeywords=[1]{,as,assert,nonlocal,with,yield},
+    morekeywords=[2]{,self,True,False,None,},
+    morekeywords=[4]{,ValueError},
+}%
+
 \chapter{Úvod}
 \label{cha:introduction}
 
@@ -122,38 +187,6 @@ frekvence~\cite{Shannon1949}. Nejčastěji používané vzorkovací frekvence js
 44\,100\,Hz a~48\,000\,Hz. Nejvyšší frekvence, které lze na těchto vzorkovacích
 frekvencích reprezentovat bez ztráty informace jsou příslušně 22\,050\,Hz
 a~24\,000\,Hz.
-
-\pgfplotsset{
-    standard/.style={
-        axis x line=middle,
-        axis y line=middle,
-        enlarge x limits=0.15,
-        enlarge y limits=0.15,
-        every axis x label/.style={
-            at={(current axis.right of origin)},
-            anchor=north west
-        },
-        every axis y label/.style={
-            at={(current axis.above origin)},
-            anchor=north east
-        },
-        every axis plot post/.style={
-            mark options={fill=white}
-        },
-    },
-    wideybar/.style={
-        standard,
-        ybar,
-        enlargelimits=0.15,
-        axis y line=left,
-        ymin=0,
-        scale only axis, % apply height and width to the actual axis
-        height=5cm,
-        % width=\textwidth-\widthof{100}-0.1cm, % textwidth - the longest label offset; does not work for some reason
-        width=15.5cm,
-        % yticklabel style={align=right, inner sep=0pt, xshift=-0.1cm}, % does not work for some reason
-    },
-}
 
 \begin{figure}[hbt]
     \centering
@@ -1376,40 +1409,6 @@ zapsán v~algoritmu~\ref{alg:own-method-decoding}.
     \label{alg:own-method-decoding}
 \end{algorithm}
 
-
-\definecolor{backcolor}{rgb}{0.95,0.95,0.92}
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegreen2}{rgb}{0,0.6,0.2}
-\definecolor{codepurple}{rgb}{0.6,0,0.6}
-\definecolor{codeorange}{rgb}{0.8,0.2,0}
-\lstdefinestyle{mystyle}{%
-    showspaces=false,
-    showtabs=false,
-    breaklines=true,
-    showstringspaces=false,
-    breakatwhitespace=true,
-    escapeinside={(*@}{@*)},
-    backgroundcolor=\color{backcolor},
-    commentstyle=\color{codegreen},
-    keywordstyle=\color{codepurple},
-    keywordstyle=[2]\color{darkblue},
-    keywordstyle=[3]\color{codepurple},
-    keywordstyle=[4]\color{codegreen2},
-    stringstyle=\color{codeorange},
-    basicstyle=\ttfamily,
-    captionpos=b,
-    numbers=left,
-    frame=single,
-    numberstyle=\tiny,
-    aboveskip=1em,
-    abovecaptionskip=6pt,
-}%
-\lstset{style=mystyle}%
-\lstdefinelanguage{PythonPlus}[]{Python}{%
-    morekeywords=[1]{,as,assert,nonlocal,with,yield},
-    morekeywords=[2]{,self,True,False,None,},
-    morekeywords=[4]{,ValueError},
-}%
 
 \chapter{Realizace systému}
 \label{cha:implementation}
