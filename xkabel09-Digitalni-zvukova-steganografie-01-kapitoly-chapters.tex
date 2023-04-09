@@ -140,7 +140,19 @@ a~24\,000\,Hz.
         every axis plot post/.style={
             mark options={fill=white}
         }
-    }
+    },
+    wideybar/.style={
+        standard,
+        ybar,
+        enlargelimits=0.15,
+        axis y line=left,
+        ymin=0,
+        scale only axis, % apply height and width to the actual axis
+        height=5cm,
+        % width=\textwidth-\widthof{100}-0.1cm, % textwidth - the longest label offset; does not work for some reason
+        width=15.5cm,
+        % yticklabel style={align=right, inner sep=0pt, xshift=-0.1cm}, % does not work for some reason
+    },
 }
 
 \begin{figure}[hbt]
@@ -2083,20 +2095,11 @@ a~modifikací.
     \centering
     \begin{tikzpicture}
         \begin{axis}[%
-            standard,
-            ybar,
+            wideybar,
             bar width=5pt,
-            axis y line=left,
             scale=0.9,
-            enlargelimits=0.15,
-            ymin=0,
-            scale only axis, % apply height and width to the actual axis
-            height=5cm,
-            % width=\textwidth-\widthof{100}-0.1cm, % textwidth - the longest label offset; does not work for some reason
-            width=15.5cm,
-            % xlabel={},
-            % ylabel={},
-            % yticklabel style={align=right, inner sep=0pt, xshift=-0.1cm}, % does not work for some reason
+            xlabel={},
+            ylabel={},
             ytick={0, 10, 25, 50, 75, 100},
             ymajorgrids=true,
             grid style=dashed,
