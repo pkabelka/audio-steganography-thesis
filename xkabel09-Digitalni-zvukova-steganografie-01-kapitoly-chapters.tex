@@ -196,11 +196,11 @@ a~24\,000\,Hz.
             \begin{axis}[%
                 standard,
                 scale=0.9,
-                domain = 0:1,
-                samples = 100,
-                xlabel = {$t~[s]$},
-                ylabel = {$x(t)$},
-                ylabel style = {yshift = 10pt},
+                domain=0:1,
+                samples=100,
+                xlabel={$t~[s]$},
+                ylabel={$x(t)$},
+                ylabel style={yshift=10pt},
                 ]
                 \addplot[blue,thick] {sin(2*180*x)};
             \end{axis}
@@ -212,11 +212,11 @@ a~24\,000\,Hz.
             \begin{axis}[%
                 standard,
                 scale=0.9,
-                domain = 0:15,
-                samples = 16,
-                xlabel = {$n$},
-                ylabel = {$x[n]$},
-                ylabel style = {yshift = 10pt},
+                domain=0:15,
+                samples=16,
+                xlabel={$n$},
+                ylabel={$x[n]$},
+                ylabel style={yshift=10pt},
                 ]
                 \addplot+[ycomb,blue,thick] {sin(2*180*x/16)};
             \end{axis}
@@ -253,13 +253,13 @@ bude mít menší velikost. Pro kvalitní audio se dnes nejčastěji používá 
             \begin{axis}[%
                 standard,
                 scale=0.9,
-                domain = 0:16,
-                xlabel = {$n$},
-                ylabel = {$x[n]$},
-                ytick = {-1.5, -0.5, 0.5, 1.5},
-                yticklabels = {$0$, $1$, $2$, $3$},
-                ymajorgrids = true,
-                grid style = dashed,
+                domain=0:16,
+                xlabel={$n$},
+                ylabel={$x[n]$},
+                ytick={-1.5, -0.5, 0.5, 1.5},
+                yticklabels={$0$, $1$, $2$, $3$},
+                ymajorgrids=true,
+                grid style=dashed,
                 ]
                 \addplot[green,dashed,samples=100] {2*sin(2*180*x/16)};
                 \addplot+[ycomb,blue,thick,mark=*] coordinates{
@@ -276,13 +276,13 @@ bude mít menší velikost. Pro kvalitní audio se dnes nejčastěji používá 
             \begin{axis}[%
                 standard,
                 scale=0.9,
-                domain = 0:16,
-                xlabel = {$n$},
-                ylabel = {$x[n]$},
-                ytick = {-3.5, -2.5, -1.5, -0.5, 0.5, 1.5, 2.5, 3.5},
-                yticklabels = {$0$, $1$, $2$, $3$, $4$, $5$, $6$, $7$},
-                ymajorgrids = true,
-                grid style = dashed,
+                domain=0:16,
+                xlabel={$n$},
+                ylabel={$x[n]$},
+                ytick={-3.5, -2.5, -1.5, -0.5, 0.5, 1.5, 2.5, 3.5},
+                yticklabels={$0$, $1$, $2$, $3$, $4$, $5$, $6$, $7$},
+                ymajorgrids=true,
+                grid style=dashed,
                 ]
                 \addplot[green,dashed,samples=100] {4*sin(2*180*x/16)};
                 \addplot+[ycomb,blue,thick,mark=*] coordinates{
@@ -652,13 +652,13 @@ obrázku~\ref{pic:segment-cepstrum}.
                 standard,
                 enlarge y limits=0.2,
                 scale=0.9,
-                xlabel = {$n$},
-                ylabel = {$x[n]$},
-                scaled y ticks = false,
-                y tick label style = {/pgf/number format/fixed},
-                ytick = {-0.03, 0.02, 0.13},
-                ymajorgrids = true,
-                grid style = dashed,
+                xlabel={$n$},
+                ylabel={$x[n]$},
+                scaled y ticks=false,
+                y tick label style={/pgf/number format/fixed},
+                ytick={-0.03, 0.02, 0.13},
+                ymajorgrids=true,
+                grid style=dashed,
                 ]
                 \addplot[blue,thick,samples=100] table [x={x}, y={y}] {
 x y
@@ -703,13 +703,13 @@ x y
                 standard,
                 enlarge y limits=0.2,
                 scale=0.9,
-                xlabel = {$n$},
-                ylabel = {$x[n]$},
-                scaled y ticks = false,
-                y tick label style = {/pgf/number format/fixed},
-                ytick = {-0.03, 0.03, 0.057},
-                ymajorgrids = true,
-                grid style = dashed,
+                xlabel={$n$},
+                ylabel={$x[n]$},
+                scaled y ticks=false,
+                y tick label style={/pgf/number format/fixed},
+                ytick={-0.03, 0.03, 0.057},
+                ymajorgrids=true,
+                grid style=dashed,
                 ]
                 \addplot[blue,thick,samples=100] table [x={x}, y={y}] {
 x y
