@@ -199,7 +199,9 @@ a~24\,000\,Hz.
                 domain = 0:1,
                 samples = 100,
                 xlabel = {$t~[s]$},
-                ylabel = {$x(t)$}]
+                ylabel = {$x(t)$},
+                ylabel style = {yshift = 10pt},
+                ]
                 \addplot[blue,thick] {sin(2*180*x)};
             \end{axis}
         \end{tikzpicture}
@@ -213,7 +215,9 @@ a~24\,000\,Hz.
                 domain = 0:15,
                 samples = 16,
                 xlabel = {$n$},
-                ylabel = {$x[n]$}]
+                ylabel = {$x[n]$},
+                ylabel style = {yshift = 10pt},
+                ]
                 \addplot+[ycomb,blue,thick] {sin(2*180*x/16)};
             \end{axis}
         \end{tikzpicture}
