@@ -2086,15 +2086,16 @@ a~modifikací.
 \label{sec:evaluation-results}
 
 \todo{výsledky vyhodnocení kvality}
-
 \blindtext
+
+\subsection*{Metoda nahrazení nejméně významného bitu}
 
 \blindtext
 
 \begin{figure}[hbt]
     \pgfplotstableread[
         col sep=semicolon,
-        ]{data/no-modifications-all-params-mean.csv}\noModAllParamsMean
+        ]{data/no-mod-params-mean-values-lsb.csv}\table
     \centering
     \begin{tikzpicture}
         \begin{axis}[%
@@ -2107,7 +2108,7 @@ a~modifikací.
             ymajorgrids=true,
             grid style=dashed,
             xtick=data, % needed for xticklabels
-            xticklabels from table={\noModAllParamsMean}{method},
+            xticklabels from table={\table}{params},
             xticklabel style={rotate=45, anchor=east},
             % nodes near coords,
             % nodes near coords align=vertical,
@@ -2116,61 +2117,83 @@ a~modifikací.
                 font=\small,
             },
             ]
-            \addplot table[x expr=\coordindex, y=ber percent] {\noModAllParamsMean};
-            \addplot table[x expr=\coordindex, y=snr db] {\noModAllParamsMean};
-            \addplot table[x expr=\coordindex, y=psnr db] {\noModAllParamsMean};
+            \addplot table[x expr=\coordindex, y=ber percent] {\table};
+            \addplot table[x expr=\coordindex, y=snr db] {\table};
+            \addplot table[x expr=\coordindex, y=psnr db] {\table};
             \legend{$\mathrm{BER}_{\%}$,$\mathrm{SNR}_\mathrm{dB}$,$\mathrm{PSNR}_\mathrm{dB}$};
         \end{axis}
     \end{tikzpicture}
     \caption{Průměrné hodnoty $\mathrm{BER}_{\%}$, $\mathrm{SNR}_\mathrm{dB}$
-    a~$\mathrm{PSNR}_\mathrm{dB}$ bez modifikací metod.}
+    a~$\mathrm{PSNR}_\mathrm{dB}$ bez modifikací pro metodu nahrazení nejméně
+    významného bitu.}
     \label{pic:no-mod-all-params-mean}
 \end{figure}
 
 \blindtext
 
-\begin{figure}[hbt]
-    \centering
-    \includegraphics[width=0.3\textwidth]{obrazky/placeholder.pdf}
-    \caption{Placeholder}
-    \label{pic:placeholder}
-\end{figure}
-
-\blindtext
-
-\blindtext
+\subsection*{Metoda skrývání pomocí ozvěny}
 
 \blindtext
 
 \begin{figure}[hbt]
+    \pgfplotstableread[
+        col sep=semicolon,
+        ]{data/no-mod-params-mean-values-echo-single.csv}\table
     \centering
-    \includegraphics[width=0.3\textwidth]{obrazky/placeholder.pdf}
-    \caption{Placeholder}
-    \label{pic:placeholder}
+    \begin{tikzpicture}
+        \begin{axis}[%
+            wideybar,
+            bar width=5pt,
+            scale=0.9,
+            xlabel={},
+            ylabel={},
+            ytick={0, 10, 25, 50, 75, 100},
+            ymajorgrids=true,
+            grid style=dashed,
+            xtick=data, % needed for xticklabels
+            xticklabels from table={\table}{params},
+            xticklabel style={rotate=45, anchor=east},
+            % nodes near coords,
+            % nodes near coords align=vertical,
+            legend style={
+                legend pos=north east,
+                font=\small,
+            },
+            ]
+            \addplot table[x expr=\coordindex, y=ber percent] {\table};
+            \addplot table[x expr=\coordindex, y=snr db] {\table};
+            \addplot table[x expr=\coordindex, y=psnr db] {\table};
+            \legend{$\mathrm{BER}_{\%}$,$\mathrm{SNR}_\mathrm{dB}$,$\mathrm{PSNR}_\mathrm{dB}$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Průměrné hodnoty $\mathrm{BER}_{\%}$, $\mathrm{SNR}_\mathrm{dB}$
+    a~$\mathrm{PSNR}_\mathrm{dB}$ bez modifikací pro metodu ukrývání pomocí
+    ozvěny s~jednou ozvěnou na bit.}
+    \label{pic:no-mod-all-params-mean}
 \end{figure}
 
 \blindtext
 
-\blinditemize
+\subsection*{Metoda rozprostřeného spektra}
 
 \blindtext
 
-\blindtext
-
-\blinditemize
+\subsection*{Metoda rozprostřeného spektra ve Fourierově transformaci (vlastní metoda)}
 
 \blindtext
 
-\begin{figure}[hbt]
-    \centering
-    \includegraphics[width=0.3\textwidth]{obrazky/placeholder.pdf}
-    \caption{Placeholder}
-    \label{pic:placeholder}
-\end{figure}
+\subsection*{Metoda fázového kódování}
 
 \blindtext
 
+\subsection*{Metoda ukrývání v~úsecích ticha}
+
 \blindtext
+
+\subsection*{Metoda vkládání tónu}
+
+\blindtext
+
 
 \chapter{Závěr}
 \label{cha:conclusion}
