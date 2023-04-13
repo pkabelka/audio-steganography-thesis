@@ -2095,7 +2095,17 @@ použity pro vytvoření grafů s~výsledky průměrných hodnot BER, SNR a~PSNR
 
 \subsection*{Metoda nahrazení nejméně významného bitu}
 
-\blindtext
+Tato metoda dosáhla bez aplikovaných modifikací nejlepších hodnot BER, SNR
+a~PSNR. V~obrázku~\ref{pic:no-mod-params-mean-values-lsb} je také vidět jasná
+korelace mezi kódování pouze potřebných bitů a~nepostřehnutelností tajné
+zprávy. Avšak tato statistika může být mírně zavádějící, protože nepoužití
+tohoto parametru přidává náhodný šum přes celou délku nahrávky, který se při
+kódování delší zprávy se může lidskému posluchači jevit méně podezřele pokud je
+šum slyšet všude na rozdíl od šumu pouze v~části se zprávou.
+
+Pokud nebylo se stego signálem manipulováno, pak má tato metoda perfektní
+rekonstrukci zakódované zprávy. Kapacitu této metody je možné vypočítat
+vynásobením počtu vzorků krycího signálu a~použité bitové hloubky.
 
 \begin{figure}[hbt]
     \pgfplotstableread[
