@@ -2129,6 +2129,43 @@ a~modifikací.
     \label{pic:no-mod-params-mean-values-lsb}
 \end{figure}
 
+\begin{figure}[hbt]
+    \pgfplotstableread[
+        col sep=semicolon,
+        ]{data/modifications-mean-values-lsb.csv}\table
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[%
+            wideybar,
+            bar width=5pt,
+            scale=0.9,
+            xlabel={},
+            ylabel={},
+            ytick={0, 30, 50, 75, 100, 120},
+            ymajorgrids=true,
+            grid style=dashed,
+            xtick=data, % needed for xticklabels
+            xticklabels from table={\table}{modification},
+            xticklabel style={rotate=45, anchor=east},
+            % nodes near coords,
+            % nodes near coords align=vertical,
+            legend style={
+                legend pos=north east,
+                font=\small,
+            },
+            ]
+            \addplot table[x expr=\coordindex, y=ber percent] {\table};
+            \addplot table[x expr=\coordindex, y=snr db] {\table};
+            \addplot table[x expr=\coordindex, y=psnr db] {\table};
+            \legend{$\mathrm{BER}_{\%}$,$\mathrm{SNR}_\mathrm{dB}$,$\mathrm{PSNR}_\mathrm{dB}$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Průměrné hodnoty $\mathrm{BER}_{\%}$, $\mathrm{SNR}_\mathrm{dB}$
+    a~$\mathrm{PSNR}_\mathrm{dB}$ s~modifikacemi metody nahrazení nejméně
+    významného bitu.}
+    \label{pic:modifications-mean-values-lsb}
+\end{figure}
+
 \subsection*{Metoda skrývání pomocí ozvěny}
 
 \blindtext
@@ -2169,6 +2206,44 @@ a~modifikací.
     a~$\mathrm{PSNR}_\mathrm{dB}$ bez modifikací pro metodu ukrývání pomocí
     ozvěny s~jednou ozvěnou na bit.}
     \label{pic:no-mod-params-mean-values-echo-single}
+\end{figure}
+
+\begin{figure}[hbt]
+    \pgfplotstableread[
+        col sep=semicolon,
+        ]{data/modifications-mean-values-echo-single.csv}\table
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[%
+            wideybar,
+            bar width=5pt,
+            scale=0.9,
+            width=14.5cm,
+            xlabel={},
+            ylabel={},
+            ytick={0, 5, 10, 25, 40},
+            ymajorgrids=true,
+            grid style=dashed,
+            xtick=data, % needed for xticklabels
+            xticklabels from table={\table}{modification},
+            xticklabel style={rotate=45, anchor=east},
+            % nodes near coords,
+            % nodes near coords align=vertical,
+            legend style={
+                legend pos=north west,
+                font=\small,
+            },
+            ]
+            \addplot table[x expr=\coordindex, y=ber percent] {\table};
+            \addplot table[x expr=\coordindex, y=snr db] {\table};
+            \addplot table[x expr=\coordindex, y=psnr db] {\table};
+            \legend{$\mathrm{BER}_{\%}$,$\mathrm{SNR}_\mathrm{dB}$,$\mathrm{PSNR}_\mathrm{dB}$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Průměrné hodnoty $\mathrm{BER}_{\%}$, $\mathrm{SNR}_\mathrm{dB}$
+    a~$\mathrm{PSNR}_\mathrm{dB}$ s~modifikacemi metody ukrývání pomocí
+    ozvěny s~jednou ozvěnou na bit.}
+    \label{pic:modifications-mean-values-echo-single}
 \end{figure}
 
 \subsection*{Metoda rozprostřeného spektra}
@@ -2212,6 +2287,43 @@ a~modifikací.
     \label{pic:no-mod-params-mean-values-dsss}
 \end{figure}
 
+\begin{figure}[hbt]
+    \pgfplotstableread[
+        col sep=semicolon,
+        ]{data/modifications-mean-values-dsss.csv}\table
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[%
+            wideybar,
+            bar width=5pt,
+            scale=0.9,
+            xlabel={},
+            ylabel={},
+            ytick={0, 10, 25, 35, 50},
+            ymajorgrids=true,
+            grid style=dashed,
+            xtick=data, % needed for xticklabels
+            xticklabels from table={\table}{modification},
+            xticklabel style={rotate=45, anchor=east},
+            % nodes near coords,
+            % nodes near coords align=vertical,
+            legend style={
+                legend pos=north east,
+                font=\small,
+            },
+            ]
+            \addplot table[x expr=\coordindex, y=ber percent] {\table};
+            \addplot table[x expr=\coordindex, y=snr db] {\table};
+            \addplot table[x expr=\coordindex, y=psnr db] {\table};
+            \legend{$\mathrm{BER}_{\%}$,$\mathrm{SNR}_\mathrm{dB}$,$\mathrm{PSNR}_\mathrm{dB}$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Průměrné hodnoty $\mathrm{BER}_{\%}$, $\mathrm{SNR}_\mathrm{dB}$
+    a~$\mathrm{PSNR}_\mathrm{dB}$ s~modifikacemi metody ukrývání pomocí
+    metody rozprostřeného spektra.}
+    \label{pic:modifications-mean-values-dsss}
+\end{figure}
+
 \subsection*{Metoda rozprostřeného spektra ve Fourierově transformaci (vlastní metoda)}
 
 \blindtext
@@ -2253,6 +2365,44 @@ a~modifikací.
     \label{pic:no-mod-params-mean-values-dsss-dft}
 \end{figure}
 
+\begin{figure}[hbt]
+    \pgfplotstableread[
+        col sep=semicolon,
+        ]{data/modifications-mean-values-dsss-dft.csv}\table
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[%
+            wideybar,
+            bar width=5pt,
+            scale=0.9,
+            xlabel={},
+            ylabel={},
+            ytick={0, 3, 15, 25, 40},
+            ymajorgrids=true,
+            grid style=dashed,
+            xtick=data, % needed for xticklabels
+            xticklabels from table={\table}{modification},
+            xticklabel style={rotate=45, anchor=east},
+            % nodes near coords,
+            % nodes near coords align=vertical,
+            legend style={
+                at={(0.9,1.0)},
+                anchor=north east,
+                font=\small,
+            },
+            ]
+            \addplot table[x expr=\coordindex, y=ber percent] {\table};
+            \addplot table[x expr=\coordindex, y=snr db] {\table};
+            \addplot table[x expr=\coordindex, y=psnr db] {\table};
+            \legend{$\mathrm{BER}_{\%}$,$\mathrm{SNR}_\mathrm{dB}$,$\mathrm{PSNR}_\mathrm{dB}$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Průměrné hodnoty $\mathrm{BER}_{\%}$, $\mathrm{SNR}_\mathrm{dB}$
+    a~$\mathrm{PSNR}_\mathrm{dB}$ s~modifikacemi metody ukrývání pomocí
+    rozprostřeného spektra ve Fourierově transformaci.}
+    \label{pic:modifications-mean-values-dsss-dft}
+\end{figure}
+
 \subsection*{Metoda fázového kódování}
 
 \blindtext
@@ -2274,6 +2424,43 @@ a~modifikací.
     ]{\table}
     \label{tab:no-mod-params-mean-values-phase}
 \end{table}
+
+\begin{figure}[hbt]
+    \pgfplotstableread[
+        col sep=semicolon,
+        ]{data/modifications-mean-values-phase.csv}\table
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[%
+            wideybar,
+            bar width=5pt,
+            scale=0.9,
+            xlabel={},
+            ylabel={},
+            ytick={0, 32, 40, 46},
+            ymajorgrids=true,
+            grid style=dashed,
+            xtick=data, % needed for xticklabels
+            xticklabels from table={\table}{modification},
+            xticklabel style={rotate=45, anchor=east},
+            % nodes near coords,
+            % nodes near coords align=vertical,
+            legend style={
+                at={(0.4,0.8)},
+                anchor=north west,
+                font=\small,
+            },
+            ]
+            \addplot table[x expr=\coordindex, y=ber percent] {\table};
+            \addplot table[x expr=\coordindex, y=snr db] {\table};
+            \addplot table[x expr=\coordindex, y=psnr db] {\table};
+            \legend{$\mathrm{BER}_{\%}$,$\mathrm{SNR}_\mathrm{dB}$,$\mathrm{PSNR}_\mathrm{dB}$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Průměrné hodnoty $\mathrm{BER}_{\%}$, $\mathrm{SNR}_\mathrm{dB}$
+    a~$\mathrm{PSNR}_\mathrm{dB}$ s~modifikacemi metody fázového kódování.}
+    \label{pic:modifications-mean-values-tone-insertion}
+\end{figure}
 
 \subsection*{Metoda ukrývání v~úsecích ticha}
 
@@ -2317,6 +2504,46 @@ a~modifikací.
     \label{pic:no-mod-params-mean-values-silence-interval}
 \end{figure}
 
+\begin{figure}[hbt]
+    \pgfplotstableread[
+        col sep=semicolon,
+        ]{data/modifications-mean-values-silence-interval.csv}\table
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[%
+            wideybar,
+            height=6cm,
+            enlarge y limits=0.15,
+            bar width=5pt,
+            scale=0.9,
+            xlabel={},
+            ylabel={},
+            ytick={0, 5, 10, 40},
+            ymajorgrids=true,
+            grid style=dashed,
+            xtick=data, % needed for xticklabels
+            xticklabels from table={\table}{modification},
+            xticklabel style={rotate=45, anchor=east},
+            % nodes near coords,
+            % nodes near coords align=vertical,
+            legend style={
+                at={(0.2, 0.97)},
+                anchor=north west,
+                font=\small,
+            },
+            ]
+            \addplot table[x expr=\coordindex, y=ber percent] {\table};
+            \addplot table[x expr=\coordindex, y=snr db] {\table};
+            \addplot table[x expr=\coordindex, y=psnr db] {\table};
+            \legend{$\mathrm{BER}_{\%}$,$\mathrm{SNR}_\mathrm{dB}$,$\mathrm{PSNR}_\mathrm{dB}$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Průměrné hodnoty $\mathrm{BER}_{\%}$, $\mathrm{SNR}_\mathrm{dB}$
+    a~$\mathrm{PSNR}_\mathrm{dB}$ s~modifikacemi metody ukrývání pomocí
+    metody ukrývání v~úsecích ticha.}
+    \label{pic:modifications-mean-values-silence-interval}
+\end{figure}
+
 \subsection*{Metoda vkládání tónu}
 
 \blindtext
@@ -2357,6 +2584,44 @@ a~modifikací.
     a~$\mathrm{PSNR}_\mathrm{dB}$ bez modifikací pro metodu ukrývání pomocí
     metody vkládání tónu.}
     \label{pic:no-mod-params-mean-values-tone-insertion}
+\end{figure}
+
+\begin{figure}[hbt]
+    \pgfplotstableread[
+        col sep=semicolon,
+        ]{data/modifications-mean-values-tone-insertion.csv}\table
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[%
+            wideybar,
+            bar width=5pt,
+            scale=0.9,
+            xlabel={},
+            ylabel={},
+            ytick={0, 32, 40, 46},
+            ymajorgrids=true,
+            grid style=dashed,
+            xtick=data, % needed for xticklabels
+            xticklabels from table={\table}{modification},
+            xticklabel style={rotate=45, anchor=east},
+            % nodes near coords,
+            % nodes near coords align=vertical,
+            legend style={
+                at={(0.4,0.8)},
+                anchor=north west,
+                font=\small,
+            },
+            ]
+            \addplot table[x expr=\coordindex, y=ber percent] {\table};
+            \addplot table[x expr=\coordindex, y=snr db] {\table};
+            \addplot table[x expr=\coordindex, y=psnr db] {\table};
+            \legend{$\mathrm{BER}_{\%}$,$\mathrm{SNR}_\mathrm{dB}$,$\mathrm{PSNR}_\mathrm{dB}$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Průměrné hodnoty $\mathrm{BER}_{\%}$, $\mathrm{SNR}_\mathrm{dB}$
+    a~$\mathrm{PSNR}_\mathrm{dB}$ s~modifikacemi metody ukrývání pomocí
+    metody vkládání tónu.}
+    \label{pic:modifications-mean-values-tone-insertion}
 \end{figure}
 
 
