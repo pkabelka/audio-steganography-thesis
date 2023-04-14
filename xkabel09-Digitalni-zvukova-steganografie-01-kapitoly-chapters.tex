@@ -2191,9 +2191,12 @@ BER.
 
 \subsection*{Metoda skrývání pomocí ozvěny}
 
-\blindtext
+Implementovaná ozvěnová metoda má čtyři varianty jejichž výsledky se každá
+z~nich snaží vylepšit předchozí.
 
-\begin{figure}[hbt]
+\subsubsection*{Varianta s~jednou ozvěnou na bit}
+
+\begin{figure}[H]
     \pgfplotstableread[
         col sep=semicolon,
         ]{data/no-mod-params-mean-values-echo-single.csv}\table
@@ -2232,7 +2235,7 @@ BER.
     \label{pic:no-mod-params-mean-values-echo-single}
 \end{figure}
 
-\begin{figure}[hbt]
+\begin{figure}[H]
     \pgfplotstableread[
         col sep=semicolon,
         ]{data/modifications-mean-values-echo-single.csv}\table
@@ -2270,6 +2273,249 @@ BER.
     a~$\mathrm{PSNR}_\mathrm{dB}$ s~modifikacemi metody ukrývání pomocí
     ozvěny s~jednou ozvěnou na bit.}
     \label{pic:modifications-mean-values-echo-single}
+\end{figure}
+
+\subsubsection{Varianta ozvěn s~kladnou a~zápornou amplitudou}
+
+\begin{figure}[H]
+    \pgfplotstableread[
+        col sep=semicolon,
+        ]{data/no-mod-params-mean-values-echo-bipolar.csv}\table
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[%
+            wideybar,
+            height=4cm,
+            bar width=5pt,
+            scale=0.9,
+            width=14.5cm,
+            xlabel={},
+            ylabel={},
+            ytick={0, 5, 10, 25, 40},
+            ymajorgrids=true,
+            grid style=dashed,
+            xtick=data, % needed for xticklabels
+            xticklabels from table={\table}{params},
+            xticklabel style={rotate=45, anchor=east},
+            % nodes near coords,
+            % nodes near coords align=vertical,
+            legend style={
+                legend pos=north west,
+                font=\small,
+            },
+            ]
+            \addplot table[x expr=\coordindex, y=ber percent] {\table};
+            \addplot table[x expr=\coordindex, y=snr db] {\table};
+            \addplot table[x expr=\coordindex, y=psnr db] {\table};
+            \legend{$\mathrm{BER}_{\%}$,$\mathrm{SNR}_\mathrm{dB}$,$\mathrm{PSNR}_\mathrm{dB}$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Průměrné hodnoty $\mathrm{BER}_{\%}$, $\mathrm{SNR}_\mathrm{dB}$
+    a~$\mathrm{PSNR}_\mathrm{dB}$ bez modifikací pro metodu ukrývání pomocí
+    ozvěny se dvěma bipolárními ozvěnami na bit.}
+    \label{pic:no-mod-params-mean-values-echo-bipolar}
+\end{figure}
+
+\begin{figure}[H]
+    \pgfplotstableread[
+        col sep=semicolon,
+        ]{data/modifications-mean-values-echo-bipolar.csv}\table
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[%
+            wideybar,
+            height=4cm,
+            enlarge y limits=0.15,
+            bar width=5pt,
+            scale=0.9,
+            width=14.5cm,
+            xlabel={},
+            ylabel={},
+            ytick={0, 5, 10, 20, 50},
+            ymajorgrids=true,
+            grid style=dashed,
+            xtick=data, % needed for xticklabels
+            xticklabels from table={\table}{modification},
+            xticklabel style={rotate=45, anchor=east},
+            % nodes near coords,
+            % nodes near coords align=vertical,
+            legend style={
+                legend pos=north west,
+                font=\small,
+            },
+            ]
+            \addplot table[x expr=\coordindex, y=ber percent] {\table};
+            \addplot table[x expr=\coordindex, y=snr db] {\table};
+            \addplot table[x expr=\coordindex, y=psnr db] {\table};
+            \legend{$\mathrm{BER}_{\%}$,$\mathrm{SNR}_\mathrm{dB}$,$\mathrm{PSNR}_\mathrm{dB}$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Průměrné hodnoty $\mathrm{BER}_{\%}$, $\mathrm{SNR}_\mathrm{dB}$
+    a~$\mathrm{PSNR}_\mathrm{dB}$ s~modifikacemi metody ukrývání pomocí
+    ozvěny se dvěma bipolárními ozvěnami na bit.}
+    \label{pic:modifications-mean-values-echo-bipolar}
+\end{figure}
+
+\subsubsection*{Varianta s~ozvěnou vpřed a~vzad}
+
+\begin{figure}[H]
+    \pgfplotstableread[
+        col sep=semicolon,
+        ]{data/no-mod-params-mean-values-echo-bf.csv}\table
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[%
+            wideybar,
+            height=4cm,
+            bar width=5pt,
+            scale=0.9,
+            width=14.5cm,
+            xlabel={},
+            ylabel={},
+            ytick={0, 5, 10, 25, 40},
+            ymajorgrids=true,
+            grid style=dashed,
+            xtick=data, % needed for xticklabels
+            xticklabels from table={\table}{params},
+            xticklabel style={rotate=45, anchor=east},
+            % nodes near coords,
+            % nodes near coords align=vertical,
+            legend style={
+                legend pos=north west,
+                font=\small,
+            },
+            ]
+            \addplot table[x expr=\coordindex, y=ber percent] {\table};
+            \addplot table[x expr=\coordindex, y=snr db] {\table};
+            \addplot table[x expr=\coordindex, y=psnr db] {\table};
+            \legend{$\mathrm{BER}_{\%}$,$\mathrm{SNR}_\mathrm{dB}$,$\mathrm{PSNR}_\mathrm{dB}$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Průměrné hodnoty $\mathrm{BER}_{\%}$, $\mathrm{SNR}_\mathrm{dB}$
+    a~$\mathrm{PSNR}_\mathrm{dB}$ bez modifikací pro metodu ukrývání pomocí
+    ozvěny s~jednou ozvěnou na bit.}
+    \label{pic:no-mod-params-mean-values-echo-bf}
+\end{figure}
+
+\begin{figure}[H]
+    \pgfplotstableread[
+        col sep=semicolon,
+        ]{data/modifications-mean-values-echo-bf.csv}\table
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[%
+            wideybar,
+            height=4cm,
+            enlarge y limits=0.15,
+            bar width=5pt,
+            scale=0.9,
+            width=14.5cm,
+            xlabel={},
+            ylabel={},
+            ytick={0, 5, 10, 20, 50},
+            ymajorgrids=true,
+            grid style=dashed,
+            xtick=data, % needed for xticklabels
+            xticklabels from table={\table}{modification},
+            xticklabel style={rotate=45, anchor=east},
+            % nodes near coords,
+            % nodes near coords align=vertical,
+            legend style={
+                legend pos=north west,
+                font=\small,
+            },
+            ]
+            \addplot table[x expr=\coordindex, y=ber percent] {\table};
+            \addplot table[x expr=\coordindex, y=snr db] {\table};
+            \addplot table[x expr=\coordindex, y=psnr db] {\table};
+            \legend{$\mathrm{BER}_{\%}$,$\mathrm{SNR}_\mathrm{dB}$,$\mathrm{PSNR}_\mathrm{dB}$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Průměrné hodnoty $\mathrm{BER}_{\%}$, $\mathrm{SNR}_\mathrm{dB}$
+    a~$\mathrm{PSNR}_\mathrm{dB}$ s~modifikacemi metody ukrývání pomocí
+    ozvěny s~jednou ozvěnou na bit.}
+    \label{pic:modifications-mean-values-echo-bf}
+\end{figure}
+
+\subsubsection*{Varianta s~ozvěnami s~kladnou a~zápornou amplitudou vpřed a~vzad}
+
+\begin{figure}[H]
+    \pgfplotstableread[
+        col sep=semicolon,
+        ]{data/no-mod-params-mean-values-echo-bipolar-bf.csv}\table
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[%
+            wideybar,
+            height=4cm,
+            bar width=5pt,
+            scale=0.9,
+            width=14.5cm,
+            xlabel={},
+            ylabel={},
+            ytick={0, 5, 10, 25, 40},
+            ymajorgrids=true,
+            grid style=dashed,
+            xtick=data, % needed for xticklabels
+            xticklabels from table={\table}{params},
+            xticklabel style={rotate=45, anchor=east},
+            % nodes near coords,
+            % nodes near coords align=vertical,
+            legend style={
+                legend pos=north west,
+                font=\small,
+            },
+            ]
+            \addplot table[x expr=\coordindex, y=ber percent] {\table};
+            \addplot table[x expr=\coordindex, y=snr db] {\table};
+            \addplot table[x expr=\coordindex, y=psnr db] {\table};
+            \legend{$\mathrm{BER}_{\%}$,$\mathrm{SNR}_\mathrm{dB}$,$\mathrm{PSNR}_\mathrm{dB}$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Průměrné hodnoty $\mathrm{BER}_{\%}$, $\mathrm{SNR}_\mathrm{dB}$
+    a~$\mathrm{PSNR}_\mathrm{dB}$ bez modifikací pro metodu ukrývání pomocí
+    ozvěny s~jednou ozvěnou na bit.}
+    \label{pic:no-mod-params-mean-values-echo-bipolar-bf}
+\end{figure}
+
+\begin{figure}[H]
+    \pgfplotstableread[
+        col sep=semicolon,
+        ]{data/modifications-mean-values-echo-bipolar-bf.csv}\table
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[%
+            wideybar,
+            height=4cm,
+            enlarge y limits=0.15,
+            bar width=5pt,
+            scale=0.9,
+            width=14.5cm,
+            xlabel={},
+            ylabel={},
+            ytick={0, 5, 10, 20, 50},
+            ymajorgrids=true,
+            grid style=dashed,
+            xtick=data, % needed for xticklabels
+            xticklabels from table={\table}{modification},
+            xticklabel style={rotate=45, anchor=east},
+            % nodes near coords,
+            % nodes near coords align=vertical,
+            legend style={
+                legend pos=north west,
+                font=\small,
+            },
+            ]
+            \addplot table[x expr=\coordindex, y=ber percent] {\table};
+            \addplot table[x expr=\coordindex, y=snr db] {\table};
+            \addplot table[x expr=\coordindex, y=psnr db] {\table};
+            \legend{$\mathrm{BER}_{\%}$,$\mathrm{SNR}_\mathrm{dB}$,$\mathrm{PSNR}_\mathrm{dB}$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Průměrné hodnoty $\mathrm{BER}_{\%}$, $\mathrm{SNR}_\mathrm{dB}$
+    a~$\mathrm{PSNR}_\mathrm{dB}$ s~modifikacemi metody ukrývání pomocí
+    ozvěny s~jednou ozvěnou na bit.}
+    \label{pic:modifications-mean-values-echo-bipolar-bf}
 \end{figure}
 
 \subsection*{Metoda rozprostřeného spektra}
