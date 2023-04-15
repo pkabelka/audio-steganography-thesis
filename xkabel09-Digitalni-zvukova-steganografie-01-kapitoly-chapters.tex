@@ -2191,10 +2191,19 @@ BER.
 
 \subsection*{Metoda skrývání pomocí ozvěny}
 
-Implementovaná ozvěnová metoda má čtyři varianty jejichž které se snaží
-vylepšit předchozí.
+Implementovaná ozvěnová metoda má čtyři varianty, které se snaží vylepšit
+každou předchozí. Tyto metody dosahují nejvyšší robustnosti ze všech
+testovaných metod. Avšak jejich nepostřehnutelnost není příliš vysoká. Pro
+zmenšení grafů budou v~prvním grafu bez modifikací vynechány názvy parametrů,
+které jsou v~pořadí: \textit{d0}, \textit{d1}, \textit{alpha}.
 
 \subsubsection*{Varianta s~jednou ozvěnou na bit}
+
+Tato varianta vznikla jako první z~ozvěnových metod, ale přesto dosahuje
+poměrně dobré robustnosti.
+Na~obrázku~\ref{pic:no-mod-params-mean-values-echo-single} je vidět, že hodnoty
+této metody nejsou příliš ovlivněny zvolenými indexy ozvěn. Naopak jsou závislé
+na zvolené amplitudě přidaných ozvěn.
 
 \begin{figure}[H]
     \pgfplotstableread[
@@ -2236,6 +2245,10 @@ vylepšit předchozí.
     \label{pic:no-mod-params-mean-values-echo-single}
 \end{figure}
 
+Na~obrázku~\ref{pic:modifications-mean-values-echo-single} je vidět, že hodnoty
+BER po modifikacích jsou v~přijatelných mezích (do 20\%) až na modifikace
+frekvenční filtrace.
+
 \begin{figure}[H]
     \pgfplotstableread[
         col sep=semicolon,
@@ -2276,7 +2289,18 @@ vylepšit předchozí.
     \label{pic:modifications-mean-values-echo-single}
 \end{figure}
 
-\subsubsection{Varianta ozvěn s~kladnou a~zápornou amplitudou}
+Ručním testováním a~vhodným výběrem parametrů byla tato metoda schopna
+dosáhnout kapacity \textasciitilde15\,bitů za sekundu při vzorkovací frekvenci
+44,1\,kHz a~hodnoty 27,6\,dB SNR a~37\,dB PSNR. Parametry byly zvoleny tak, aby
+byl výsledný stego signál lidským uchem nerozeznatelný od krycího signálu. Jako
+hraniční hodnota BER bylo zvoleno 15\% stejně jako u~autorů~\cite{Gruhl1996},
+kteří dosáhli průměrné kapacity 16\,bitů za sekundu. Také došli k~závěru, že
+parametr dozvuku (anglicky \textit{decay rate}) byl nejdůležitějším parametrem
+pro dekódování. V~automatickém testování byly původně testovány i~různé hodnoty
+dozvuku a~rozdíl oproti zvolené výchozí hodnotě 0,85 byl méně než 1\% BER.
+
+\subsubsection*{Varianta ozvěn s~kladnou a~zápornou amplitudou}
+
 
 \begin{figure}[H]
     \pgfplotstableread[
