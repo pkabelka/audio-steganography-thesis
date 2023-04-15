@@ -2491,10 +2491,16 @@ také vyhodnocena na \textasciitilde15\,bitů za sekundu při vzorkovací frekve
 44,1\,kHz a~hodnotami 24,3\,dB SNR a~40,9\,dB PSNR, což je sice horší výsledek
 než u~předchozích dvou variant. Na druhou stranu má tato varianta nejvyšší
 robustnost ze všech čtyř implementovaných variant jak vyplývá
-z~obrázku~\ref{pic:modifications-mean-values-echo-bf}.
+z~obrázku~\ref{pic:modifications-mean-values-echo-bf}. Autoři této
+metody~\cite{Kim2003} došli ke kapacitě 10\,bitů za sekundu při vzorkovací
+frekvenci 44,1\,kHz.
 
 \subsubsection*{Varianta s~ozvěnami s~kladnou a~zápornou (bipolární) amplitudou
 vpřed a~vzad}
+
+Tato varianta má ze všech čtyř nejvyšší hodnoty SNR a~PSNR a~hodnoty BER
+podobné jako u~ozvěnové metody s~bipolárními ozvěnami jak lze vidět na
+obrázku~\ref{pic:no-mod-params-mean-values-echo-bipolar-bf}.
 
 \begin{figure}[H]
     \pgfplotstableread[
@@ -2536,6 +2542,10 @@ vpřed a~vzad}
     \label{pic:no-mod-params-mean-values-echo-bipolar-bf}
 \end{figure}
 
+I~s modifikacemi má tato varianta téměř totožné výsledky jako u~ozvěnová metoda
+s~bipolárními ozvěnami
+(viz~\ref{pic:modifications-mean-values-echo-bipolar-bf}).
+
 \begin{figure}[H]
     \pgfplotstableread[
         col sep=semicolon,
@@ -2576,6 +2586,11 @@ vpřed a~vzad}
     ozvěny s~bipolárními ozvěnami před a~vzad.}
     \label{pic:modifications-mean-values-echo-bipolar-bf}
 \end{figure}
+
+Ručním testováním jako v~ostatních variantách byla kapacita této varianty také
+vyhodnocena na \textasciitilde15\,bitů za sekundu při vzorkovací frekvenci
+44,1\,kHz a~hodnotami 31,9\,dB SNR a~48,5\,dB PSNR, což je nejvyšší ze všech
+čtyř.
 
 \subsection*{Metoda rozprostřeného spektra}
 
