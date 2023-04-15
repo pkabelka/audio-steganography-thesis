@@ -2301,6 +2301,11 @@ dozvuku a~rozdíl oproti zvolené výchozí hodnotě 0,85 byl méně než 1\% BE
 
 \subsubsection*{Varianta ozvěn s~kladnou a~zápornou amplitudou}
 
+U~této varianty začínají být vidět rozdíly při volbě jiných indexů ozvěn.
+Obrázek~\ref{pic:no-mod-params-mean-values-echo-bipolar} naznačuje, že použití
+nižších hodnot indexů vede k~nižším hodnotám BER a~vyšším hodnotám SNR a~PSNR.
+V~porovnání s~první variantou má tato metoda sice vyšší BER, ale má také
+podstatně vyšší SNR a~PSNR a~tím pádem by měla být méně detekovatelná.
 
 \begin{figure}[H]
     \pgfplotstableread[
@@ -2342,6 +2347,10 @@ dozvuku a~rozdíl oproti zvolené výchozí hodnotě 0,85 byl méně než 1\% BE
     \label{pic:no-mod-params-mean-values-echo-bipolar}
 \end{figure}
 
+Avšak poloviční hlasitost amplitudy ozvěn je pravděpodobně důvod horší
+robustnosti proti modifikacím jak lze vidět na
+obrázku~\ref{pic:modifications-mean-values-echo-bipolar}.
+
 \begin{figure}[H]
     \pgfplotstableread[
         col sep=semicolon,
@@ -2381,6 +2390,12 @@ dozvuku a~rozdíl oproti zvolené výchozí hodnotě 0,85 byl méně než 1\% BE
     ozvěny se dvěma bipolárními ozvěnami na bit.}
     \label{pic:modifications-mean-values-echo-bipolar}
 \end{figure}
+
+Autoři této metody~\cite{Oh2001} nezmínili kapacitu této varianty, ale
+z~ručního testování podobnému jako v~předchozí variantě byla kapacita také
+\textasciitilde15\,bitů za sekundu při vzorkovací frekvenci 44,1\,kHz. Výhodou
+této varianty je vyšší hodnota SNR a~PSNR při stejné hodnotě BER. Vhodnou
+volbou indexů ozvěn byla dosažena hodnota 30\,dB SNR a~46,6\,dB PSNR.
 
 \subsubsection*{Varianta s~ozvěnou vpřed a~vzad}
 
