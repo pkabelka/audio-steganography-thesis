@@ -1844,13 +1844,13 @@ průzkumem. Tato hodnota však není pevně daná v~kódu a~je možné ji změni
 kódování a~dekódování. Dekódování probíhá ekvivalentně stejně jako
 v~teoretickém popisu této metody. Po nalezení délek úseků ticha jsou získány
 decimální hodnoty půlbajtů. Ty však nestačí pouze převést na bity, protože je
-půlka z~nich nevyužitá. Proto je ještě potřeba extrahovat z~celých bajtů pouze
-každé 4~bity a~4~bity vynechat. Zápis extrakce 4~bitů z~každého bajtu
+půlka z~nich nevyužitá. Proto je ještě potřeba extrahovat z~každého bajtu pouze
+první 4~bity a~4~bity vynechat. Zápis extrakce 4~bitů z~každého bajtu
 využívající vlastnosti NumPy pole NDArray lze vidět ve
 výpisu~\ref{lst:get-4-bits-from-byte}.
 
 \begin{lstlisting}[language=PythonPlus, label={lst:get-4-bits-from-byte},
-caption={Extrakce pouze 4~bitů z~každého bajtu.}]
+caption={Extrakce prvních 4~bitů z~každého bajtu.}]
 decoded = np.unpackbits(
     decoded, axis=-1,
     bitorder='little').reshape(-1, 4)[::2, :].reshape(-1)[:l]
