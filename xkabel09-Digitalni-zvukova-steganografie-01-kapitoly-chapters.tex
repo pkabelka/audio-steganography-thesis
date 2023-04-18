@@ -2597,7 +2597,17 @@ vyhodnocena na \textasciitilde15\,bitů za sekundu při vzorkovací frekvenci
 
 \subsection*{Metoda rozprostřeného spektra}
 
-\blindtext
+Tato metoda má velmi podobné výsledky jako ozvěnová metoda s~bipolárními
+ozvěnami (viz~\ref{ssub:eval:echo-bipolar}). Kódování s~parametrem
+\texttt{alpha=0.05} odpovídá 5\%~maximální amplitudy. V~testování se nachází
+pouze jako referenční hodnota pro BER blízko 0\%. V~praxi je tato hodnota
+nepoužitelná, protože je generovaný šum příliš hlasitý. Hodnoty
+\texttt{alpha=0.005} a~\texttt{alpha=0.0025} už jsou blíže reálně použitelným
+hodnotám, ale stále nejsou nepostřehnutelné. Proto se hodí spíše do krycího
+signálu, který už sám o~sobě obsahuje určité množství šumu, které zprávu
+zamaskuje. Nevýhodou nižších hodnot \texttt{alpha} je snížená kapacita metody
+a~tudíž vyšší chybovost pro delší zprávy jak lze vidět
+z~obrázku~\ref{pic:no-mod-params-mean-values-dsss}.
 
 \begin{figure}[hbt]
     \pgfplotstableread[
@@ -2638,6 +2648,11 @@ vyhodnocena na \textasciitilde15\,bitů za sekundu při vzorkovací frekvenci
 \end{figure}
 
 \begin{figure}[hbt]
+Jak lze vidět z~obrázku~\ref{pic:modifications-mean-values-dsss}, má tato
+metoda částečně odolnost proti převzorkování, překvantování a~přidání šumu.
+Naopak má nulovou odolnost proti modifikacím, které upravují frekvenční
+spektrum signálu.
+
     \pgfplotstableread[
         col sep=semicolon,
         ]{data/modifications-mean-values-dsss.csv}\table
@@ -2674,6 +2689,10 @@ vyhodnocena na \textasciitilde15\,bitů za sekundu při vzorkovací frekvenci
     metody rozprostřeného spektra.}
     \label{pic:modifications-mean-values-dsss}
 \end{figure}
+
+Při ručním testování byl použita hodnota 0,001 pro parametr \texttt{alpha}, při
+které byla vyhodnocena kapacita této metody na 4-8~bitů podle volby parametru
+\texttt{password}, který měl na hodnoty BER velmi vysoký vliv.
 
 \subsection*{Metoda rozprostřeného spektra ve Fourierově transformaci (vlastní
 metoda)}
