@@ -2788,7 +2788,9 @@ metody.
 
 \subsection*{Metoda fázového kódování}
 
-\blindtext
+Jelikož tato metoda nemá žádné parametry, byl první graf nahrazen za
+tabulku~\ref{tab:no-mod-params-mean-values-phase}. Tato metoda ukrývá informace
+ve fázích vysokých frekvencí a~má výbornou míru dekódovatelnosti.
 
 \begin{table}[H]
     \vskip6pt
@@ -2807,6 +2809,15 @@ metody.
     ]{\table}
     \label{tab:no-mod-params-mean-values-phase}
 \end{table}
+
+Tato metoda má velmi nízkou robustnost vůči všem aplikovaným modifikacím, jak
+lze vidět z~obrázku~\ref{pic:modifications-mean-values-phase}. Podle
+autorů~\cite{Bender1996} má tato metoda kapacitu 4-16~bitů za sekundu na
+základě množství přítomného šumu v~krycím signálu. Při ručním testování bylo
+zjištěno, že výsledný stego signál obsahuje praskání napříč celou délkou
+signálu. Toto praskání bylo možné zamaskovat použitím krycího signálu
+s~velmi silným šumem. Maximální kapacita v~signálu s~šumem dosáhla až
+9756~bitů za sekundu.
 
 \begin{figure}[H]
     \pgfplotstableread[
@@ -2843,7 +2854,7 @@ metody.
     \end{tikzpicture}
     \caption{Průměrné hodnoty $\mathrm{BER}_{\%}$, $\mathrm{SNR}_\mathrm{dB}$
     a~$\mathrm{PSNR}_\mathrm{dB}$ s~modifikacemi metody fázového kódování.}
-    \label{pic:modifications-mean-values-tone-insertion}
+    \label{pic:modifications-mean-values-phase}
 \end{figure}
 
 \subsection*{Metoda ukrývání v~úsecích ticha}
