@@ -2491,9 +2491,10 @@ obrázku~\ref{pic:modifications-mean-values-echo-bf}.
 
 Ručním testováním jako v~první a~druhé variantě byla kapacita této varianty
 také vyhodnocena na \textasciitilde15\,bitů za sekundu při vzorkovací frekvenci
-44,1\,kHz a~hodnotami 24,3\,dB SNR a~40,9\,dB PSNR, což je sice horší výsledek
-než u~předchozích dvou variant. Na druhou stranu má tato varianta nejvyšší
-robustnost ze všech čtyř implementovaných variant jak vyplývá
+44,1\,kHz a~hodnotou 0,1 parametru \texttt{alpha}. Hodnota SNR byla 24,3\,dB
+a~40,9\,dB pro PSNR, což je sice horší výsledek než u~předchozích dvou variant,
+ale na druhou stranu má tato varianta nejvyšší robustnost ze všech čtyř
+implementovaných variant jak vyplývá
 z~obrázku~\ref{pic:modifications-mean-values-echo-bf}. Autoři této
 metody~\cite{Kim2003} vyhodnotili kapacitu na 10\,bitů za sekundu při
 vzorkovací frekvenci 44,1\,kHz.
@@ -2592,8 +2593,9 @@ s~bipolárními ozvěnami
 
 Ručním testováním jako v~ostatních variantách byla kapacita této varianty také
 vyhodnocena na \textasciitilde15\,bitů za sekundu při vzorkovací frekvenci
-44,1\,kHz a~hodnotami 31,9\,dB SNR a~48,5\,dB PSNR, což je nejvyšší ze všech
-čtyř.
+44,1\,kHz a~hodnotami 31,9\,dB SNR a~48,5\,dB PSNR, což jsou nejvyšší hodnoty
+ze všech čtyř variant. Pro pro parametr \texttt{alpha} byla použita hodnota
+hodnota 0,2.
 
 \subsection*{Metoda rozprostřeného spektra}
 
