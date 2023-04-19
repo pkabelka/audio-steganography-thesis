@@ -2857,7 +2857,16 @@ sekundu.
 
 \subsection*{Metoda ukrývání v~úsecích ticha}
 
-\blindtext
+Hodnota SNR této metody
+v~obrázku~\ref{pic:no-mod-params-mean-values-silence-interval} může být
+zavádějící. Tuto nízkou hodnotu způsobuje posun vzorků zkrácením intervalů
+ticha. Na obrázku~\ref{pic:modifications-mean-values-silence-interval} lze
+vidět, že má tato metoda výbornou robustnost proti modifikacím spektra. Avšak
+ostatní modifikace mají silný vliv na detekci začátku a~konce intervalu ticha.
+Pouhá změna jednoho vzorku nad hraniční hodnotu v~některém z~intervalů ovlivní
+dekódování. Kapacitu této metody není možné jednoznačně určit, protože se váže
+na množství úseků ticha v~krycím signálu. Avšak v~nerušených nahrávkách běžné
+řeči se kapacita pohybuje okolo 25~bitů na sekundu.
 
 \begin{figure}[H]
     \pgfplotstableread[
