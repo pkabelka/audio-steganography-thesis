@@ -3082,8 +3082,30 @@ v~úsecích ticha.
 \chapter{Závěr}
 \label{cha:conclusion}
 
-\blindtext
+Cílem této práce bylo vytvořit přehled metod z~oblasti digitální zvukové
+steganografie a~implementovat několik z~nich. Z~osmi metod popsaných
+v~kapitole~\ref{cha:digital-steganography} jich bylo implementováno šest
+a~jedna vlastní metoda navíc. U~metod nahrazení nejméně významného bitu, metody
+ukrývání pomocí ozvěny a~metody rozprostřeného spektra byly také implementovány
+modifikované varianty těchto metod.
 
-\blindtext
+Výsledným produktem této práce je softwarová knihovna pro programovací jazyk
+Python s~jednoduše rozšiřitelným rozhraním metod. Knihovna také obsahuje
+vestavěný terminálový program pro kódování a~dekódování libovolných dat do
+krycích audio souborů ve formátu WAVE pomocí implementovaných metod. Dále
+obsahuje knihovna program pro vyhodnocení robustnosti a~nepostřehnutelnosti na
+zadaných datových sadách a~také program pro zpracování těchto dat.
 
-\blindtext
+Jelikož bylo při implementaci přihlíženo spíše na množství metod
+a~rozšiřitelnost, nebyly implementovány pokročilé techniky pro zlepšení
+robustnosti a~nepostřehnutelnosti. Mezi tyto techniky patří Huffmanovo kódování
+a~jiné kompresní algoritmy, šifrování, paritní a~samoopravné kódy. Dalším
+vylepšením do budoucna by mohla být možnost tyto techniky kombinovat stylem
+vrstvení.
+
+Posledním požadavkem této práce je, aby byla co nejvíce otevřená a~dostupná pro
+kohokoliv se zájmem o~steganografii. Proto je text této práce dostupný pod
+licencí CC-BY-4.0\footnote{\url{https://creativecommons.org/licenses/by/4.0}}
+na adrese \url{https://github.com/pkabelka/audio-steganography-thesis}.
+Programová část této práce je dostupná pod licencí Apache-2.0 na adrese
+\url{https://github.com/pkabelka/audio-steganography}.
