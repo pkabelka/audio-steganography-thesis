@@ -4,28 +4,38 @@
 \begin{verbatim}
 LICENSE
 NOTICE
-audio-steganography.sh          skript pro jednodušší spuštění
+README-CZ.md                        návod na použití v češtině
+README.md                           návod na použití v angličtině
+audio-steganography.sh              skript pro jednodušší spuštění
 audio_steganography
 |   __init__.py
-|   __main__.py                 spouští vestavěný program
+|   __main__.py                     spouští vestavěný program
 |   audio_utils.py
 |   cli
-|   |   __init__.py             obsahuje funkci main() vestavěného programu
+|   |   __init__.py                 obsahuje funkci main() programu
 |   |   argument_parsing.py
 |   |   cli_utils.py
+|   |   evaluation
+|   |   |   __init__.py
+|   |   |   __main__.py             spouští skript pro vyhodnocení
+|   |   |   argument_parsing.py
+|   |   |   evaluate_method.py
+|   |   |   process.py              skript pro zpracování výsledků
 |   |   exit_codes.py
 |   |   method_facade.py
 |   |   mode.py
+|   decorators.py
 |   exceptions.py
-|   methods                     implementované metody
+|   methods                         implementované metody
 |   |   ...
-|   |   tests
-|   |   |   ...
 |   stat_utils.py
 |   tests
 |   |   ...
 |   tests_common.py
+requirements.txt                    seznam potřebných Python knihoven
+doc                                 text této práce
 \end{verbatim}
+
 
 \chapter{Statistické funkce}
 \label{cha:statistical-functions}
