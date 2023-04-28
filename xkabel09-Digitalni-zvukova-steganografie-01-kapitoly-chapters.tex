@@ -1110,10 +1110,11 @@ z~nich:
         nedoporučuje.
     \item \textit{audio-steganography-algorithms}\footnote{\url{https://github.com/ktekeli/audio-steganography-algorithms}}
         -- Sada implementací metod pro program MATLAB. Obsahuje metodu
-        rozprostřeného spektra (viz podsekce~\ref{sub:dsss}), ukrývání pomocí ozvěny
-        (viz podsekce~\ref{sub:echo-hiding}), nejméně významného bitu
-        (viz podsekce~\ref{sub:lsb}) a~fázového kódování (viz podsekce~\ref{sub:phase-coding}).
-        Bohužel jsou modifikace metod v~nečitelném proprietárním formátu.
+        rozprostřeného spektra (viz podsekce~\ref{sub:dsss}), ukrývání pomocí
+        ozvěny (viz podsekce~\ref{sub:echo-hiding}), nejméně významného bitu
+        (viz podsekce~\ref{sub:lsb}) a~fázového kódování (viz
+        podsekce~\ref{sub:phase-coding}). Bohužel jsou modifikace metod
+        v~nečitelném proprietárním formátu.
     \item \textit{Steganography}\footnote{\url{https://github.com/ragibson/Steganography}}
         -- Program v~jazyce \textit{Python}. Pro audio soubory ve formátu
         \textit{WAV} podporuje pouze metodu nahrazení nejméně významného bitu.
@@ -1352,10 +1353,11 @@ kde autoři kódují informaci do modulu (absolutní hodnoty) koeficientů
 Fourierovy transformace obrázku. Rozdíl je ale v~tom, že navrhovaná metoda
 upravuje reálnou část komplexního koeficientu Fourierovy transformace, čímž
 upravuje modul i~fázi. Druhá část této metody je kombinace s~metodou přímého
-rozprostřeného spektra (viz podsekce~\ref{sub:dsss}). Aby bylo kódování robustnější,
-informační bity jsou nejprve rozprostřeny po celé délce krycího signálu a~poté
-jsou přičteny ke koeficientům Fourierovy transformace krycího signálu. Princip
-kódování je možné vidět v~algoritmu~\ref{alg:own-method-encoding}.
+rozprostřeného spektra (viz podsekce~\ref{sub:dsss}). Aby bylo kódování
+robustnější, informační bity jsou nejprve rozprostřeny po celé délce krycího
+signálu a~poté jsou přičteny ke koeficientům Fourierovy transformace krycího
+signálu. Princip kódování je možné vidět
+v~algoritmu~\ref{alg:own-method-encoding}.
 
 \begin{algorithm}
     \SetNlSty{}{}{:}
@@ -1650,10 +1652,10 @@ varianta hledání a~to pomocí optimalizační metody
 \textit{Basin-hopping}\footnote{\url{https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.basinhopping.html}}
 z~knihovny \textit{SciPy}. Jedná se o~optimalizační funkci pro nalezení
 globálního minima dané funkce. V~případě steganografických metod se
-minimalizovanou funkcí myslí funkce míry bitové chybovosti (dále jen BER,
-viz kapitola~\ref{cha:statistical-functions}). Použitím této optimalizační funkce je
-hledání správných hodnot mnohem rychlejší než při hledání hrubou silo, ale není
-zaručeno, že výsledné hodnoty dosáhnou zakódování bez chyb.
+minimalizovanou funkcí myslí funkce míry bitové chybovosti (dále jen BER, viz
+kapitola~\ref{cha:statistical-functions}). Použitím této optimalizační funkce
+je hledání správných hodnot mnohem rychlejší než při hledání hrubou silo, ale
+není zaručeno, že výsledné hodnoty dosáhnou zakódování bez chyb.
 
 Samotné kódování každé metody je implementováno v~její příslušné třídě ve
 funkci \texttt{\_encode}. Pokud není vybrána metoda hledání hodnot zpoždění,
@@ -2093,10 +2095,11 @@ a~modifikací.
 
 V~prvním grafu u~jednotlivých metod jsou průměrné hodnoty bitové chybovosti
 (BER, viz příloha~\ref{cha:statistical-functions}), poměru signálu k~šumu (SNR,
-viz příloha~\ref{cha:statistical-functions}) a~špičkového poměr signálu k~šumu (PSNR,
-viz příloha~\ref{cha:statistical-functions}) pro jednotlivé testované parametry.
-Z~výsledků v~prvním grafu byly vybrány nejlepší parametry metod, které byly
-použity pro vytvoření grafů s~výsledky průměrných hodnot BER, SNR a~PSNR.
+viz příloha~\ref{cha:statistical-functions}) a~špičkového poměr signálu k~šumu
+(PSNR, viz příloha~\ref{cha:statistical-functions}) pro jednotlivé testované
+parametry. Z~výsledků v~prvním grafu byly vybrány nejlepší parametry metod,
+které byly použity pro vytvoření grafů s~výsledky průměrných hodnot BER, SNR
+a~PSNR.
 
 \subsection*{Metoda nahrazení nejméně významného bitu}
 
