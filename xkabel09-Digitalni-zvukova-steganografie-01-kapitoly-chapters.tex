@@ -1835,14 +1835,10 @@ pro nalezení úseků ticha je vidět ve výpisu~\ref{lst:silence-intervals}.
 caption={Nalezení indexů a~délek úseků ticha.}]
 def consecutive_values(input: Union[List, np.ndarray]):
     input = np.asanyarray(input)
-    if input.size == 0:
-        return np.array([]), np.array([])
-    diff = np.ones(input.shape, dtype=bool)
-    diff[1:] = np.diff(input)
-    return np.nonzero(diff)[0], np.diff(np.append(np.nonzero(diff)[0], input.size))
-
-silence_starts, silence_lens = consecutive_values(
-    np.abs(self._source_data) <= 0.15 * np.abs(self._source_data).max())
+    if input.size == 0: return np.array([]), np.array([])
+    d = np.ones(input.shape, dtype=bool); d[1:] = np.diff(input)
+    return np.nonzero(d)[0], np.diff(np.append(np.nonzero(d)[0], input.size))
+starts, lens = consecutive_values(np.abs(source) <= 0.15 * np.abs(source).max())
 \end{lstlisting}
 
 Implementační rozdíl v~této metodě je výchozí minimální délka úseku ticha, pro
@@ -1899,7 +1895,7 @@ výpočet amplitud a~modulaci tónů se segmenty je vidět ve
 výpisu~\ref{lst:tone-insertion}.
 
 \begin{lstlisting}[language=PythonPlus, label={lst:tone-insertion},
-caption={Výpočet amplitud a~přidání tónů k~segmentům.}]
+caption={Výpočet amplitud a~přidání tónů k~segmentům.}, float]
 f0_amplitudes = np.empty((2, len(segments)))
 f0_amplitudes[0] = np.sqrt(0.0025 * segment_powers / tone_f0_power)
 f0_amplitudes[1] = np.sqrt(0.000025 * segment_powers / tone_f0_power)
@@ -1918,7 +1914,7 @@ segmentu a~jednotlivých tónů. Kód pro výpočet korelace a~určení hodnoty 
 lze vidět ve výpisu~\ref{lst:tone-insertion-decoding}.
 
 \begin{lstlisting}[language=PythonPlus, label={lst:tone-insertion-decoding},
-caption={Výpočet korelace mezi segmenty a~tóny.}]
+caption={Výpočet korelace mezi segmenty a~tóny.}, float]
 for i in range(min(l, len(segments))):
     decoded[i] = (
         np.sum(segments[i] * tone_f1) / segment_len >
