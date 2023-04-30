@@ -1246,11 +1246,13 @@ Pro ověření vlastností steganografických metod bude součástí knihovny dr
 vestavěný program, který bude systematicky testovat jednotlivé vlastnosti každé
 metody. Testování bude probíhat na často používaných datových sadách pro
 digitální zvukovou steganografii. Podle~\cite{AlSabhany2020} jsou to tyto
-datové sady: \textit{TIMIT}~\cite{Garofolo1993}, \textit{GTZAN}
+datové sady: \textit{GTZAN}
 \cite{Tzanetakis2001}, \textit{Noizeus}~\cite{Hu2006} a~\textit{UrbanSound8K}
 \cite{Salamon2014}. K~těmto datovým sadám jsem ještě přidal vlastní sadu
 souborů, která bude s~ostatními více popsána
-v~části~\ref{ssub:dataset-descriptions}.
+v~části~\ref{ssub:dataset-descriptions}. Podle~\cite{AlSabhany2020} patří mezi
+používané sady také datový korpus \textit{TIMIT}~\cite{Garofolo1993}, avšak ten
+zde nebude testován.
 
 Hodnoty jednotlivých vlastností se vyčíslují pomocí statistických funkcí, které
 se často objevovaly v~průzkumu~\cite{AlSabhany2020}. Tyto funkce jsou:
@@ -1286,15 +1288,6 @@ metodami zvlášť i~kombinovaně:
 
 \subsubsection{Popis použitých datových sad}
 \label{ssub:dataset-descriptions}
-
-Datový korpus \textit{TIMIT} vznikl v~roce~1993 za účelem automatizovaného
-vyhodnocování systémů pro detekci řeči~\cite{Garofolo1993}. Našel avšak použití
-v~širokém spektru dalších oblastí pracující se zvukovými nahrávkami, mezi nimiž
-je i~zvuková steganografie. Korpus obsahuje nahrávky od 630~řečníků z~osmi
-hlavních dialektů americké angličtiny. Každý řečník četl deset foneticky
-pestrých vět. Nahrávky obsahují jeden kanál PCM kódovaného zvuku ve formátu
-WAV. Zvuk je vzorkován na frekvenci 16\,kHz a~vzorky jsou kvantovány na
-16~bitech~\cite{Garofolo1993}. Průměrná délka jedné nahrávky jsou 3~sekundy.
 
 Datová sada \textit{GTZAN} vznikla mezi lety 2000-2001 a~obsahuje
 1000~hudebních nahrávek po 30~sekundách. Žánr a~zdroj jednotlivých nahrávek je
@@ -1335,7 +1328,6 @@ datových sad.
         \toprule
         Název & Vzorkovací frekvence & Bitová hloubka & Počet nahrávek \\
         \midrule
-        TIMIT & 16000\,Hz & 16\,b & 6300 \\
         GTZAN & 22050\,Hz & 16\,b & 1000 \\
         NOIZEUS & 8000\, Hz & 16\,b & 960 \\
         UrbanSound8K & -- & -- & 8732 \\
@@ -2058,9 +2050,6 @@ Z~datové sady \textit{UrbanSound8K} byl použit pouze oddíl s~názvem
 kódovány pomocí adaptivní diferenciální pulzně-kódové modulace, která není
 podporována funkcí \texttt{scipy.io.wavfile.read}, která se stará o~načítání
 audio souborů.
-
-Z~datové sady \textit{TIMIT} byla vybrána od každého z~630~řečníků pouze jedna
-věta namísto všech deseti namluvených.
 
 \section{Testované parametry}
 \label{sec:tested-parameters}
