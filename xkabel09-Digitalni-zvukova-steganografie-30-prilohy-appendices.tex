@@ -1,39 +1,42 @@
-\chapter{Obsah přiloženého paměťového média}
+\chapter{Obsah přiloženého média}
 \label{cha:medium-contents}
 
 \begin{verbatim}
-LICENSE
-NOTICE
-README-CZ.md                        návod na použití v češtině
-README.md                           návod na použití v angličtině
-audio-steganography.sh              skript pro jednodušší spuštění
-audio_steganography
-|   __init__.py
-|   __main__.py                     spouští vestavěný program
-|   audio_utils.py
-|   cli
-|   |   __init__.py                 obsahuje funkci main() programu
-|   |   argument_parsing.py
-|   |   cli_utils.py
-|   |   evaluation
-|   |   |   __init__.py
-|   |   |   __main__.py             spouští skript pro vyhodnocení
-|   |   |   argument_parsing.py
-|   |   |   evaluate_method.py
-|   |   |   process.py              skript pro zpracování výsledků
-|   |   exit_codes.py
-|   |   method_facade.py
-|   |   mode.py
-|   decorators.py
-|   exceptions.py
-|   methods                         implementované metody
+text/                                 text této práce
+|   ...
+program/
+|   audio-steganography.sh            skript pro jednodušší spuštění
+|   requirements.txt                  seznam potřebných Python knihoven
+|   README.md                         návod na použití v angličtině
+|   README-CZ.md                      návod na použití v češtině
+|   audio_steganography/
+|   |   cli/
+|   |   |   __init__.py               obsahuje funkci main() programu
+|   |   |   evaluation/
+|   |   |   |   process.py            skript pro zpracování výsledků
+|   |   |   |   __main__.py           spouští skript pro vyhodnocení
+|   |   |   |   ...
+|   |   |   ...
+|   |   tests/
+|   |   |   ...
+|   |   methods/                      implementované metody
+|   |   |   echo_bipolar.py
+|   |   |   echo_bf.py
+|   |   |   echo_bipolar_bf.py
+|   |   |   echo_single.py
+|   |   |   dsss.py
+|   |   |   dsss_dft.py
+|   |   |   lsb.py
+|   |   |   tone_insertion.py
+|   |   |   phase_coding.py
+|   |   |   silence_interval.py
+|   |   |   ...
+|   |   |   tests/
+|   |   |   |   ...
+|   |   __main__.py
+|   |   __init__.py                   spouští vestavěný program
 |   |   ...
-|   stat_utils.py
-|   tests
-|   |   ...
-|   tests_common.py
-requirements.txt                    seznam potřebných Python knihoven
-doc                                 text této práce
+|   ...
 \end{verbatim}
 
 
