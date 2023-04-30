@@ -2238,8 +2238,8 @@ na zvolené amplitudě přidaných ozvěn.
 \end{figure}
 
 Na~obrázku~\ref{pic:modifications-mean-values-echo-single} je vidět, že hodnoty
-BER po modifikacích jsou v~přijatelných mezích (do 20\%) až na modifikace
-frekvenční filtrace.
+BER po modifikacích přidání šumu a~překódování do formátu MP3 jsou
+v~přijatelných mezích (do 20\%).
 
 \begin{figure}[H]
     \pgfplotstableread[
@@ -2341,8 +2341,7 @@ podstatně vyšší SNR a~PSNR a~tím pádem by měla být méně detekovatelná
     \label{pic:no-mod-params-mean-values-echo-bipolar}
 \end{figure}
 
-Avšak poloviční hlasitost amplitudy ozvěn je pravděpodobně důvod horší
-robustnosti proti modifikacím jak lze vidět na
+Tato varianta má také lepší hodnoty po modifikacích jak lze vidět na
 obrázku~\ref{pic:modifications-mean-values-echo-bipolar}.
 
 \begin{figure}[H]
@@ -2494,8 +2493,8 @@ vzorkovací frekvenci 44,1\,kHz.
 \subsubsection*{Varianta s~ozvěnami s~kladnou a~zápornou (bipolární) amplitudou
 vpřed a~vzad}
 
-Tato varianta má ze všech čtyř nejvyšší hodnoty SNR a~PSNR a~hodnoty BER
-podobné jako u~ozvěnové metody s~bipolárními ozvěnami jak lze vidět na
+Tato varianta má ze všech čtyř nejvyšší hodnoty SNR a~PSNR. Hodnoty BER má tato
+varianta podobné jako ozvěnová metoda s~bipolárními ozvěnami, jak lze vidět na
 obrázku~\ref{pic:no-mod-params-mean-values-echo-bipolar-bf}.
 
 \begin{figure}[H]
@@ -2692,10 +2691,10 @@ Autoři~\cite{Bender1996} vyhodnotili kapacitu této metody na 4~bity za sekundu
 \subsection*{Metoda rozprostřeného spektra ve Fourierově transformaci (vlastní
 metoda)}
 
-Rozprostírání bitů ve Fourierově transformaci krycího signálu má mírně lepší
-hodnoty pokud není stego signál modifikován, jak lze vidět
-z~obrázku~\ref{pic:no-mod-params-mean-values-dsss-dft}. Bohužel má tato metoda
-podstatně nižší odolnost vůči všem aplikovaným modifikacím jak lze vidět
+Rozprostírání bitů ve Fourierově transformaci krycího signálu má nižší hodnoty
+pokud není stego signál modifikován, jak lze vidět
+z~obrázku~\ref{pic:no-mod-params-mean-values-dsss-dft}. Avšak má tato metoda
+mírně vyšší odolnost vůči aplikovaným modifikacím jak lze vidět
 z~obrázku~\ref{pic:modifications-mean-values-dsss-dft}. Kapacita této metody
 byla vyhodnocena také na 4-8~bitů jako u~neupravené metody.
 
@@ -2940,10 +2939,11 @@ na množství úseků ticha v~krycím signálu. Avšak v~nerušených nahrávká
 
 \subsection*{Metoda vkládání tónu}
 
-Tato metoda dosáhla výborných hodnot BER, SNR a~PSNR bez modifikací, jak Jak
-lze vidět na obrázku~\ref{pic:no-mod-params-mean-values-tone-insertion}.
-Problém této metody však nastává při aplikaci modifikací. Tato metoda má
-extrémně nízkou robustnost vůči jakýmkoliv modifikacím, jak Jak lze vidět na
+Tato metoda dosáhla výborných hodnot BER, SNR a~PSNR bez modifikací, při
+správné volbě frekvencí vložených tónů, jak lze vidět na
+obrázku~\ref{pic:no-mod-params-mean-values-tone-insertion}. Problém této metody
+však nastává při aplikaci modifikací. Tato metoda má extrémně nízkou robustnost
+vůči jakýmkoliv modifikacím, jak lze vidět na
 obrázku~\ref{pic:modifications-mean-values-tone-insertion}. Tento výsledek je
 stejně špatný jako u~metody nahrazení nejméně významného bitu a~metody
 rozprostřeného spektra ve Fourierově transformaci. Ručním testováním byla
@@ -3030,9 +3030,9 @@ kapacita této metody vyhodnocena na 62~bitů za sekundu.
 \section{Shrnutí výsledků}
 \label{sec:results-summary}
 
-Pro lepší přehled výsledných hodnot nemodifikovaných stego signálů
-z~automatického a~ručního testování obsahuje tabulka~\ref{tab:results-summary}
-výsledné hodnoty SNR, PSNR a~kapacitu metod pro krycí signál vzorkovaný na
+Pro lepší přehled výsledných hodnot nemodifikovaných stego signálů primárně
+z~ručního testování, obsahuje tabulka~\ref{tab:results-summary} výsledné
+hodnoty SNR, PSNR a~kapacitu metod pro krycí signál vzorkovaný na
 frekvenci~44,1\,kHz.
 
 \begin{table}[H]
@@ -3044,7 +3044,7 @@ frekvenci~44,1\,kHz.
         \toprule
         Název metody & SNR & PSNR & Kapacita \\
         \midrule
-        Nahrazení nejméně významného bitu          & 90--105\,dB & 108--122\,dB & 44\,100\,b/s \\
+        Nahrazení nejméně významného bitu          & 90--111\,dB & 108--128\,dB & 44\,100\,b/s \\
         Ozvěny: jedna ozvěna na bit                & 27,6\,dB    & 37\,dB       & 16\,b/s \\
         Ozvěny: ozvěny s~bipolární amplitudou      & 30\,dB      & 46,6\,dB     & 16\,b/s \\
         Ozvěny: ozvěny vpřed a~vzad                & 24,3\,dB    & 40,9\,dB     & 16\,b/s \\
