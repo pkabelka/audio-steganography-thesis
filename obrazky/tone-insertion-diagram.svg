@@ -28,8 +28,8 @@
      inkscape:document-units="mm"
      showgrid="true"
      inkscape:zoom="4"
-     inkscape:cx="176.5"
-     inkscape:cy="64.125001"
+     inkscape:cx="169.75"
+     inkscape:cy="84.625"
      inkscape:window-width="2560"
      inkscape:window-height="1382"
      inkscape:window-x="1920"
@@ -72,14 +72,14 @@
        inkscape:label="segment">
       <text
          xml:space="preserve"
-         style="font-size:2.82222px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+         style="font-size:2.11667px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
          x="17.654278"
          y="28.11528"
          id="text20571"
          inkscape:label="bit"><tspan
            sodipodi:role="line"
            id="tspan20569"
-           style="font-size:2.82222px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.265;stroke-dasharray:none;stroke-opacity:1"
+           style="font-size:2.11667px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.265;stroke-dasharray:none;stroke-opacity:1"
            x="17.654278"
            y="28.11528">0</tspan></text>
       <path
@@ -152,7 +152,7 @@
            style="font-size:2.11667px;stroke-width:0.265"
            x="12.553136"
            y="22.971777">f<tspan
-   style="font-size:1.41111px"
+   style="font-size:1.76389px"
    id="tspan43537">0</tspan></tspan></text>
       <text
          xml:space="preserve"
@@ -166,7 +166,7 @@
            style="font-size:2.11667px;stroke-width:0.265"
            x="17.553135"
            y="22.971777">f<tspan
-   style="font-size:1.41111px"
+   style="font-size:1.76389px"
    id="tspan43539">1</tspan></tspan></text>
       <text
          xml:space="preserve"
@@ -180,7 +180,7 @@
            style="font-size:2.11667px;stroke-width:0.265"
            x="25.835815"
            y="23.158998">f<tspan
-   style="font-size:1.41111px"
+   style="font-size:1.76389px"
    id="tspan43541">s</tspan>/2</tspan></text>
       <text
          xml:space="preserve"
@@ -194,7 +194,7 @@
            style="font-size:2.11667px;stroke-width:0.265"
            x="10.877234"
            y="13.85837">0.25% P<tspan
-   style="font-size:1.41111px"
+   style="font-size:1.76389px"
    id="tspan44485">0</tspan></tspan></text>
       <text
          xml:space="preserve"
@@ -208,7 +208,7 @@
            style="font-size:2.11667px;stroke-width:0.265"
            x="14.648419"
            y="17.114202">0.0025% P<tspan
-   style="font-size:1.41111px"
+   style="font-size:1.76389px"
    id="tspan44489">0</tspan></tspan></text>
     </g>
     <g
@@ -217,14 +217,14 @@
        transform="translate(25)">
       <text
          xml:space="preserve"
-         style="font-size:2.82222px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+         style="font-size:2.11667px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
          x="17.654278"
          y="28.11528"
          id="text11361"
          inkscape:label="bit"><tspan
            sodipodi:role="line"
            id="tspan11359"
-           style="font-size:2.82222px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.265;stroke-dasharray:none;stroke-opacity:1"
+           style="font-size:2.11667px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.265;stroke-dasharray:none;stroke-opacity:1"
            x="17.654278"
            y="28.11528">1</tspan></text>
       <path
@@ -297,7 +297,7 @@
            style="font-size:2.11667px;stroke-width:0.265"
            x="12.553136"
            y="22.971777">f<tspan
-   style="font-size:1.41111px"
+   style="font-size:1.76389px"
    id="tspan43545">0</tspan></tspan></text>
       <text
          xml:space="preserve"
@@ -311,7 +311,7 @@
            style="font-size:2.11667px;stroke-width:0.265"
            x="17.553135"
            y="22.971777">f<tspan
-   style="font-size:1.41111px"
+   style="font-size:1.76389px"
    id="tspan43547">1</tspan></tspan></text>
       <text
          xml:space="preserve"
@@ -325,7 +325,7 @@
            style="font-size:2.11667px;stroke-width:0.265"
            x="25.835815"
            y="23.158998">f<tspan
-   style="font-size:1.41111px"
+   style="font-size:1.76389px"
    id="tspan43549">s</tspan>/2</tspan></text>
       <text
          xml:space="preserve"
@@ -339,7 +339,7 @@
            style="font-size:2.11667px;stroke-width:0.265"
            x="14.563031"
            y="14.17263">0.25% P<tspan
-   style="font-size:1.41111px"
+   style="font-size:1.76389px"
    id="tspan44487">1</tspan></tspan></text>
       <text
          xml:space="preserve"
@@ -353,7 +353,7 @@
            style="font-size:2.11667px;stroke-width:0.265"
            x="10.201652"
            y="17.123611">0.0025% P<tspan
-   style="font-size:1.41111px"
+   style="font-size:1.76389px"
    id="tspan44491">1</tspan></tspan></text>
     </g>
     <g
@@ -362,14 +362,14 @@
        transform="translate(50)">
       <text
          xml:space="preserve"
-         style="font-size:2.82222px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+         style="font-size:2.11667px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
          x="17.654278"
          y="28.11528"
          id="text11413"
          inkscape:label="bit"><tspan
            sodipodi:role="line"
            id="tspan11411"
-           style="font-size:2.82222px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.265;stroke-dasharray:none;stroke-opacity:1"
+           style="font-size:2.11667px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.265;stroke-dasharray:none;stroke-opacity:1"
            x="17.654278"
            y="28.11528">0</tspan></text>
       <path
@@ -442,7 +442,7 @@
            style="font-size:2.11667px;stroke-width:0.265"
            x="12.553136"
            y="22.971777">f<tspan
-   style="font-size:1.41111px"
+   style="font-size:1.76389px"
    id="tspan43553">0</tspan></tspan></text>
       <text
          xml:space="preserve"
@@ -456,7 +456,7 @@
            style="font-size:2.11667px;stroke-width:0.265"
            x="17.553135"
            y="22.971777">f<tspan
-   style="font-size:1.41111px"
+   style="font-size:1.76389px"
    id="tspan43555">1</tspan></tspan></text>
       <text
          xml:space="preserve"
@@ -470,7 +470,7 @@
            style="font-size:2.11667px;stroke-width:0.265"
            x="25.835815"
            y="23.158998">f<tspan
-   style="font-size:1.41111px"
+   style="font-size:1.76389px"
    id="tspan43557">s</tspan>/2</tspan></text>
       <text
          xml:space="preserve"
@@ -484,7 +484,7 @@
            style="font-size:2.11667px;stroke-width:0.265"
            x="10.630494"
            y="14.091315">0.25% P<tspan
-   style="font-size:1.41111px"
+   style="font-size:1.76389px"
    id="tspan44493">2</tspan></tspan></text>
       <text
          xml:space="preserve"
@@ -498,7 +498,7 @@
            style="font-size:2.11667px;stroke-width:0.265"
            x="14.648419"
            y="17.114202">0.0025% P<tspan
-   style="font-size:1.41111px"
+   style="font-size:1.76389px"
    id="tspan44495">2</tspan></tspan></text>
     </g>
     <text
