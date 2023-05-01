@@ -962,8 +962,8 @@ kóduje bity \texttt{010}.
 
 Dekódování probíhá porovnáním poměrů výkonu segmentu k~výkonu tónu na dané
 frekvenci~\cite{Djebbar2012}. Dekódovací pravidlo lze vidět v~rovnici
-\ref{eq:tone-insertion-decision-rule} kde $b$ značí hodnotu bitu a~výkon
-segmentu je označen jako $P_i$ přičemž $i$ značí index segmentu a~$f_0$~a$f_1$
+\ref{eq:tone-insertion-decision-rule}, kde $b$ značí hodnotu bitu a~výkon
+segmentu je označen jako $P_i$, přičemž $i$ značí index segmentu a~$f_0$~a$f_1$
 značí použité frekvence.
 
 \begin{equation}
@@ -1149,7 +1149,7 @@ až minut.
 
 Při volbě tajné zprávy bude mít uživatel programu na výběr textový vstup nebo
 obsah souboru. Rozhraní jednotlivých metod bude pracovat s~bity ukrývané
-informace, díky čemu nebude nezáležet na typu kódovaných dat. Pro kódování je
+informace, díky čemuž nebude záležet na typu kódovaných dat. Pro kódování je
 tedy postačí převést z~bajtů na bity a~při dekódování naopak. Většina
 steganografických metod má několik parametrů které mají vliv na robustnost,
 kapacitu a~nepostřehnutelnost metody. Tyto parametry budou uživateli
@@ -1160,7 +1160,7 @@ Z~metod popsaných v~sekci~\ref{sec:existing-methods} jsem plánoval
 implementovat všechny, avšak některé metody se ukázaly být velmi složité na
 implementaci. Implementována nebude metoda vlnkové transformace a~také metoda
 paritního kódování, protože se jedná prakticky o~modifikaci metody nahrazení
-nejméně významného bitu. U~metody vybraných k~implementaci budou také
+nejméně významného bitu. U~metod vybraných k~implementaci budou také
 implementovány některé popsané modifikace metod.
 
 \subsection*{Blokové schéma a~komponenty systému}
@@ -1292,7 +1292,7 @@ metodami zvlášť i~kombinovaně:
 
 Datová sada \textit{GTZAN} vznikla mezi lety 2000-2001 a~obsahuje
 1000~hudebních nahrávek po 30~sekundách. Žánr a~zdroj jednotlivých nahrávek je
-různorodý. Celkem obsahuje datová sada 10~hudeních žánrů. Nahrávky obsahují
+různorodý. Datová sada obsahuje celkem 10~hudeních žánrů. Nahrávky obsahují
 jeden kanál a~jsou vzorkovány na frekvenci 22050\,Hz a~kvantovány na
 16~bitech~\cite{Tzanetakis2001}.
 
@@ -1418,7 +1418,7 @@ zapsán v~algoritmu~\ref{alg:own-method-decoding}.
 \label{cha:implementation}
 
 V~této kapitole bude popsána konkrétní struktura modulů a~tříd, tak jak jsou
-v~řešení implementovány. Bude popsáno jak je dosaženo polymorfizmu pomocí
+v~řešení implementovány. Bude popsáno, jak je dosaženo polymorfizmu pomocí
 společného rozhraní metod. Budou také popsány oba vestavěné programy a~poté
 budou popsány implementace jednotlivých metod v~knihovně.
 
@@ -1426,7 +1426,7 @@ budou popsány implementace jednotlivých metod v~knihovně.
 \label{sec:modules}
 
 Řešení je rozděleno do několika modulů a~balíčků, které plní specifickou
-činnost. Kořenovém balíčku se nachází následující balíčky:
+činnost. V~kořenovém balíčku se nachází následující balíčky:
 
 \begin{itemize}
     \item \texttt{cli} -- obsahuje moduly týkající se vestavěného programu pro
@@ -1518,7 +1518,7 @@ s~dodatečnými parametry potřebnými pro dekódování u~některých metod. Po
 společné volitelné argumenty jsou:
 
 \begin{itemize}
-    \item \verb|-y/--overwrite| -- potlačí chybovou hlášku pokud výstupní
+    \item \verb|-y/--overwrite| -- potlačí chybovou hlášku, pokud výstupní
         soubor existuje a~bude přepsán bez dotázání,
     \item \verb|--stats| -- přidá do dodatečného výstupu programu výstup
         statistických funkcí.
@@ -1562,8 +1562,8 @@ funkcí expandovat do argumentů slovník (asociované pole hodnot) s~přiřazen
 parametry. Pokud je v~hlavičce funkce použito \texttt{**kwargs}, pak Python
 ignoruje přebytečné argumenty. Při volání funkcí \texttt{encode}
 a~\texttt{decode} je díky tomu možné přednastavit argumenty pro metody předem
-do slovníku a~poté pouze vybrat použitou metodu. Tato funkcionalita je využita
-jak ve třídě \texttt{MethodFacade} tak i~při volání fasády ve funkci
+do slovníku a~poté pouze vybrat použitou metodu. Tato funkcionalita je využita,
+jak ve třídě \texttt{MethodFacade}, tak i~při volání fasády ve funkci
 \texttt{main}. Zjednodušený příklad kódu z~funkce \texttt{main} je ve výpisu
 \ref{lst:general-method-usage}.
 
@@ -1592,7 +1592,7 @@ informace.
 
 Tato podsekce popisuje implementaci metody popsané v~podsekci~\ref{sub:lsb}.
 Kódování pomocí této metody je velmi jednoduché, pokud jsou vzorky krycího
-signálu celočíselného datového typu. Pokud jsou vzorky typu datového typu
+signálu celočíselného datového typu. Pokud jsou vzorky datového typu
 \textit{float}, pak je potřeba nejprve převést vzorky do celočíselného datového
 typu se stejnou bitovou velikostí. V~knihovně NumPy je možné použít funkci
 \texttt{tobytes}, která převede pole se vzorky na pole sekvence bajtů tak, jak
@@ -1655,8 +1655,8 @@ funkci \texttt{\_encode}. Pokud není vybrána metoda hledání hodnot zpožděn
 budou použity hodnoty zadané uživatelem bez ohledu na hodnotu BER. To umožňuje
 případně implementovat jiné způsoby hledání optimálních hodnot. Implementace
 obsahuje velký rozdíl oproti teoretickému popisu z~důvodu optimalizace
-kódování, a~to nahrazením konvoluce pro vytvoření ozvěny za zkopírování pole
-a~doplnění příslušným počtem nul. Jednotlivé ozvěny jsou pak přiřazeny jako
+kódování, a~to nahrazením vytvoření ozvěny konvolucí za zkopírování pole
+a~doplnění příslušného počtu nul. Jednotlivé ozvěny jsou pak přiřazeny jako
 výřezy zkopírovaného pole. Ukázka kódu, který se v~podobné formě nachází ve
 všech variantách ozvěnové metody je vidět ve
 výpisu~\ref{lst:echo-source-padding}.
@@ -1703,7 +1703,7 @@ používají autokorelaci cepstra.
 Tato podsekce popisuje implementaci metody popsané v~podsekci~\ref{sub:dsss}.
 Pro vytvoření sekvence čipů je použita funkce \texttt{spread\_bits}, která
 rozprostírá bity přes zadanou délku (viz výpis~\ref{lst:spread-bits}). Čipy
-jsou poté vynásobeny pseudonáhodnou sekvencí čipů generovanou ze zadaného
+jsou poté vynásobeny pseudonáhodnou sekvencí čipů vygenerované ze zadaného
 klíče. Klíč je převeden na 32-bitové číslo hešovací funkcí \textit{SHA256} a~je
 použit jako počátek pseudonáhodného generátoru (anglicky \textit{seed}).
 Implementace používá pro generování pseudonáhodné sekvence generátor
@@ -1762,14 +1762,15 @@ encoded = np.fft.ifft(encoded).real
 \label{sub:phase-coding-implementation}
 
 Tato podsekce popisuje implementaci metody popsané
-v~podsekci~\ref{sub:phase-coding}. Kroky implementace se shodují s~teoretickým
-popisem až na zvolené fáze v~prvním segmentu. Autoři~\cite{Bender1996}
-nahradili fáze nultého segmentu novými fázemi, které reprezentují ukrývanou
-informaci. Při implementaci jsem zjistil, že tato varianta velmi negativně
-ovlivňuje fáze na začátku a~tím i~výsledný stego signál. Rozhodl jsem se proto
-implementovat modifikaci této metody, která nahrazuje naopak fáze nejvyšších
-frekvencí v~segmentu. Algoritmický popis této metody jsem našel v~odpovědi Dana
-Oaka na fóru \textit{StackExchange}~\cite{PhaseStackExchange}.
+v~podsekci~\ref{sub:phase-coding}. Kroky implementace se téměř shodují
+s~teoretickým popisem této metody. Rozdíl je ve volbě fází v~prvním segmentu.
+Autoři~\cite{Bender1996} nahradili fáze nultého segmentu novými fázemi, které
+reprezentují ukrývanou informaci. Při implementaci jsem zjistil, že tato
+varianta velmi negativně ovlivňuje fáze na začátku a~tím i~výsledný stego
+signál. Rozhodl jsem se proto implementovat modifikaci této metody, která
+naopak nahrazuje fáze nejvyšších frekvencí v~segmentu. Algoritmický popis této
+metody jsem našel v~odpovědi Dana Oaka na fóru
+\textit{StackExchange}~\cite{PhaseStackExchange}.
 
 Pro zakódování se zvolí velikost segmentů několikrát větší než je délka
 ukrývaných bitů, aby byly nové fáze uloženy ve vysokých frekvencích. Délka
@@ -1942,9 +1943,6 @@ použité datové sady. Očekávaná struktura je datových sad je následujíc�
 |   |   <kategorie>
 |   |   |   <soubory>
 |   |   |   ...
-|   |   <kategorie>
-|   |   |   <soubory>
-|   |   |   ...
 |   |   ...
 |   ...
 \end{verbatim}
@@ -1962,7 +1960,7 @@ Pro výpis průběžného stavu vyhodnocování je možné použít přepínač
 o~právě vyhodnocovaném souboru, metodě, parametrů a~modifikací včetně
 dodatečných informací o~prováděném kódování a~dekódování.
 
-Pro zrychlení vyhodnocování, spouští program vyhodnocení souborů paralelně.
+Pro zrychlení vyhodnocování spouští program vyhodnocení souborů paralelně.
 Počet paralelních procesů je možné ovládat přepínačem \verb|-p/--processes|.
 Výchozí hodnotou je maximální počet použitelných jader procesoru.
 
@@ -1970,32 +1968,33 @@ Přepínač \verb|-e/--extended| přidá k~vyhodnocovaným metodám dodatečné
 parametry pro hlubší testování, avšak vyhodnocování bude trvat podstatně déle.
 
 Při implementaci a~testování se objevily u~testování překódování do formátu MP3
-problémy při kterých docházelo k~náhlé zástavě programu. Nepovedlo se mi určit
-zdroj problému protože se objevoval pouze u~některých souborů z~datových sad
-a~proto jsem přidal přepínač \verb|--no-mp3| pro vypnutí překódování do formátů
-MP3.
+problémy, při kterých docházelo k~náhlé zástavě programu. Nepovedlo se mi určit
+zdroj tohoto problému, protože se objevoval pouze u~některých souborů
+z~datových sad. Proto jsem přidal přepínač \verb|--no-mp3| pro vypnutí
+překódování do formátů MP3.
 
-Na závěr jsou po přepínačích zadány metody které budou vyhodnocovány. Názvy
+Na závěr jsou po přepínačích zadány metody, které budou vyhodnocovány. Názvy
 metod je možné vypsat v~nápovědě přepínačem \verb|-h/--help|. Pro vyhodnocení
 všech metod je možné zadat argument \texttt{ALL} nebo nezadat žádnou metodu.
 
 \subsection*{Způsob vyhodnocení}
 \label{sub:evaluation-program}
 
-Program nejprve vyhodnotí zadané argumenty ze kterých zjistí primárně kořenovou
-složku obsahující datové sady. Při načítání cest souborů jsou ignorovány
-všechny soubory a~složky začínající tečkou. Všechny soubory které budou použity
-pro vyhodnocení se přidají spolu se zvolenými metodami jako argumenty pro
-funkci \texttt{evaluate\_method}, která provádí kódování, modifikace
-a~dekódování. Třída \texttt{Pool} z~knihovny \texttt{multiprocessing} zajišťuje
-vytváření a~spouštění paralelních procesů s~funkcí \texttt{evaluate\_method}.
+Program nejprve vyhodnotí zadané argumenty, ze kterých zjistí primárně
+kořenovou složku obsahující datové sady. Při načítání cest souborů jsou
+ignorovány všechny soubory a~složky začínající tečkou. Všechny soubory které,
+budou použity pro vyhodnocení se přidají spolu se zvolenými metodami jako
+argumenty pro funkci \texttt{evaluate\_method}, která provádí kódování,
+modifikace a~dekódování. Třída \texttt{Pool} z~knihovny
+\texttt{multiprocessing} zajišťuje vytváření a~spouštění paralelních procesů
+s~funkcí \texttt{evaluate\_method}.
 
-Funkce \texttt{evaluate\_method} obsahuje několik vrstev vnořených cyklů které
+Funkce \texttt{evaluate\_method} obsahuje několik vrstev vnořených cyklů, které
 přidávají vyhodnocované aspekty. První cyklus testuje různé délky zpráv. Pokud
 je zpráva příliš dlouhá na konkrétní metodu a~její nastavení, pak jsou
 ponechány hodnoty prázdné až na dobu kódování a~dekódování, které jsou
 nastaveny na nekonečno. V~dalším cyklu se každá zpráva kóduje do souboru
-zvolenými metodami. Každá metoda má také různé parametry které ovlivňují míru
+zvolenými metodami. Každá metoda má také různé parametry, které ovlivňují míru
 nepostřehnutelnosti, robustnosti a~kapacity. Proto musí být tyto parametry
 otestovány navzájem s~ostatními pro nalezení optimálních hodnot. Po zakódování
 zprávy jsou aplikovány modifikace a~vyhodnocení vlastností statistickými
@@ -2042,7 +2041,7 @@ V~této kapitole budou popsány výsledky vyhodnocení implementovaných metod n
 zvolených datových sadách popsaných v~části~\ref{ssub:dataset-descriptions}.
 Vyhodnocování velkého množství kombinací parametrů metod způsobilo výrazné
 zpomalení programu a~velikost datových sad tomu také nepřispěla. Proto byly
-z~určitých datových sad vybrány menší skupiny souborů na kterých bylo
+z~určitých datových sad vybrány menší skupiny souborů, na kterých bylo
 vyhodnocení provedeno.
 
 Z~datové sady \textit{UrbanSound8K} byl použit pouze oddíl s~názvem
@@ -2139,10 +2138,10 @@ vynásobením počtu vzorků krycího signálu a~použité bitové hloubky.
     \label{pic:no-mod-params-mean-values-lsb}
 \end{figure}
 
-Jak je vidět z~grafu~\ref{pic:modifications-mean-values-lsb} má tato metoda
+Jak je vidět z~grafu~\ref{pic:modifications-mean-values-lsb}, má tato metoda
 velmi nízkou robustnost, ale překvapivě není z~testovaných metod nejhorší.
-Jedinou modifikací, přes kterou byla tato metoda schopna dekódovat informace
-byla převzorkování na polovinu vzorků, čemu také prakticky odpovídá hodnota
+Jedinou modifikací, přes kterou byla tato metoda schopna dekódovat informace,
+bylo převzorkování na polovinu vzorků, čemuž také prakticky odpovídá hodnota
 BER.
 
 \begin{figure}[hbt]
@@ -2346,7 +2345,7 @@ podstatně vyšší SNR a~PSNR a~tím pádem by měla být méně detekovatelná
     \label{pic:no-mod-params-mean-values-echo-bipolar}
 \end{figure}
 
-Tato varianta má také lepší hodnoty po modifikacích jak lze vidět na
+Tato varianta má také lepší hodnoty po modifikacích, jak lze vidět na
 obrázku~\ref{pic:modifications-mean-values-echo-bipolar}.
 
 \begin{figure}[H]
@@ -2400,7 +2399,7 @@ byla dosažena hodnota 30\,dB SNR a~46,6\,dB PSNR.
 \subsubsection*{Varianta s~ozvěnou vpřed a~vzad}
 
 Výsledky této varianty jsou velmi podobné první variantě, ale s~mírně lepšími
-hodnotami jak je vidět na obrázku~\ref{pic:no-mod-params-mean-values-echo-bf}.
+hodnotami, jak je vidět na obrázku~\ref{pic:no-mod-params-mean-values-echo-bf}.
 
 \begin{figure}[H]
     \pgfplotstableread[
@@ -2444,7 +2443,7 @@ hodnotami jak je vidět na obrázku~\ref{pic:no-mod-params-mean-values-echo-bf}.
 \end{figure}
 
 Výsledky této varianty s~modifikacemi jsou také velmi podobné první variantě,
-také s~mírně lepšími hodnotami jak je vidět na
+také s~mírně lepšími hodnotami, jak je vidět na
 obrázku~\ref{pic:modifications-mean-values-echo-bf}.
 
 \begin{figure}[H]
@@ -2701,10 +2700,10 @@ Autoři~\cite{Bender1996} vyhodnotili kapacitu této metody na 4~bity za sekundu
 \subsection*{Metoda rozprostřeného spektra ve Fourierově transformaci (vlastní
 metoda)}
 
-Rozprostírání bitů ve Fourierově transformaci krycího signálu má nižší hodnoty
+Rozprostírání bitů ve Fourierově transformaci krycího signálu má nižší hodnoty,
 pokud není stego signál modifikován, jak lze vidět
 z~obrázku~\ref{pic:no-mod-params-mean-values-dsss-dft}. Avšak má tato metoda
-mírně vyšší odolnost vůči aplikovaným modifikacím jak lze vidět
+mírně vyšší odolnost vůči aplikovaným modifikacím, jak lze vidět
 z~obrázku~\ref{pic:modifications-mean-values-dsss-dft}. Kapacita této metody
 byla vyhodnocena také na 4-8~bitů jako u~neupravené metody.
 
