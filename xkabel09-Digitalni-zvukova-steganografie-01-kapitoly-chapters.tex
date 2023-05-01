@@ -1530,13 +1530,13 @@ a~parametry.
 
 Třída \texttt{MethodFacade} se nachází v~modulu \texttt{cli/method\_facade}
 a~jejím účelem je abstrakce některých činností při použití vestavěného
-programu. Ze zadaných argumentů připraví fasáda data pro kódování či dekódování
-na základě zvoleného módu. Přípravou dat se myslí načtení dat z~\textit{WAV}
-souboru do \textit{NumPy} \texttt{NDArray} pole pomocí funkce
+programu. Krycí signál je načten ve funkci \texttt{main} z~\textit{WAV} souboru
+do \textit{NumPy} \texttt{NDArray} pole pomocí funkce
 \texttt{scipy.io.wavfile.read}. V~případě kódování je dalším krokem přípravy
 načtení ukrývaných dat do pole typu \texttt{uint8}, které bude obsahovat
 informační bity. Tento převod je proveden načtením kódovaných dat jako pole
-bajtů a~poté převedením na jednotlivé bity.
+bajtů a~poté převedením na jednotlivé bity. Ze zadaných argumentů se vytvoří
+fasáda pro kódování či dekódování na základě zvoleného módu. 
 
 Po přípravě dat je možné použít funkce \texttt{encode} a~\texttt{decode}, které
 předají jejich parametry stejnojmenným funkcím instance vybrané metody.
