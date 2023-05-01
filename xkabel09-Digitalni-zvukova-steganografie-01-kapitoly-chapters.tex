@@ -68,10 +68,10 @@
 
 Steganografie je obor zabývající se skrýváním informace takovým způsobem, aby
 nebylo možné zjistit její přítomnost. Důvod pro takovéto skrývání informace
-může být zajištění bezpečnosti před nějakou třetí stranou, pro kterou není
-informace určena. Steganografie se dnes dělí na tradiční a~digitální.
-V~digitální steganografii je velké množství typů dat, do kterých je možné
-vkládat utajované informace a~digitální zvuk je jedním z~nich.
+může být zajištění bezpečnosti před třetí stranou, pro kterou není informace
+určena. Steganografie se dnes dělí na tradiční a~digitální. V~digitální
+steganografii je velké množství typů dat, do kterých je možné vkládat utajované
+informace a~digitální zvuk je jedním z~nich.
 
 V~oblasti digitální zvukové steganografie je dostupné velké množství kvalitní
 literatury popisující teoretické fungování metod, kterými se jednotlivé
@@ -79,10 +79,10 @@ publikace zabývají. Je však těžké najít konkrétní implementace popisova
 metod i~přesto, že autoři je implementovali pro získání výsledků. Proto je
 hlavním cílem této práce vytvořit softwarovou knihovnu a~program
 v~programovacím jazyce Python, aby měl kdokoliv možnost pracovat na výzkumu
-v~této vědecké disciplíně. Někdy totiž nestačí pouze algoritmický popis různých
-metod pro pochopení jejich fungování. Implementace v~konkrétním programovacím
-jazyce nám přináší formalismus, který umožňuje snazší pochopení. Chtěl bych
-proto touto prací přispět v~této oblasti tím, že bude přístupnější pro širší
+v~této vědecké disciplíně. Ne vždy stačí pouze algoritmický popis různých metod
+pro pochopení jejich fungování. Implementace v~konkrétním programovacím jazyce
+nám přináší formalismus, který umožňuje snazší pochopení. Chtěl bych proto
+touto prací přispět v~této oblasti tím, že bude přístupnější pro širší
 veřejnost.
 
 V~následujících kapitolách této práce je shrnut současný stav tohoto oboru,
@@ -318,7 +318,7 @@ v~následující podsekci.
 
 Digitálních audio formátů je velké množství, každý se svými odlišnými
 vlastnostmi. Hlavní kategorie, na které se digitální zvukové formáty dělí, jsou
-\textit{nekomprimované} a~\textit{komprimované} -- ty se ještě dělí na formáty
+\textit{nekomprimované} a~\textit{komprimované} -- ty se dále dělí na formáty
 se ztrátovou a~bezeztrátovou kompresí. Příklady některých známých formátů jsou
 v~tabulce~\ref{tab:audio-formats}.
 
@@ -343,20 +343,19 @@ v~tabulce~\ref{tab:audio-formats}.
     \label{tab:audio-formats}
 \end{table}
 
-Výhodou komprimovaných formátů je místo, které je díky nim ušetřeno. Naopak
-hlavní nevýhodou komprimovaných formátů je složitější proces kódování
-a~dekódování. Se vzorky komprimovaných formátů není možné přímo pracovat, ale
-je potřeba je nejprve dekomprimovat a~převést do formátu, který umožňuje
-pracovat se zvukovými daty přímo. Jedním z~nekomprimovaných formátů je
-\textit{Waveform Audio File Format} (dále jen WAV) je proprietární formát pro
-digitální audio vytvořený firmami Microsoft a~IBM. Je široce rozšířený a~není
-k~němu potřeba žádná licence. Tento formát je nástavbou generického
-multimediálního formátu \textit{Resource Interchange File Format} (RIFF).
-Konkrétní typ pulzně-kódové modulace, který WAV formát nejčastěji používá je
-lineární pulzně-kódová modulace (LPCM)~\cite{RFC2361} -- kvantovací úrovně mají
-mezi sebou rovnoměrné rozestupy~\cite{LPCM}. Může ale používat i~jiné typy
-kódování, jako \textit{IEEE Float} nebo komprimované \textmu-Law a~A-Law
-\cite{RFC2361}.
+Výhodou komprimovaných formátů je úspora datového prostoru. Naopak hlavní
+nevýhodou komprimovaných formátů je složitější proces kódování a~dekódování. Se
+vzorky komprimovaných formátů není možné přímo pracovat, ale je potřeba je
+nejprve dekomprimovat a~převést do formátu, který umožňuje pracovat se
+zvukovými daty přímo. Jedním z~nekomprimovaných formátů je \textit{Waveform
+Audio File Format} (dále jen WAV) je proprietární formát pro digitální audio
+vytvořený firmami Microsoft a~IBM. Je široce rozšířený a~není k~němu potřeba
+žádná licence. Tento formát je nástavbou generického multimediálního formátu
+\textit{Resource Interchange File Format} (RIFF). Konkrétní typ pulzně-kódové
+modulace, který WAV formát nejčastěji používá je lineární pulzně-kódová
+modulace (LPCM)~\cite{RFC2361} -- kvantovací úrovně mají mezi sebou rovnoměrné
+rozestupy~\cite{LPCM}. Může ale používat i~jiné typy kódování, jako
+\textit{IEEE Float} nebo komprimované \textmu-Law a~A-Law \cite{RFC2361}.
 
 V~roce 2020 provedli AlSabhany, Ali, Ridzuan a~další~\cite{AlSabhany2020}
 systematické srovnání 134~publikací zabývající se digitální zvukovou
@@ -378,10 +377,10 @@ analyzovat komunikaci pro přítomnost utajené zprávy, není možné obsah roz
 od náhodného šumu.
 
 Digitální zvuková steganografie má široké spektrum využití. Mezi praktické
-příklady patří: monitorování reklam v~rádiu, indexování video nahrávek, použití
-všude tam, kde není možné použít šifrování, zachování soukromí jednotlivce,
-utajená komunikace mezi vojenskými rozvědkami nebo bezpečnostními
-složkami~\cite{Dutta2020}.
+příklady patří: monitorování reklam v~rádiu, indexování video nahrávek,
+zachování soukromí jednotlivce, utajená komunikace mezi vojenskými rozvědkami
+nebo bezpečnostními složkami a~použití všude tam, kde není možné použít
+šifrování~\cite{Dutta2020}.
 
 Dalším často používaným pojmem spojeným se steganografií je vodoznak. Vodoznaky
 se používají pro vložení informací o~původu, vlastnictví, či autorských právech
@@ -499,8 +498,8 @@ V~této podkapitole bude popsáno několik existujících metod digitální zvuk
 steganografie. Popis každé metody bude obsahovat její princip a~silné a~slabé
 stránky. Každý popis bude obsahovat konkrétní způsob jakým je možné zakódovat
 a~dekódovat informace danou metodou. Na závěr každého popisu metody budou
-diskutovány možnosti modifikace metody pro zlepšení nějaké ze steganografických
-vlastností.
+diskutovány možnosti modifikace metody pro zlepšení některé ze
+steganografických vlastností.
 
 \subsection*{Metoda nahrazení nejméně významného bitu}
 \label{sub:lsb}
@@ -520,15 +519,15 @@ kódování pomocí této metody je vizualizován na obrázku~\ref{pic:lsb-diagr
 \end{figure}
 
 Tato metoda se vyznačuje velmi vysokou kapacitou~\cite{Djebbar2012}
-a~jednoduchou implementací. Kapacita této metody je přímo úměrná počtu
-a~bitovou hloubkou vzorků nosiče. Je také vhodná pro kombinaci s~dalšími
-steganografickými technikami~\cite{Djebbar2012}, jako je šifrování nebo
-komprese. Hlavní nevýhodou této metody je její nízká robustnost. Informace
-ukryté LSB metodou je velmi jednoduché poškodit triviálními úpravami stego
-souboru jako je například zesílení, filtrace, přidání šumu, ztrátová komprese
-\cite{Djebbar2012}, převzorkování nebo překvantování. Robustnost této metody
-a~odolnost proti některým z~těchto modifikací je možné zvýšit vkládáním do jiné
-bitové úrovně než je poslední~\cite{Djebbar2012}.
+a~jednoduchou implementací. Kapacita této metody je přímo úměrná počtu a~bitové
+hloubce vzorků nosiče. Je také vhodná pro kombinaci s~dalšími steganografickými
+technikami~\cite{Djebbar2012}, jako je šifrování nebo komprese. Hlavní
+nevýhodou této metody je její nízká robustnost. Informace ukryté LSB metodou je
+velmi jednoduché poškodit triviálními úpravami stego souboru jako je například
+zesílení, filtrace, přidání šumu, ztrátová komprese \cite{Djebbar2012},
+převzorkování nebo překvantování. Robustnost této metody a~odolnost proti
+některým z~těchto modifikací je možné zvýšit vkládáním do jiné bitové úrovně
+než je poslední~\cite{Djebbar2012}.
 
 Nemodifikovaná LSB metoda není příliš bezpečná, neboť je možné jednoduše vyčíst
 hodnoty určité bitové úrovně a~tím odhalit ukryté informace~\cite{Djebbar2012}.
@@ -597,7 +596,7 @@ použitím masky s~vyhlazením přechodů jsou na obrázku
     \centering
     \includegraphics[width=0.8\textwidth]{obrazky/echo-smoothed.pdf}
     \caption{Ozvěny vzniklé konvolucí s~konvolučními jádry pro jednu ozvěnu
-    s~vyhlazením.}
+    s~vyhlazením přechodů mezi segmenty.}
     \label{pic:echo-single-kernel-echo-smooth}
 \end{figure}
 
@@ -760,17 +759,17 @@ x y
 \end{figure}
 
 Nevýhodou při dekódování této metody je například falešná detekce, pokud se ve
-zvuku doopravdy vyskytuje ozvěna. Dále může být těžké detekovat informaci,
-pokud je amplituda ozvěny příliš malá a~špičky na indexech zpoždění budou tudíž
-splývat s~okolím. Zesílení amplitudy zlepší míru detekce, ale zvýší také
-náchylnost na neoprávněnou detekci~\cite{Kim2003}.
+zvuku vyskytuje ozvěna, která nebyla vytvořena touto metodou. Dále může být
+těžké detekovat informaci, pokud je amplituda ozvěny příliš malá a~špičky na
+indexech zpoždění budou proto splývat s~okolím. Zesílení amplitudy zlepší míru
+detekce, ale zvýší také náchylnost na neoprávněnou detekci~\cite{Kim2003}.
 
 \subsubsection*{Modifikace metody skrývání pomocí ozvěny}
 \label{ssub:echo-modifications}
 
 Pro zvýšení robustnosti a~nepostřehnutelnosti použili autoři Oh, Seok, Hong
 a~Youn~\cite{Oh2001} konvoluční jádro, které nejprve vytvoří ozvěnu se zápornou
-amplitudou a~poté s~kladnou (anglicky bipolar echo). Zjistili, že tato
+a~poté s~kladnou amplitudou (anglicky bipolar echo). Zjistili, že tato
 modifikace má vyšší míru robustnosti i~po překódování do ztrátového formátu
 MP3. Dekódování této modifikace spočívá v~detekování špiček v~autokorelaci
 výkonového cepstra. Výkonové cepstrum je podobné normálnímu cepstru a~je
@@ -804,7 +803,7 @@ rozprostřené spektrum (anglicky \textit{direct sequence spread spectrum}).
 
 Kódování začíná převedením ukrývaných dat z~binárního formátu na čipy. Čip je
 impulz, který používá hodnotu \textit{-1} místo binární hodnoty \textit{0}
-a~hodnotu \textit{1} používá bez změny~\cite{Kuznetsov2022}. Poté je každý bit
+a~hodnotu \textit{1} používá beze změny~\cite{Kuznetsov2022}. Poté je každý bit
 vynásoben pseudonáhodnou čipovou sekvencí $n$-krát, čímž dojde k~rozprostření
 informačních bitů přes více přenesených bitů. Zvýšení počtu kopií bitů zvýší
 robustnost a~zároveň sníží kapacitu této metody~\cite{AlSabhany2020}. Výsledné
@@ -939,9 +938,9 @@ Tyto metody byly využívány již od počátků steganografie a~využívají pe
 vlastností lidského sluchového ústrojí a~psychoakustických vlastností řeči.
 Tyto metody využívají maskování v~časové nebo frekvenční doméně. Maskování
 v~časové doméně využívá nutnosti počkat chvíli po zaslechnutí hlasitého tónu.
-Pro ukrytí nějakého tónu je možné vložit jej do bezprostřední blízkosti
+Pro ukrytí určitého tónu je možné vložit jej do bezprostřední blízkosti
 hlasitého impulzu. Nápodobně, maskování ve frekvenční doméně probíhá vložením
-frekvence, která se nachází v~blízkém okolí nějaké jiné frekvence s~vyšší
+frekvence, která se nachází v~blízkém okolí jiné frekvence s~vyšší
 amplitudou~\cite{Dutta2020}.
 
 Jedna z~metod pracující ve frekvenční doméně je metoda vkládání tónu
@@ -1033,11 +1032,12 @@ Nejlepší metodou pro ukrývání informací v~transformační doméně je disk
 vlnková transformace (anglicky \textit{discrete wavelet transform}, dále jen
 DWT), protože prezentuje informace o~frekvencích, které lze získat z~Fourierovy
 transformace jako funkci v~čase. Vlnková transformace poskytuje dobrý kompromis
-mezi Fourierovou transformací, která frekvencím nepřiřazuje čas. Další
-transformační funkcí je diskrétní kosinová transformace (anglicky
-\textit{discrete cosine transform} -- DCT). Ta není pro účely ukrývání
-informací příliš vhodná, protože zavádí do audia artefakty. Metody
-v~transformační doméně jsou poměrně méně odolné proti šumu~\cite{Dutta2020}.
+mezi časovou doménou signálu a~frekvenční doménou, protože Fourierova
+transformace frekvencím nepřiřazuje čas. Další transformační funkcí je
+diskrétní kosinová transformace (anglicky \textit{discrete cosine transform} --
+DCT). Ta není pro účely ukrývání informací příliš vhodná, protože zavádí do
+audia artefakty. Metody v~transformační doméně jsou poměrně méně odolné proti
+šumu~\cite{Dutta2020}.
 
 Pro zakódování informace do nosiče pomocí DWT se nosič rozdělí na segmenty po
 512~vzorcích. Na každý segment je pětkrát aplikována dekompozice na
@@ -1251,7 +1251,7 @@ digitální zvukovou steganografii. Podle~\cite{AlSabhany2020} jsou to tyto
 datové sady: \textit{GTZAN} \cite{Tzanetakis2001},
 \textit{Noizeus}~\cite{Hu2006} a~\textit{UrbanSound8K} \cite{Salamon2014}.
 K~těmto datovým sadám jsem ještě přidal vlastní sadu souborů, která bude
-s~ostatními více popsána v~části~\ref{ssub:dataset-descriptions}.
+s~ostatními více popsána níže.
 Podle~\cite{AlSabhany2020} patří mezi používané sady také datový korpus
 \textit{TIMIT}~\cite{Garofolo1993}, avšak ten zde nebude testován.
 
@@ -1442,7 +1442,7 @@ Tyto moduly jsou:
 
 \begin{itemize}
     \item \texttt{audio\_utils} -- obsahuje pomocné funkce pro práci se
-        signály, nejdůležitější funkcí je \texttt{split\_to\_n\_segments},
+        signály; nejdůležitější funkcí je \texttt{split\_to\_n\_segments},
         která rozdělí pole na segmenty s~požadovanou délkou,
     \item \texttt{stat\_utils} -- obsahuje implementované statistické funkce
         popsané v~příloze~\ref{cha:statistical-functions},
@@ -1591,13 +1591,13 @@ informace.
 \label{sub:lsb-implementation}
 
 Tato podsekce popisuje implementaci metody popsané v~podsekci~\ref{sub:lsb}.
-Kódování pomocí této metody je velmi jednoduché pokud jsou vzorky krycího
+Kódování pomocí této metody je velmi jednoduché, pokud jsou vzorky krycího
 signálu celočíselného datového typu. Pokud jsou vzorky typu datového typu
 \textit{float}, pak je potřeba nejprve převést vzorky do celočíselného datového
 typu se stejnou bitovou velikostí. V~knihovně NumPy je možné použít funkci
-\texttt{tobytes}, která převede pole se vzorky na pole sekvenci bajtů, tak jak
+\texttt{tobytes}, která převede pole se vzorky na pole sekvence bajtů tak, jak
 jsou uloženy v~paměti. Bajty je možné znovu načíst do NDArray pole funkcí
-\texttt{frombuffer}, které se specifikuje požadovaný celočíselný typ. Úryvek
+\texttt{frombuffer}, které specifikuje požadovaný celočíselný typ. Úryvek
 kódu~\ref{lst:lsb-float-conversion} převede pole vzorků s~plovoucí desetinnou
 čárkou na pole celočíselných typů. Slovník \texttt{dtype\_conv} slouží jako
 tabulka pro převod plovoucích typů na celočíselné.
@@ -1615,13 +1615,13 @@ Implementace podporuje kódování do více bitových úrovní a~zakódování p
 potřebných bitů. Při kódování do více úrovní se musí bity v~poli
 \texttt{\_secret\_data} rozdělit na podpole o~velikosti zvolené bitové hloubky.
 Podpole jsou poté převedeny na bajty. Ve vzorcích krycího signálu jsou
-vynulovány poslední bity po zvolenou bitovou úroveň logickou funkcí
+vynulovány poslední bity až po zvolenou bitovou úroveň logickou funkcí
 \texttt{and} a~zakódována ukrývaná data logickou funkcí \texttt{or}.
 
 Při kódování pouze potřebných bitů bude upraveno pouze tolik vzorků, kolik je
-potřeba. Pokud je tato volba vypnutá, vyplní se zbytek vzorků do náhodným
-šumem, aby ukrytá data splynula. Dekódování probíhá opačně, bajty jsou načteny
-funkcí \texttt{and} a~převedeny na bity.
+potřeba. Pokud je tato volba vypnutá, vyplní se zbytek vzorků náhodným šumem,
+aby ukrytá data splynula. Dekódování probíhá opačně, bajty jsou načteny funkcí
+\texttt{and} a~převedeny na bity.
 
 \subsection*{Metoda skrývání pomocí ozvěny}
 \label{sub:echo-hiding-implementation}
@@ -1630,24 +1630,24 @@ Tato podsekce popisuje implementaci metody a~modifikací popsaných
 v~podsekci~\ref{sub:echo-hiding}. Všechny varianty této metody používají stejné
 parametry a~kontroly, proto třídy těchto metod dědí z~abstraktní bázové třídy
 \texttt{EchoBase} v~modulu \texttt{cli/echo\_base}. Při kódování se po zavolání
-funkce \texttt{encode} přesměruje volání na funkci \texttt{encode\_wrapper} do
-které se k~argumentům přidá konkrétní kódovaná třída. Ve funkci
+funkce \texttt{encode} přesměruje volání na funkci \texttt{encode\_wrapper}, do
+které se k~argumentům přidá konkrétní třída vybraná ke kódování. Ve funkci
 \texttt{encode\_wrapper} se provedou kontroly argumentů a~také výběr způsobu
 volitelného hledání optimálních zpoždění ozvěn.
 
-Kódování pomocí této metody je těžko předvídatelné a~výsledky závisí velmi na
+Kódování pomocí této metody je těžko předvídatelné a~výsledky silně závisí na
 zvolených hodnotách zpoždění. Proto jsem pro hledání optimálních hodnot
 implementoval dva způsoby automatického hledání. Prvním způsobem je hledání
 hrubou silou, které provede 300~iterací v~okolí \texttt{d0} a~\texttt{d1}.
-Tento způsob hledání většinou najde optimální hodnoty, ale doba běhu může trvat
-velmi dlouho na základě délky krycího signálu. Efektivnějším způsobem je druhá
-varianta hledání a~to pomocí optimalizační metody
+Tento způsob hledání většinou najde optimální hodnoty. Avšak doba běhu může
+trvat velmi dlouho, na základě délky krycího signálu. Efektivnějším způsobem je
+druhá varianta hledání a~to pomocí optimalizační metody
 \textit{Basin-hopping}\footnote{\url{https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.basinhopping.html}}
 z~knihovny \textit{SciPy}. Jedná se o~optimalizační funkci pro nalezení
 globálního minima dané funkce. V~případě steganografických metod se
 minimalizovanou funkcí myslí funkce míry bitové chybovosti (dále jen BER, viz
 kapitola~\ref{cha:statistical-functions}). Použitím této optimalizační funkce
-je hledání správných hodnot mnohem rychlejší než při hledání hrubou silo, ale
+je hledání správných hodnot mnohem rychlejší než při hledání hrubou silou, ale
 není zaručeno, že výsledné hodnoty dosáhnou zakódování bez chyb.
 
 Samotné kódování každé metody je implementováno v~její příslušné třídě ve
@@ -1721,10 +1721,10 @@ caption={Modulace krycího signálu, rozprostřených bitů a~pseudonáhodné se
 encoded = source + mixer * alpha * pn_sequence
 \end{lstlisting}
 
-K~dekódování se znovu vygeneruje pseudonáhodná sekvence čipů ze zadaného klíče.
-Sekvence čipů i~stego signál se rozdělí na segmenty se zadanou délkou. Poté je
-provedena korelace mezi segmenty stego signálu a~sekvence čipů. Korelace je
-implementována pouze jako součet vynásobených vzorků (viz
+Pro~dekódování se znovu vygeneruje pseudonáhodná sekvence čipů ze zadaného
+klíče. Sekvence čipů i~stego signál se rozdělí na segmenty se zadanou délkou.
+Poté je provedena korelace mezi segmenty stego signálu a~sekvence čipů.
+Korelace je implementována pouze jako součet vynásobených vzorků (viz
 výpis~\ref{lst:dsss-decoding}).
 
 \begin{lstlisting}[language=PythonPlus, label={lst:dsss-decoding},
@@ -1820,7 +1820,7 @@ umožňuje filtrovat zadané pole určitými podmínkami. Výsledkem je pole
 booleovských hodnot \texttt{true} a~\texttt{false} jako výsledek zadané
 podmínky pro každý prvek vstupního pole. Pro nalezení úseků ticha se použije
 jako podmínka filtru zda je absolutní hodnota vzorku menší než 15\% maximálního
-rozsahu signálu. V~booleovských hodnotách se poté najdou souvislé sekvence
+rozsahu signálu. V~booleovských hodnotách jsou poté nalezeny souvislé sekvence
 hodnot \texttt{true}. Kód funkce \texttt{consecutive\_values} a~její použití
 pro nalezení úseků ticha je vidět ve výpisu~\ref{lst:silence-intervals}.
 
@@ -1867,12 +1867,12 @@ vzorků segmentu.
     P = \frac{1}{N} \sum_{n=0}^{n=N-1}{|x[n]|^2}
 \end{equation}
 
-\noindent Poté jsou vygenerovány tóny na zvolených frekvencích funkcí $\sin$. Z~obou tónů
-jsou také vypočítány výkony, aby bylo možné nastavit jejich amplitudy tak, aby
-měly požadovaný poměr výkonu. Výpočet amplitudy tóny k~docílení požadovaného
-výkonu je vidět v~rovnici~\ref{eq:tone-amplitude}, kde $A$ je požadovaná
-amplituda tónu, $M$ je požadovaný procentuální poměr výkonu, $P_s$ je výkon
-segmentu a~$P_t$ je výkon tónu.
+\noindent Poté jsou vygenerovány tóny na zvolených frekvencích funkcí $\sin$.
+Z~obou tónů jsou také vypočítány výkony, aby bylo možné nastavit jejich
+amplitudy tak, aby měly požadovaný poměr výkonu. Výpočet amplitud tónů
+k~docílení požadovaných výkonů je vidět v~rovnici~\ref{eq:tone-amplitude}, kde
+$A$ je požadovaná amplituda tónu, $M$ je požadovaný procentuální poměr výkonu,
+$P_s$ je výkon segmentu a~$P_t$ je výkon tónu.
 
 \begin{equation}
     \label{eq:tone-amplitude}
@@ -2027,9 +2027,9 @@ přepínače \verb|--graphs| také grafy z~tabulek ve formátu PDF.
 \subsection*{Zpracování výsledků}
 \label{sub:evaluation-processing-program}
 
-Program načte na základě daných argumentů načteny tabulky s~výsledky ze všech
-souborů do jedné instance třídy \texttt{DataFrame} z~knihovny \textit{pandas}.
-Tato tabulka je předána funkci \texttt{process\_data}, která data zpracuje,
+Program načte na základě daných argumentů tabulky s~výsledky ze všech souborů
+do jedné instance třídy \texttt{DataFrame} z~knihovny \textit{pandas}. Tato
+tabulka je předána funkci \texttt{process\_data}, která data zpracuje,
 vyfiltruje a~vytvoří tabulky a~grafy s~výslednými hodnotami zjišťovaných
 parametrů steganografických metod. Konkrétní parametry a~hodnoty budou popsány
 v~následující kapitole.
@@ -2041,7 +2041,7 @@ v~následující kapitole.
 V~této kapitole budou popsány výsledky vyhodnocení implementovaných metod na
 zvolených datových sadách popsaných v~části~\ref{ssub:dataset-descriptions}.
 Vyhodnocování velkého množství kombinací parametrů metod způsobilo výrazné
-zpomalení programu a~velikost datových sad tomu nepomohla. Proto byly
+zpomalení programu a~velikost datových sad tomu také nepřispěla. Proto byly
 z~určitých datových sad vybrány menší skupiny souborů na kterých bylo
 vyhodnocení provedeno.
 
@@ -2094,7 +2094,7 @@ a~PSNR. V~obrázku~\ref{pic:no-mod-params-mean-values-lsb} je také vidět jasn�
 korelace mezi kódování pouze potřebných bitů a~nepostřehnutelností tajné
 zprávy. Avšak tato statistika může být mírně zavádějící, protože nepoužití
 tohoto parametru přidává náhodný šum přes celou délku nahrávky, který se při
-kódování delší zprávy se může lidskému posluchači jevit méně podezřele pokud je
+kódování delší zprávy může lidskému posluchači jevit méně podezřele, pokud je
 šum slyšet všude na rozdíl od šumu pouze v~části se zprávou.
 
 Pokud nebylo se stego signálem manipulováno, pak má tato metoda perfektní
@@ -2545,9 +2545,9 @@ obrázku~\ref{pic:no-mod-params-mean-values-echo-bipolar-bf}.
     \label{pic:no-mod-params-mean-values-echo-bipolar-bf}
 \end{figure}
 
-I~s modifikacemi má tato varianta téměř totožné výsledky jako u~ozvěnová metoda
-s~bipolárními ozvěnami
-(viz obrázek~\ref{pic:modifications-mean-values-echo-bipolar-bf}).
+I~s modifikacemi má tato varianta téměř totožné výsledky jako ozvěnová metoda
+s~bipolárními ozvěnami (viz
+obrázek~\ref{pic:modifications-mean-values-echo-bipolar-bf}).
 
 \begin{figure}[H]
     \pgfplotstableread[
@@ -2593,8 +2593,8 @@ s~bipolárními ozvěnami
 Ručním testováním jako v~ostatních variantách byla kapacita této varianty také
 vyhodnocena na \textasciitilde15\,bitů za sekundu při vzorkovací frekvenci
 44,1\,kHz a~hodnotami 31,9\,dB SNR a~48,5\,dB PSNR, což jsou nejvyšší hodnoty
-ze všech čtyř variant. Pro pro parametr \texttt{alpha} byla použita hodnota
-hodnota 0,2.
+ze všech čtyř variant. Pro parametr \texttt{alpha} byla použita hodnota hodnota
+0,2.
 
 \subsection*{Metoda rozprostřeného spektra}
 
@@ -2721,7 +2721,7 @@ byla vyhodnocena také na 4-8~bitů jako u~neupravené metody.
             scale=0.9,
             xlabel={},
             ylabel={},
-            ytick={0, 3, 15, 25, 40, 50},
+            ytick={0, 5, 15, 25, 40, 50},
             ymajorgrids=true,
             grid style=dashed,
             xtick=data, % needed for xticklabels
@@ -2880,12 +2880,12 @@ na množství úseků ticha v~krycím signálu. Avšak v~nerušených nahrávká
         \begin{axis}[%
             wideybar,
             height=6cm,
-            enlarge y limits=0.15,
             bar width=5pt,
             scale=0.9,
             xlabel={},
             ylabel={},
-            ytick={0, 2, 16, 24},
+            ytick={0, 15, 37},
+            ymax=40,
             ymajorgrids=true,
             grid style=dashed,
             xtick=data, % needed for xticklabels
@@ -3093,7 +3093,7 @@ modifikované varianty těchto metod.
 Výsledným produktem této práce je softwarová knihovna pro programovací jazyk
 Python s~jednoduše rozšiřitelným rozhraním metod. Knihovna také obsahuje
 vestavěný terminálový program pro kódování a~dekódování libovolných dat do
-krycích audio souborů ve formátu WAVE pomocí implementovaných metod. Dále
+krycích audio souborů ve formátu WAV pomocí implementovaných metod. Dále
 obsahuje knihovna program pro vyhodnocení robustnosti a~nepostřehnutelnosti na
 zadaných datových sadách a~také program pro zpracování těchto dat. Výsledky
 většiny metod se shodují s~výsledky autorů daných metod.
@@ -3101,9 +3101,9 @@ většiny metod se shodují s~výsledky autorů daných metod.
 Jelikož bylo při implementaci přihlíženo spíše na množství metod
 a~rozšiřitelnost, nebyly implementovány pokročilé techniky pro zlepšení
 robustnosti, nepostřehnutelnosti a~kapacity. Mezi tyto techniky patří
-Huffmanovo kódování a~jiné kompresní algoritmy, šifrování, paritní
-a~samoopravné kódy. Dalším vylepšením do budoucna by mohla být možnost tyto
-techniky kombinovat stylem vrstvení.
+šifrování, paritní a~samoopravné kódy, Huffmanovo kódování a~jiné kompresní
+algoritmy. Dalším vylepšením do budoucna by mohla být možnost tyto techniky
+kombinovat stylem vrstvení.
 
 Posledním požadavkem této práce je, aby byla co nejvíce otevřená a~dostupná pro
 kohokoliv se zájmem o~steganografii. Proto je text této práce dostupný pod
