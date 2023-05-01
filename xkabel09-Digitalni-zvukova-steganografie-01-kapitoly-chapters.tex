@@ -68,9 +68,9 @@
 
 Steganografie je obor zabývající se skrýváním informace takovým způsobem, aby
 nebylo možné zjistit její přítomnost. Důvod pro takovéto skrývání informace
-může být zajištění bezpečnosti před nějakou třetí stranou pro kterou není
+může být zajištění bezpečnosti před nějakou třetí stranou, pro kterou není
 informace určena. Steganografie se dnes dělí na tradiční a~digitální.
-V~digitální steganografii je velké množství typů dat do kterých je možné
+V~digitální steganografii je velké množství typů dat, do kterých je možné
 vkládat utajované informace a~digitální zvuk je jedním z~nich.
 
 V~oblasti digitální zvukové steganografie je dostupné velké množství kvalitní
@@ -89,9 +89,9 @@ V~následujících kapitolách této práce je shrnut současný stav tohoto obo
 jsou vysvětleny cíle a~technické prostředky použité k~jejich dosažení
 a~zhodnoceny dosažené výsledky. V~kapitole~\ref{cha:digital-steganography} jsou
 do hloubky popsány steganografické metody vybrané pro implementaci a~některé
-další používané. Kapitola~\ref{cha:library-design} popisuje proč byl vybrán
+další používané. Kapitola~\ref{cha:library-design} popisuje, proč byl vybrán
 programovací jazyk Python a~použité knihovny. Je zde také popsána struktura
-balíčků pro Python a~steganografické metody které byly vybrány pro
+balíčků pro Python a~steganografické metody, které byly vybrány pro
 implementaci. Na konci kapitoly je popsán způsob vyhodnocení kvality metod
 a~popis vlastní metody. Kapitola~\ref{cha:implementation} je zaměřená na popis
 rozvržení kódu a~implementaci steganografických metod.
@@ -108,8 +108,8 @@ CC-BY-4.0\footnote{\url{https://creativecommons.org/licenses/by/4.0}} na adrese
 \label{cha:digital-steganography}
 
 Tato kapitola představí steganografii obecně a~její klasifikace. Poté bude
-stručně popsán způsob jakým se dnes reprezentuje digitální zvuk. Dále budou
-vysvětleny vlastnosti na základě kterých budou metody hodnoceny a~srovnávány
+stručně popsán způsob, jakým se dnes reprezentuje digitální zvuk. Dále budou
+vysvětleny vlastnosti, na základě kterých budou metody hodnoceny a~srovnávány
 včetně způsobu jejich ověření. Závěr této kapitoly se bude věnovat existujícím
 steganografickým metodám včetně jejich možných modifikací.
 
@@ -128,8 +128,8 @@ doby~\cite{Anderson1998}, kdy je považována za podobor zabezpečení dat
 
 V~dnešním světě se stalo zabezpečení dat zájmem všech a~steganografie jako
 proces ukrývání zprávy do jiného typu média slouží k~ochraně před
-neautorizovanými či neoprávněnými příjemci~\cite{Dutta2020}. Médium do kterého
-je informace skrývána se nazývá nosič a~může být různých typů, jako například
+neautorizovanými či neoprávněnými příjemci~\cite{Dutta2020}. Médium, do kterého
+je informace skrývána, se nazývá nosič a~může být různých typů, jako například
 obrázek, audio, video, IP datagram~\cite{Dutta2020}, text a~mnoho dalších.
 Hierarchickou klasifikaci je možné vidět na obrázku
 \ref{pic:steganography-classification}.
@@ -157,10 +157,10 @@ V~reálném světě se zvuk vyskytuje jako vibrace materiálu při frekvenci
 slyšitelné člověkem, která se pohybuje mezi 10\,Hz a~20\,000\,Hz
 \cite{Swanson1998}. Zvuk je ve skutečném světě spojitý signál -- má nekonečný
 počet hodnot -- a~je tedy definován všude. Základními parametry signálu jsou
-\textit{frekvence}, \textit{perioda} a~\textit{amplituda}. Amplituda, která
-udává maximální výchylku signálu. Frekvence, nebo také kmitočet, vyjadřuje
-počet period za jednotku času a~udává se v~Hertzích (Hz). Perioda je úzce
-svázaná s~frekvencí a~vyjadřuje délku jednoho opakování v~signálu, udává se
+\textit{frekvence}, \textit{perioda} a~\textit{amplituda}. Amplituda udává
+maximální výchylku signálu. Frekvence, nebo také kmitočet, vyjadřuje počet
+period za jednotku času a~udává se v~Hertzích (Hz). Perioda je úzce svázaná
+s~frekvencí a~vyjadřuje délku jednoho opakování v~signálu, udává se
 v~sekundách~\cite{Cernocky2021}. Vztah mezi frekvencí a~periodou lze vidět
 v~rovnici~\ref{eq:period}, kde $T$~je perioda a~$f$~je frekvence.
 
@@ -173,7 +173,7 @@ Aby bylo možné se zvukem pracovat
 digitálně, je nutné převést jej do diskrétní formy, která má konečný počet
 hodnot. Toho je možné docílit vzorkováním signálu na určité vzorkovací
 frekvenci a~poté kvantováním~\cite{Cernocky2021}. Posledním krokem pro převod
-spojitého signálu na digitální, je kódování. Tyto tři procesy tvoří systém,
+spojitého signálu na digitální je kódování. Tyto tři procesy tvoří systém,
 který se nazývá \textit{pulzně-kódová modulace}~(PCM)~\cite{Oliver1948}, který
 je neopominutelným základem pro práci s~digitálním audiem.
 
@@ -239,9 +239,9 @@ Vzorkování diskretizuje časovou komponentu spojitého signálu na pevně dan�
 počet vzorků za jednotku času, ale nijak neovlivňuje hodnoty, kterých
 jednotlivé vzorky mohou nabývat. Kvantování je proces diskretizace hodnot
 zaokrouhlováním k~předem určeným hodnotám~\cite{Oliver1948}. Hodnoty nebo také
-hladiny, ke kterým se zaokrouhluje jsou dané počtem použitých bitů. Vyšší počet
-bitů vede ke zlepšení kvality, protože zaokrouhlené hodnoty jsou blíže jejich
-původním. Tento jev lze vidět na obrázku~\ref{pic:quantization}. Proces
+hladiny, ke kterým se zaokrouhluje, jsou dané počtem použitých bitů. Vyšší
+počet bitů vede ke zlepšení kvality, protože zaokrouhlené hodnoty jsou blíže
+jejich původním. Tento jev lze vidět na obrázku~\ref{pic:quantization}. Proces
 kvantování vždy zavede do výsledného signálu takzvaný \textit{kvantizační šum}
 \cite{Oliver1948}, protože převedení reálných čísel na digitální není exaktní.
 Tento šum je rozdílem původního signálu a~kvantovaného signálu. Použití menšího
@@ -303,9 +303,9 @@ bude mít menší velikost. Pro kvalitní audio se dnes nejčastěji používá 
     \label{pic:quantization}
 \end{figure}
 
-Na závěr, pro uložení a~přenos digitálních signálů musí být vzorky zakódovány.
-Nejjednodušší způsob pro zakódování kvantovaných hodnot je převedením na
-binární čísla. Jednotlivé jedničky a~nuly pak mohou při přenosu reprezentovat
+Posledním krokem pro uložení a~přenos digitálních signálů je kódování vzorků.
+Nejjednodušší způsob pro zakódování kvantovaných hodnot je převod na binární
+čísla. Jednotlivé jedničky a~nuly pak mohou při přenosu reprezentovat
 přítomnost pulzu~(1) a~nepřítomnost pulzu~(0). Tento systém, který obsahuje
 vzorkování, kvantování a~kódování, se nazývá \textit{pulzně-kódová
 modulace}~(PCM)~\cite{Oliver1948}. Pulzně-kódová modulace je důležitá obecně
@@ -317,7 +317,7 @@ v~následující podsekci.
 \label{sub:digital-audio-formats}
 
 Digitálních audio formátů je velké množství, každý se svými odlišnými
-vlastnostmi. Hlavní kategorie na které se digitální zvukové formáty dělí jsou
+vlastnostmi. Hlavní kategorie, na které se digitální zvukové formáty dělí, jsou
 \textit{nekomprimované} a~\textit{komprimované} -- ty se ještě dělí na formáty
 se ztrátovou a~bezeztrátovou kompresí. Příklady některých známých formátů jsou
 v~tabulce~\ref{tab:audio-formats}.
@@ -368,17 +368,17 @@ WAV.
 \label{sec:digital-audio-steganography}
 
 Poslední dobou se začaly objevovat nové směry založené na steganografických
-přístupech pro zajištění bezpečnosti a~utajení dat které by v~kombinaci
+přístupech pro zajištění bezpečnosti a~utajení dat, které by v~kombinaci
 s~konvenčními bezpečnostními technikami mohly vést k~lepším výsledkům
 \cite{Djebbar2012}. Jedna z~konvenčních bezpečnostních technik kombinovaných se
-steganografií je kryptografie. Zatím co steganografie se zabývá ukrýváním
+steganografií je kryptografie. Zatímco steganografie se zabývá ukrýváním
 informace, hlavním cílem kryptografie je převést zprávu do formy, která je pro
 neoprávněné osoby nečitelná~\cite{AlSabhany2020}. I~když se tedy někdo pokusí
 analyzovat komunikaci pro přítomnost utajené zprávy, není možné obsah rozeznat
 od náhodného šumu.
 
 Digitální zvuková steganografie má široké spektrum využití. Mezi praktické
-příklady patří: monitorování reklam v~rádiu, indexování video zpráv, použití
+příklady patří: monitorování reklam v~rádiu, indexování video nahrávek, použití
 všude tam, kde není možné použít šifrování, zachování soukromí jednotlivce,
 utajená komunikace mezi vojenskými rozvědkami nebo bezpečnostními
 složkami~\cite{Dutta2020}.
@@ -397,17 +397,17 @@ tisknou na každý list. Tyto tečky obsahují zakódované sériové číslo ti
 a~čas tisku~\cite{Dutta2020}. Pokud je vodoznak použit pro ochranu
 intelektuálního vlastnictví, pak se ještě rozlišuje mezi vodoznakem a~otiskem.
 Vodoznakem se značí všechny objekty stejně, ale otisk se může měnit například
-pro každého zákazníka pro jeho pozdější identifikaci. To může být užitečné
-pokud poruší licenční podmínky například sdílením zakoupené hudby
-\cite{Swanson1998}.
+pro každého zákazníka pro jeho pozdější identifikaci. To může být užitečné,
+pokud poruší licenční podmínky například sdílením zakoupené
+hudby~\cite{Swanson1998}.
 
 \section{Vlastnosti a~jejich ověřování}
 \label{sec:method-properties}
 
 Aby bylo možné jednotlivé metody srovnávat mezi sebou, je nutné určit
-vlastnosti podle kterých budou hodnoceny. Těch může být mnoho, ale různí autoři
-steganografických publikací se shodují, že nejvýznamnějšími vlastnostmi jsou
-\textit{robustnost}, \textit{kapacita} a~\textit{nepostřehnutelnost}
+vlastnosti, podle kterých budou hodnoceny. Těch může být mnoho, ale různí
+autoři steganografických publikací se shodují, že nejvýznamnějšími vlastnostmi
+jsou \textit{robustnost}, \textit{kapacita} a~\textit{nepostřehnutelnost}
 \cite{AlSabhany2020}\cite{Djebbar2012}\cite{Dutta2020}. Tyto tři vlastnosti je
 možné si představit jako trojúhelník s~každou vlastností v~jednom rohu, jak je
 vidět na obrázku~\ref{pic:method-property-triangle}. Důvodem je fakt, že není
@@ -464,12 +464,12 @@ vlastníka~\cite{Swanson1998}.
 
 Kapacita udává množství informace, které je možné do nosiče zakódovat a~úspěšně
 dekódovat~\cite{Dutta2020}\cite{Djebbar2012}. Kapacitu metody je možné vyjádřit
-bitech za sekundu ($bps$ nebo také $b/s$) nebo jako procentuální poměr
+v~bitech za sekundu ($bps$ nebo také $b/s$) nebo jako procentuální poměr
 velikosti skryté informace k~velikosti nosiče
 \cite{AlSabhany2020}\cite{Dutta2020}. Výhodou zvukových steganografických metod
-je velká velikost souborů, což umožňuje skrýt větší množství informací. Zároveň
-je možné ukládat informace do nevyužitých polí v~hlavičkách souborů
-\cite{Dutta2020}.
+je větší velikost souborů, se kterými metody pracují, což umožňuje ukrytí
+většího množství informací. Zároveň je možné ukládat informace do nevyužitých
+polí v~hlavičkách souborů \cite{Dutta2020}.
 
 \subsection*{Nepostřehnutelnost}
 \label{sub:imperceptibility}
@@ -518,10 +518,10 @@ kódování pomocí této metody je vizualizován na obrázku~\ref{pic:lsb-diagr
     \label{pic:lsb-diagram}
 \end{figure}
 
-Tato metoda se vyznačuje velmi vysokou kapacitu~\cite{Djebbar2012}
+Tato metoda se vyznačuje velmi vysokou kapacitou~\cite{Djebbar2012}
 a~jednoduchou implementací. Kapacita této metody je přímo úměrná počtu
 a~bitovou hloubkou vzorků nosiče. Je také vhodná pro kombinaci s~dalšími
-steganografickými technikami~\cite{Djebbar2012} jako je šifrování nebo
+steganografickými technikami~\cite{Djebbar2012}, jako je šifrování nebo
 komprese. Hlavní nevýhodou této metody je její nízká robustnost. Informace
 ukryté LSB metodou je velmi jednoduché poškodit triviálními úpravami stego
 souboru jako je například zesílení, filtrace, přidání šumu, ztrátová komprese
@@ -542,10 +542,10 @@ Rivest-Shamir-Adleman (RSA)~\cite{Dutta2020}.
 
 Kapacitu LSB metody je možné zvýšit například ukládáním do více bitových úrovní
 za sebou v~jednotlivých vzorcích. Tato modifikace však produkuje šum, který je
-lidské ucho schopno zachytit. Lepším způsobem jak zvýšit kapacitu je vkládáním
+lidské ucho schopno zachytit. Lepším způsobem jak zvýšit kapacitu, je ukládání
 do 4~nejnižších bitových úrovní pomocí algoritmu \textit{nahrazení nejmenší
 chybou} (anglicky minimum-error replacement) a~rozprostření chyby do
-následujících 4~vzorků. Tato modifikace zvyšuje kapacitu LSB metody o~33\%
+následujících 4~vzorků. Tato modifikace zvyšuje kapacitu LSB metody o~33\%,
 zatímco poměr signálu k~šumu je nižší než u~nemodifikované metody se stejným
 počtem použitých bitů~\cite{Cvejic2002}.
 
@@ -576,11 +576,12 @@ a~logickou~0. Kódování probíhá konvolucí segmentu a~konvolučním jádrem 
 příslušný bit. Jednotlivé segmenty se následně spojí a~přidají ke krycímu médiu
 \cite{Gruhl1996}. V~praxi je ale výhodnější provést konvoluci krycího média
 s~oběma konvolučními jádry a~použít bity ukrývané informace jako masku, která
-určí které segmenty ponechat a~přidat ke krycímu médiu~\cite{Gruhl1996}. Pro
+určí jaké segmenty ponechat a~přidat ke krycímu médiu~\cite{Gruhl1996}. Pro
 snížení míry zkreslení na rozmezí segmentů je vhodné vyhladit změnu mezi
 hodnotou~0~a~1~\cite{Tekeli2017}. Příklad ozvěn, které vniknou použitím masky
-bez vyhlazení jsou na obrázku~\ref{pic:echo-single-kernel-echo}. Příklad ozvěn,
-které vniknou použitím masky s~vyhlazením jsou na obrázku
+bez vyhlazení přechodů mezi segmenty jsou na
+obrázku~\ref{pic:echo-single-kernel-echo}. Příklad ozvěn, které vniknou
+použitím masky s~vyhlazením přechodů jsou na obrázku
 \ref{pic:echo-single-kernel-echo-smooth}.
 
 \begin{figure}[hbt]
@@ -758,8 +759,8 @@ x y
 \end{figure}
 
 Nevýhodou při dekódování této metody je například falešná detekce, pokud se ve
-zvuku doopravdy vyskytuje ozvěna. Dále může být těžké detekovat informaci pokud
-je amplituda ozvěny příliš malá a~špičky na indexech zpoždění budou tudíž
+zvuku doopravdy vyskytuje ozvěna. Dále může být těžké detekovat informaci,
+pokud je amplituda ozvěny příliš malá a~špičky na indexech zpoždění budou tudíž
 splývat s~okolím. Zesílení amplitudy zlepší míru detekce, ale zvýší také
 náchylnost na neoprávněnou detekci~\cite{Kim2003}.
 
