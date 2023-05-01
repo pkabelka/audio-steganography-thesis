@@ -486,9 +486,10 @@ analyzovanými publikacemi byl globální \textit{poměr signálu k~šumu} (SNR)
 a~dále \textit{špičkový poměr signálu k~šumu} (PSNR).
 
 Zvukové steganografické metody mají tu nevýhodu, že lidské zvukové ústrojí je
-velmi citlivé. Přesto má nedostatky, které je možné využít, jako například
-maskování tónu, který následuje po hlasitém impulzu. Dalším příkladem je
-maskování informace, která je zakódovaná ve frekvenci zvuku, který se nachází
+velmi citlivé, což ztěžuje ukrývání informací nepostřehnutelně. Přesto má
+zvukové ústrojí nedostatky, které je možné využít, jako například maskování
+tónu, který následuje po hlasitém impulzu. Dalším příkladem je maskování
+informace, která je zakódovaná ve frekvenci zvuku, který se nachází
 poblíž~\cite{Dutta2020}.
 
 \section{Existující řešení}
@@ -542,7 +543,7 @@ Rivest-Shamir-Adleman (RSA)~\cite{Dutta2020}.
 
 Kapacitu LSB metody je možné zvýšit například ukládáním do více bitových úrovní
 za sebou v~jednotlivých vzorcích. Tato modifikace však produkuje šum, který je
-lidské ucho schopno zachytit. Lepším způsobem jak zvýšit kapacitu, je ukládání
+lidské ucho schopno zachytit. Lepším způsobem, jak zvýšit kapacitu, je ukládání
 do 4~nejnižších bitových úrovní pomocí algoritmu \textit{nahrazení nejmenší
 chybou} (anglicky minimum-error replacement) a~rozprostření chyby do
 následujících 4~vzorků. Tato modifikace zvyšuje kapacitu LSB metody o~33\%,
@@ -780,7 +781,7 @@ definováno rovnicí~\ref{eq:power-cepstrum}.
     C_p = \mathcal{F}^-1(\log{|\mathcal{F}(x(t))|}^2)
 \end{equation}
 
-O~dva~roky později publikovali autoři Kim a~Choi~\cite{Kim2003} způsob jak
+O~dva~roky později publikovali autoři Kim a~Choi~\cite{Kim2003} způsob, jak
 znovu zvýšit robustnost pomocí konvolučního jádra se dvěma ozvěnami posunutými
 vpřed i~vzad (anglicky backward-forward echo). Později publikovali autoři Wu
 a~Chen \cite{Wu2006} modifikaci ozvěnové metody kombinující již popsané
@@ -797,7 +798,7 @@ Metoda rozprostřeného spektra byla nejprve vytvořena jako metoda pro zvýšen
 spolehlivosti přenosu dat a~zajištění doručení informací. Ze stejných důvodů se
 rozprostření spektra používá i~ve steganografii. Princip této metody spočívá
 v~opakování informačních bitů $n$-krát podle čipové rychlosti (anglicky
-\textit{chip rate}). Ta určuje kolika bity bude kódován každý informační bit.
+\textit{chip rate}). Ta určuje, kolika bity bude kódován každý informační bit.
 \cite{AlSabhany2020}. Dále popisované variantě této metody se říká přímé
 rozprostřené spektrum (anglicky \textit{direct sequence spread spectrum}).
 
