@@ -6,26 +6,25 @@
 #===========================================
 # asi budete chtit prejmenovat / you will probably rename:
 CO=xkabel09-Digitalni-zvukova-steganografie
-FJ=/usr/bin/firejail --profile=latex --disable-mnt --whitelist="$(shell pwd)" --blacklist="$(shell pwd)"/.git --private-bin=pdflatex,bibtex,latex,dvips
 
 all: $(CO).pdf
 
 pdf: $(CO).pdf
 
 $(CO).ps: $(CO).dvi
-	$(FJ) dvips $(CO)
+	dvips $(CO)
 
 $(CO).pdf: clean
-	$(FJ) pdflatex $(CO)
-	-$(FJ) bibtex $(CO)
-	$(FJ) pdflatex $(CO)
-	$(FJ) pdflatex $(CO)
+	pdflatex $(CO)
+	-bibtex $(CO)
+	pdflatex $(CO)
+	pdflatex $(CO)
 
 $(CO).dvi: $(CO).tex $(CO).bib
-	$(FJ) latex $(CO)
-	-$(FJ) bibtex $(CO)
-	$(FJ) latex $(CO)
-	$(FJ) latex $(CO)
+	latex $(CO)
+	-bibtex $(CO)
+	latex $(CO)
+	latex $(CO)
 
 clean:
 	rm -f *.dvi *.log $(CO).blg $(CO).bbl $(CO).toc *.aux $(CO).out $(CO).lof $(CO).ptc
@@ -33,9 +32,7 @@ clean:
 	rm -f *~
 
 pack:
-	git restore --source make -- Makefile
-	-tar czvf $(CO).tar.gz *.tex *.bib template-fig/* obrazky/* bib-styles/* data/* fitthesis.cls zadani.pdf zadani-bw.pdf $(CO).pdf Makefile
-	git restore --source master -- Makefile
+	tar czvf $(CO).tar.gz *.tex *.bib template-fig/* obrazky/* bib-styles/* data/* fitthesis.cls zadani.pdf zadani-bw.pdf $(CO).pdf Makefile
 
 rename:
 	mv $(CO).tex $(NAME).tex
@@ -57,5 +54,5 @@ vlna:
 
 # Spocita normostrany / Count of standard pages
 normostrany:
-	/usr/bin/firejail --quiet --profile=zathura --private-bin=pdftotext pdftotext -nopgbrk $(CO).pdf - | sed -n '/^Kapitola 1$$/,/^Literatura$$/p' | wc -c | xargs printf "scale=2; %s/1800;\n" | bc
+	echo "scale=2; `detex -n $(CO)-[01]*.tex | sed s/"^ *"/""/ | sed s/"^	*"/""/ | wc -c`/1800;" | bc
 
